@@ -1,5 +1,3 @@
-import java.awt.Image;
-
 import javax.swing.*;
 
 public class TestClass {
@@ -9,7 +7,11 @@ public class TestClass {
 		Graphics g = new Graphics();
 				
 		MapGrid map = new MapGrid(25, 25, g);
-		final DrawMapGrid draw = new DrawMapGrid(map);
+		MapEditorMenuBar menuBar = new MapEditorMenuBar(map);
+		
+		GraphicsPanel gp = new GraphicsPanel();
+		
+		final DrawGUI draw = new DrawGUI(map, menuBar, gp);
 		
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {

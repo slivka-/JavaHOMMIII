@@ -1,6 +1,5 @@
 import javax.swing.*;
 import javax.swing.border.MatteBorder;
-
 import java.awt.*;
 
 public class MapGrid extends JPanel{
@@ -9,10 +8,12 @@ public class MapGrid extends JPanel{
 	private int colCount;
 	private final int cellWidth = 32;
 	private final int cellHeight = 32;
+	private CellGrid[][] cells;
 	
 	public MapGrid(int rowCount, int colCount, Graphics g){
 		this.rowCount = rowCount;
 		this.colCount = colCount;
+		cells = new CellGrid[rowCount][colCount];
 		
 		setLayout(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
@@ -24,27 +25,36 @@ public class MapGrid extends JPanel{
 				
 				Image img = g.getRandomTileDefaultBackgroundImage();
 				CellGrid cell = new CellGrid(cellWidth, cellHeight, img);
+
+				add(cell, gbc);
+				cells[row][col] = cell;
+			}
+		}
+	}
+	
+	public void drawGrid() {
+		for (int row = 0; row < rowCount; ++row) {
+			for (int col = 0; col < colCount; ++col) {
 				
-				/*
-				//Border
+				MatteBorder b = null;
+				
 				if (row < rowCount - 1) {
 					if (col < colCount - 1) {
-						cell.setBorder(new MatteBorder(1, 1, 0, 0, Color.black));
+						b = new MatteBorder(1, 1, 0, 0, Color.black);
 					}
 					else {
-						cell.setBorder(new MatteBorder(1, 1, 0, 1, Color.black));
+						b = new MatteBorder(1, 1, 0, 1, Color.black);
 					}
 				}
 				else {
 					if (col < colCount - 1) {
-						cell.setBorder(new MatteBorder(1, 1, 1, 0, Color.black));
+						b = new MatteBorder(1, 1, 1, 0, Color.black);
 					}
 					else {
-						cell.setBorder(new MatteBorder(1, 1, 1, 1, Color.black));
+						b = new MatteBorder(1, 1, 1, 1, Color.black);
 					}
 				}
-				*/
-				add(cell, gbc);
+				cells[row][col].setBorder(b);
 			}
 		}
 	}
