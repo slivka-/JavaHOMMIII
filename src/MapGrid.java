@@ -7,14 +7,12 @@ public class MapGrid extends JPanel{
 	
 	private int rowCount;
 	private int colCount;
-	private int cellWidth;
-	private int cellHeight;
+	private final int cellWidth = 32;
+	private final int cellHeight = 32;
 	
-	public MapGrid(int rowCount, int colCount, int cellWidth, int cellHeight){
+	public MapGrid(int rowCount, int colCount, Graphics g){
 		this.rowCount = rowCount;
 		this.colCount = colCount;
-		this.cellWidth = cellWidth;
-		this.cellHeight = cellHeight;
 		
 		setLayout(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
@@ -24,9 +22,11 @@ public class MapGrid extends JPanel{
 				gbc.gridx = col;
 				gbc.gridy = row;
 				
-				CellGrid cell = new CellGrid(cellWidth, cellHeight);
+				Image img = g.getRandomTileDefaultBackgroundImage();
+				CellGrid cell = new CellGrid(cellWidth, cellHeight, img);
 				
-				cell.setBackground(Color.GRAY);
+				/*
+				//Border
 				if (row < rowCount - 1) {
 					if (col < colCount - 1) {
 						cell.setBorder(new MatteBorder(1, 1, 0, 0, Color.black));
@@ -43,7 +43,7 @@ public class MapGrid extends JPanel{
 						cell.setBorder(new MatteBorder(1, 1, 1, 1, Color.black));
 					}
 				}
-				
+				*/
 				add(cell, gbc);
 			}
 		}
