@@ -26,12 +26,12 @@ public class MapEditorMenuBar extends JMenuBar {
 		edit.setMnemonic(KeyEvent.VK_E);
 		this.add(edit);
 		
-		JMenuItem eShowGrid = new JMenuItem("Show grid");
-		eShowGrid.setToolTipText("Show grid on the map");
+		JMenuItem eShowGrid = new JMenuItem("Show/Hide grid");
+		eShowGrid.setToolTipText("Shows/Hides grid on the map");
 		eShowGrid.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent event) {
-				map.drawGrid();
+				map.showHideGrid();
 			}
 			
 		});

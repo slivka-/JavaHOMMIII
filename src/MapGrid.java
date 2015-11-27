@@ -9,6 +9,7 @@ public class MapGrid extends JPanel{
 	private final int cellWidth = 32;
 	private final int cellHeight = 32;
 	private CellGrid[][] cells;
+	private boolean isGrid = false;
 	
 	public MapGrid(int rowCount, int colCount, Graphics g){
 		this.rowCount = rowCount;
@@ -32,7 +33,17 @@ public class MapGrid extends JPanel{
 		}
 	}
 	
-	public void drawGrid() {
+	public void showHideGrid() {
+		if (isGrid) {
+			hideGrid();
+		}
+		else {
+			drawGrid();
+		}
+	}
+	
+	private void drawGrid() {
+		isGrid = true;
 		for (int row = 0; row < rowCount; ++row) {
 			for (int col = 0; col < colCount; ++col) {
 				
@@ -55,6 +66,15 @@ public class MapGrid extends JPanel{
 					}
 				}
 				cells[row][col].setBorder(b);
+			}
+		}
+	}
+	
+	private void hideGrid() {
+		isGrid = false;
+		for (int row = 0; row < rowCount; ++row) {
+			for (int col = 0; col < colCount; ++col) {
+				cells[row][col].setBorder(BorderFactory.createEmptyBorder());
 			}
 		}
 	}
