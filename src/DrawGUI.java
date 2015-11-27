@@ -26,7 +26,6 @@ public class DrawGUI {
 		JPanel mapPanel = new JPanel();
 		mapPanel.setLayout(new BorderLayout());
 		JScrollPane scrollPane = new JScrollPane(map);
-		//scrollPane.setSize(600, 780);
 		mapPanel.add(scrollPane, BorderLayout.CENTER);
 		mapPanel.setSize(600, 780);
 		frame.getContentPane().add(mapPanel);
@@ -40,5 +39,4 @@ public class DrawGUI {
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 	}
-
 }

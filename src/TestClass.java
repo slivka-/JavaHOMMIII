@@ -6,7 +6,8 @@ public class TestClass {
 		
 		Graphics g = new Graphics();
 				
-		MapGrid map = new MapGrid(25, 25, g);
+		MapGrid map = new MapGrid(g);
+		map.initializeGrid(MapSize.SMALL);
 		MapEditorMenuBar menuBar = new MapEditorMenuBar(map);
 		
 		GraphicsPanel gp = new GraphicsPanel();
@@ -18,7 +19,5 @@ public class TestClass {
 				draw.drawAndShowMap();
 			}
 		});
-
 	}
-
 }

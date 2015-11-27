@@ -10,27 +10,30 @@ public class MapGrid extends JPanel{
 	private final int cellHeight = 32;
 	private CellGrid[][] cells;
 	private boolean isGrid = false;
+	private Graphics graphics;
+
+	public MapGrid(Graphics g){
+		this.graphics = g;
+	}
 	
-	public MapGrid(int rowCount, int colCount, Graphics g){
-		this.rowCount = rowCount;
-		this.colCount = colCount;
+	public void initializeGrid(MapSize size) {
+		removeAll();
+		rowCount = colCount = size.getValue();
 		cells = new CellGrid[rowCount][colCount];
-		
 		setLayout(new GridBagLayout());
-		GridBagConstraints gbc = new GridBagConstraints();
-		
+		GridBagConstraints gbc = new GridBagConstraints();	
 		for (int row = 0; row < rowCount; ++row) {
 			for (int col = 0; col < colCount; ++col) {
 				gbc.gridx = col;
 				gbc.gridy = row;
 				
-				Image img = g.getRandomTileDefaultBackgroundImage();
+				Image img = graphics.getRandomTileDefaultBackgroundImage();
 				CellGrid cell = new CellGrid(cellWidth, cellHeight, img);
-
 				add(cell, gbc);
 				cells[row][col] = cell;
 			}
 		}
+		updateUI();
 	}
 	
 	public void showHideGrid() {
