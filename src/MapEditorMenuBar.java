@@ -1,4 +1,5 @@
 import javax.swing.*;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,6 +22,18 @@ public class MapEditorMenuBar extends JMenuBar {
 		JMenu file = new JMenu("File");
 		file.setMnemonic(KeyEvent.VK_F);
 		this.add(file);
+		JMenuItem newMap = new JMenuItem("New");
+		newMap.setToolTipText("Make a new map");
+		newMap.setMnemonic(KeyEvent.VK_N);
+		file.add(newMap);
+		JMenuItem loadMap = new JMenuItem("Open");
+		loadMap.setToolTipText("Open saved new map");
+		loadMap.setMnemonic(KeyEvent.VK_O);
+		file.add(loadMap);
+		JMenuItem saveMap = new JMenuItem("Save");
+		saveMap.setToolTipText("Save map");
+		saveMap.setMnemonic(KeyEvent.VK_S);
+		file.add(saveMap);		
 		
 		JMenu edit = new JMenu("Edit");
 		edit.setMnemonic(KeyEvent.VK_E);
