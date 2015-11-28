@@ -1,5 +1,7 @@
 package battleScreen;
 
+import dataClasses.HeroInfo;
+
 public class BattleInfo {
 
 	private HeroInfo player1;
