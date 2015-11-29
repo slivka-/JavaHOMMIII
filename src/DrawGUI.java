@@ -1,17 +1,21 @@
 import java.awt.*;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
 
 
 public class DrawGUI {
 	
-	private MapGrid map;
+	private MapGridContainer mgc;
 	private MapEditorMenuBar menuBar;
 	private GraphicsPanel gp;
+	private ImageSelectionBox isb;
 	
-	public DrawGUI(MapGrid map, MapEditorMenuBar menuBar, GraphicsPanel gp) {
-		this.map = map;
+	public DrawGUI(MapGridContainer mgc, MapEditorMenuBar menuBar, GraphicsPanel gp, ImageSelectionBox isb) {
+		this.mgc = mgc;
 		this.menuBar = menuBar;
 		this.gp = gp;
+		this.isb = isb;
 	}
 	
 	public void drawAndShowMap() {
@@ -22,17 +26,17 @@ public class DrawGUI {
 		frame.getContentPane().add(menuBar, BorderLayout.NORTH);
 		menuBar.setSize(800, 20);
 		
-		//makes map scrollable
-		JPanel mapPanel = new JPanel();
-		mapPanel.setLayout(new BorderLayout());
-		JScrollPane scrollPane = new JScrollPane(map);
-		mapPanel.add(scrollPane, BorderLayout.CENTER);
-		mapPanel.setSize(600, 780);
-		frame.getContentPane().add(mapPanel);
+		frame.getContentPane().add(mgc);
 		
-		frame.getContentPane().add(gp, BorderLayout.EAST);		
+		//frame.getContentPane().add(gp, BorderLayout.EAST);		
 		gp.setSize(200, 780);
 		
+		JScrollPane temp = new JScrollPane(isb.getList());
+		JPanel imagePanel = new JPanel();
+		imagePanel.setLayout(new BorderLayout());
+		imagePanel.add(temp, BorderLayout.CENTER);
+		frame.getContentPane().add(imagePanel, BorderLayout.EAST);
+
 		frame.setPreferredSize(new Dimension(800, 800));
 		frame.setResizable(false);
 		frame.pack();

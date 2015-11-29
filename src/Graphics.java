@@ -2,6 +2,7 @@ import java.awt.Image;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Random;
+
 import javax.imageio.ImageIO;
 
 
@@ -9,6 +10,8 @@ public class Graphics {
 	
 	private ArrayList<Image> defaultTileBackgroundImage;
 	private File defaultImageBackgroundDirectory = new File("assets\\terrain\\green");
+	private File defaultImageDirectory = new File("assets");
+	private ArrayList<ArrayList<Image>> listOfImages = new ArrayList<ArrayList<Image>>();
 	private Random r = new Random();
 	
 	public Graphics() {
@@ -34,5 +37,34 @@ public class Graphics {
 
 	public Image getRandomTileDefaultBackgroundImage() {
 		return defaultTileBackgroundImage.get(r.nextInt(defaultTileBackgroundImage.size()));
+	}
+	
+	public ArrayList<Image> loadAllDefaultImagesFromDirectory(File path) {
+		ArrayList<Image> imgFiles = new ArrayList<Image>();
+		for (File file : path.listFiles()) {
+			if (file.getName().toLowerCase().endsWith(".png")) {
+				Image img = null;
+				try {
+					img = ImageIO.read(file);
+				}
+				catch (Exception e) {
+					//TODO: handling
+				}
+				if (img != null) {
+					imgFiles.add(img);
+				}
+			}
+		}
+		return imgFiles;		
+	}
+	
+	public void loadAllDefaultImages() {
+		for (File path : defaultImageDirectory.listFiles()) {
+			listOfImages.add(loadAllDefaultImagesFromDirectory(path));
+		}
+	}
+	
+	public ArrayList<ArrayList<Image>> getListOfImages() {
+		return listOfImages;
 	}
 }
