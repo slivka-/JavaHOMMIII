@@ -1,6 +1,8 @@
 import javax.swing.*;
 import javax.swing.border.MatteBorder;
+
 import java.awt.*;
+import java.awt.image.BufferedImage;
 
 
 public class MapGrid extends JPanel{
@@ -53,6 +55,9 @@ public class MapGrid extends JPanel{
 			return;
 		}
 		else {
+			BufferedImage chunks[] = ImageProcessor.divideImage(newImg, cellWidth, cellHeight);
+			//for mines this is ideal
+			newImg = chunks[chunks.length - 2];
 			int _x = x / cellWidth;
 			int _y = y / cellHeight;
 			cells[_x][_y].setIcon(new ImageIcon(newImg));
