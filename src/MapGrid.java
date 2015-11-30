@@ -56,11 +56,24 @@ public class MapGrid extends JPanel{
 		}
 		else {
 			BufferedImage chunks[] = ImageProcessor.divideImage(newImg, cellWidth, cellHeight);
-			//for mines this is ideal
-			newImg = chunks[chunks.length - 2];
-			int _x = x / cellWidth;
-			int _y = y / cellHeight;
-			cells[_x][_y].setIcon(new ImageIcon(newImg));
+			
+			int rows = newImg.getHeight(null) / cellHeight;
+			int cols = newImg.getWidth(null) / cellWidth;
+			int centerX = x / cellWidth; //dok³adna wspó³rzêdna x mapy
+			int centerY = y / cellHeight; //dok³adna wspó³rzêdna y mapy
+			int count = 0;
+			for (int r = 0; r < rows; ++r) {
+				for(int c = 0; c < cols; ++c) {
+					int _x = centerX + c - cols/2;
+					int _y = centerY + r - rows+1;
+					//TODO: add handling for _x and _y
+					cells[_x][_y].setIcon(new ImageIcon(chunks[count++]));
+					//cells[x][y].setType = town/mine/etc.
+					//cells[x][y].canMove = false //exception- center(true)
+					//or collect cells and put them in collection of object of i.e. town type
+				}
+				
+			}
 		}
 	}
 	

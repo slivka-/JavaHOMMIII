@@ -50,7 +50,7 @@ public class MapGridContainer extends JPanel{
 			public void mouseClicked(MouseEvent e) {
 			    if(e.getButton() == MouseEvent.BUTTON1)
 			    {
-			    	map.changeCellImage(e.getX(), e.getY());
+			    	map.changeCellImage(map.getMousePosition().x, map.getMousePosition().y);
 			    }	 
 				
 			}
