@@ -24,13 +24,14 @@ public class MapGrid extends JPanel{
 	public MapGrid(Graphics g, ImageSelectionBox isb){
 		this.graphics = g;
 		this.isb = isb;
+		setLayout(new GridBagLayout());
 	}
 	
 	public void initializeGrid(MapSize size) {
 		removeAll();
+		isGridOn = false;
 		rowCount = colCount = size.getValue();
 		cells = new CellGrid[rowCount][colCount];
-		setLayout(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();	
 		for (int col = 0; col < colCount; ++col) {
 			for  (int row = 0; row < rowCount; ++row){
@@ -38,7 +39,7 @@ public class MapGrid extends JPanel{
 				gbc.gridy = row;
 				
 				Image img = graphics.getRandomTileDefaultBackgroundImage();
-				CellGrid cell = new CellGrid(cellWidth, cellHeight, img, this);
+				CellGrid cell = new CellGrid(cellWidth, cellHeight, img);
 				add(cell, gbc);
 				cells[col][row] = cell;
 			}

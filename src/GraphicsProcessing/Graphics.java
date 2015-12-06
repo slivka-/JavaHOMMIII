@@ -17,6 +17,7 @@ public class Graphics {
 	
 	public Graphics() {
 		readAllDefaultBackgroundImages();
+		loadAllDefaultImages();
 	}
 	
 	private void readAllDefaultBackgroundImages() {

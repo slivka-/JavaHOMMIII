@@ -9,35 +9,43 @@ import javax.swing.event.ListSelectionListener;
 public class ImageSelectionBox {
 
 	private ArrayList<ArrayList<Image>> images;
-	private JList list;
 	private int selectedIndex = -1;
 	private int selectedList = -1;
 	private Image selectedImage = null;
 	private ImageSelectionBoxContainer isbc;
+	private ArrayList<JList> imageLists;
 	
 	public ImageSelectionBox(ArrayList<ArrayList<Image>> images) {
 		this.images = images;
+		imageLists = new ArrayList<JList>();
+		initializeLists();
 	}
 	
 	public void setContainer(ImageSelectionBoxContainer isbc) {
 		this.isbc = isbc;
 	}
 	
+	private void initializeLists() {
+		for (int i = 0; i < images.size(); ++i) {
+			JList list = new JList(images.get(i).toArray());
+			list.setCellRenderer(new ListRenderer());
+			list.addListSelectionListener(new ListSelectionListener() {
+				
+				@Override
+				public void valueChanged(ListSelectionEvent e) {
+					selectedIndex = imageLists.get(selectedList).getSelectedIndex();	
+					selectedImage = getImageAtIndex(selectedIndex);
+				}
+			});
+			imageLists.add(list);
+		}
+	}
+	
 	private void setImageList(int selectedList) {
 		this.selectedList = selectedList;
 		selectedIndex = -1;
 		selectedImage = null;
-		list = new JList(images.get(selectedList).toArray());
-		list.setCellRenderer(new ListRenderer());
-		list.addListSelectionListener(new ListSelectionListener() {
-			
-			@Override
-			public void valueChanged(ListSelectionEvent e) {
-				selectedIndex = list.getSelectedIndex();	
-				selectedImage = getImageAtIndex(selectedIndex);
-			}
-		});
-		isbc.changeList(list);
+		isbc.changeList(imageLists.get(selectedList));
 	}
 	
 	private Image getImageAtIndex(int index) {
@@ -74,7 +82,7 @@ public class ImageSelectionBox {
 	
 	
 	public JList getList() {
-		return list;
+		return imageLists.get(selectedList);
 	}
 
 }

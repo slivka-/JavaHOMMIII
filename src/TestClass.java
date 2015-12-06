@@ -14,18 +14,15 @@ public class TestClass {
 
 	public static void main(String[] args) {
 		
-		Graphics g = new Graphics();
-		g.loadAllDefaultImages();
-		ArrayList<ArrayList<Image>> img = g.getListOfImages();
+		Graphics g = new Graphics();		
 		
-		ImageSelectionBox isb = new ImageSelectionBox(img);
-		ImageSelectionBoxContainer isbc = new ImageSelectionBoxContainer(isb);
+		ImageSelectionBox isb = new ImageSelectionBox(g.getListOfImages());
 		FolderImageBox fib = new FolderImageBox();
-
 		fib.setDirectoriesNames(g.getAllDirectoriesName());
-		
 		ImageSelectionController isc = new ImageSelectionController(isb, fib);
+		
 		FolderImageBoxContainer fibc = new FolderImageBoxContainer(fib);
+		ImageSelectionBoxContainer isbc = new ImageSelectionBoxContainer(isb);
 		ImageFolderComponent imgFolders = new ImageFolderComponent(fibc, isbc);
 		
 		MapGrid map = new MapGrid(g, isb);

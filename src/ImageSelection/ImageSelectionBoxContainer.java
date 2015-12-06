@@ -15,7 +15,8 @@ public class ImageSelectionBoxContainer extends JPanel{
 	public ImageSelectionBoxContainer(ImageSelectionBox isb) {
 		this.isb = isb;
 		isb.setContainer(this);
-		pane = new JScrollPane(isb.getList());
+		//pane = new JScrollPane(isb.getList());
+		pane = new JScrollPane();
 		initialize();
 	}
 	
