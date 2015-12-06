@@ -100,8 +100,8 @@ public class MapGrid extends JPanel{
 				
 				MatteBorder b = null;
 				
-				if (row < rowCount - 1) {
-					if (col < colCount - 1) {
+				if (row < rowCount) {
+					if (col < colCount) {
 						b = new MatteBorder(1, 1, 0, 0, Color.black);
 					}
 					else {
@@ -109,7 +109,7 @@ public class MapGrid extends JPanel{
 					}
 				}
 				else {
-					if (col < colCount - 1) {
+					if (col < colCount) {
 						b = new MatteBorder(1, 1, 1, 0, Color.black);
 					}
 					else {
