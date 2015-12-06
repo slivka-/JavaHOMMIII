@@ -1,5 +1,10 @@
+package Map;
 import javax.swing.*;
 import javax.swing.border.MatteBorder;
+
+import GraphicsProcessing.Graphics;
+import GraphicsProcessing.ImageProcessor;
+import ImageSelection.ImageSelectionBox;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -59,8 +64,8 @@ public class MapGrid extends JPanel{
 			
 			int rows = newImg.getHeight(null) / cellHeight;
 			int cols = newImg.getWidth(null) / cellWidth;
-			int centerX = x / cellWidth; //dok³adna wspó³rzêdna x mapy
-			int centerY = y / cellHeight; //dok³adna wspó³rzêdna y mapy
+			int centerX = x / cellWidth;
+			int centerY = y / cellHeight;
 			int count = 0;
 			for (int r = 0; r < rows; ++r) {
 				for(int c = 0; c < cols; ++c) {
@@ -80,14 +85,15 @@ public class MapGrid extends JPanel{
 	public void showHideGrid() {
 		if (isGridOn) {
 			hideGrid();
+			isGridOn = false;
 		}
 		else {
 			drawGrid();
+			isGridOn = true;
 		}
 	}
 	
 	private void drawGrid() {
-		isGridOn = true;
 		for (int row = 0; row < rowCount; ++row) {
 			for (int col = 0; col < colCount; ++col) {
 				
@@ -115,7 +121,6 @@ public class MapGrid extends JPanel{
 	}
 	
 	private void hideGrid() {
-		isGridOn = false;
 		for (int row = 0; row < rowCount; ++row) {
 			for (int col = 0; col < colCount; ++col) {
 				cells[row][col].setBorder(BorderFactory.createEmptyBorder());

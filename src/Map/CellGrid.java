@@ -1,3 +1,4 @@
+package Map;
 import javax.swing.*;
 import java.awt.*;
 

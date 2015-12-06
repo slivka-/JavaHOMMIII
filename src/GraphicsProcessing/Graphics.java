@@ -1,3 +1,4 @@
+package GraphicsProcessing;
 import java.awt.Image;
 import java.io.File;
 import java.util.ArrayList;
@@ -62,6 +63,16 @@ public class Graphics {
 		for (File path : defaultImageDirectory.listFiles()) {
 			listOfImages.add(loadAllDefaultImagesFromDirectory(path));
 		}
+	}
+	
+	public ArrayList<String> getAllDirectoriesName() {
+		ArrayList<String> directories = new ArrayList<String>();
+		for (File dir : defaultImageDirectory.listFiles()) {
+			if (dir.isDirectory()) {
+				directories.add(dir.getName());
+			}
+		}
+		return directories;
 	}
 	
 	public ArrayList<ArrayList<Image>> getListOfImages() {

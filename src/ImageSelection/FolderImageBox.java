@@ -1,34 +1,48 @@
-import java.awt.*;
+package ImageSelection;
+import java.awt.Color;
+import java.awt.Component;
 import java.util.ArrayList;
-
-import javax.swing.*;
+import javax.swing.DefaultListCellRenderer;
+import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.border.MatteBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-public class ImageSelectionBox{
 
-	private ArrayList<Image> images;
+
+public class FolderImageBox {
+
+	ArrayList<String> directories;
 	private JList list;
 	private int selectedIndex = -1;
-	private Image selectedImage = null;
+	private ImageSelectionController controller;	
 	
-	public ImageSelectionBox(ArrayList<Image> images) {
-		this.images = images;
-		list = new JList(images.toArray());
+	public FolderImageBox() {}
+	
+	public void setController(ImageSelectionController isc) {
+		controller = isc;
+	}
+	
+	public void setDirectoriesNames(ArrayList<String> directories) {
+		this.directories = directories;
+	}
+	
+	public void initialize() {
+		list = new JList(directories.toArray());
 		list.setCellRenderer(new ListRenderer());
 		list.addListSelectionListener(new ListSelectionListener() {
 			
 			@Override
 			public void valueChanged(ListSelectionEvent e) {
-				selectedIndex = list.getSelectedIndex();	
-				selectedImage = getImageAtIndex(selectedIndex);
+				selectedIndex = list.getSelectedIndex();
+				controller.setSelectedDirectory(selectedIndex);
 			}
 		});
 	}
 	
-	private Image getImageAtIndex(int index) {
-		return images.get(index);
+	public JList getList() {
+		return list;
 	}
 	
 	private class ListRenderer extends DefaultListCellRenderer {
@@ -36,12 +50,9 @@ public class ImageSelectionBox{
 		public Component getListCellRendererComponent(
                 JList list, Object value, int index,
                 boolean isSelected, boolean cellHasFocus) {
-			/*
-			JLabel label = (JLabel) super.getListCellRendererComponent(
-					list, value, index, isSelected, cellHasFocus);
-					*/
+			
 			JLabel label = new JLabel();
-			label.setIcon(new ImageIcon(images.get(index)));
+			label.setText(directories.get(index));
 			// Selected item has red border
 			if (isSelected) {
 				label.setBorder(new MatteBorder(1, 1, 1, 1, Color.RED));
@@ -53,14 +64,4 @@ public class ImageSelectionBox{
 			return label;
 		}
 	}
-	
-	public Image getSelectedImage() {
-		return selectedImage;
-	}
-	
-	
-	public JList getList() {
-		return list;
-	}
-
 }

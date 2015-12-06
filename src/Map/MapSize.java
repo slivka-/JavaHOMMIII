@@ -1,3 +1,4 @@
+package Map;
 /*
  * Small (36x36), Medium (72x72), Large (108x108)
  */
