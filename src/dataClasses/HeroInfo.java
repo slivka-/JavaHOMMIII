@@ -4,7 +4,10 @@ import java.util.HashMap;
 import java.util.TreeMap;
 
 
-//Klasa zawieraj¹ca dane bohatera i jego armie;
+/**
+ * @author slivka
+ * Klasa zawiera dane nt bohatera i jego armii
+ */
 public class HeroInfo {
 	private int ID;
 	private String Name;
@@ -21,13 +24,18 @@ public class HeroInfo {
 		setArmy(new HashMap<Integer, UnitInfo>());
 	}
 	
+	/**
+	 * Dodaje jednostki do armii bohatera
+	 * @param position pozycja w armii(1-5)
+	 * @param unit oddzia³
+	 */
 	public void addToArmy(int position, UnitInfo unit)
 	{
 		if(army.size()<5)
 		{
 			army.put(position, unit);
 		}
-		army = new HashMap(new TreeMap(army));
+		army = new HashMap<Integer, UnitInfo>(new TreeMap<Integer, UnitInfo>(army));
 	}
 	
 	public HashMap<Integer, UnitInfo> getArmy() {

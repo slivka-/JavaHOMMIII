@@ -1,12 +1,20 @@
 package battleScreen;
 
-import dataClasses.HeroInfo;
+import java.util.HashMap;
 
+import dataClasses.HeroInfo;
+import dataClasses.UnitInfo;
+
+/**
+ * @author slivka
+ * Klasa przechowuje informacje o bitwie
+ */
 public class BattleInfo {
 
 	private HeroInfo player1;
 	private HeroInfo player2;
 	private HeroInfo[] spectators;
+	private HashMap<Integer, UnitInfo> CPUarmy;
 	private int terrainType;
 	//TODO: Dodaæ battleGrid trzymaj¹cy info o terenie, zrobiæ klasê dla pola terenu
 	
@@ -15,6 +23,7 @@ public class BattleInfo {
 		player1 = null;
 		player2 = null;
 		spectators = null;
+		CPUarmy = null;
 		terrainType = 0;
 	}
 	
@@ -38,6 +47,15 @@ public class BattleInfo {
 	public void setPlayer2(HeroInfo player2) 
 	{
 		this.player2 = player2;
+	}
+	
+//============================CUP army  GET/SET==================================\\		
+	public HashMap<Integer, UnitInfo> getCPUarmy() {
+		return CPUarmy;
+	}
+
+	public void setCPUarmy(HashMap<Integer, UnitInfo> cPUarmy) {
+		CPUarmy = cPUarmy;
 	}
 	
 //============================SPECTATORS GET/SET================================\\	
