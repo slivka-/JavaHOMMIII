@@ -1,5 +1,6 @@
 package Map;
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 
 public class Tile extends JLayeredPane{
@@ -42,6 +43,10 @@ public class Tile extends JLayeredPane{
 	public void setMapObject(ImageIcon img) {
 		object.setIcon(img);
 		updateUI();
+	}
+
+	public void setMapObjectBorder(Border b) {
+		object.setBorder(b);
 	}
 
 	public boolean getOccupied() {

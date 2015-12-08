@@ -68,12 +68,20 @@ public class MapGrid extends JPanel{
 			int cols = newImg.getWidth(null) / cellWidth;
 			int centerX = x / cellWidth;
 			int centerY = y / cellHeight;
+
+			//left upper corner -> right upper corner -> left down corner -> right down corner
+			//must be within map
+			if (centerX - cols/2 < 0 || centerX + cols/2 > colCount || centerY - rows + 1 < 0)
+			{
+				return;
+			}
+
 			int count = 0;
 			for (int r = 0; r < rows; ++r) {
 				for(int c = 0; c < cols; ++c) {
 					int _x = centerX + c - cols/2;
 					int _y = centerY + r - rows+1;
-					//TODO: add handling for _x and _y and check if tile is occupied
+					//TODO: check if tile is occupied
 					cells[_x][_y].setMapObject(new ImageIcon(chunks[count++]));
 					//cells[x][y].setType = town/mine/etc.
 					//cells[x][y].canMove = false //exception- center(true)
@@ -117,7 +125,7 @@ public class MapGrid extends JPanel{
 						b = new MatteBorder(1, 1, 1, 1, Color.black);
 					}
 				}
-				cells[row][col].setBorder(b);
+				cells[row][col].setMapObjectBorder(b);
 			}
 		}
 	}
@@ -125,7 +133,7 @@ public class MapGrid extends JPanel{
 	private void hideGrid() {
 		for (int row = 0; row < rowCount; ++row) {
 			for (int col = 0; col < colCount; ++col) {
-				cells[row][col].setBorder(BorderFactory.createEmptyBorder());
+				cells[row][col].setMapObjectBorder(BorderFactory.createEmptyBorder());
 			}
 		}
 	}
