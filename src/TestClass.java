@@ -20,10 +20,9 @@ public class TestClass {
 		FolderImageBox fib = new FolderImageBox();
 		fib.setDirectoriesNames(g.getAllDirectoriesName());
 		ImageSelectionController isc = new ImageSelectionController(isb, fib);
-		
-		FolderImageBoxContainer fibc = new FolderImageBoxContainer(fib);
+
 		ImageSelectionBoxContainer isbc = new ImageSelectionBoxContainer(isb);
-		ImageFolderComponent imgFolders = new ImageFolderComponent(fibc, isbc);
+		ImageFolderComponent imgFolders = new ImageFolderComponent(fib, isbc);
 		
 		MapGrid map = new MapGrid(g, isb);
 		map.initializeGrid(MapSize.SMALL);

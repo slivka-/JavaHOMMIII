@@ -1,25 +1,23 @@
 package ImageSelection;
-import java.awt.Color;
-import java.awt.Component;
+import java.awt.*;
 import java.util.ArrayList;
-import javax.swing.DefaultListCellRenderer;
-import javax.swing.JLabel;
-import javax.swing.JList;
+import javax.swing.*;
 import javax.swing.border.MatteBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 
 
-public class FolderImageBox {
+public class FolderImageBox extends JPanel {
 
 	ArrayList<String> directories;
 	private JList list;
 	private int selectedIndex = -1;
-	private ImageSelectionController controller;	
+	private ImageSelectionController controller;
+	private JScrollPane pane;
 	
 	public FolderImageBox() {}
-	
+
 	public void setController(ImageSelectionController isc) {
 		controller = isc;
 	}
@@ -39,10 +37,15 @@ public class FolderImageBox {
 				controller.setSelectedDirectory(selectedIndex);
 			}
 		});
+		pane = new JScrollPane(list);
+		this.setLayout(new BorderLayout());
+		this.add(pane, BorderLayout.CENTER);
+		pane.setPreferredSize(new Dimension(220, 200));
+
 	}
-	
-	public JList getList() {
-		return list;
+
+	public JScrollPane getPane() {
+		return pane;
 	}
 	
 	private class ListRenderer extends DefaultListCellRenderer {
