@@ -16,7 +16,7 @@ public class MapGrid extends JPanel{
 	private int colCount;
 	private final int cellWidth = 32;
 	private final int cellHeight = 32;
-	private CellGrid[][] cells;
+	private Tile[][] cells;
 	private boolean isGridOn = false;
 	private Graphics graphics;
 	private ImageSelectionBox isb;
@@ -31,7 +31,7 @@ public class MapGrid extends JPanel{
 		removeAll();
 		isGridOn = false;
 		rowCount = colCount = size.getValue();
-		cells = new CellGrid[rowCount][colCount];
+		cells = new Tile[rowCount][colCount];
 		GridBagConstraints gbc = new GridBagConstraints();	
 		for (int col = 0; col < colCount; ++col) {
 			for  (int row = 0; row < rowCount; ++row){
@@ -39,7 +39,8 @@ public class MapGrid extends JPanel{
 				gbc.gridy = row;
 				
 				Image img = graphics.getRandomTileDefaultBackgroundImage();
-				CellGrid cell = new CellGrid(cellWidth, cellHeight, img);
+				//movementCost temporary set to 1- it should be set depending on background
+				Tile cell = new Tile(cellWidth, cellHeight, 1, img);
 				add(cell, gbc);
 				cells[col][row] = cell;
 			}
@@ -72,8 +73,8 @@ public class MapGrid extends JPanel{
 				for(int c = 0; c < cols; ++c) {
 					int _x = centerX + c - cols/2;
 					int _y = centerY + r - rows+1;
-					//TODO: add handling for _x and _y
-					cells[_x][_y].setIcon(new ImageIcon(chunks[count++]));
+					//TODO: add handling for _x and _y and check if tile is occupied
+					cells[_x][_y].setMapObject(new ImageIcon(chunks[count++]));
 					//cells[x][y].setType = town/mine/etc.
 					//cells[x][y].canMove = false //exception- center(true)
 					//or collect cells and put them in collection of object of i.e. town type
