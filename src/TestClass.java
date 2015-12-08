@@ -21,8 +21,7 @@ public class TestClass {
 		fib.setDirectoriesNames(g.getAllDirectoriesName());
 		ImageSelectionController isc = new ImageSelectionController(isb, fib);
 
-		ImageSelectionBoxContainer isbc = new ImageSelectionBoxContainer(isb);
-		ImageFolderComponent imgFolders = new ImageFolderComponent(fib, isbc);
+		ImageFolderComponent imgFolders = new ImageFolderComponent(fib, isb);
 		
 		MapGrid map = new MapGrid(g, isb);
 		map.initializeGrid(MapSize.SMALL);

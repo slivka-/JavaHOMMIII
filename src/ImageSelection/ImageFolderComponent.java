@@ -6,12 +6,12 @@ import javax.swing.JPanel;
 
 public class ImageFolderComponent extends JPanel{
 
-	public ImageFolderComponent(FolderImageBox fib, ImageSelectionBoxContainer isbc) {
+	public ImageFolderComponent(FolderImageBox fib, ImageSelectionBox isb) {
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		//FolderImage
 		add(fib.getPane(), BorderLayout.NORTH);
 		//ImageSelectionBox
-		add(isbc.getPane(), BorderLayout.CENTER);
+		add(isb.getPane(), BorderLayout.CENTER);
 	}
 	
 	

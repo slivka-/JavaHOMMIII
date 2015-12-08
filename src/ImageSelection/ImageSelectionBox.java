@@ -6,26 +6,28 @@ import javax.swing.border.MatteBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-public class ImageSelectionBox {
+public class ImageSelectionBox extends JPanel{
 
-	private ArrayList<ArrayList<Image>> images;
 	private int selectedIndex = -1;
 	private int selectedList = -1;
 	private Image selectedImage = null;
-	private ImageSelectionBoxContainer isbc;
 	private ArrayList<JList> imageLists;
+	private JScrollPane pane;
 	
 	public ImageSelectionBox(ArrayList<ArrayList<Image>> images) {
-		this.images = images;
 		imageLists = new ArrayList<JList>();
-		initializeLists();
+		initialize();
+		initializeLists(images);
 	}
-	
-	public void setContainer(ImageSelectionBoxContainer isbc) {
-		this.isbc = isbc;
+
+	private void initialize() {
+		pane = new JScrollPane();
+		this.setLayout(new BorderLayout());
+		this.add(pane, BorderLayout.CENTER);
+		pane.setPreferredSize(new Dimension(220, 600));
 	}
-	
-	private void initializeLists() {
+
+	private void initializeLists(ArrayList<ArrayList<Image>> images) {
 		for (int i = 0; i < images.size(); ++i) {
 			JList list = new JList(images.get(i).toArray());
 			list.setCellRenderer(new ListRenderer());
@@ -33,8 +35,8 @@ public class ImageSelectionBox {
 				
 				@Override
 				public void valueChanged(ListSelectionEvent e) {
-					selectedIndex = imageLists.get(selectedList).getSelectedIndex();	
-					selectedImage = getImageAtIndex(selectedIndex);
+					selectedIndex = imageLists.get(selectedList).getSelectedIndex();
+					selectedImage = (Image)imageLists.get(selectedList).getModel().getElementAt(selectedIndex);
 				}
 			});
 			imageLists.add(list);
@@ -45,11 +47,13 @@ public class ImageSelectionBox {
 		this.selectedList = selectedList;
 		selectedIndex = -1;
 		selectedImage = null;
-		isbc.changeList(imageLists.get(selectedList));
+		pane.setViewportView(imageLists.get(selectedList));
+		pane.validate();
+		pane.repaint();
 	}
-	
-	private Image getImageAtIndex(int index) {
-		return images.get(selectedList).get(index);
+
+	public JScrollPane getPane() {
+		return pane;
 	}
 	
 	private class ListRenderer extends DefaultListCellRenderer {
@@ -59,7 +63,7 @@ public class ImageSelectionBox {
                 boolean isSelected, boolean cellHasFocus) {
 			
 			JLabel label = new JLabel();
-			label.setIcon(new ImageIcon(images.get(selectedList).get(index)));
+			label.setIcon(new ImageIcon((Image)imageLists.get(selectedList).getModel().getElementAt(index)));
 			// Selected item has red border
 			if (isSelected) {
 				label.setBorder(new MatteBorder(1, 1, 1, 1, Color.RED));
@@ -78,11 +82,6 @@ public class ImageSelectionBox {
 	
 	public void setImageSet(int listIndex) {
 		setImageList(listIndex);		
-	}
-	
-	
-	public JList getList() {
-		return imageLists.get(selectedList);
 	}
 
 }
