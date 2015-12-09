@@ -2,6 +2,7 @@ package battleDisplay;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.geom.AffineTransform;
@@ -37,7 +38,7 @@ public class GraphicsPanel extends JPanel {
 		this._y = y;
 		this._unitID = unitID;
 		this._unitSize = unitSize;
-		this.setBounds(_x,_y, image.getWidth(), image.getHeight());
+		this.setBounds(_x-(image.getWidth()/2),_y-image.getHeight(), image.getWidth(), image.getHeight());
 		this.addMouseListener(new MouseListener() {
 			
 			@Override
@@ -67,7 +68,6 @@ public class GraphicsPanel extends JPanel {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				System.out.println(unitID);
-				
 			}
 		});;
 	}
@@ -80,6 +80,18 @@ public class GraphicsPanel extends JPanel {
 		tx.translate(-image.getWidth(null),0);
 		AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
 		image = op.filter(image, null);
+		repaint();
+	}
+	/**
+	 * Metoda przesuwaj¹ca jednostkê na now¹ pozycje
+	 * @param p nowa pozycja jednostki
+	 */
+	public void movePanel(Point p)
+	{
+		//System.out.println((p.y-100)/43);
+		int nextZIndex = 10 - ((p.y-100)/43);
+		this.setBounds(p.x-(image.getWidth()/2),p.y-image.getHeight(), image.getWidth(), image.getHeight());
+		this.getParent().setComponentZOrder(this, nextZIndex);
 		repaint();
 	}
 	

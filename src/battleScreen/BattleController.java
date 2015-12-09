@@ -1,7 +1,9 @@
 package battleScreen;
 
+import java.awt.Point;
 import java.util.HashMap;
 
+import dataClasses.CellEntity;
 import dataClasses.HeroInfo;
 import dataClasses.UnitInfo;
 /**
@@ -22,7 +24,7 @@ public class BattleController {
 		this.model.setPlayer1(Player1);
 		this.model.setPlayer2(Player2);
 		this.model.setTerraintype(terrainType);
-		this.view = new BattleView(width,height);
+		this.view = new BattleView(width,height,this);
 	}
 	
 	public BattleController(int terrainType, HeroInfo Player1, HashMap<Integer, UnitInfo> Enemy)
@@ -31,7 +33,7 @@ public class BattleController {
 		this.model.setPlayer1(Player1);
 		this.model.setCPUarmy(Enemy);
 		this.model.setTerraintype(terrainType);
-		this.view = new BattleView(width,height);
+		this.view = new BattleView(width,height,this);
 	}
 
 //============================GET/SET==================================\\	
@@ -63,14 +65,27 @@ public class BattleController {
 	 */
 	public void BattleInit()
 	{
-		if(model.getPlayer2() != null)
-		{
-			view.DrawBattleScreen(model.getTerraintype(), model.getPlayer1().getArmy(), model.getPlayer2().getArmy());
-		}
-		else
-		{
-			view.DrawBattleScreen(model.getTerraintype(), model.getPlayer1().getArmy(), model.getCPUarmy());
-		}
+		model.GenerateBattlefield();
+		model.PalceUnits();
+		
+		view.DrawBattleScreen(model.getTerraintype(),model.getBattlefieldInfo());
 	}
 	
+	/**
+	 * Przesuwa jednostke na wybrane pole
+	 * @param targetCell pole na które jednostka ma siê przesun¹æ
+	 */
+	public void MoveUnit(Point targetCell)
+	{
+		
+		model.BattlefieldInfo[model.activeUnit.currentPos.x][model.activeUnit.currentPos.y].contains = CellEntity.EMPTY;
+		model.BattlefieldInfo[model.activeUnit.currentPos.x][model.activeUnit.currentPos.y].unit = null;
+		
+		model.BattlefieldInfo[targetCell.x][targetCell.y].contains = CellEntity.UNIT;
+		model.BattlefieldInfo[targetCell.x][targetCell.y].unit = model.activeUnit;
+		model.activeUnit.currentPos = targetCell;
+		view.moveUnit(model.BattlefieldInfo[targetCell.x][targetCell.y]);
+		model.SetNextActiveUnit();
+		
+	}
 }

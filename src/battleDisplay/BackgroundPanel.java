@@ -2,7 +2,6 @@ package battleDisplay;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -20,57 +19,20 @@ public class BackgroundPanel extends JPanel {
 	private static final long serialVersionUID = 7882245762555727253L;
 	
 	private BufferedImage image;
-	private Boolean drawGrid = false;
+	private Boolean drawGrid = true;
 	
 	/**
 	 * @param src scie¿ka do pliku t³a
+	 * @param mListener listener myszy
 	 */
-	public BackgroundPanel(String src){
+	public BackgroundPanel(String src, MouseListener mListener){
 		try {
 			image = ImageIO.read(new File(src));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		this.setBounds(1,1, image.getWidth(), image.getHeight());
-		this.addMouseListener(new MouseListener() {
-			
-			@Override
-			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				if(drawGrid)
-				{
-					drawGrid = false;
-				}
-				else
-				{
-					drawGrid = true;
-				}
-				repaint();
-			}
-		});
+		this.addMouseListener(mListener);
 	}
 	
 	
