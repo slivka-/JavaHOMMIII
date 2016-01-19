@@ -24,7 +24,10 @@ public class TestClass {
 		ImageFolderComponent imgFolders = new ImageFolderComponent(fib, isb);
 		
 		MapGrid map = new MapGrid(g, isb);
+
 		map.initializeGrid(MapSize.SMALL);
+		//map.initializeGrid();
+
 		MapEditorMenuBar menuBar = new MapEditorMenuBar(map);
 		MapGridContainer mgc = new MapGridContainer(map);
 		
