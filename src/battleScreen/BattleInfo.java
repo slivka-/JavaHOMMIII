@@ -28,7 +28,7 @@ public class BattleInfo {
 	private Queue<UnitInfo> BattleQueue;
 	public UnitInfo activeUnit;
 	
-	//--sta³e do rysowania--
+	//--staï¿½e do rysowania--
 	private final int cellWidth = 50;
 	private final int cellHeight = 43;
 	private final int offsetX = 75;
@@ -60,6 +60,7 @@ public class BattleInfo {
 	 */
 	public void GenerateBattlefield()
 	{
+
 		Random rnd = new Random();
 		for(int i=0;i<10;i++)
 		{
@@ -73,6 +74,7 @@ public class BattleInfo {
 				 
 			}
 		}
+
 	}
 	
 	/**
@@ -92,10 +94,11 @@ public class BattleInfo {
 			BattlefieldInfo[(key*2)-1][0].contains = CellEntity.UNIT;
 			BattlefieldInfo[(key*2)-1][0].unit = u;
 			BattleQueue.enqueue(u);
+			System.out.println(u.unitID+", "+u.unitSize);
 		}
 		
 		
-		//--sprawdzanie czy armia 2 to gracz czy wolny oddzia³
+		//--sprawdzanie czy armia 2 to gracz czy wolny oddziaï¿½
 		HashMap<Integer, UnitInfo> player2Army;
 		if(player2 != null){
 			player2Army = player2.getArmy();
@@ -111,17 +114,20 @@ public class BattleInfo {
 		while(army2Iterator.hasNext())
 		{
 			Integer key = army2Iterator.next();
-			UnitInfo u = player1Army.get(key);
+			UnitInfo u = player2Army.get(key);
 			u.currentPos = new Point((key*2)-1,13);
 			BattlefieldInfo[(key*2)-1][13].contains = CellEntity.UNIT;
 			BattlefieldInfo[(key*2)-1][13].unit = u;
 			BattleQueue.enqueue(u);
+			System.out.println(u.unitID+", "+u.unitSize);
 		}
 		try {
 			activeUnit = BattleQueue.dequeue();
+
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		//activeUnit.unitDisplay.setAsActive();
 	}
 	
 	/**
@@ -130,8 +136,10 @@ public class BattleInfo {
 	public void SetNextActiveUnit()
 	{
 		BattleQueue.enqueue(activeUnit);
+		activeUnit.unitDisplay.setAsNotActive();
 		try {
 			activeUnit = BattleQueue.dequeue();
+			activeUnit.unitDisplay.setAsActive();
 		} catch (InterruptedException e) {
 			System.out.println("BRAK JEDNOSTEK, BITWA SKONCZONA");
 			e.printStackTrace();

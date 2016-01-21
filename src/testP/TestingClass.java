@@ -18,14 +18,14 @@ public class TestingClass {
 		HeroInfo player1 = new HeroInfo();
 		HeroInfo player2 = new HeroInfo();
 		
-		UnitType t1 = new UnitType("ch³op");
-		UnitType t2 = new UnitType("rycerz");
+		UnitType t1 = new UnitType("pikinier","pikeMan",65,115,8,0,0,0);
+		UnitType t2 = new UnitType("pikinier","pikeMan",65,115,8,0,0,0);
 		
-		UnitInfo u1  = new UnitInfo(5, t1,1);
-		UnitInfo u2  = new UnitInfo(7, t2,2);
-		UnitInfo u3  = new UnitInfo(7, t2,3);
-		UnitInfo u4  = new UnitInfo(7, t2,4);
-		UnitInfo u5  = new UnitInfo(7, t2,5);
+		UnitInfo u1  = new UnitInfo(5, t1,01);
+		UnitInfo u2  = new UnitInfo(7, t2,02);
+		UnitInfo u3  = new UnitInfo(7, t2,03);
+		UnitInfo u4  = new UnitInfo(7, t2,04);
+		UnitInfo u5  = new UnitInfo(7, t2,05);
 		
 		player1.addToArmy(2, u2);
 		player1.addToArmy(1, u1);
@@ -34,8 +34,8 @@ public class TestingClass {
 		player1.addToArmy(3, u3);
 		
 		
-		UnitInfo u11  = new UnitInfo(15, t1,3);
-		UnitInfo u21  = new UnitInfo(2, t2,4);
+		UnitInfo u11  = new UnitInfo(15, t1,11);
+		UnitInfo u21  = new UnitInfo(2, t2,12);
 		
 		player2.addToArmy(2, u21);
 		player2.addToArmy(1, u11);

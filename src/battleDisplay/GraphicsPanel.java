@@ -1,8 +1,10 @@
 package battleDisplay;
 
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Point;
+import dataClasses.UnitType;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.geom.AffineTransform;
@@ -10,35 +12,45 @@ import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.*;
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+import javax.swing.Timer;
 
 import javax.imageio.ImageIO;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 /**
  * @author slivka
- * Klasa rysuj¹ca jednostki
+ * Klasa rysujï¿½ca jednostki
  */
 public class GraphicsPanel extends JPanel {
 
 	private static final long serialVersionUID = 3688560623253859696L;
-	private int _unitID;
-	private BufferedImage image;
+	private UnitType _unit;
 	private int _unitSize;
 	private int _x;
 	private int _y;
-	
-	public GraphicsPanel(String src, int x, int y, int unitID, int unitSize)
+	private List<AnimationFrame> _idleFrames = new ArrayList<AnimationFrame>();
+	private Animate animate;
+	private boolean facingLeft = false;
+	private boolean active = false;
+
+	public GraphicsPanel(UnitType unit, int x, int y, int unitSize)
 	{
-		try {
-			image = ImageIO.read(new File(src));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+
 		this._x = x;
 		this._y = y;
-		this._unitID = unitID;
+		this._unit = unit;
 		this._unitSize = unitSize;
-		this.setBounds(_x-(image.getWidth()/2),_y-image.getHeight(), image.getWidth(), image.getHeight());
+
+		SpriteLoader sl = new SpriteLoader(_unit._spriteName,_unit._frameWidth,_unit._frameHeight);
+		_idleFrames = sl.getFrames(_unit._idleFrames,0);
+		animate = new Animate(_idleFrames);
+
+
+
+		this.setBounds(_x-(_unit._frameWidth/2),_y-_unit._frameHeight, _unit._frameWidth, _unit._frameHeight+12);
 		this.addMouseListener(new MouseListener() {
 			
 			@Override
@@ -67,39 +79,104 @@ public class GraphicsPanel extends JPanel {
 			
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				System.out.println(unitID);
+				System.out.println("OK");
 			}
-		});;
+		});
+		start();
+		animate.start();
 	}
 	/**
-	 * Metoda odwracaj¹ca grafike jednostki
+	 * Metoda odwracajï¿½ca grafike jednostki
 	 */
 	public void flipFacing()
 	{
-		AffineTransform tx = AffineTransform.getScaleInstance(-1, 1);
-		tx.translate(-image.getWidth(null),0);
-		AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
-		image = op.filter(image, null);
-		repaint();
+		if(facingLeft)
+		{
+			facingLeft = false;
+		}
+		else
+		{
+			facingLeft = true;
+		}
 	}
+
+	public void setAsActive()
+	{
+		active = true;
+	}
+
+	public void setAsNotActive()
+	{
+		active = false;
+	}
+
 	/**
-	 * Metoda przesuwaj¹ca jednostkê na now¹ pozycje
+	 * Metoda przesuwajï¿½ca jednostkï¿½ na nowï¿½ pozycje
 	 * @param p nowa pozycja jednostki
 	 */
 	public void movePanel(Point p)
 	{
 		//System.out.println((p.y-100)/43);
-		int nextZIndex = 10 - ((p.y-100)/43);
-		this.setBounds(p.x-(image.getWidth()/2),p.y-image.getHeight(), image.getWidth(), image.getHeight());
-		this.getParent().setComponentZOrder(this, nextZIndex);
+		int nextZIndex = ((p.y-100)/43);
+
+		this.setBounds(p.x-(_unit._frameWidth/2),p.y-_unit._frameHeight, _unit._frameWidth, _unit._frameHeight+12);
+		JLayeredPane j = (JLayeredPane)this.getParent();
+		j.setLayer(this,nextZIndex);
+		System.out.println(this.getParent().getComponentZOrder(this));
+		revalidate();
 		repaint();
 	}
-	
+
+	private void start()
+	{
+		Timer timer = new Timer(90, new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+				animate.update();
+				revalidate();
+				repaint();
+			}
+		});
+		timer.setRepeats(true);
+		timer.setCoalesce(true);
+		timer.setInitialDelay(ThreadLocalRandom.current().nextInt(100,1000));
+		timer.start();
+	}
+
+
 	@Override
 	protected void paintComponent(Graphics g)
 	{
+
 		super.paintComponent(g);
 		Graphics2D g2 = (Graphics2D)g;
-		g2.drawImage(image, 0, 0, null);
+		if(!facingLeft)
+		{
+			g2.drawImage(animate.getSprite(), 0, 0, null);
+		}
+		else
+		{
+			BufferedImage image = animate.getSprite();
+			AffineTransform tx = AffineTransform.getScaleInstance(-1, 1);
+			tx.translate(-image.getWidth(null),0);
+			AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
+			image = op.filter(image, null);
+			g2.drawImage(image, 0, 0, null);
+		}
+		//g2.drawRect(10,85,30,15);
+		if(active)
+		{
+			g2.setColor(Color.yellow);
+		}
+		else
+		{
+			g2.setColor(Color.white);
+		}
+
+		g2.fillRect(10,_unit._frameHeight-3,30,15);
+		g2.setColor(Color.black);
+		g2.drawString(Integer.toString(_unitSize),20,_unit._frameHeight+9);
 	}
 }

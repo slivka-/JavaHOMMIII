@@ -11,6 +11,7 @@ import javax.swing.JLayeredPane;
 
 import battleDisplay.BackgroundPanel;
 import battleDisplay.GraphicsPanel;
+import battleDisplay.StaticGraphicsPanel;
 import dataClasses.BattlefieldCell;
 import dataClasses.CellEntity;
 import dataClasses.UnitInfo;
@@ -18,7 +19,7 @@ import dataClasses.UnitInfo;
 
 /**
  * @author slivka
- * Klasa kontroluj¹ca wyœwietlanie pola bitwy
+ * Klasa kontrolujï¿½ca wyï¿½wietlanie pola bitwy
  */
 public class BattleView {
 
@@ -60,7 +61,7 @@ public class BattleView {
 	}
 	
 	/**
-	 * Metoda inicjalizuje i wyœwietla pole bitwy
+	 * Metoda inicjalizuje i wyï¿½wietla pole bitwy
 	 */
 	private void InitializeDisplay()
 	{
@@ -85,7 +86,7 @@ public class BattleView {
 	}
 		
 	/**
-	 * Metoda wyœwietla jednostki na polu bitwy
+	 * Metoda wyï¿½wietla jednostki na polu bitwy
 	 * @param BattlefiledInfo tablica zawierajaca informacje o polu bitwy
 	 */
 	private void InitializeBattlefield(BattlefieldCell[][] BattlefieldInfo)
@@ -98,22 +99,24 @@ public class BattleView {
 				{
 					BattlefieldCell c = BattlefieldInfo[i][j];
 					UnitInfo u = c.unit;
-					GraphicsPanel g = new GraphicsPanel(u.unitType.spritepath, c.drawingPoint.x, c.drawingPoint.y ,u.unitID,u.unitSize);
+					GraphicsPanel g = new GraphicsPanel(u.unitType, c.drawingPoint.x, c.drawingPoint.y ,u.unitSize);
 					u.unitDisplay = g;
 					if(j==13)
 					{
 						g.flipFacing();
 					}
 					g.setOpaque(false);
-					lPane.add(g, i,0);
+					lPane.add(g,i,-1);
 				}
+
 				if(BattlefieldInfo[i][j].contains == CellEntity.OBSTACLE)
 				{
 					BattlefieldCell c = BattlefieldInfo[i][j];
-					GraphicsPanel g = new GraphicsPanel(c.imgPath, c.drawingPoint.x, c.drawingPoint.y ,0,0);
+					StaticGraphicsPanel g = new StaticGraphicsPanel(c.imgPath, c.drawingPoint.x, c.drawingPoint.y);
 					g.setOpaque(false);
-					lPane.add(g, i,0);
+					lPane.add(g, i,-1);
 				}
+
 			}
 		}
 	}
