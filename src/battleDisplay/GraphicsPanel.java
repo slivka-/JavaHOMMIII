@@ -10,14 +10,10 @@ import java.awt.event.MouseListener;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.util.*;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 import javax.swing.Timer;
-
-import javax.imageio.ImageIO;
 import javax.swing.*;
 
 /**
@@ -31,7 +27,7 @@ public class GraphicsPanel extends JPanel {
 	private int _unitSize;
 	private int _x;
 	private int _y;
-	private List<AnimationFrame> _idleFrames = new ArrayList<AnimationFrame>();
+	private List<BufferedImage> _idleFrames = new ArrayList<BufferedImage>();
 	private Animate animate;
 	private boolean facingLeft = false;
 	private boolean active = false;
@@ -51,43 +47,17 @@ public class GraphicsPanel extends JPanel {
 
 
 		this.setBounds(_x-(_unit._frameWidth/2),_y-_unit._frameHeight, _unit._frameWidth, _unit._frameHeight+12);
-		this.addMouseListener(new MouseListener() {
-			
-			@Override
-			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				System.out.println("OK");
-			}
-		});
+		//this.addMouseListener(new MouseListener() {
+
 		start();
 		animate.start();
 	}
-	/**
-	 * Metoda odwracaj�ca grafike jednostki
-	 */
+
+	public void updateUnitSize(int newUnitSize)
+	{
+		_unitSize = newUnitSize;
+	}
+
 	public void flipFacing()
 	{
 		if(facingLeft)
@@ -110,12 +80,14 @@ public class GraphicsPanel extends JPanel {
 		active = false;
 	}
 
+
 	/**
 	 * Metoda przesuwaj�ca jednostk� na now� pozycje
 	 * @param p nowa pozycja jednostki
 	 */
 	public void movePanel(Point p)
 	{
+
 		//System.out.println((p.y-100)/43);
 		int nextZIndex = ((p.y-100)/43);
 

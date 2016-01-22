@@ -5,6 +5,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.BitSet;
 import java.util.List;
 
 /**
@@ -31,8 +32,6 @@ public class SpriteLoader
     {
         try
         {
-            //System.out.println(_path+_unitSpriteName+".png");
-            //System.out.println(_path+_unitSpriteName+".png");
             this._spriteSheet = ImageIO.read(new File(_path+_unitSpriteName+".png"));
         }
         catch (IOException ex)
@@ -41,14 +40,12 @@ public class SpriteLoader
         }
     }
 
-    public List<AnimationFrame> getFrames(int numOfFrames,int numOfRow)
+    public List<BufferedImage> getFrames(int numOfFrames,int numOfRow)
     {
-        List<AnimationFrame> frames = new ArrayList<AnimationFrame>();
+        List<BufferedImage> frames = new ArrayList<BufferedImage>();
         for (int i=0;i<numOfFrames;i++)
         {
-            AnimationFrame frame = new AnimationFrame(_spriteSheet.getSubimage(i * _frameWidth, numOfRow * _frameHeight, _frameWidth, _frameHeight),1);
-            frames.add(frame);
-
+            frames.add(_spriteSheet.getSubimage(i * _frameWidth, numOfRow * _frameHeight, _frameWidth, _frameHeight));
         }
         return frames;
     }

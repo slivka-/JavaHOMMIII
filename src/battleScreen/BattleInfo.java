@@ -6,7 +6,6 @@ import java.util.Iterator;
 import java.util.Random;
 
 
-
 import sun.misc.Queue;
 import dataClasses.BattlefieldCell;
 import dataClasses.CellEntity;
@@ -71,7 +70,6 @@ public class BattleInfo {
 					BattlefieldInfo[i][j].contains = CellEntity.OBSTACLE;
 					BattlefieldInfo[i][j].imgPath = "assets\\terrain\\OBS\\kamien.png";
 				}
-				 
 			}
 		}
 
@@ -91,6 +89,7 @@ public class BattleInfo {
 			Integer key = army1Iterator.next();
 			UnitInfo u = player1Army.get(key);
 			u.currentPos = new Point((key*2)-1,0);
+			u.setUnitDisplay(new Point(BattlefieldInfo[(key*2)-1][0].drawingPoint));
 			BattlefieldInfo[(key*2)-1][0].contains = CellEntity.UNIT;
 			BattlefieldInfo[(key*2)-1][0].unit = u;
 			BattleQueue.enqueue(u);
@@ -116,6 +115,7 @@ public class BattleInfo {
 			Integer key = army2Iterator.next();
 			UnitInfo u = player2Army.get(key);
 			u.currentPos = new Point((key*2)-1,13);
+			u.setUnitDisplay(new Point(BattlefieldInfo[(key*2)-1][13].drawingPoint));
 			BattlefieldInfo[(key*2)-1][13].contains = CellEntity.UNIT;
 			BattlefieldInfo[(key*2)-1][13].unit = u;
 			BattleQueue.enqueue(u);
@@ -123,6 +123,7 @@ public class BattleInfo {
 		}
 		try {
 			activeUnit = BattleQueue.dequeue();
+			activeUnit.setAsActive();
 
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -136,10 +137,10 @@ public class BattleInfo {
 	public void SetNextActiveUnit()
 	{
 		BattleQueue.enqueue(activeUnit);
-		activeUnit.unitDisplay.setAsNotActive();
+		activeUnit.setAsNotActive();
 		try {
 			activeUnit = BattleQueue.dequeue();
-			activeUnit.unitDisplay.setAsActive();
+			activeUnit.setAsActive();
 		} catch (InterruptedException e) {
 			System.out.println("BRAK JEDNOSTEK, BITWA SKONCZONA");
 			e.printStackTrace();

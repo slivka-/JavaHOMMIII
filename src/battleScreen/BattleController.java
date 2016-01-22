@@ -2,13 +2,15 @@ package battleScreen;
 
 import java.awt.Point;
 import java.util.HashMap;
+import java.util.List;
 
+import battleDisplay.PathFinding;
 import dataClasses.CellEntity;
 import dataClasses.HeroInfo;
 import dataClasses.UnitInfo;
 /**
  * @author slivka
- * Klasa g³ówna, kontroluje przep³yw informacji
+ * Klasa gï¿½ï¿½wna, kontroluje przepï¿½yw informacji
  */
 public class BattleController {
 
@@ -61,7 +63,7 @@ public class BattleController {
 	
 //============================CONTROL==================================\\	
 	/**
-	 * Metoda inicjalizuj¹ca bitwe
+	 * Metoda inicjalizujï¿½ca bitwe
 	 */
 	public void BattleInit()
 	{
@@ -73,11 +75,17 @@ public class BattleController {
 	
 	/**
 	 * Przesuwa jednostke na wybrane pole
-	 * @param targetCell pole na które jednostka ma siê przesun¹æ
+	 * @param targetCell pole na ktï¿½re jednostka ma siï¿½ przesunï¿½ï¿½
 	 */
 	public void MoveUnit(Point targetCell)
 	{
-		
+		Point startingPoint = model.activeUnit.currentPos;
+		List<Point> path = PathFinding.findPath(startingPoint, targetCell, model.BattlefieldInfo);
+		for(Point p : path)
+		{
+			System.out.println("X: "+p.x+", Y:"+p.y);
+		}
+
 		model.BattlefieldInfo[model.activeUnit.currentPos.x][model.activeUnit.currentPos.y].contains = CellEntity.EMPTY;
 		model.BattlefieldInfo[model.activeUnit.currentPos.x][model.activeUnit.currentPos.y].unit = null;
 		
@@ -85,7 +93,11 @@ public class BattleController {
 		model.BattlefieldInfo[targetCell.x][targetCell.y].unit = model.activeUnit;
 		model.activeUnit.currentPos = targetCell;
 		view.moveUnit(model.BattlefieldInfo[targetCell.x][targetCell.y]);
+		endTurn();
+	}
+
+	private void endTurn()
+	{
 		model.SetNextActiveUnit();
-		
 	}
 }

@@ -10,7 +10,6 @@ import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
 
 import battleDisplay.BackgroundPanel;
-import battleDisplay.GraphicsPanel;
 import battleDisplay.StaticGraphicsPanel;
 import dataClasses.BattlefieldCell;
 import dataClasses.CellEntity;
@@ -99,14 +98,12 @@ public class BattleView {
 				{
 					BattlefieldCell c = BattlefieldInfo[i][j];
 					UnitInfo u = c.unit;
-					GraphicsPanel g = new GraphicsPanel(u.unitType, c.drawingPoint.x, c.drawingPoint.y ,u.unitSize);
-					u.unitDisplay = g;
 					if(j==13)
 					{
-						g.flipFacing();
+						u.flipFacing();
 					}
-					g.setOpaque(false);
-					lPane.add(g,i,-1);
+
+					lPane.add(u.getUnitDisplay(),i,-1);
 				}
 
 				if(BattlefieldInfo[i][j].contains == CellEntity.OBSTACLE)
@@ -127,10 +124,8 @@ public class BattleView {
 	 */
 	public void moveUnit(BattlefieldCell cell)
 	{
-		
 		UnitInfo uInfo = cell.unit;
-		GraphicsPanel unitGraphics = uInfo.unitDisplay;
+		uInfo.moveUnit(cell.drawingPoint);
 		System.out.println(cell.drawingPoint.x+", "+cell.drawingPoint.y);
-		unitGraphics.movePanel(cell.drawingPoint);
 	}
 }

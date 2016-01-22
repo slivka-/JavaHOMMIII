@@ -8,21 +8,19 @@ import java.util.List;
  */
 public class Animate
 {
-    private int frameCount;                 // Counts ticks for change
     private int currentFrame;               // animations current frame
     private int animationDirection;         // animation direction (i.e counting forward or backward)
     private int totalFrames;                // total amount of frames for your animation
 
     private boolean stopped;                // has animations stopped
 
-    private List<AnimationFrame> _frames = new ArrayList<AnimationFrame>();    // Arraylist of frames
+    private List<BufferedImage> _frames = new ArrayList<BufferedImage>();    // Arraylist of frames
 
-    public Animate(List<AnimationFrame> frames) {
+    public Animate(List<BufferedImage> frames) {
         this.stopped = true;
         this._frames = frames;
 
 
-        this.frameCount = 0;
         this.currentFrame = 0;
         this.animationDirection = 1;
         this.totalFrames = this._frames.size();
@@ -60,12 +58,11 @@ public class Animate
 
     public void reset() {
         this.stopped = true;
-        this.frameCount = 0;
         this.currentFrame = 0;
     }
 
     public BufferedImage getSprite() {
-        return _frames.get(currentFrame).getFrame();
+        return _frames.get(currentFrame);
     }
 
     public void update() {
