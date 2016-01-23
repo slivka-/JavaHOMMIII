@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 
 //import battleDisplay.PathFinding;
+import dataClasses.BattlefieldCell;
 import dataClasses.CellEntity;
 import dataClasses.HeroInfo;
 import dataClasses.UnitInfo;
@@ -74,6 +75,7 @@ public class BattleController {
 		model.PalceUnits();
 		
 		view.DrawBattleScreen(model.getTerraintype(),model.getBattlefieldInfo());
+		newTurn();
 	}
 	
 	/**
@@ -82,6 +84,7 @@ public class BattleController {
 	 */
 	public void MoveUnit(Point targetCell)
 	{
+		view.clearUnitRange();
 		Point startingPoint = model.activeUnit.currentPos;
 
 		FindPath f = new FindPath(model.BattlefieldInfo,startingPoint,targetCell);
@@ -99,11 +102,18 @@ public class BattleController {
 		model.BattlefieldInfo[targetCell.x][targetCell.y].unit = model.activeUnit;
 		model.activeUnit.currentPos = targetCell;
 		view.moveUnit(model.BattlefieldInfo[targetCell.x][targetCell.y],path);
-		endTurn();
+		newTurn();
 	}
 
-	private void endTurn()
+	private void newTurn()
 	{
 		model.SetNextActiveUnit();
+		ArrayList<Point> moveRange = model.getMoveRange();
+		view.drawUnitRange(moveRange);
+	}
+
+	public BattlefieldCell[][] getBattlefieldInfo()
+	{
+		return model.BattlefieldInfo;
 	}
 }

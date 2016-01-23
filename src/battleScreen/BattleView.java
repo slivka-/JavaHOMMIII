@@ -11,6 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
 
 import battleDisplay.BackgroundPanel;
+import battleDisplay.RangeIndicator;
 import battleDisplay.StaticGraphicsPanel;
 import dataClasses.BattlefieldCell;
 import dataClasses.CellEntity;
@@ -36,7 +37,7 @@ public class BattleView {
 		_bfWidth = width;
 		_bfHeight = height;
 		_mListener = new MouseListener() {
-			
+
 			@Override
 			public void mouseReleased(MouseEvent e) {}
 			@Override
@@ -48,8 +49,10 @@ public class BattleView {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				//System.out.println((e.getX()-50)/50+", "+((e.getY()-110)/43));
-				Point p = new Point((e.getX()-50)/50,((e.getY()-110)/43));
-				mainController.MoveUnit(p);
+				//Point p = new Point((e.getX()-50)/50,((e.getY()-110)/43));
+				RangeIndicator r = (RangeIndicator)e.getSource();
+				//System.out.println(r.location);
+				mainController.MoveUnit(r.location);
 			}
 		};
 	}
@@ -79,7 +82,7 @@ public class BattleView {
 		mainBattleFrame.add(lPane, BorderLayout.CENTER);
 		
 		lPane.setBounds(0, 0, _bfWidth, _bfHeight);
-		BackgroundPanel Background = new BackgroundPanel("assets\\terrain\\BG\\BG0.png",_mListener);
+		BackgroundPanel Background = new BackgroundPanel("assets\\terrain\\BG\\BG0.png");
 		Background.setOpaque(true);
 		lPane.add(Background, new Integer(0),0);
 		mainBattleFrame.setVisible(true);
@@ -103,7 +106,7 @@ public class BattleView {
 					{
 						u.flipFacing();
 					}
-					lPane.add(u.getUnitDisplay(),j,-1);
+					lPane.add(u.getUnitDisplay(),j,j+1);
 				}
 
 				if(BattlefieldInfo[i][j].contains == CellEntity.OBSTACLE)
@@ -111,11 +114,47 @@ public class BattleView {
 					BattlefieldCell c = BattlefieldInfo[i][j];
 					StaticGraphicsPanel g = new StaticGraphicsPanel(c.imgPath, c.drawingPoint.x, c.drawingPoint.y);
 					g.setOpaque(false);
-					lPane.add(g, j,-1);
+					lPane.add(g, j,j+1);
 				}
 
 			}
 		}
+	}
+
+	public void clearUnitRange()
+	{
+		Component[] c = lPane.getComponents();
+		RangeIndicator r = new RangeIndicator(new Point(0,0),_mListener);
+		for(Component cmp : c)
+		{
+			if(cmp.getClass() == r.getClass())
+			{
+				lPane.remove(cmp);
+			}
+		}
+		lPane.repaint();
+	}
+
+	public void drawUnitRange(ArrayList<Point> range)
+	{
+
+		for(Point p : range)
+		{
+			BattlefieldCell c = mainController.getBattlefieldInfo()[(p.x-50)/50][(p.y-110)/43];
+			RangeIndicator r;
+			if(c.contains == CellEntity.OBSTACLE)
+			{
+				r = new RangeIndicator(p, null);
+			}
+			else
+			{
+				r = new RangeIndicator(p, _mListener);
+			}
+			r.setVisible(true);
+			lPane.add(r, new Integer(0), -1);
+			lPane.setLayer(r,1);
+		}
+		lPane.repaint();
 	}
 	
 	/**

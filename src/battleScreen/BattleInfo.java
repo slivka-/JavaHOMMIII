@@ -1,6 +1,7 @@
 package battleScreen;
 
 import java.awt.Point;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Random;
@@ -121,6 +122,7 @@ public class BattleInfo {
 			BattleQueue.enqueue(u);
 			//System.out.println(u.unitID+", "+u.unitSize);
 		}
+		/*
 		try {
 			activeUnit = BattleQueue.dequeue();
 			activeUnit.setAsActive();
@@ -128,6 +130,7 @@ public class BattleInfo {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		*/
 		//activeUnit.unitDisplay.setAsActive();
 	}
 	
@@ -136,8 +139,11 @@ public class BattleInfo {
 	 */
 	public void SetNextActiveUnit()
 	{
-		BattleQueue.enqueue(activeUnit);
-		activeUnit.setAsNotActive();
+		if(activeUnit!=null)
+		{
+			BattleQueue.enqueue(activeUnit);
+			activeUnit.setAsNotActive();
+		}
 		try {
 			activeUnit = BattleQueue.dequeue();
 			activeUnit.setAsActive();
@@ -146,7 +152,25 @@ public class BattleInfo {
 			e.printStackTrace();
 		}
 	}
-		
+
+	public ArrayList<Point> getMoveRange()
+	{
+		int range = activeUnit.unitType.speed;
+		ArrayList<Point> moveRange = new ArrayList<Point>();
+		for(int i=0;i<14;i++)
+		{
+			for(int j=0;j<10;j++)
+			{
+				int distance = Math.abs(BattlefieldInfo[i][j].location.x - activeUnit.currentPos.x) + Math.abs(BattlefieldInfo[i][j].location.y - activeUnit.currentPos.y);
+				if(distance <= range)
+				{
+					moveRange.add(new Point(50+50*i,110+43*j));
+				}
+			}
+		}
+		return moveRange;
+	}
+
 	public BattlefieldCell[][] getBattlefieldInfo()
 	{
 		return BattlefieldInfo;

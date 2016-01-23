@@ -11,6 +11,7 @@ public class UnitType {
 	public String _spriteName;
 	public String _townName;
 	public int initiative;
+	public int speed = 3;
 	public int _idleFrames;
 	public int _attackFrames;
 	public int _moveFrames;

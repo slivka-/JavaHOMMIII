@@ -91,6 +91,8 @@ public class GraphicsPanel extends JPanel {
 
 	public void movePanel(final ArrayList<Point> path)
 	{
+		pathPointCount = 0;
+		animationCount = 0;
 		final int endOfPath = path.size();
 		Timer timer = new Timer(25, new ActionListener()
 		{

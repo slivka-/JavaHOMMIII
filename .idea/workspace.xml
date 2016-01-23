@@ -2,18 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a84184e7-9ef9-4486-ac6f-da6f5692ca5e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/units/castle/archangel.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/battleDisplay/RangeIndicator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/battleDisplay/BackgroundPanel.java" afterPath="$PROJECT_DIR$/src/battleDisplay/BackgroundPanel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/battleScreen/BattleController.java" afterPath="$PROJECT_DIR$/src/battleScreen/BattleController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/battleScreen/BattleInfo.java" afterPath="$PROJECT_DIR$/src/battleScreen/BattleInfo.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/battleScreen/BattleView.java" afterPath="$PROJECT_DIR$/src/battleScreen/BattleView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pathFinding/FindPath.java" afterPath="$PROJECT_DIR$/src/pathFinding/FindPath.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/battleDisplay/GraphicsPanel.java" afterPath="$PROJECT_DIR$/src/battleDisplay/GraphicsPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/battleDisplay/SpriteLoader.java" afterPath="$PROJECT_DIR$/src/battleDisplay/SpriteLoader.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/testP/TestingClass.java" afterPath="$PROJECT_DIR$/src/testP/TestingClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dataClasses/UnitInfo.java" afterPath="$PROJECT_DIR$/src/dataClasses/UnitInfo.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dataClasses/UnitType.java" afterPath="$PROJECT_DIR$/src/dataClasses/UnitType.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\Programy\GIT\JavaHOMMIII\assets\units\pikeMan.png" afterPath="$PROJECT_DIR$/assets/units/castle/pikeMan.png" />
     </list>
     <ignored path="JavaHOMMIII.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,11 +36,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="BattleView.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BattleView.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/battleScreen/BattleView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-40.642857" vertical-offset="953" max-vertical-offset="2244">
-              <caret line="127" column="29" selection-start-line="127" selection-start-column="29" selection-end-line="127" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.6593592" vertical-offset="0" max-vertical-offset="2975">
+              <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1950#2091#0" expanded="true" />
+                <element signature="e#2090#2091#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RangeIndicator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/battleDisplay/RangeIndicator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
+              <caret line="18" column="60" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -54,22 +65,21 @@
       <file leaf-file-name="BackgroundPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/battleDisplay/BackgroundPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="986">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="952">
+              <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BattleController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/battleScreen/BattleController.java">
+      <file leaf-file-name="GraphicsPanel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/battleDisplay/GraphicsPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1496">
-              <caret line="86" column="80" selection-start-line="86" selection-start-column="80" selection-end-line="86" selection-end-column="80" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1180" max-vertical-offset="3060">
+              <caret line="94" column="27" selection-start-line="94" selection-start-column="27" selection-end-line="94" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#BattleController#0;class#BattleController#0" expanded="false" />
-                <element signature="method#BattleController#1;class#BattleController#0" expanded="false" />
+                <element signature="method#flipFacing#0;class#GraphicsPanel#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -78,8 +88,8 @@
       <file leaf-file-name="FindPath.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pathFinding/FindPath.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1410" max-vertical-offset="2380">
-              <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="432" max-vertical-offset="2380">
+              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#959#966#0" expanded="true" />
@@ -91,44 +101,56 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UnitInfo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dataClasses/UnitInfo.java">
+      <file leaf-file-name="BattleController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/battleScreen/BattleController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="1071">
-              <caret line="60" column="36" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1039" max-vertical-offset="1717">
+              <caret line="116" column="37" selection-start-line="116" selection-start-column="37" selection-end-line="116" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#744#745#0" expanded="true" />
-                <element signature="e#775#776#0" expanded="true" />
-                <element signature="e#806#807#0" expanded="true" />
-                <element signature="e#838#839#0" expanded="true" />
-                <element signature="e#872#873#0" expanded="true" />
-                <element signature="e#907#908#0" expanded="true" />
-                <element signature="e#1051#1052#0" expanded="true" />
-                <element signature="e#1085#1086#0" expanded="true" />
+                <element signature="method#BattleController#0;class#BattleController#0" expanded="false" />
+                <element signature="method#BattleController#1;class#BattleController#0" expanded="false" />
+                <element signature="e#2984#2985#0" expanded="true" />
+                <element signature="e#3019#3020#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestingClass.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BattleInfo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/battleScreen/BattleInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1225" max-vertical-offset="3553">
+              <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3710#3717#0" expanded="true" />
+                <element signature="e#4109#4110#0" expanded="true" />
+                <element signature="e#4138#4139#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestingClass.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/testP/TestingClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3887195" vertical-offset="0" max-vertical-offset="884">
-              <caret line="20" column="74" selection-start-line="20" selection-start-column="74" selection-end-line="20" selection-end-column="74" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="100" max-vertical-offset="884">
+              <caret line="21" column="81" selection-start-line="21" selection-start-column="81" selection-end-line="21" selection-end-column="81" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SpriteLoader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/battleDisplay/SpriteLoader.java">
+      <file leaf-file-name="UnitInfo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dataClasses/UnitInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1037">
-              <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="12" max-vertical-offset="918">
+              <caret line="60" column="36" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1188#1203#0" expanded="true" />
+                <element signature="e#1051#1052#0" expanded="true" />
+                <element signature="e#1085#1086#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -137,24 +159,9 @@
       <file leaf-file-name="UnitType.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dataClasses/UnitType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
-              <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
+              <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GraphicsPanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/battleDisplay/GraphicsPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3128">
-              <caret line="58" column="5" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#flipFacing#0;class#GraphicsPanel#0" expanded="false" />
-                <element signature="e#2026#2939#0" expanded="true" />
-                <element signature="e#2938#2939#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -180,15 +187,17 @@
         <option value="$PROJECT_DIR$/src/dataClasses/BattlefieldCell.java" />
         <option value="$PROJECT_DIR$/src/pathFinding/BattlefieldMap.java" />
         <option value="$PROJECT_DIR$/src/pathFinding/MapCell.java" />
-        <option value="$PROJECT_DIR$/src/battleScreen/BattleInfo.java" />
         <option value="$PROJECT_DIR$/src/dataClasses/UnitInfo.java" />
         <option value="$PROJECT_DIR$/src/pathFinding/FindPath.java" />
-        <option value="$PROJECT_DIR$/src/battleScreen/BattleView.java" />
-        <option value="$PROJECT_DIR$/src/battleScreen/BattleController.java" />
-        <option value="$PROJECT_DIR$/src/dataClasses/UnitType.java" />
         <option value="$PROJECT_DIR$/src/battleDisplay/SpriteLoader.java" />
+        <option value="$PROJECT_DIR$/src/dataClasses/UnitType.java" />
         <option value="$PROJECT_DIR$/src/testP/TestingClass.java" />
+        <option value="$PROJECT_DIR$/src/battleDisplay/BackgroundPanel.java" />
+        <option value="$PROJECT_DIR$/src/battleScreen/BattleInfo.java" />
         <option value="$PROJECT_DIR$/src/battleDisplay/GraphicsPanel.java" />
+        <option value="$PROJECT_DIR$/src/battleDisplay/RangeIndicator.java" />
+        <option value="$PROJECT_DIR$/src/battleScreen/BattleController.java" />
+        <option value="$PROJECT_DIR$/src/battleScreen/BattleView.java" />
       </list>
     </option>
   </component>
@@ -731,12 +740,12 @@
       <updated>1453388203998</updated>
       <workItem from="1453388207914" duration="19377000" />
       <workItem from="1453463353322" duration="24553000" />
-      <workItem from="1453547731927" duration="15788000" />
+      <workItem from="1453547731927" duration="23566000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59718000" />
+    <option name="totallyTimeSpent" value="67496000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="7" />
@@ -753,7 +762,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23489933" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30536914" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20782396" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -824,7 +833,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="8" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/battleScreen/BattleController.java</url>
+          <line>36</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -851,6 +868,8 @@
             <element signature="imports" expanded="true" />
             <element signature="method#BattleController#0;class#BattleController#0" expanded="false" />
             <element signature="method#BattleController#1;class#BattleController#0" expanded="false" />
+            <element signature="e#2984#2985#0" expanded="true" />
+            <element signature="e#3019#3020#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -937,6 +956,8 @@
             <element signature="imports" expanded="true" />
             <element signature="method#BattleController#0;class#BattleController#0" expanded="false" />
             <element signature="method#BattleController#1;class#BattleController#0" expanded="false" />
+            <element signature="e#2984#2985#0" expanded="true" />
+            <element signature="e#3019#3020#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1051,16 +1072,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/battleScreen/BattleInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41545895" vertical-offset="1408" max-vertical-offset="3094">
-          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pathFinding/BattlefieldMap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.146379" vertical-offset="123" max-vertical-offset="1649">
@@ -1073,10 +1084,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/units/castle/archangel.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/battleDisplay/SpriteLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.76558894" vertical-offset="0" max-vertical-offset="1037">
+          <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1188#1203#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/testP/TestingClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="100" max-vertical-offset="884">
+          <caret line="21" column="81" selection-start-line="21" selection-start-column="81" selection-end-line="21" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dataClasses/UnitType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dataClasses/UnitInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="12" max-vertical-offset="918">
+          <caret line="60" column="36" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1051#1052#0" expanded="true" />
+            <element signature="e#1085#1086#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/battleScreen/BattleInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2194" max-vertical-offset="3553">
+          <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3710#3717#0" expanded="true" />
+            <element signature="e#4109#4110#0" expanded="true" />
+            <element signature="e#4138#4139#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pathFinding/FindPath.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1410" max-vertical-offset="2380">
-          <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="432" max-vertical-offset="2380">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#959#966#0" expanded="true" />
@@ -1087,96 +1155,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/battleScreen/BattleController.java">
+    <entry file="file://$PROJECT_DIR$/src/battleDisplay/BackgroundPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1496">
-          <caret line="86" column="80" selection-start-line="86" selection-start-column="80" selection-end-line="86" selection-end-column="80" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#BattleController#0;class#BattleController#0" expanded="false" />
-            <element signature="method#BattleController#1;class#BattleController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dataClasses/UnitInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="918">
-          <caret line="60" column="36" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#744#745#0" expanded="true" />
-            <element signature="e#775#776#0" expanded="true" />
-            <element signature="e#806#807#0" expanded="true" />
-            <element signature="e#838#839#0" expanded="true" />
-            <element signature="e#872#873#0" expanded="true" />
-            <element signature="e#907#908#0" expanded="true" />
-            <element signature="e#1051#1052#0" expanded="true" />
-            <element signature="e#1085#1086#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dataClasses/UnitType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
-          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="952">
+          <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/battleDisplay/SpriteLoader.java">
+    <entry file="file://$PROJECT_DIR$/src/battleDisplay/GraphicsPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1037">
-          <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1180" max-vertical-offset="3060">
+          <caret line="94" column="27" selection-start-line="94" selection-start-column="27" selection-end-line="94" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1188#1203#0" expanded="true" />
+            <element signature="method#flipFacing#0;class#GraphicsPanel#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/units/castle/archangel.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/battleDisplay/GraphicsPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/battleDisplay/RangeIndicator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3128">
-          <caret line="58" column="5" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
+          <caret line="18" column="60" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#flipFacing#0;class#GraphicsPanel#0" expanded="false" />
-            <element signature="e#2026#2939#0" expanded="true" />
-            <element signature="e#2938#2939#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/battleScreen/BattleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1039" max-vertical-offset="1717">
+          <caret line="116" column="37" selection-start-line="116" selection-start-column="37" selection-end-line="116" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#BattleController#0;class#BattleController#0" expanded="false" />
+            <element signature="method#BattleController#1;class#BattleController#0" expanded="false" />
+            <element signature="e#2984#2985#0" expanded="true" />
+            <element signature="e#3019#3020#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/battleScreen/BattleView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-40.642857" vertical-offset="953" max-vertical-offset="2244">
-          <caret line="127" column="29" selection-start-line="127" selection-start-column="29" selection-end-line="127" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.6593592" vertical-offset="0" max-vertical-offset="2975">
+          <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1950#2091#0" expanded="true" />
+            <element signature="e#2090#2091#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/battleDisplay/BackgroundPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="986">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/testP/TestingClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3887195" vertical-offset="0" max-vertical-offset="884">
-          <caret line="20" column="74" selection-start-line="20" selection-start-column="74" selection-end-line="20" selection-end-column="74" />
-          <folding />
         </state>
       </provider>
     </entry>

@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 
 /**
  * @author slivka
- * Klasa rysuj¹ca t³o bitwy
+ * Klasa rysujï¿½ca tï¿½o bitwy
  */
 public class BackgroundPanel extends JPanel {
 	
@@ -22,17 +22,15 @@ public class BackgroundPanel extends JPanel {
 	private Boolean drawGrid = true;
 	
 	/**
-	 * @param src scie¿ka do pliku t³a
-	 * @param mListener listener myszy
+	 * @param src scieï¿½ka do pliku tï¿½a
 	 */
-	public BackgroundPanel(String src, MouseListener mListener){
+	public BackgroundPanel(String src){
 		try {
 			image = ImageIO.read(new File(src));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		this.setBounds(1,1, image.getWidth(), image.getHeight());
-		this.addMouseListener(mListener);
 	}
 	
 	
