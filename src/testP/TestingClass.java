@@ -18,8 +18,8 @@ public class TestingClass {
 		HeroInfo player1 = new HeroInfo();
 		HeroInfo player2 = new HeroInfo();
 		
-		UnitType t1 = new UnitType("pikinier","pikeMan",65,115,8,0,0,0);
-		UnitType t2 = new UnitType("pikinier","pikeMan",65,115,8,0,0,0);
+		UnitType t1 = new UnitType("pikinier","archangel","castle",189,189,6,0,0,0);
+		UnitType t2 = new UnitType("pikinier","pikeMan","castle",65,115,8,0,0,0);
 		
 		UnitInfo u1  = new UnitInfo(5, t1,01);
 		UnitInfo u2  = new UnitInfo(7, t2,02);

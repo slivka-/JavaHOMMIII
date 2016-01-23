@@ -1,6 +1,7 @@
 package dataClasses;
 
 import java.awt.Point;
+import java.util.ArrayList;
 
 import battleDisplay.GraphicsPanel;
 
@@ -55,8 +56,8 @@ public class UnitInfo {
 		unitDisplay.updateUnitSize(newUnitSize);
 	}
 
-	public void moveUnit(Point p)
+	public void moveUnit(ArrayList<Point> path)
 	{
-		unitDisplay.movePanel(p);
+		unitDisplay.movePanel(path);
 	}
 }

@@ -5,7 +5,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.BitSet;
 import java.util.List;
 
 /**
@@ -18,13 +17,15 @@ public class SpriteLoader
     private int _frameHeight;
     private String _path = "assets\\units\\";
     private String _unitSpriteName;
+    private String _unitTownName;
 
-    public SpriteLoader(String unitSpriteName, int frameWidth, int frameHeight)
+    public SpriteLoader(String unitSpriteName,String unitTownName, int frameWidth, int frameHeight)
     {
 
         this._frameWidth = frameWidth;
         this._frameHeight = frameHeight;
         this._unitSpriteName = unitSpriteName;
+        this._unitTownName = unitTownName;
         loadSpriteSheet();
     }
 
@@ -32,7 +33,7 @@ public class SpriteLoader
     {
         try
         {
-            this._spriteSheet = ImageIO.read(new File(_path+_unitSpriteName+".png"));
+            this._spriteSheet = ImageIO.read(new File(_path+_unitTownName+"\\"+_unitSpriteName+".png"));
         }
         catch (IOException ex)
         {

@@ -1,6 +1,7 @@
 package battleScreen;
 
 import java.awt.Point;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -84,7 +85,8 @@ public class BattleController {
 		Point startingPoint = model.activeUnit.currentPos;
 
 		FindPath f = new FindPath(model.BattlefieldInfo,startingPoint,targetCell);
-		List<Point> path = f.generatePath();
+		ArrayList<Point> path = f.generatePath();
+		System.out.println("===================");
 		for(Point p : path)
 		{
 			System.out.println("X: "+p.x+", Y:"+p.y);
@@ -92,12 +94,11 @@ public class BattleController {
 
 		model.BattlefieldInfo[model.activeUnit.currentPos.x][model.activeUnit.currentPos.y].contains = CellEntity.EMPTY;
 		model.BattlefieldInfo[model.activeUnit.currentPos.x][model.activeUnit.currentPos.y].unit = null;
-		
+
 		model.BattlefieldInfo[targetCell.x][targetCell.y].contains = CellEntity.UNIT;
 		model.BattlefieldInfo[targetCell.x][targetCell.y].unit = model.activeUnit;
 		model.activeUnit.currentPos = targetCell;
-		System.out.println(targetCell);
-		view.moveUnit(model.BattlefieldInfo[targetCell.x][targetCell.y]);
+		view.moveUnit(model.BattlefieldInfo[targetCell.x][targetCell.y],path);
 		endTurn();
 	}
 

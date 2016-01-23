@@ -9,6 +9,7 @@ import java.util.Random;
 public class UnitType {
 	public String _name;
 	public String _spriteName;
+	public String _townName;
 	public int initiative;
 	public int _idleFrames;
 	public int _attackFrames;
@@ -18,10 +19,11 @@ public class UnitType {
 	public int _frameHeight;
 
 	
-	public UnitType(String name, String spriteName,int frameWidth, int frameHeight, int idleFrames, int attackFrames, int moveFrames, int deathFrames)
+	public UnitType(String name, String spriteName,String townName,int frameWidth, int frameHeight, int idleFrames, int attackFrames, int moveFrames, int deathFrames)
 	{
 		this._name = name;
 		this._spriteName = spriteName;
+		this._townName = townName;
 		Random rnd = new Random();
 		this.initiative = rnd.nextInt(10);
 		this._attackFrames = attackFrames;

@@ -40,7 +40,7 @@ public class GraphicsPanel extends JPanel {
 		this._unit = unit;
 		this._unitSize = unitSize;
 
-		SpriteLoader sl = new SpriteLoader(_unit._spriteName,_unit._frameWidth,_unit._frameHeight);
+		SpriteLoader sl = new SpriteLoader(_unit._spriteName,_unit._townName,_unit._frameWidth,_unit._frameHeight);
 		_idleFrames = sl.getFrames(_unit._idleFrames,0);
 		animate = new Animate(_idleFrames);
 
@@ -83,18 +83,65 @@ public class GraphicsPanel extends JPanel {
 
 	/**
 	 * Metoda przesuwaj�ca jednostk� na now� pozycje
-	 * @param p nowa pozycja jednostki
+	 * @param path sciezka jednostki;
 	 */
-	public void movePanel(Point p)
+
+	private int pathPointCount = 0;
+	private int animationCount = 0;
+
+	public void movePanel(final ArrayList<Point> path)
 	{
+		final int endOfPath = path.size();
+		Timer timer = new Timer(25, new ActionListener()
+		{
 
-		//System.out.println((p.y-100)/43);
-		int nextZIndex = ((p.y-100)/43);
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+				if(pathPointCount+1 != endOfPath)
+				{
+					if (animationCount < 9)
+					{
+						float nextX = calculate1DProgress(path.get(pathPointCount).x, path.get(pathPointCount + 1).x, animationCount);
+						float nextY = calculate1DProgress(path.get(pathPointCount).y, path.get(pathPointCount + 1).y, animationCount);
+						nextMoveFrame(nextX, nextY);
+						animationCount++;
+					} else
+					{
+						float nextX = calculate1DProgress(path.get(pathPointCount).x, path.get(pathPointCount + 1).x, animationCount);
+						float nextY = calculate1DProgress(path.get(pathPointCount).y, path.get(pathPointCount + 1).y, animationCount);
+						nextMoveFrame(nextX, nextY);
+						animationCount = 0;
+						pathPointCount++;
+					}
+				}
+				else
+				{
+					System.out.println("STOP");
+					((Timer) e.getSource()).stop();
+				}
+			}
+		});
 
-		this.setBounds(p.x-(_unit._frameWidth/2),p.y-_unit._frameHeight, _unit._frameWidth, _unit._frameHeight+12);
+		timer.setRepeats(true);
+		timer.setCoalesce(true);
+		timer.start();
+	}
+
+	private float calculate1DProgress(int from, int to, int frame)
+	{
+		int distance = to - from;
+		float piece = distance/10;
+		float next = from + (piece * frame);
+		return next;
+	}
+
+	private void nextMoveFrame(float nextX, float nextY)
+	{
+		int nextZIndex = (int)((nextY-100)/43);
+		this.setBounds((int)nextX-(_unit._frameWidth/2),(int)nextY-_unit._frameHeight, _unit._frameWidth, _unit._frameHeight+12);
 		JLayeredPane j = (JLayeredPane)this.getParent();
 		j.setLayer(this,nextZIndex);
-		System.out.println(this.getParent().getComponentZOrder(this));
 		revalidate();
 		repaint();
 	}

@@ -93,10 +93,10 @@ public class BattleInfo {
 			BattlefieldInfo[0][(key*2)-1].contains = CellEntity.UNIT;
 			BattlefieldInfo[0][(key*2)-1].unit = u;
 			BattleQueue.enqueue(u);
-			System.out.println(u.currentPos);
+			//System.out.println(u.currentPos);
 		}
 		
-		
+
 		//--sprawdzanie czy armia 2 to gracz czy wolny oddzia�
 		HashMap<Integer, UnitInfo> player2Army;
 		if(player2 != null){
@@ -119,7 +119,7 @@ public class BattleInfo {
 			BattlefieldInfo[13][(key*2)-1].contains = CellEntity.UNIT;
 			BattlefieldInfo[13][(key*2)-1].unit = u;
 			BattleQueue.enqueue(u);
-			System.out.println(u.unitID+", "+u.unitSize);
+			//System.out.println(u.unitID+", "+u.unitSize);
 		}
 		try {
 			activeUnit = BattleQueue.dequeue();

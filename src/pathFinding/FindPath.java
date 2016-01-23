@@ -19,10 +19,14 @@ public class FindPath
 
     private MapCell endingCell;
 
+    private BattlefieldCell[][] bInfo;
+
     public FindPath(BattlefieldCell[][] battlefieldInfo, Point startPoint, Point endPoint)
     {
+
         this.startPoint = startPoint;
         this.endPoint = endPoint;
+        this.bInfo = battlefieldInfo;
         map = new BattlefieldMap(battlefieldInfo,startPoint,endPoint);
         closedList = new ArrayList<MapCell>();
         _openList = new openList();
@@ -31,7 +35,13 @@ public class FindPath
     public ArrayList<Point> generatePath()
     {
         getPath();
-        return reconstructPath(endingCell);
+        ArrayList<Point> cellPath = reconstructPath(endingCell);
+        ArrayList<Point> paintPath = new ArrayList<Point>();
+        for(Point p :cellPath)
+        {
+            paintPath.add(bInfo[p.x][p.y].drawingPoint);
+        }
+        return paintPath;
     }
 
     private void getPath()
@@ -91,7 +101,6 @@ public class FindPath
         while (current.parent != null)
         {
             st.push(current);
-            System.out.println("ALG: "+current.location);
             current = current.parent;
         }
         output.add(startPoint);

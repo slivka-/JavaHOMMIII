@@ -5,6 +5,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.*;
 
 import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
@@ -46,7 +47,7 @@ public class BattleView {
 			public void mouseEntered(MouseEvent e) {}
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				System.out.println((e.getX()-50)/50+", "+((e.getY()-110)/43));
+				//System.out.println((e.getX()-50)/50+", "+((e.getY()-110)/43));
 				Point p = new Point((e.getX()-50)/50,((e.getY()-110)/43));
 				mainController.MoveUnit(p);
 			}
@@ -102,7 +103,6 @@ public class BattleView {
 					{
 						u.flipFacing();
 					}
-					System.out.println(u.currentPos);
 					lPane.add(u.getUnitDisplay(),j,-1);
 				}
 
@@ -122,10 +122,9 @@ public class BattleView {
 	 * Metoda poruszajaca jednostki
 	 * @param cell polena ktorym ma znalezc sie jednostka
 	 */
-	public void moveUnit(BattlefieldCell cell)
+	public void moveUnit(BattlefieldCell cell, ArrayList<Point> path)
 	{
 		UnitInfo uInfo = cell.unit;
-		uInfo.moveUnit(cell.drawingPoint);
-		System.out.println(cell.drawingPoint.x+", "+cell.drawingPoint.y);
+		uInfo.moveUnit(path);
 	}
 }
