@@ -2,10 +2,9 @@ package Map.MapObjects;
 
 
 import Map.MapObjects.Mines.Mine;
+import Map.MapObjects.Resources.Resource;
 import Map.MapObjects.Towns.Town;
-import GraphicsProcessing.Graphics;
 
-import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class MapObject {
@@ -40,10 +39,10 @@ public class MapObject {
             mapObject = Mine.makeMine(object, img);
         }
         else if(category.equals("miscellaneous")) {
-
+            mapObject = Miscellaneous.makeMiscellaneous(object, img);
         }
         else if(category.equals("resources")) {
-
+            mapObject = Resource.makeResource(object, img);
         }
 
         return mapObject;
