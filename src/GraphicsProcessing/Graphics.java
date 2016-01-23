@@ -1,7 +1,9 @@
 package GraphicsProcessing;
 import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Random;
 
 import javax.imageio.ImageIO;
@@ -12,8 +14,9 @@ public class Graphics {
 	private ArrayList<Image> defaultTileBackgroundImage;
 	private File defaultImageBackgroundDirectory = new File("assets\\terrain\\green");
 	private File defaultImageDirectory = new File("assets");
-	private ArrayList<ArrayList<Image>> listOfImages = new ArrayList<ArrayList<Image>>();
 	private Random r = new Random();
+	// catalog: fileName, imgFile
+	private HashMap<String, HashMap<String, BufferedImage>> listImages = new HashMap<String, HashMap<String, BufferedImage>>();
 	
 	public Graphics() {
 		readAllDefaultBackgroundImages();
@@ -40,12 +43,20 @@ public class Graphics {
 	public Image getRandomTileDefaultBackgroundImage() {
 		return defaultTileBackgroundImage.get(r.nextInt(defaultTileBackgroundImage.size()));
 	}
-	
-	public ArrayList<Image> loadAllDefaultImagesFromDirectory(File path) {
-		ArrayList<Image> imgFiles = new ArrayList<Image>();
+
+
+	public void loadAllDefaultImages() {
+		for (File path : defaultImageDirectory.listFiles()) {
+			listImages.put(path.getName(), loadAllDefaultImagesFromDirectory(path));
+		}
+	}
+
+	public HashMap<String, BufferedImage> loadAllDefaultImagesFromDirectory(File path) {
+		HashMap<String, BufferedImage> imgFiles = new HashMap<String, BufferedImage>();
 		for (File file : path.listFiles()) {
+			//System.out.println("File name: " + file.getName());
 			if (file.getName().toLowerCase().endsWith(".png")) {
-				Image img = null;
+				BufferedImage img = null;
 				try {
 					img = ImageIO.read(file);
 				}
@@ -53,17 +64,11 @@ public class Graphics {
 					//TODO: handling
 				}
 				if (img != null) {
-					imgFiles.add(img);
+					imgFiles.put(file.getName(), img);
 				}
 			}
 		}
-		return imgFiles;		
-	}
-	
-	public void loadAllDefaultImages() {
-		for (File path : defaultImageDirectory.listFiles()) {
-			listOfImages.add(loadAllDefaultImagesFromDirectory(path));
-		}
+		return imgFiles;
 	}
 	
 	public ArrayList<String> getAllDirectoriesName() {
@@ -75,8 +80,8 @@ public class Graphics {
 		}
 		return directories;
 	}
-	
-	public ArrayList<ArrayList<Image>> getListOfImages() {
-		return listOfImages;
+
+	public HashMap<String, HashMap<String, BufferedImage>> getListImages() {
+		return listImages;
 	}
 }

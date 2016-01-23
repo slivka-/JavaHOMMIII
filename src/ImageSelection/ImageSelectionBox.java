@@ -1,6 +1,8 @@
 package ImageSelection;
 import java.awt.*;
-import java.util.ArrayList;
+import java.awt.image.BufferedImage;
+import java.util.HashMap;
+import java.util.Map;
 import javax.swing.*;
 import javax.swing.border.MatteBorder;
 import javax.swing.event.ListSelectionEvent;
@@ -9,13 +11,17 @@ import javax.swing.event.ListSelectionListener;
 public class ImageSelectionBox extends JPanel{
 
 	private int selectedIndex = -1;
-	private int selectedList = -1;
-	private Image selectedImage = null;
-	private ArrayList<JList> imageLists;
+	private BufferedImage selectedImage = null;
 	private JScrollPane pane;
-	
-	public ImageSelectionBox(ArrayList<ArrayList<Image>> images) {
-		imageLists = new ArrayList<JList>();
+	private HashMap<String, HashMap<String, BufferedImage>> listOfImagesByCategory;
+	private String selectedImageName = null;
+	private String selectedCategory = null;
+	private HashMap<String, JList> imageLists;
+
+
+	public ImageSelectionBox(HashMap<String, HashMap<String, BufferedImage>> images) {
+		listOfImagesByCategory = images;
+		imageLists = new HashMap<String, JList>();
 		initialize();
 		initializeLists(images);
 	}
@@ -27,43 +33,43 @@ public class ImageSelectionBox extends JPanel{
 		pane.setPreferredSize(new Dimension(220, 600));
 	}
 
-	private void initializeLists(ArrayList<ArrayList<Image>> images) {
-		for (int i = 0; i < images.size(); ++i) {
-			JList list = new JList(images.get(i).toArray());
-			list.setCellRenderer(new ListRenderer());
+
+	/***
+	 * Initialize list with images from given folders. Adds listener on value changed for getting currently
+	 * selected image.
+	 * @param images
+	 */
+	private void initializeLists(HashMap<String, HashMap<String, BufferedImage>> images) {
+		for (Map.Entry<String, HashMap<String, BufferedImage>> entry : images.entrySet()) {
+			JList list = new JList(entry.getValue().keySet().toArray());
+			list.setCellRenderer(new MyListRenderer());
 			list.addListSelectionListener(new ListSelectionListener() {
-				
 				@Override
 				public void valueChanged(ListSelectionEvent e) {
-					selectedIndex = imageLists.get(selectedList).getSelectedIndex();
-					selectedImage = (Image)imageLists.get(selectedList).getModel().getElementAt(selectedIndex);
+					selectedIndex = imageLists.get(selectedCategory).getSelectedIndex();
+					selectedImageName = (String) imageLists.get(selectedCategory).getModel().getElementAt(selectedIndex);
+					selectedImage = listOfImagesByCategory.get(selectedCategory).get(selectedImageName);
 				}
 			});
-			imageLists.add(list);
+			imageLists.put(entry.getKey(), list);
 		}
 	}
-	
-	private void setImageList(int selectedList) {
-		this.selectedList = selectedList;
-		selectedIndex = -1;
-		selectedImage = null;
-		pane.setViewportView(imageLists.get(selectedList));
-		pane.validate();
-		pane.repaint();
-	}
 
-	public JScrollPane getPane() {
-		return pane;
-	}
-	
-	private class ListRenderer extends DefaultListCellRenderer {
+	/***
+	 * Class for helping rendering list with images in ImageSelectionBox
+	 */
+	public class MyListRenderer extends DefaultListCellRenderer {
 		@Override
 		public Component getListCellRendererComponent(
-                JList list, Object value, int index,
-                boolean isSelected, boolean cellHasFocus) {
-			
-			JLabel label = new JLabel();
-			label.setIcon(new ImageIcon((Image)imageLists.get(selectedList).getModel().getElementAt(index)));
+				JList list, Object value, int index,
+				boolean isSelected, boolean cellHasFocus) {
+			JLabel label = (JLabel) super.getListCellRendererComponent(
+					list, value, index, isSelected, cellHasFocus);
+
+			//selectedImageName = (String)value;
+			label.setIcon(new ImageIcon(listOfImagesByCategory.get(selectedCategory).get(value)));
+			label.setHorizontalTextPosition(JLabel.CENTER);
+			label.setVerticalTextPosition(JLabel.BOTTOM);
 			// Selected item has red border
 			if (isSelected) {
 				label.setBorder(new MatteBorder(1, 1, 1, 1, Color.RED));
@@ -71,17 +77,41 @@ public class ImageSelectionBox extends JPanel{
 			else {
 				label.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
 			}
-			
 			return label;
 		}
 	}
-	
-	public Image getSelectedImage() {
+
+
+	/***
+	 * Changes displayed images in imageSelectionBox to those in given category(folder)
+	 * @param cat Category(folder) within which images are stored
+	 */
+	private void setCategoryImageList(String cat) {
+		selectedCategory = cat;
+		selectedImage = null;
+		pane.setViewportView(imageLists.get(selectedCategory));
+		pane.validate();
+		pane.repaint();
+	}
+
+	public JScrollPane getPane() {
+		return pane;
+	}
+
+	public BufferedImage getSelectedImage() {
 		return selectedImage;
 	}
-	
-	public void setImageSet(int listIndex) {
-		setImageList(listIndex);		
+
+	public String getSelectedImageName() {
+		return selectedImageName;
+	}
+
+	public void setCategory(String cat) {
+		setCategoryImageList(cat);
+	}
+
+	public String getSelectedCategory() {
+		return selectedCategory;
 	}
 
 }

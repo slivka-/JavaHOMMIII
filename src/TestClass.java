@@ -1,5 +1,3 @@
-import java.awt.Image;
-import java.util.ArrayList;
 import javax.swing.*;
 import GraphicsProcessing.DrawGUI;
 import GraphicsProcessing.Graphics;
@@ -16,7 +14,7 @@ public class TestClass {
 		
 		Graphics g = new Graphics();		
 		
-		ImageSelectionBox isb = new ImageSelectionBox(g.getListOfImages());
+		ImageSelectionBox isb = new ImageSelectionBox(g.getListImages());
 		FolderImageBox fib = new FolderImageBox();
 		fib.setDirectoriesNames(g.getAllDirectoriesName());
 		ImageSelectionController isc = new ImageSelectionController(isb, fib);

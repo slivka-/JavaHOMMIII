@@ -5,6 +5,7 @@ import javax.swing.border.MatteBorder;
 import GraphicsProcessing.Graphics;
 import GraphicsProcessing.ImageProcessor;
 import ImageSelection.ImageSelectionBox;
+import Map.MapObjects.MapObject;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -17,7 +18,6 @@ public class MapGrid extends JPanel{
 	private final int cellWidth = 32;
 	private final int cellHeight = 32;
 	private Tile[][] cells;
-	//private Tile2[][] cells2;
 	private boolean isGridOn = false;
 	private Graphics graphics;
 	private ImageSelectionBox isb;
@@ -112,15 +112,22 @@ public class MapGrid extends JPanel{
 	 * @param x mouse X
 	 * @param y mouse Y
 	 */
-
 	public void changeCellImage(int x, int y) {
-		Image newImg = isb.getSelectedImage();
-		if (newImg == null) {
+		//powinno być jakieś sprawdzanie jaki to object
+		//get object
+		String category = isb.getSelectedCategory();
+		String name = isb.getSelectedImageName();
+		if (category == null || name == null) {
+			System.out.println("Brak obrazka");
 			return;
 		}
 		else {
+			BufferedImage newImg = isb.getSelectedImage();
+			MapObject mo = MapObject.makeMapObject(category, name, newImg);
+			//Image newImg = mo.getImage();
+			System.out.println("Nazwa obrazka: " + isb.getSelectedImageName());
 			BufferedImage chunks[] = ImageProcessor.divideImage(newImg, cellWidth, cellHeight);
-			
+
 			int rows = newImg.getHeight(null) / cellHeight;
 			int cols = newImg.getWidth(null) / cellWidth;
 			int centerX = x / cellWidth;
@@ -132,7 +139,40 @@ public class MapGrid extends JPanel{
 			if(areTilesOccupied(rows, cols, centerX, centerY))
 				return;
 
-			drawImageOnTiles(chunks, rows, cols, centerX, centerY);
+			drawImageOnTiles(chunks, rows, cols, centerX, centerY, mo);
+		}
+	}
+
+	public void printTileID(int x, int y) {
+		int mouseX = x / cellHeight;
+		int mouseY = y / cellWidth;
+		System.out.println("x: " + x + "  y: " + y);
+		System.out.println("x: " + mouseX + "  y: " + mouseY);
+		System.out.println("Occupied? " + cells[mouseX][mouseY].getOccupied());
+		System.out.println(cells[mouseX][mouseY].getID());
+		int ID = cells[mouseX][mouseY].getID();
+		for (int i = 0; i < colCount; ++i) {
+			for (int j = 0; j < rowCount; ++j) {
+				if (cells[i][j].getID() != -1)
+					System.out.println(cells[i][j].getID());
+				if (cells[i][j].getID() == ID) {
+					cells[i][j].deleteMapObject();
+				}
+			}
+		}
+	}
+
+	public void deleteTile(int x, int y) {
+		int mouseX = x / cellHeight;
+		int mouseY = y / cellWidth;
+		int ID = cells[mouseX][mouseY].getID();
+		//need better one
+		for (int i = 0; i < colCount; ++i) {
+			for (int j = 0; j < rowCount; ++j) {
+				if (cells[i][j].getID() == ID) {
+					cells[i][j].deleteMapObject();
+				}
+			}
 		}
 	}
 
@@ -163,7 +203,7 @@ public class MapGrid extends JPanel{
 		return true;
 	}
 
-	private void drawImageOnTiles(BufferedImage chunks[], int rows, int cols, int centerX, int centerY) {
+	private void drawImageOnTiles(BufferedImage chunks[], int rows, int cols, int centerX, int centerY, MapObject mo) {
 		int count = 0;
 		for (int r = 0; r < rows; ++r) {
 			for(int c = 0; c < cols; ++c) {
@@ -171,6 +211,7 @@ public class MapGrid extends JPanel{
 				int _y = centerY + r - rows+1;
 				cells[_x][_y].setMapObject(new ImageIcon(chunks[count++]));
 				cells[_x][_y].setOccupied(true);
+				cells[_x][_y].setMapObject(mo);
 				//cells[x][y].setType = town/mine/etc.
 				//cells[x][y].canMove = false //exception- center(true)
 				//or collect cells and put them in collection of object of i.e. town type

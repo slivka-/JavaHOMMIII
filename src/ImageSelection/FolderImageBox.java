@@ -15,6 +15,8 @@ public class FolderImageBox extends JPanel {
 	private int selectedIndex = -1;
 	private ImageSelectionController controller;
 	private JScrollPane pane;
+	//after
+	private String selectedDirectory = null;
 	
 	public FolderImageBox() {}
 
@@ -34,7 +36,11 @@ public class FolderImageBox extends JPanel {
 			@Override
 			public void valueChanged(ListSelectionEvent e) {
 				selectedIndex = list.getSelectedIndex();
-				controller.setSelectedDirectory(selectedIndex);
+				//odkomentowac
+				//controller.setSelectedDirectory(selectedIndex);
+				//after
+				selectedDirectory = directories.get(selectedIndex);
+				controller.setSelectedDirectoryName(selectedDirectory);
 			}
 		});
 		pane = new JScrollPane(list);

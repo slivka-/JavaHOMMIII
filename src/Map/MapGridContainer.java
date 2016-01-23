@@ -52,7 +52,12 @@ public class MapGridContainer extends JPanel{
 			    if(e.getButton() == MouseEvent.BUTTON1)
 			    {
 			    	map.changeCellImage(map.getMousePosition().x, map.getMousePosition().y);
-			    }	 
+			    }
+				else if (e.getButton() == MouseEvent.BUTTON3)
+				{
+					//for testing
+					map.printTileID(map.getMousePosition().x, map.getMousePosition().y);
+				}
 				
 			}
 		});

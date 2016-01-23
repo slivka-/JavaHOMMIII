@@ -9,16 +9,14 @@ public class ImageSelectionController {
 		this.isb = isb;
 		this.fib = fib;
 		initialize();
-		
 	}
 	
 	private void initialize() {
 		fib.setController(this);		
 		fib.initialize();
 	}
-	
-	
-	public void setSelectedDirectory(int index) {
-		isb.setImageSet(index);
+
+	public void setSelectedDirectoryName(String dir) {
+		isb.setCategory(dir);
 	}
 }
