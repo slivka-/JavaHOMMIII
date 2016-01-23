@@ -4,10 +4,12 @@ import java.awt.Point;
 import java.util.HashMap;
 import java.util.List;
 
-import battleDisplay.PathFinding;
+//import battleDisplay.PathFinding;
 import dataClasses.CellEntity;
 import dataClasses.HeroInfo;
 import dataClasses.UnitInfo;
+import pathFinding.FindPath;
+
 /**
  * @author slivka
  * Klasa g��wna, kontroluje przep�yw informacji
@@ -80,7 +82,9 @@ public class BattleController {
 	public void MoveUnit(Point targetCell)
 	{
 		Point startingPoint = model.activeUnit.currentPos;
-		List<Point> path = PathFinding.findPath(startingPoint, targetCell, model.BattlefieldInfo);
+
+		FindPath f = new FindPath(model.BattlefieldInfo,startingPoint,targetCell);
+		List<Point> path = f.generatePath();
 		for(Point p : path)
 		{
 			System.out.println("X: "+p.x+", Y:"+p.y);
@@ -92,6 +96,7 @@ public class BattleController {
 		model.BattlefieldInfo[targetCell.x][targetCell.y].contains = CellEntity.UNIT;
 		model.BattlefieldInfo[targetCell.x][targetCell.y].unit = model.activeUnit;
 		model.activeUnit.currentPos = targetCell;
+		System.out.println(targetCell);
 		view.moveUnit(model.BattlefieldInfo[targetCell.x][targetCell.y]);
 		endTurn();
 	}

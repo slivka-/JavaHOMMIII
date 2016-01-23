@@ -47,7 +47,7 @@ public class BattleView {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				System.out.println((e.getX()-50)/50+", "+((e.getY()-110)/43));
-				Point p = new Point(((e.getY()-110)/43),(e.getX()-50)/50);
+				Point p = new Point((e.getX()-50)/50,((e.getY()-110)/43));
 				mainController.MoveUnit(p);
 			}
 		};
@@ -90,20 +90,20 @@ public class BattleView {
 	 */
 	private void InitializeBattlefield(BattlefieldCell[][] BattlefieldInfo)
 	{
-		for(int i=0;i<10;i++)
+		for(int i=0;i<14;i++)
 		{
-			for(int j=0;j<14;j++)
+			for(int j=0;j<10;j++)
 			{
 				if(BattlefieldInfo[i][j].contains == CellEntity.UNIT)
 				{
 					BattlefieldCell c = BattlefieldInfo[i][j];
 					UnitInfo u = c.unit;
-					if(j==13)
+					if(i==13)
 					{
 						u.flipFacing();
 					}
-
-					lPane.add(u.getUnitDisplay(),i,-1);
+					System.out.println(u.currentPos);
+					lPane.add(u.getUnitDisplay(),j,-1);
 				}
 
 				if(BattlefieldInfo[i][j].contains == CellEntity.OBSTACLE)
@@ -111,7 +111,7 @@ public class BattleView {
 					BattlefieldCell c = BattlefieldInfo[i][j];
 					StaticGraphicsPanel g = new StaticGraphicsPanel(c.imgPath, c.drawingPoint.x, c.drawingPoint.y);
 					g.setOpaque(false);
-					lPane.add(g, i,-1);
+					lPane.add(g, j,-1);
 				}
 
 			}

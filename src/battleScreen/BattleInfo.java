@@ -42,12 +42,12 @@ public class BattleInfo {
 		spectators = null;
 		CPUarmy = null;
 		terrainType = 0;
-		BattlefieldInfo = new BattlefieldCell[10][14];
-		for(int i=0;i<10;i++)
+		BattlefieldInfo = new BattlefieldCell[14][10];
+		for(int i=0;i<14;i++)
 		{
-			for(int j=0;j<14;j++)
+			for(int j=0;j<10;j++)
 			{
-				BattlefieldInfo[i][j] = new BattlefieldCell(offsetX+(cellWidth*j),offsetY+(cellHeight*(i+1)));
+				BattlefieldInfo[i][j] = new BattlefieldCell(offsetX+(cellWidth*i),offsetY+(cellHeight*(j+1)),new Point(i,j));
 			}
 		}
 		BattleQueue = new Queue<UnitInfo>();
@@ -61,9 +61,9 @@ public class BattleInfo {
 	{
 
 		Random rnd = new Random();
-		for(int i=0;i<10;i++)
+		for(int i=2;i<12;i++)
 		{
-			for(int j=2;j<12;j++)
+			for(int j=0;j<10;j++)
 			{
 				if(rnd.nextInt(100)>95)
 				{
@@ -88,12 +88,12 @@ public class BattleInfo {
 		{
 			Integer key = army1Iterator.next();
 			UnitInfo u = player1Army.get(key);
-			u.currentPos = new Point((key*2)-1,0);
-			u.setUnitDisplay(new Point(BattlefieldInfo[(key*2)-1][0].drawingPoint));
-			BattlefieldInfo[(key*2)-1][0].contains = CellEntity.UNIT;
-			BattlefieldInfo[(key*2)-1][0].unit = u;
+			u.currentPos = new Point(0,(key*2)-1);
+			u.setUnitDisplay(new Point(BattlefieldInfo[0][(key*2)-1].drawingPoint));
+			BattlefieldInfo[0][(key*2)-1].contains = CellEntity.UNIT;
+			BattlefieldInfo[0][(key*2)-1].unit = u;
 			BattleQueue.enqueue(u);
-			System.out.println(u.unitID+", "+u.unitSize);
+			System.out.println(u.currentPos);
 		}
 		
 		
@@ -114,10 +114,10 @@ public class BattleInfo {
 		{
 			Integer key = army2Iterator.next();
 			UnitInfo u = player2Army.get(key);
-			u.currentPos = new Point((key*2)-1,13);
-			u.setUnitDisplay(new Point(BattlefieldInfo[(key*2)-1][13].drawingPoint));
-			BattlefieldInfo[(key*2)-1][13].contains = CellEntity.UNIT;
-			BattlefieldInfo[(key*2)-1][13].unit = u;
+			u.currentPos = new Point(13,(key*2)-1);
+			u.setUnitDisplay(new Point(BattlefieldInfo[13][(key*2)-1].drawingPoint));
+			BattlefieldInfo[13][(key*2)-1].contains = CellEntity.UNIT;
+			BattlefieldInfo[13][(key*2)-1].unit = u;
 			BattleQueue.enqueue(u);
 			System.out.println(u.unitID+", "+u.unitSize);
 		}

@@ -8,12 +8,14 @@ public class BattlefieldCell {
 	public UnitInfo unit;
 	public String imgPath;
 	public Point drawingPoint;
-	
-	public BattlefieldCell(int cellX, int cellY)
+	public Point location;
+
+	public BattlefieldCell(int cellX, int cellY, Point location)
 	{
 		contains = CellEntity.EMPTY;
 		unit = null;
 		imgPath = null;
 		drawingPoint = new Point(cellX, cellY);
+		this.location = location;
 	}
 }
