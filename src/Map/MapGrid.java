@@ -144,22 +144,14 @@ public class MapGrid extends JPanel{
 	}
 
 	public void printTileID(int x, int y) {
+		System.out.println("Jednak dziala");
 		int mouseX = x / cellHeight;
 		int mouseY = y / cellWidth;
 		System.out.println("x: " + x + "  y: " + y);
 		System.out.println("x: " + mouseX + "  y: " + mouseY);
 		System.out.println("Occupied? " + cells[mouseX][mouseY].getOccupied());
 		System.out.println(cells[mouseX][mouseY].getID());
-		int ID = cells[mouseX][mouseY].getID();
-		for (int i = 0; i < colCount; ++i) {
-			for (int j = 0; j < rowCount; ++j) {
-				if (cells[i][j].getID() != -1)
-					System.out.println(cells[i][j].getID());
-				if (cells[i][j].getID() == ID) {
-					cells[i][j].deleteMapObject();
-				}
-			}
-		}
+		cells[mouseX][mouseY].printInfo();
 	}
 
 	public void deleteTile(int x, int y) {

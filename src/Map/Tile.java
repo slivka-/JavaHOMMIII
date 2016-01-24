@@ -84,6 +84,15 @@ public class Tile extends JLayeredPane{
 		return movementCost;
 	}
 
+	public void printInfo() {
+		if (mapObject != null) {
+			mapObject.printInfo();
+		}
+		else {
+			System.out.println("Podono jest nullem");
+		}
+	}
+
 	public int getID() {
 		return ID;
 	}

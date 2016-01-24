@@ -1,7 +1,9 @@
 package Map.MapObjects;
 
 
+import Map.MapObjects.Landscapes.Landscape;
 import Map.MapObjects.Mines.Mine;
+import Map.MapObjects.Miscellaneous.Misc;
 import Map.MapObjects.Resources.Resource;
 import Map.MapObjects.Towns.Town;
 
@@ -29,6 +31,11 @@ public class MapObject {
         return img;
     }
 
+    public void printInfo() {
+        System.out.println("ID: " + ID);
+        System.out.println("ObjectName: " + this.getClass().getName());
+    }
+
     public static MapObject makeMapObject(String category, String object, BufferedImage img) {
         MapObject mapObject = null;
 
@@ -39,10 +46,13 @@ public class MapObject {
             mapObject = Mine.makeMine(object, img);
         }
         else if(category.equals("miscellaneous")) {
-            mapObject = Miscellaneous.makeMiscellaneous(object, img);
+            mapObject = Misc.makeMisc(object, img);
         }
         else if(category.equals("resources")) {
             mapObject = Resource.makeResource(object, img);
+        }
+        else if(category.equals("landscapes")) {
+            mapObject = Landscape.makeLandscape(img);
         }
 
         return mapObject;

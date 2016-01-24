@@ -55,6 +55,7 @@ public class MapGridContainer extends JPanel{
 			    }
 				else if (e.getButton() == MouseEvent.BUTTON3)
 				{
+					//map.deleteTile(map.getMousePosition().x, map.getMousePosition().y);
 					//for testing
 					map.printTileID(map.getMousePosition().x, map.getMousePosition().y);
 				}
