@@ -63,6 +63,7 @@ public class BattlefieldMap
                 {
                     map[i][j].W = map[i-1][j];
                 }
+                /*
                 if(thisY-1>=0 && thisX+1<=13)
                 {
                     map[i][j].NE = map[i+1][j-1];
@@ -79,6 +80,7 @@ public class BattlefieldMap
                 {
                     map[i][j].SW = map[i-1][j+1];
                 }
+                */
                 map[i][j].updateNeighbours();
             }
         }

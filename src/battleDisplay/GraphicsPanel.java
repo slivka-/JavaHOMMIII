@@ -12,6 +12,8 @@ import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 import java.util.*;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadLocalRandom;
 import javax.swing.Timer;
 import javax.swing.*;
@@ -28,7 +30,9 @@ public class GraphicsPanel extends JPanel {
 	private int _x;
 	private int _y;
 	private List<BufferedImage> _idleFrames = new ArrayList<BufferedImage>();
-	private Animate animate;
+	private AnimateThread animateThread;
+	private MoveThread moveThread;
+	private ExecutorService ex;
 	private boolean facingLeft = false;
 	private boolean active = false;
 
@@ -42,15 +46,15 @@ public class GraphicsPanel extends JPanel {
 
 		SpriteLoader sl = new SpriteLoader(_unit._spriteName,_unit._townName,_unit._frameWidth,_unit._frameHeight);
 		_idleFrames = sl.getFrames(_unit._idleFrames,0);
-		animate = new Animate(_idleFrames);
 
-
+		animateThread = new AnimateThread(_idleFrames);
+		ex = Executors.newFixedThreadPool(2);
+		ex.execute(animateThread);
 
 		this.setBounds(_x-(_unit._frameWidth/2),_y-_unit._frameHeight, _unit._frameWidth, _unit._frameHeight+12);
 		//this.addMouseListener(new MouseListener() {
 
-		start();
-		animate.start();
+		startRefresh();
 	}
 
 	public void updateUnitSize(int newUnitSize)
@@ -91,78 +95,24 @@ public class GraphicsPanel extends JPanel {
 
 	public void movePanel(final ArrayList<Point> path)
 	{
-		pathPointCount = 0;
-		animationCount = 0;
-		final int endOfPath = path.size();
-		Timer timer = new Timer(25, new ActionListener()
-		{
 
-			@Override
-			public void actionPerformed(ActionEvent e)
-			{
-				if(pathPointCount+1 != endOfPath)
-				{
-					if (animationCount < 9)
-					{
-						float nextX = calculate1DProgress(path.get(pathPointCount).x, path.get(pathPointCount + 1).x, animationCount);
-						float nextY = calculate1DProgress(path.get(pathPointCount).y, path.get(pathPointCount + 1).y, animationCount);
-						nextMoveFrame(nextX, nextY);
-						animationCount++;
-					} else
-					{
-						float nextX = calculate1DProgress(path.get(pathPointCount).x, path.get(pathPointCount + 1).x, animationCount);
-						float nextY = calculate1DProgress(path.get(pathPointCount).y, path.get(pathPointCount + 1).y, animationCount);
-						nextMoveFrame(nextX, nextY);
-						animationCount = 0;
-						pathPointCount++;
-					}
-				}
-				else
-				{
-					System.out.println("STOP");
-					((Timer) e.getSource()).stop();
-				}
-			}
-		});
-
-		timer.setRepeats(true);
-		timer.setCoalesce(true);
-		timer.start();
+		moveThread = new MoveThread(path);
+		ex.execute(moveThread);
 	}
 
-	private float calculate1DProgress(int from, int to, int frame)
+	private void startRefresh()
 	{
-		int distance = to - from;
-		float piece = distance/10;
-		float next = from + (piece * frame);
-		return next;
-	}
-
-	private void nextMoveFrame(float nextX, float nextY)
-	{
-		int nextZIndex = (int)((nextY-100)/43);
-		this.setBounds((int)nextX-(_unit._frameWidth/2),(int)nextY-_unit._frameHeight, _unit._frameWidth, _unit._frameHeight+12);
-		JLayeredPane j = (JLayeredPane)this.getParent();
-		j.setLayer(this,nextZIndex);
-		revalidate();
-		repaint();
-	}
-
-	private void start()
-	{
-		Timer timer = new Timer(90, new ActionListener()
+		Timer timer = new Timer(20, new ActionListener()
 		{
 			@Override
 			public void actionPerformed(ActionEvent e)
 			{
-				animate.update();
 				revalidate();
 				repaint();
 			}
 		});
 		timer.setRepeats(true);
 		timer.setCoalesce(true);
-		timer.setInitialDelay(ThreadLocalRandom.current().nextInt(100,1000));
 		timer.start();
 	}
 
@@ -175,16 +125,32 @@ public class GraphicsPanel extends JPanel {
 		Graphics2D g2 = (Graphics2D)g;
 		if(!facingLeft)
 		{
-			g2.drawImage(animate.getSprite(), 0, 0, null);
+			g2.drawImage(animateThread.getFrame(), 0, 0, null);
+
 		}
 		else
 		{
-			BufferedImage image = animate.getSprite();
+			BufferedImage image = animateThread.getFrame();
 			AffineTransform tx = AffineTransform.getScaleInstance(-1, 1);
 			tx.translate(-image.getWidth(null),0);
 			AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
 			image = op.filter(image, null);
 			g2.drawImage(image, 0, 0, null);
+		}
+		if(moveThread!=null)
+		{
+			if(moveThread.isRunning())
+			{
+				int nextZIndex = (int) ((moveThread.getCurrentPosition().getY() - 100) / 43);
+				this.setBounds((int) moveThread.getCurrentPosition().getX() - (_unit._frameWidth / 2), (int) moveThread.getCurrentPosition().getY() - _unit._frameHeight, _unit._frameWidth, _unit._frameHeight + 12);
+				JLayeredPane j = (JLayeredPane) this.getParent();
+				j.setLayer(this, nextZIndex);
+				System.out.println("ruszam sie");
+			}
+			else
+			{
+				moveThread = null;
+			}
 		}
 		//g2.drawRect(10,85,30,15);
 		if(active)

@@ -19,11 +19,12 @@ public class MapCell implements Comparable<MapCell>
     public MapCell E = null;
     public MapCell W = null;
 
+    /*
     public MapCell NE = null;
     public MapCell NW = null;
     public MapCell SE = null;
     public MapCell SW = null;
-
+    */
     public MapCell parent;
 
     public ArrayList<MapCell> neighbours = new ArrayList<MapCell>();
@@ -54,7 +55,7 @@ public class MapCell implements Comparable<MapCell>
         {
             neighbours.add(W);
         }
-
+        /*
         if(NE!=null)
         {
             neighbours.add(NE);
@@ -71,6 +72,7 @@ public class MapCell implements Comparable<MapCell>
         {
             neighbours.add(SW);
         }
+        */
     }
 
 
