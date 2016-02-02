@@ -153,6 +153,28 @@ public class BattleInfo {
 		}
 	}
 
+	public void deleteUnitFromQueue(UnitInfo killedUnit)
+	{
+		try
+		{
+			Queue<UnitInfo> newBattleQueue = new Queue<UnitInfo>();
+			while (!BattleQueue.isEmpty())
+			{
+				UnitInfo i = BattleQueue.dequeue();
+				if (!i.equals(killedUnit))
+				{
+					newBattleQueue.enqueue(i);
+				}
+			}
+			BattleQueue = newBattleQueue;
+		}
+		catch (Exception ex)
+		{
+			ex.printStackTrace();
+		}
+
+	}
+
 	public ArrayList<Point> getMoveRange()
 	{
 		int range = activeUnit.unitType.speed;

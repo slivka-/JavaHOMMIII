@@ -3,6 +3,7 @@ package battleDisplay;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
 /**
  * Created by slivka on 23.01.2016.
@@ -11,15 +12,22 @@ public class RangeIndicator extends JPanel
 {
     public Point location;
 
+    public AttackDirection attackDirection;
 
-    public RangeIndicator(Point p, MouseListener mListener)
+
+    public RangeIndicator(Point p, MouseListener mListener, MouseMotionListener mMotionListener)
     {
         this.setOpaque(false);
         this.setBounds(p.x+1,p.y+1,50,43);
         this.location = new Point((p.x-50)/50,((p.y-110)/43));
+        this.attackDirection = AttackDirection.RIGHT;
         if(mListener != null)
         {
             this.addMouseListener(mListener);
+        }
+        if(mMotionListener != null)
+        {
+            this.addMouseMotionListener(mMotionListener);
         }
     }
 

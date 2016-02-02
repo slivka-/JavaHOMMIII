@@ -10,19 +10,23 @@ import battleDisplay.GraphicsPanel;
  * Klasa przechowywuj�ca informacje o oddziale
  */
 public class UnitInfo {
-	
-	public int unitID;
+
 	public int unitSize;
 	public UnitType unitType;
 	public Point currentPos;
+	public int woundedUnitHealth;
+	public UnitCommander commander;
 	private GraphicsPanel unitDisplay;
 
 
-	public UnitInfo(int size, UnitType type, int ID)
+
+	public UnitInfo(int size, UnitType type, UnitCommander commander)
 	{
 		this.unitSize = size;
 		this.unitType = type;
-		this.unitID = ID;
+		this.commander = commander;
+		this.woundedUnitHealth = 0;
+
 	}
 
 	public void setUnitDisplay(Point drawingPoint)
@@ -53,11 +57,27 @@ public class UnitInfo {
 
 	public void updateUnitSize(int newUnitSize)
 	{
-		unitDisplay.updateUnitSize(newUnitSize);
+		unitSize = newUnitSize;
+		unitDisplay.updateUnitSize(unitSize);
 	}
 
 	public void moveUnit(ArrayList<Point> path)
 	{
 		unitDisplay.movePanel(path);
+	}
+
+	public void attackUnit(ArrayList<Point> path)
+	{
+		unitDisplay.attackUnit(path);
+	}
+
+	public void unitDeath()
+	{
+		unitDisplay.unitDeath();
+	}
+
+	public boolean isAnimationFinished()
+	{
+		return unitDisplay.isAnimationFinished();
 	}
 }

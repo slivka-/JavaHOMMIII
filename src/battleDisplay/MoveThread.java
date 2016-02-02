@@ -16,6 +16,7 @@ public class MoveThread implements Runnable
     private int endOfPath;
     private Point2D currentPosition;
     private boolean isRunning;
+    private boolean isFacingLeft;
 
 
     public MoveThread(ArrayList<Point> path)
@@ -37,6 +38,11 @@ public class MoveThread implements Runnable
         return isRunning;
     }
 
+    public boolean isFacingLeft()
+    {
+        return isFacingLeft;
+    }
+
     private double calculate1DProgress(int from, int to, int frame)
     {
         int distance = to - from;
@@ -53,6 +59,14 @@ public class MoveThread implements Runnable
             try
             {
                 double nextX = calculate1DProgress(_path.get(pathPointCount).x, _path.get(pathPointCount + 1).x, animationCount);
+                if(nextX - currentPosition.getX()>0)
+                {
+                    isFacingLeft = false;
+                }
+                else
+                {
+                    isFacingLeft = true;
+                }
                 double nextY = calculate1DProgress(_path.get(pathPointCount).y, _path.get(pathPointCount + 1).y, animationCount);
                 currentPosition.setLocation(nextX, nextY);
                 if (animationCount < 9)
