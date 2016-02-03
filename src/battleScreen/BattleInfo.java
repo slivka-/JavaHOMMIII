@@ -144,18 +144,6 @@ public class BattleInfo {
 		{
 			BattleQueue.enqueue(i);
 		}
-		try
-		{
-			activeUnit = BattleQueue.dequeue();
-			activeUnit.setAsActive();
-			nextActiveUnit = BattleQueue.dequeue();
-		}
-		catch (Exception ex)
-		{
-			ex.printStackTrace();
-		}
-
-
 	}
 	
 	/**
@@ -164,18 +152,26 @@ public class BattleInfo {
 	public void SetNextActiveUnit()
 	{
 		try {
-			activeUnit.setAsNotActive();
-			BattleQueue.enqueue(activeUnit);
-			if(nextActiveUnit!= null)
+			if(activeUnit == null && nextActiveUnit == null)
 			{
-				activeUnit = nextActiveUnit;
+				activeUnit = BattleQueue.dequeue();
+				activeUnit.setAsActive();
+				nextActiveUnit = BattleQueue.dequeue();
 			}
 			else
 			{
-				activeUnit = BattleQueue.dequeue();
+				activeUnit.setAsNotActive();
+				BattleQueue.enqueue(activeUnit);
+				if (nextActiveUnit != null)
+				{
+					activeUnit = nextActiveUnit;
+				} else
+				{
+					activeUnit = BattleQueue.dequeue();
+				}
+				activeUnit.setAsActive();
+				nextActiveUnit = BattleQueue.dequeue();
 			}
-			activeUnit.setAsActive();
-			nextActiveUnit = BattleQueue.dequeue();
 		}
 		catch (InterruptedException e) {
 			System.out.println("BRAK JEDNOSTEK, BITWA SKONCZONA");

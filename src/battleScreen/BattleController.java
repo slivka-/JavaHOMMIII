@@ -8,7 +8,6 @@ import java.util.HashMap;
 import java.util.List;
 
 //import battleDisplay.PathFinding;
-import Client.ClientThread;
 import dataClasses.*;
 import pathFinding.FindPath;
 
@@ -25,22 +24,20 @@ public class BattleController {
 	private BattleInfo model;
 	private BattleView view;
 
-	private ClientThread clientThread;
 	
 	private int width = 808;
 	private int height = 664;
 
 	//IDENTYFIKACJA GRACZA
 	private UnitCommander me;
-	public boolean isMyTurn;
+	public boolean isMyTurn = true;
 		
-	public BattleController(int terrainType, HeroInfo Player1, HeroInfo Player2, UnitCommander me, ClientThread parentThread)
+	public BattleController(int terrainType, HeroInfo Player1, HeroInfo Player2, UnitCommander me)
 	{
 		this.model = new BattleInfo();
 		this.model.setPlayer1(Player1);
 		this.model.setPlayer2(Player2);
 		this.model.setTerraintype(terrainType);
-		this.clientThread = parentThread;
 		this.me = me;
 		this.view = new BattleView(width,height,this);
 
@@ -101,10 +98,6 @@ public class BattleController {
 	 */
 	public void MoveUnit(Point targetCell)
 	{
-			if(isMyTurn)
-			{
-				clientThread.sendMoveInfo(targetCell);
-			}
 			view.clearUnitRange();
 			Point startingPoint = model.activeUnit.currentPos;
 			FindPath f = new FindPath(model.BattlefieldInfo, startingPoint, targetCell);
@@ -221,9 +214,10 @@ public class BattleController {
 
 	private void newTurn()
 	{
+
 		model.SetNextActiveUnit();
 		ArrayList<Point> moveRange = model.getMoveRange();
-		//debugSetMe();
+		debugSetMe();
 		view.drawUnitRange(moveRange);
 	}
 

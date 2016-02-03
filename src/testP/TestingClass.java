@@ -40,9 +40,9 @@ public class TestingClass {
 		UnitInfo u4  = new UnitInfo(7, c4,UnitCommander.PLAYER1);
 		
 		player1.addToArmy(2, u2);
-		//player1.addToArmy(1, u1);
-		//player1.addToArmy(4, u4);
-		//player1.addToArmy(3, u3);
+		player1.addToArmy(1, u1);
+		player1.addToArmy(4, u4);
+		player1.addToArmy(3, u3);
 		
 		
 		UnitInfo u11  = new UnitInfo(15, d1,UnitCommander.PLAYER2);
@@ -52,14 +52,14 @@ public class TestingClass {
 		
 		player2.addToArmy(2, u21);
 		player2.addToArmy(1, u11);
-		//player2.addToArmy(4, u31);
-		//player2.addToArmy(3, u41);
+		player2.addToArmy(4, u31);
+		player2.addToArmy(3, u41);
 
 		
-		//controller = new  BattleController(1,player1,player2,UnitCommander.PLAYER1);
+		controller = new  BattleController(1,player1,player2,UnitCommander.PLAYER1);
 		
 		
-		//controller.BattleInit();
+		controller.BattleInit();
 
 	}
 
