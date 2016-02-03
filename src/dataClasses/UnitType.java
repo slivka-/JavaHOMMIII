@@ -14,18 +14,17 @@ public class UnitType {
 	//STATS
 	public int _health;
 	public int _attack;
-	public int initiative;
-	public int speed = 20;
+	public int _initiative;
+	public int speed = 5;
 
 	
-	public UnitType(String name, String spriteName,String townName,int attack,int health)
+	public UnitType(String name, String spriteName,String townName,int attack,int health, int initiative)
 	{
 		this._name = name;
 		this._spriteName = spriteName;
 		this._townName = townName;
 		this._attack = attack;
 		this._health = health;
-		Random rnd = new Random();
-		this.initiative = rnd.nextInt(10);
+		this._initiative = initiative;
 	}
 }

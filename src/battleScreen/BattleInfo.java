@@ -1,17 +1,11 @@
 package battleScreen;
 
 import java.awt.Point;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Random;
+import java.util.*;
 
 
+import dataClasses.*;
 import sun.misc.Queue;
-import dataClasses.BattlefieldCell;
-import dataClasses.CellEntity;
-import dataClasses.HeroInfo;
-import dataClasses.UnitInfo;
 
 /**
  * @author slivka
@@ -27,6 +21,7 @@ public class BattleInfo {
 	public BattlefieldCell[][] BattlefieldInfo;
 	private Queue<UnitInfo> BattleQueue;
 	public UnitInfo activeUnit;
+	public UnitInfo nextActiveUnit;
 	
 	//--sta�e do rysowania--
 	private final int cellWidth = 50;
@@ -53,6 +48,7 @@ public class BattleInfo {
 		}
 		BattleQueue = new Queue<UnitInfo>();
 		activeUnit = null;
+		nextActiveUnit = null;
 	}
 	
 	/**
@@ -81,7 +77,7 @@ public class BattleInfo {
 	 */
 	public void PalceUnits()
 	{
-		
+		ArrayList<UnitInfo> unsortedUnits = new ArrayList<UnitInfo>();
 		//--umieszczanie jednostek armii 1
 		HashMap<Integer, UnitInfo> player1Army = player1.getArmy();
 		Iterator<Integer> army1Iterator = player1Army.keySet().iterator();
@@ -93,7 +89,7 @@ public class BattleInfo {
 			u.setUnitDisplay(new Point(BattlefieldInfo[0][(key*2)-1].drawingPoint));
 			BattlefieldInfo[0][(key*2)-1].contains = CellEntity.UNIT;
 			BattlefieldInfo[0][(key*2)-1].unit = u;
-			BattleQueue.enqueue(u);
+			unsortedUnits.add(u);
 			//System.out.println(u.currentPos);
 		}
 		
@@ -119,19 +115,47 @@ public class BattleInfo {
 			u.setUnitDisplay(new Point(BattlefieldInfo[13][(key*2)-1].drawingPoint));
 			BattlefieldInfo[13][(key*2)-1].contains = CellEntity.UNIT;
 			BattlefieldInfo[13][(key*2)-1].unit = u;
-			BattleQueue.enqueue(u);
-			//System.out.println(u.unitID+", "+u.unitSize);
+			unsortedUnits.add(u);
 		}
-		/*
-		try {
+
+		Collections.sort(unsortedUnits, new Comparator<UnitInfo>()
+		{
+			@Override
+			public int compare(UnitInfo o1, UnitInfo o2)
+			{
+				int output = 0;
+				if(o1.unitType._initiative < o2.unitType._initiative)
+				{
+					output = 1;
+				}
+				else if(o1.unitType._initiative > o2.unitType._initiative)
+				{
+					output = -1;
+				}
+				else if(o1.unitType._initiative == o2.unitType._initiative)
+				{
+					output = 0;
+				}
+				return output;
+			}
+		});
+
+		for(UnitInfo i : unsortedUnits)
+		{
+			BattleQueue.enqueue(i);
+		}
+		try
+		{
 			activeUnit = BattleQueue.dequeue();
 			activeUnit.setAsActive();
-
-		} catch (InterruptedException e) {
-			e.printStackTrace();
+			nextActiveUnit = BattleQueue.dequeue();
 		}
-		*/
-		//activeUnit.unitDisplay.setAsActive();
+		catch (Exception ex)
+		{
+			ex.printStackTrace();
+		}
+
+
 	}
 	
 	/**
@@ -139,17 +163,24 @@ public class BattleInfo {
 	 */
 	public void SetNextActiveUnit()
 	{
-		if(activeUnit!=null)
-		{
-			BattleQueue.enqueue(activeUnit);
-			activeUnit.setAsNotActive();
-		}
 		try {
-			activeUnit = BattleQueue.dequeue();
+			activeUnit.setAsNotActive();
+			BattleQueue.enqueue(activeUnit);
+			if(nextActiveUnit!= null)
+			{
+				activeUnit = nextActiveUnit;
+			}
+			else
+			{
+				activeUnit = BattleQueue.dequeue();
+			}
 			activeUnit.setAsActive();
-		} catch (InterruptedException e) {
+			nextActiveUnit = BattleQueue.dequeue();
+		}
+		catch (InterruptedException e) {
 			System.out.println("BRAK JEDNOSTEK, BITWA SKONCZONA");
 			e.printStackTrace();
+
 		}
 	}
 
@@ -167,6 +198,17 @@ public class BattleInfo {
 				}
 			}
 			BattleQueue = newBattleQueue;
+			if(killedUnit.commander == UnitCommander.PLAYER1)
+			{
+				player1.removeFromArmy(killedUnit);
+				System.out.println(player1.getArmy());
+			}
+			else
+			{
+				player2.removeFromArmy(killedUnit);
+				System.out.println(player2.getArmy());
+			}
+
 		}
 		catch (Exception ex)
 		{

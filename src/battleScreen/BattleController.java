@@ -8,13 +8,14 @@ import java.util.HashMap;
 import java.util.List;
 
 //import battleDisplay.PathFinding;
+import Client.ClientThread;
 import dataClasses.*;
 import pathFinding.FindPath;
 
 import javax.swing.*;
 
 
-//TODO: usuwać martwe jednostki z armii boharterów, ogarnąć inicjatywe, zrobić koniec bitwy, ekran końcowy, panel z info(ew obrona i poddane sie)
+//TODO: AI,zrobić koniec bitwy, ekran końcowy, panel z info(ew obrona i poddane sie)
 /**
  * @author slivka
  * Klasa g��wna, kontroluje przep�yw informacji
@@ -23,20 +24,24 @@ public class BattleController {
 
 	private BattleInfo model;
 	private BattleView view;
+
+	private ClientThread clientThread;
 	
 	private int width = 808;
-	private int height = 586;
+	private int height = 664;
 
 	//IDENTYFIKACJA GRACZA
-	private UnitCommander me = UnitCommander.PLAYER1;
-	private boolean isMyTurn = true;
+	private UnitCommander me;
+	public boolean isMyTurn;
 		
-	public BattleController(int terrainType, HeroInfo Player1, HeroInfo Player2)
+	public BattleController(int terrainType, HeroInfo Player1, HeroInfo Player2, UnitCommander me, ClientThread parentThread)
 	{
 		this.model = new BattleInfo();
 		this.model.setPlayer1(Player1);
 		this.model.setPlayer2(Player2);
 		this.model.setTerraintype(terrainType);
+		this.clientThread = parentThread;
+		this.me = me;
 		this.view = new BattleView(width,height,this);
 
 	}
@@ -57,27 +62,25 @@ public class BattleController {
 
 //============================GET/SET==================================\\	
 	
-	public void SetPlayer1(HeroInfo heroInfo)
-	{
-		model.setPlayer1(heroInfo);
-	}
-	
-	public void SetPlayer2(HeroInfo heroInfo)
-	{
-		model.setPlayer2(heroInfo);
-	}
-	
 	public void SetSpectators(HeroInfo[] heroInfo)
 	{
 		model.setSpectators(heroInfo);
 	}
 
-	public void SetTerrain(int terrain)
-	{
-		model.setTerraintype(terrain);
-	}
-
 	public UnitCommander getMe() { return this.me; }
+
+	public boolean isNextMoveMine()
+	{
+
+		if(model.nextActiveUnit.commander.equals(me))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
 	
 //============================CONTROL==================================\\	
 	/**
@@ -98,11 +101,12 @@ public class BattleController {
 	 */
 	public void MoveUnit(Point targetCell)
 	{
-		if(isMyTurn)
-		{
+			if(isMyTurn)
+			{
+				clientThread.sendMoveInfo(targetCell);
+			}
 			view.clearUnitRange();
 			Point startingPoint = model.activeUnit.currentPos;
-
 			FindPath f = new FindPath(model.BattlefieldInfo, startingPoint, targetCell);
 			ArrayList<Point> path = f.generatePath();
 			System.out.println("===================");
@@ -112,17 +116,17 @@ public class BattleController {
 			}
 			model.BattlefieldInfo[model.activeUnit.currentPos.x][model.activeUnit.currentPos.y].contains = CellEntity.EMPTY;
 			model.BattlefieldInfo[model.activeUnit.currentPos.x][model.activeUnit.currentPos.y].unit = null;
-
 			model.BattlefieldInfo[targetCell.x][targetCell.y].contains = CellEntity.UNIT;
 			model.BattlefieldInfo[targetCell.x][targetCell.y].unit = model.activeUnit;
 			model.activeUnit.currentPos = targetCell;
 			view.moveUnit(model.BattlefieldInfo[targetCell.x][targetCell.y], path);
 			this.waitForAnimation(model.activeUnit,null);
-		}
+
 	}
 
 	public void AttackUnit(Point attackTarget, Point attackPosition)
 	{
+
 		view.clearUnitRange();
 		Point startingPoint = model.activeUnit.currentPos;
 
@@ -137,6 +141,7 @@ public class BattleController {
 		model.activeUnit.currentPos = attackPosition;
 		view.attackUnit(model.BattlefieldInfo[attackPosition.x][attackPosition.y], path);
 		this.waitForAnimation(model.activeUnit,attackTarget);
+
 	}
 
 	private void endAttackTurn(Point attackTarget)
@@ -218,12 +223,22 @@ public class BattleController {
 	{
 		model.SetNextActiveUnit();
 		ArrayList<Point> moveRange = model.getMoveRange();
-		debugSetMe();
+		//debugSetMe();
 		view.drawUnitRange(moveRange);
 	}
 
 	public BattlefieldCell[][] getBattlefieldInfo()
 	{
 		return model.BattlefieldInfo;
+	}
+
+	public void battleFlee()
+	{
+			System.out.println("DZIAŁA");
+	}
+
+	public void unitDefend()
+	{
+
 	}
 }

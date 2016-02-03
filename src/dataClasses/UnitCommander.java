@@ -5,5 +5,5 @@ package dataClasses;
  */
 public enum UnitCommander
 {
-    PLAYER1,PLAYER2,FREEARMY
+    PLAYER1,PLAYER2,PLAYER3,PLAYER4,FREEARMY
 }

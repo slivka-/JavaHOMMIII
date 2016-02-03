@@ -1,6 +1,7 @@
 package dataClasses;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.TreeMap;
 
 
@@ -27,7 +28,7 @@ public class HeroInfo {
 	/**
 	 * Dodaje jednostki do armii bohatera
 	 * @param position pozycja w armii(1-5)
-	 * @param unit oddzia³
+	 * @param unit oddziaï¿½
 	 */
 	public void addToArmy(int position, UnitInfo unit)
 	{
@@ -45,6 +46,19 @@ public class HeroInfo {
 	public void setArmy(HashMap<Integer, UnitInfo> hashMap) {
 		this.army = hashMap;
 	}
-	
+
+	public void removeFromArmy(UnitInfo unit)
+	{
+		Iterator<Integer> iterator = army.keySet().iterator();
+		while(iterator.hasNext())
+		{
+			Integer key = iterator.next();
+			if(army.get(key).equals(unit))
+			{
+				army.remove(key);
+				break;
+			}
+		}
+	}
 	
 }
