@@ -41,7 +41,7 @@ public class MapGrid extends JPanel{
 				
 				Image img = graphics.getRandomTileDefaultBackgroundImage();
 				//movementCost temporary set to 1- it should be set depending on background
-				Tile cell = new Tile(cellWidth, cellHeight, 1, img);
+				Tile cell = new Tile(cellWidth, cellHeight, 1, img, new Point(col, row));
 				add(cell, gbc);
 				cells[col][row] = cell;
 			}
@@ -203,7 +203,7 @@ public class MapGrid extends JPanel{
 				int _y = centerY + r - rows+1;
 				cells[_x][_y].setMapObject(new ImageIcon(chunks[count++]));
 				cells[_x][_y].setOccupied(true);
-				cells[_x][_y].setMapObject(mo);
+				cells[_x][_y].setMapObject(mo, new Point(_x, _y));
 				//cells[x][y].setType = town/mine/etc.
 				//cells[x][y].canMove = false //exception- center(true)
 				//or collect cells and put them in collection of object of i.e. town type
