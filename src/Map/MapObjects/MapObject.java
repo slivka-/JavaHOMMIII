@@ -15,6 +15,7 @@ public class MapObject {
     //protected Tile[] tiles;
     protected int ID;
     protected BufferedImage img;
+    protected TerrainPassability passability;
     //Player ownership
 
     protected static int generateID() {
@@ -34,6 +35,10 @@ public class MapObject {
     public void printInfo() {
         System.out.println("ID: " + ID);
         System.out.println("ObjectName: " + this.getClass().getName());
+    }
+
+    public TerrainPassability getPassability() {
+        return passability;
     }
 
     public static MapObject makeMapObject(String category, String object, BufferedImage img) {

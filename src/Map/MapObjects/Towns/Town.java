@@ -13,9 +13,6 @@ public abstract class Town extends MapObject {
     //gdzie pierwszy string to nazwa folderu, drugi to nazwa pliku
     //i po prostu tak pobierać poprzez town -> loch i mamy obrazek lochu
     //gorzej by było z animacją, wtedy np. Image[]
-    //private static File lochImageFile = new File("assets\\towns\\loch.png");
-    //private static File zamekImageFile = new File("assets\\towns\\zamek.png");
-    //private static File fortecaImageFile = new File("assets\\towns\\forteca.png");
 
     public static Town makeTown(String name, BufferedImage g) {
         Town t = null;

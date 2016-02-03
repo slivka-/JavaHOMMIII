@@ -1,5 +1,6 @@
 package Map;
 import Map.MapObjects.MapObject;
+import Map.MapObjects.TerrainPassability;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -16,8 +17,11 @@ public class Tile extends JLayeredPane{
 	private JLabel object;
 	private int ID = -1;
 	private MapObject mapObject;
-	
-	public Tile(int cellWidth, int cellHeight, int movementCost, Image img) {
+	private TerrainPassability passability;
+	private Point drawingPoint;
+	private Point firstDrawingPoint;
+
+	public Tile(int cellWidth, int cellHeight, int movementCost, Image img, Point drawingPoint) {
 		//super(new ImageIcon(img));
 		this.cellWidth = cellWidth;
 		this.cellHeight = cellHeight;
@@ -27,6 +31,8 @@ public class Tile extends JLayeredPane{
 		initializeBackground(img);
 		initializeMapObject();
 		isOccupied = false;
+		this.firstDrawingPoint = drawingPoint;
+		this.drawingPoint = drawingPoint;
 	}
 
 	public Tile(int cellWidth, int cellHeight, int movementCost, Image img, MapObject mapObject) {
@@ -63,9 +69,10 @@ public class Tile extends JLayeredPane{
 		updateUI();
 	}
 
-	public void setMapObject(MapObject mo) {
+	public void setMapObject(MapObject mo, Point drawingPoint) {
 		this.mapObject = mo;
 		this.ID = mo.getID();
+		this.drawingPoint = drawingPoint;
 	}
 
 	public void setMapObjectBorder(Border b) {
@@ -100,6 +107,7 @@ public class Tile extends JLayeredPane{
 	public void deleteMapObject() {
 		this.ID = -1;
 		this.setOccupied(false);
+		drawingPoint = firstDrawingPoint;
 		movementCost = 1;
 		object.setIcon(null);
 		object.revalidate();
@@ -110,4 +118,7 @@ public class Tile extends JLayeredPane{
 		return new Dimension(cellWidth, cellHeight);
 	}
 
+	public Point getDrawingPoint() {
+		return drawingPoint;
+	}
 }
