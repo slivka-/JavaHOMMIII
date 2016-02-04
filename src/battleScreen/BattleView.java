@@ -26,7 +26,8 @@ public class BattleView {
 	private MouseListener _mListener;
 	private MouseListener _aListener;
 	private MouseMotionListener _aDirectionListener;
-	
+	private JLabel infoBoxText;
+
 	public BattleView(int width, int height, BattleController mControl)
 	{
 		mainController = mControl;
@@ -114,6 +115,13 @@ public class BattleView {
 		infoBox.setVisible(true);
 		mainBattleInterface.add(infoBox);
 
+		infoBoxText = new JLabel();
+		infoBoxText.setBounds(100,586,592,50);
+		infoBoxText.setVisible(true);
+		infoBoxText.setForeground(Color.white);
+		infoBox.add(infoBoxText, -1);
+		infoBoxText.setText("BITWA ROZPOCZ\u0118TA");
+
 
 
 		//MOUSE LISTENERS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -128,26 +136,23 @@ public class BattleView {
 			public void mousePressed(MouseEvent e) {}
 			@Override
 			public void mouseExited(MouseEvent e) {
-				if(mainController.isMyTurn)
-				{
+
 					mainBattleFrame.setCursor(Cursor.getDefaultCursor());
-				}
+
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				if(mainController.isMyTurn)
-				{
+
 					mainBattleFrame.setCursor(moveCursor);
-				}
+
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if(mainController.isMyTurn)
-				{
+
 					RangeIndicator r = (RangeIndicator) e.getSource();
 					mainController.MoveUnit(r.location);
 					mainBattleFrame.setCursor(Cursor.getDefaultCursor());
-				}
+
 			}
 		};
 
@@ -156,8 +161,7 @@ public class BattleView {
 			@Override
 			public void mouseClicked(MouseEvent e)
 			{
-				if(mainController.isMyTurn)
-				{
+
 					RangeIndicator r = (RangeIndicator) e.getSource();
 					Point attackPosition = new Point();
 					switch (r.attackDirection)
@@ -177,7 +181,7 @@ public class BattleView {
 					}
 					mainController.AttackUnit(r.location, attackPosition);
 					mainBattleFrame.setCursor(Cursor.getDefaultCursor());
-				}
+
 			}
 
 			@Override
@@ -201,10 +205,7 @@ public class BattleView {
 			@Override
 			public void mouseExited(MouseEvent e)
 			{
-				if(mainController.isMyTurn)
-				{
 					mainBattleFrame.setCursor(Cursor.getDefaultCursor());
-				}
 			}
 		};
 
@@ -233,35 +234,66 @@ public class BattleView {
 			@Override
 			public void mouseMoved(MouseEvent e)
 			{
-				if(mainController.isMyTurn)
-				{
+
 					RangeIndicator r = (RangeIndicator) e.getSource();
 
 					if (e.getY() > 30 && e.getY() < 43 && e.getX() > 15 && e.getX() < 35 && r.location.y < 9)
 					{
-						mainBattleFrame.setCursor(swordDownCursor);
-						r.attackDirection = AttackDirection.DOWN;
+						Point p = new Point(r.location.x,r.location.y+1);
+						BattlefieldCell c = mainController.getBattlefieldCell(p);
+						if(c!=null)
+						{
+							if(c.contains == CellEntity.EMPTY || (p.x == mainController.getActiveUnitLocation().x && p.y == mainController.getActiveUnitLocation().y))
+							{
+								mainBattleFrame.setCursor(swordDownCursor);
+								r.attackDirection = AttackDirection.DOWN;
+							}
+						}
 					}
 
 					if (e.getY() > 0 && e.getY() < 13 && e.getX() > 15 && e.getX() < 35 && r.location.y > 0)
 					{
-						mainBattleFrame.setCursor(swordUpCursor);
-						r.attackDirection = AttackDirection.UP;
+						Point p = new Point(r.location.x,r.location.y-1);
+						BattlefieldCell c = mainController.getBattlefieldCell(p);
+						if(c!=null)
+						{
+							if(c.contains == CellEntity.EMPTY || (p.x == mainController.getActiveUnitLocation().x && p.y == mainController.getActiveUnitLocation().y))
+							{
+								mainBattleFrame.setCursor(swordUpCursor);
+								r.attackDirection = AttackDirection.UP;
+							}
+						}
 					}
 
 					if (e.getY() > 13 && e.getY() < 30 && e.getX() > 0 && e.getX() < 15 && r.location.x > 0)
 					{
-						mainBattleFrame.setCursor(swordLeftCursor);
-						r.attackDirection = AttackDirection.LEFT;
+						Point p = new Point(r.location.x-1,r.location.y);
+						BattlefieldCell c = mainController.getBattlefieldCell(p);
+						if(c!=null)
+						{
+							if (c.contains == CellEntity.EMPTY || (p.x == mainController.getActiveUnitLocation().x && p.y == mainController.getActiveUnitLocation().y))
+							{
+								mainBattleFrame.setCursor(swordLeftCursor);
+								r.attackDirection = AttackDirection.LEFT;
+							}
+						}
 					}
 
 					if (e.getY() > 13 && e.getY() < 30 && e.getX() > 35 && e.getX() < 50 && r.location.x < 13)
 					{
-						mainBattleFrame.setCursor(swordRightCursor);
-						r.attackDirection = AttackDirection.RIGHT;
+						Point p = new Point(r.location.x+1,r.location.y);
+						BattlefieldCell c = mainController.getBattlefieldCell(p);
+						if(c!=null)
+						{
+							if (c.contains == CellEntity.EMPTY || (p.x == mainController.getActiveUnitLocation().x && p.y == mainController.getActiveUnitLocation().y))
+							{
+								mainBattleFrame.setCursor(swordRightCursor);
+								r.attackDirection = AttackDirection.RIGHT;
+							}
+						}
 					}
 				}
-			}
+
 		};
 
 	}
@@ -357,5 +389,10 @@ public class BattleView {
 	{
 		UnitInfo uInfo = cell.unit;
 		uInfo.attackUnit(path);
+	}
+
+	public void setBattleText(String battleText)
+	{
+		this.infoBoxText.setText(battleText);
 	}
 }

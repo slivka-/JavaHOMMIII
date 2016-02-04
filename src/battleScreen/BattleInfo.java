@@ -184,16 +184,23 @@ public class BattleInfo {
 	{
 		try
 		{
-			Queue<UnitInfo> newBattleQueue = new Queue<UnitInfo>();
-			while (!BattleQueue.isEmpty())
+			if(nextActiveUnit != killedUnit)
 			{
-				UnitInfo i = BattleQueue.dequeue();
-				if (!i.equals(killedUnit))
+				Queue<UnitInfo> newBattleQueue = new Queue<UnitInfo>();
+				while (!BattleQueue.isEmpty())
 				{
-					newBattleQueue.enqueue(i);
+					UnitInfo i = BattleQueue.dequeue();
+					if (!i.equals(killedUnit))
+					{
+						newBattleQueue.enqueue(i);
+					}
 				}
+				BattleQueue = newBattleQueue;
 			}
-			BattleQueue = newBattleQueue;
+			else
+			{
+				nextActiveUnit = null;
+			}
 			if(killedUnit.commander == UnitCommander.PLAYER1)
 			{
 				player1.removeFromArmy(killedUnit);

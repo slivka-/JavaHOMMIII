@@ -17,6 +17,7 @@ public class UnitInfo {
 	public int woundedUnitHealth;
 	public UnitCommander commander;
 	private GraphicsPanel unitDisplay;
+	public int Defending;
 
 
 
@@ -26,6 +27,7 @@ public class UnitInfo {
 		this.unitType = type;
 		this.commander = commander;
 		this.woundedUnitHealth = 0;
+		this.Defending = 1;
 
 	}
 
@@ -47,12 +49,18 @@ public class UnitInfo {
 
 	public void setAsActive()
 	{
+		this.Defending = 1;
 		unitDisplay.setAsActive();
 	}
 
 	public void setAsNotActive()
 	{
 		unitDisplay.setAsNotActive();
+	}
+
+	public void setDefending()
+	{
+		this.Defending = 2;
 	}
 
 	public void updateUnitSize(int newUnitSize)

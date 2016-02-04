@@ -1,4 +1,4 @@
-package pathFinding;
+package Pathfinding;
 
 import java.awt.*;
 import java.util.*;

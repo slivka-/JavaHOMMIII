@@ -9,7 +9,7 @@ import java.util.List;
 
 //import battleDisplay.PathFinding;
 import dataClasses.*;
-import pathFinding.FindPath;
+import Pathfinding.FindPath;
 
 import javax.swing.*;
 
@@ -186,28 +186,34 @@ public class BattleController {
 	{
 		int attackerDamage = attacker.unitSize * attacker.unitType._attack;
 		int defenderHealth;
+		String battleText;
+
 		if(defender.woundedUnitHealth == 0)
 		{
-			defenderHealth = defender.unitSize * defender.unitType._health;
+			defenderHealth = (defender.unitSize) * defender.unitType._health;
 		}
 		else
 		{
-			defenderHealth = (defender.unitSize-1 * defender.unitType._health)+defender.woundedUnitHealth;
+			defenderHealth = ((defender.unitSize-1) * defender.unitType._health)+defender.woundedUnitHealth;
 		}
 
-		if(attackerDamage > defenderHealth)
+		if((int)Math.floor((double) attackerDamage / (double) defender.Defending) >= defenderHealth)
 		{
+			battleText = "Oddzia\u0142 "+attacker.unitType._name+" zaatakowa\u0142 oddzia\u0142 "+defender.unitType._name+", niszcz\u0105c go.";
+			view.setBattleText(battleText);
 			return null;
+
 		}
 		else
 		{
 			UnitInfo output = defender;
-			int remainingHealth = defenderHealth - attackerDamage;
+			int remainingHealth = defenderHealth - (int)Math.floor((double) attackerDamage / (double) defender.Defending);
 			int remainingUnits = (int)((double)remainingHealth/(double)defender.unitType._health);
 			int woundedUnitHealth = remainingHealth % defender.unitType._health;
 			output.updateUnitSize(remainingUnits);
 			output.woundedUnitHealth = woundedUnitHealth;
-
+			battleText = "<HTML>Oddzia\u0142 "+attacker.unitType._name+" zaatakowa\u0142 oddzia\u0142 "+defender.unitType._name+" zadaj\u0105c "+attackerDamage+" obra\u017Ce\u0144.<br/>Przy \u017Cyciu pozosta\u0142o "+remainingUnits+" jednostek.</HTML>";
+			view.setBattleText(battleText);
 			return output;
 		}
 	}
@@ -218,12 +224,32 @@ public class BattleController {
 		model.SetNextActiveUnit();
 		ArrayList<Point> moveRange = model.getMoveRange();
 		debugSetMe();
-		view.drawUnitRange(moveRange);
+		if(isMyTurn)
+		{
+			view.drawUnitRange(moveRange);
+		}
 	}
 
 	public BattlefieldCell[][] getBattlefieldInfo()
 	{
 		return model.BattlefieldInfo;
+	}
+
+	public BattlefieldCell getBattlefieldCell(Point p)
+	{
+		try
+		{
+			return model.BattlefieldInfo[p.x][p.y];
+		}
+		catch (NullPointerException ex)
+		{
+			return null;
+		}
+	}
+
+	public Point getActiveUnitLocation()
+	{
+		return model.activeUnit.currentPos;
 	}
 
 	public void battleFlee()
@@ -233,6 +259,10 @@ public class BattleController {
 
 	public void unitDefend()
 	{
+		view.clearUnitRange();
+		model.activeUnit.setDefending();
 
+		view.setBattleText("Oddzia\u0142 "+model.activeUnit.unitType._name+" broni si\u0119. (Otrzymywane obra\u017Cenia -50%)");
+		newTurn();
 	}
 }
