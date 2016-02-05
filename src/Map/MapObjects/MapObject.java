@@ -7,14 +7,19 @@ import Map.MapObjects.Miscellaneous.Misc;
 import Map.MapObjects.Resources.Resource;
 import Map.MapObjects.Towns.Town;
 
+import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
-public class MapObject {
+public class MapObject implements Serializable{
     protected static int availableID = 0;
 
     //protected Tile[] tiles;
     protected int ID;
-    protected BufferedImage img;
+    protected transient BufferedImage img;
     protected TerrainPassability passability;
     //Player ownership
 
@@ -61,5 +66,17 @@ public class MapObject {
         }
 
         return mapObject;
+    }
+
+    private void writeObject(ObjectOutputStream out) throws IOException
+    {
+        out.defaultWriteObject();
+        ImageIO.write(img,"png",out);
+    }
+
+    private void readObject(ObjectInputStream in) throws IOException,ClassNotFoundException
+    {
+        in.defaultReadObject();
+        img = ImageIO.read(in);
     }
 }

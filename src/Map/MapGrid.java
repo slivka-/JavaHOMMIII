@@ -9,6 +9,7 @@ import Map.MapObjects.MapObject;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.util.*;
 
 
 public class MapGrid extends JPanel{
@@ -47,6 +48,64 @@ public class MapGrid extends JPanel{
 			}
 		}
 		updateUI();
+	}
+
+	public void readSavedMap(SavedMap savedMap)
+	{
+		this.initializeGrid(savedMap.get_mapSize());
+		ArrayList<Point> usedPoints = new ArrayList<Point>();
+		this.cells = savedMap.get_cells();
+
+		for(Tile[] TileRow:cells)
+		{
+			for (Tile t:TileRow)
+			{
+				if(t.getCenterPosition()!= null)
+				{
+					int centerX = t.getCenterPosition().x;
+					int centerY = t.getCenterPosition().y;
+					boolean draw = true;
+					for (Point p : usedPoints)
+					{
+						if (p.x == centerX && p.y == centerY)
+						{
+							draw = false;
+						}
+					}
+					if (draw)
+					{
+						usedPoints.add(t.getCenterPosition());
+						t.printInfo();
+						System.out.println(t.getMapObject().getImage().toString());
+						BufferedImage chunks[] = ImageProcessor.divideImage(t.getMapObject().getImage(), cellWidth, cellHeight);
+						int rows = t.getMapObject().getImage().getHeight(null) / cellHeight;
+						int cols = t.getMapObject().getImage().getWidth(null) / cellWidth;
+						drawImageOnTiles(chunks, rows, cols, centerX, centerY, t.getMapObject());
+					}
+				}
+				t.updateUI();
+				t.revalidate();
+				t.repaint();
+			}
+		}
+		this.revalidate();
+		this.repaint();
+	}
+
+	public MapSize getMapSize()
+	{
+		if(rowCount == MapSize.SMALL.getValue())
+		{
+			return MapSize.SMALL;
+		}
+		else if(rowCount == MapSize.MEDIUM.getValue())
+		{
+			return MapSize.MEDIUM;
+		}
+		else
+		{
+			return MapSize.LARGE;
+		}
 	}
 /*
 	public void initializeGrid() {
@@ -204,6 +263,7 @@ public class MapGrid extends JPanel{
 				cells[_x][_y].setMapObject(new ImageIcon(chunks[count++]));
 				cells[_x][_y].setOccupied(true);
 				cells[_x][_y].setMapObject(mo, new Point(_x, _y));
+				cells[_x][_y].setCenterPosition(new Point(centerX,centerY));
 				//cells[x][y].setType = town/mine/etc.
 				//cells[x][y].canMove = false //exception- center(true)
 				//or collect cells and put them in collection of object of i.e. town type
@@ -211,6 +271,8 @@ public class MapGrid extends JPanel{
 		}
 		cells[centerX][centerY].setOccupied(false);
 	}
+
+
 
 	public void showHideGrid() {
 		if (isGridOn) {
@@ -222,7 +284,9 @@ public class MapGrid extends JPanel{
 			isGridOn = true;
 		}
 	}
-	
+
+	public Tile[][] getMapCells(){return this.cells;}
+
 	private void drawGrid() {
 		for (int row = 0; row < rowCount; ++row) {
 			for (int col = 0; col < colCount; ++col) {

@@ -5,9 +5,10 @@ import Map.MapObjects.TerrainPassability;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.io.Serializable;
 import java.util.Map;
 
-public class Tile extends JLayeredPane{
+public class Tile extends JLayeredPane implements Serializable{
 
 	private int cellWidth;
 	private int cellHeight;
@@ -20,6 +21,7 @@ public class Tile extends JLayeredPane{
 	private TerrainPassability passability;
 	private Point drawingPoint;
 	private Point firstDrawingPoint;
+	private Point centerPosition;
 
 	public Tile(int cellWidth, int cellHeight, int movementCost, Image img, Point drawingPoint) {
 		//super(new ImageIcon(img));
@@ -67,6 +69,11 @@ public class Tile extends JLayeredPane{
 	public void setMapObject(ImageIcon img) {
 		object.setIcon(img);
 		updateUI();
+	}
+
+	public MapObject getMapObject()
+	{
+		return this.mapObject;
 	}
 
 	public void setMapObject(MapObject mo, Point drawingPoint) {
@@ -120,5 +127,15 @@ public class Tile extends JLayeredPane{
 
 	public Point getDrawingPoint() {
 		return drawingPoint;
+	}
+
+	public Point getCenterPosition()
+	{
+		return centerPosition;
+	}
+
+	public void setCenterPosition(Point centerPosition)
+	{
+		this.centerPosition = centerPosition;
 	}
 }
