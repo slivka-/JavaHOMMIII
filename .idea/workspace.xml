@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a84184e7-9ef9-4486-ac6f-da6f5692ca5e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Map/SavedMap.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map/MapEditorMenuBar.java" afterPath="$PROJECT_DIR$/src/Map/MapEditorMenuBar.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map/MapGrid.java" afterPath="$PROJECT_DIR$/src/Map/MapGrid.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map/MapObjects/MapObject.java" afterPath="$PROJECT_DIR$/src/Map/MapObjects/MapObject.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map/Tile.java" afterPath="$PROJECT_DIR$/src/Map/Tile.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -36,12 +33,9 @@
       <file leaf-file-name="MapEditorMenuBar.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Map/MapEditorMenuBar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="679" max-vertical-offset="2278">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2244">
               <caret line="61" column="54" selection-start-line="61" selection-start-column="54" selection-end-line="61" selection-end-column="54" />
-              <folding>
-                <element signature="e#3802#3803#0" expanded="true" />
-                <element signature="e#3831#3832#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -49,11 +43,31 @@
       <file leaf-file-name="MapGrid.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Map/MapGrid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.30676693" vertical-offset="510" max-vertical-offset="5457">
-              <caret line="52" column="4" selection-start-line="52" selection-start-column="4" selection-end-line="92" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.54382825" vertical-offset="1039" max-vertical-offset="5695">
+              <caret line="89" column="62" selection-start-line="89" selection-start-column="62" selection-end-line="89" selection-end-column="62" />
               <folding>
-                <element signature="e#1502#1509#0" expanded="true" />
+                <element signature="e#1721#1728#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestClass.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/TestClass.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MapGridContainer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Map/MapGridContainer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1173">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -61,17 +75,12 @@
       <file leaf-file-name="Tile.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Map/Tile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1426" max-vertical-offset="2142">
-              <caret line="139" column="5" selection-start-line="139" selection-start-column="5" selection-end-line="139" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1049" max-vertical-offset="2091">
+              <caret line="95" column="5" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2152#2153#0" expanded="true" />
-                <element signature="e#2180#2181#0" expanded="true" />
+                <element signature="method#printInfo#0;class#Tile#0" expanded="false" />
                 <element signature="method#deleteMapObject#0;class#Tile#0" expanded="false" />
-                <element signature="e#3169#3170#0" expanded="true" />
-                <element signature="e#3197#3198#0" expanded="true" />
-                <element signature="e#3254#3255#0" expanded="true" />
-                <element signature="e#3297#3298#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -80,11 +89,9 @@
       <file leaf-file-name="MapObject.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Map/MapObjects/MapObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="168" max-vertical-offset="833">
-              <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-              <folding>
-                <element signature="method#makeMapObject#0;class#MapObject#0" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1173">
+              <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -138,9 +145,9 @@
         <option value="$PROJECT_DIR$/src/testP/TestingClass.java" />
         <option value="$PROJECT_DIR$/src/Map/MapObjects/SerializableMapObject.java" />
         <option value="$PROJECT_DIR$/src/Map/MapObjects/MapObject.java" />
-        <option value="$PROJECT_DIR$/src/Map/Tile.java" />
         <option value="$PROJECT_DIR$/src/Map/SavedMap.java" />
         <option value="$PROJECT_DIR$/src/Map/MapEditorMenuBar.java" />
+        <option value="$PROJECT_DIR$/src/Map/Tile.java" />
         <option value="$PROJECT_DIR$/src/Map/MapGrid.java" />
       </list>
     </option>
@@ -179,6 +186,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -281,8 +290,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -647,11 +654,12 @@
       <workItem from="1454527525542" duration="1386000" />
       <workItem from="1454591486439" duration="5980000" />
       <workItem from="1454679834176" duration="7641000" />
+      <workItem from="1454692681258" duration="1227000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125792000" />
+    <option name="totallyTimeSpent" value="127019000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
@@ -668,7 +676,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22483222" sideWeight="0.46760392" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34340045" sideWeight="0.46760392" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14792176" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -788,18 +796,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="1156">
           <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#isNextMoveMine#0;class#BattleController#0" expanded="false" />
-            <element signature="method#BattleInit#0;class#BattleController#0" expanded="false" />
-            <element signature="method#MoveUnit#0;class#BattleController#0" expanded="false" />
-            <element signature="method#AttackUnit#0;class#BattleController#0" expanded="false" />
-            <element signature="method#endAttackTurn#0;class#BattleController#0" expanded="false" />
-            <element signature="method#waitForAnimation#0;class#BattleController#0" expanded="false" />
-            <element signature="class#4633:4953" expanded="false" />
-            <element signature="method#newTurn#0;class#BattleController#0" expanded="false" />
-            <element signature="method#getBattlefieldCell#0;class#BattleController#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -807,14 +803,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="493">
           <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding>
-            <element signature="method#setUnitDisplay#0;class#UnitInfo#0" expanded="false" />
-            <element signature="e#1108#1109#0" expanded="false" />
-            <element signature="e#1133#1134#0" expanded="false" />
-            <element signature="method#updateUnitSize#0;class#UnitInfo#0" expanded="false" />
-            <element signature="e#1521#1522#0" expanded="false" />
-            <element signature="e#1568#1569#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -822,14 +810,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2890">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#compare#0;class#2922:3335" expanded="false" />
-            <element signature="method#SetNextActiveUnit#0;class#BattleInfo#0" expanded="false" />
-            <element signature="method#deleteUnitFromQueue#0;class#BattleInfo#0" expanded="false" />
-            <element signature="e#5358#5359#0" expanded="false" />
-            <element signature="e#5387#5388#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -837,29 +817,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1700" max-vertical-offset="2142">
           <caret line="116" column="39" selection-start-line="116" selection-start-column="39" selection-end-line="116" selection-end-column="39" />
-          <folding>
-            <element signature="class#1958:2307" expanded="false" />
-            <element signature="class#2499:2848" expanded="false" />
-            <element signature="class#3506:4297" expanded="false" />
-            <element signature="method#mouseExited#0;class#3506:4297" expanded="false" />
-            <element signature="method#mouseEntered#0;class#3506:4297" expanded="false" />
-            <element signature="method#mouseClicked#0;class#3506:4297" expanded="false" />
-            <element signature="class#4319:5388" expanded="false" />
-            <element signature="method#mouseClicked#0;class#4319:5388" expanded="false" />
-            <element signature="method#mousePressed#0;class#4319:5388" expanded="false" />
-            <element signature="method#mouseReleased#0;class#4319:5388" expanded="false" />
-            <element signature="method#mouseEntered#0;class#4319:5388" expanded="false" />
-            <element signature="class#5419:8496" expanded="false" />
-            <element signature="method#mouseMoved#0;class#5419:8496" expanded="false" />
-            <element signature="method#InitializeBattlefield#0;class#BattleView#0" expanded="false" />
-            <element signature="method#clearUnitRange#0;class#BattleView#0" expanded="false" />
-            <element signature="method#drawUnitRange#0;class#BattleView#0" expanded="false" />
-            <element signature="docComment;method#moveUnit#0;class#BattleView#0" expanded="false" />
-            <element signature="method#moveUnit#0;class#BattleView#0" expanded="false" />
-            <element signature="method#attackUnit#0;class#BattleView#0" expanded="false" />
-            <element signature="e#10543#10544#0" expanded="false" />
-            <element signature="e#10586#10587#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -874,7 +831,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
           <caret line="0" column="20" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -948,11 +904,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1020">
           <caret line="58" column="22" selection-start-line="58" selection-start-column="22" selection-end-line="58" selection-end-column="22" />
-          <folding>
-            <element signature="method#HeroInfo#0;class#HeroInfo#0" expanded="false" />
-            <element signature="e#876#877#0" expanded="false" />
-            <element signature="e#902#903#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1013,7 +964,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
           <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1061,14 +1011,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2089" max-vertical-offset="3332">
           <caret line="183" column="0" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#compare#0;class#2922:3335" expanded="false" />
-            <element signature="method#SetNextActiveUnit#0;class#BattleInfo#0" expanded="false" />
-            <element signature="method#deleteUnitFromQueue#0;class#BattleInfo#0" expanded="false" />
-            <element signature="e#5358#5359#0" expanded="false" />
-            <element signature="e#5387#5388#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1076,22 +1018,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="1190">
           <caret line="62" column="26" selection-start-line="62" selection-start-column="26" selection-end-line="62" selection-end-column="26" />
-          <folding>
-            <element signature="method#setUnitDisplay#0;class#UnitInfo#0" expanded="false" />
-            <element signature="e#1108#1109#0" expanded="false" />
-            <element signature="e#1133#1134#0" expanded="false" />
-            <element signature="method#updateUnitSize#0;class#UnitInfo#0" expanded="false" />
-            <element signature="e#1521#1522#0" expanded="false" />
-            <element signature="e#1568#1569#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TestClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1099,18 +1025,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1850" max-vertical-offset="2567">
           <caret line="264" column="86" selection-start-line="264" selection-start-column="86" selection-end-line="264" selection-end-column="91" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#isNextMoveMine#0;class#BattleController#0" expanded="false" />
-            <element signature="method#BattleInit#0;class#BattleController#0" expanded="false" />
-            <element signature="method#MoveUnit#0;class#BattleController#0" expanded="false" />
-            <element signature="method#AttackUnit#0;class#BattleController#0" expanded="false" />
-            <element signature="method#endAttackTurn#0;class#BattleController#0" expanded="false" />
-            <element signature="method#waitForAnimation#0;class#BattleController#0" expanded="false" />
-            <element signature="class#4633:4953" expanded="false" />
-            <element signature="method#newTurn#0;class#BattleController#0" expanded="false" />
-            <element signature="method#getBattlefieldCell#0;class#BattleController#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1118,29 +1032,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1191" max-vertical-offset="2142">
           <caret line="122" column="48" selection-start-line="122" selection-start-column="48" selection-end-line="122" selection-end-column="48" />
-          <folding>
-            <element signature="class#1958:2307" expanded="false" />
-            <element signature="class#2499:2848" expanded="false" />
-            <element signature="class#3506:4297" expanded="false" />
-            <element signature="method#mouseExited#0;class#3506:4297" expanded="false" />
-            <element signature="method#mouseEntered#0;class#3506:4297" expanded="false" />
-            <element signature="method#mouseClicked#0;class#3506:4297" expanded="false" />
-            <element signature="class#4319:5388" expanded="false" />
-            <element signature="method#mouseClicked#0;class#4319:5388" expanded="false" />
-            <element signature="method#mousePressed#0;class#4319:5388" expanded="false" />
-            <element signature="method#mouseReleased#0;class#4319:5388" expanded="false" />
-            <element signature="method#mouseEntered#0;class#4319:5388" expanded="false" />
-            <element signature="class#5419:8496" expanded="false" />
-            <element signature="method#mouseMoved#0;class#5419:8496" expanded="false" />
-            <element signature="method#InitializeBattlefield#0;class#BattleView#0" expanded="false" />
-            <element signature="method#clearUnitRange#0;class#BattleView#0" expanded="false" />
-            <element signature="method#drawUnitRange#0;class#BattleView#0" expanded="false" />
-            <element signature="docComment;method#moveUnit#0;class#BattleView#0" expanded="false" />
-            <element signature="method#moveUnit#0;class#BattleView#0" expanded="false" />
-            <element signature="method#attackUnit#0;class#BattleView#0" expanded="false" />
-            <element signature="e#10543#10544#0" expanded="false" />
-            <element signature="e#10586#10587#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1148,7 +1039,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34256056" vertical-offset="94" max-vertical-offset="1139">
           <caret line="29" column="48" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1172,15 +1062,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.098981075" vertical-offset="0" max-vertical-offset="687">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Map/MapGridContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1173">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1218,50 +1099,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Map/MapObjects/MapObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="1496">
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Map/MapEditorMenuBar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="679" max-vertical-offset="2278">
           <caret line="61" column="54" selection-start-line="61" selection-start-column="54" selection-end-line="61" selection-end-column="54" />
-          <folding>
-            <element signature="e#3802#3803#0" expanded="true" />
-            <element signature="e#3831#3832#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Map/MapObjects/MapObject.java">
+    <entry file="file://$PROJECT_DIR$/src/TestClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="833">
-          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-          <folding>
-            <element signature="method#makeMapObject#0;class#MapObject#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Map/MapGridContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1173">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Map/Tile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1353" max-vertical-offset="2142">
-          <caret line="139" column="5" selection-start-line="139" selection-start-column="5" selection-end-line="139" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1049" max-vertical-offset="2091">
+          <caret line="95" column="5" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2152#2153#0" expanded="true" />
-            <element signature="e#2180#2181#0" expanded="true" />
+            <element signature="method#printInfo#0;class#Tile#0" expanded="false" />
             <element signature="method#deleteMapObject#0;class#Tile#0" expanded="false" />
-            <element signature="e#3169#3170#0" expanded="true" />
-            <element signature="e#3197#3198#0" expanded="true" />
-            <element signature="e#3254#3255#0" expanded="true" />
-            <element signature="e#3297#3298#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Map/MapGrid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30676693" vertical-offset="510" max-vertical-offset="5457">
-          <caret line="52" column="4" selection-start-line="52" selection-start-column="4" selection-end-line="92" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.54382825" vertical-offset="1039" max-vertical-offset="5695">
+          <caret line="89" column="62" selection-start-line="89" selection-start-column="62" selection-end-line="89" selection-end-column="62" />
           <folding>
-            <element signature="e#1502#1509#0" expanded="true" />
+            <element signature="e#1721#1728#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -41,7 +41,6 @@ public class MapGrid extends JPanel{
 				gbc.gridy = row;
 				
 				Image img = graphics.getRandomTileDefaultBackgroundImage();
-				//movementCost temporary set to 1- it should be set depending on background
 				Tile cell = new Tile(cellWidth, cellHeight, 1, img, new Point(col, row));
 				add(cell, gbc);
 				cells[col][row] = cell;
@@ -50,12 +49,26 @@ public class MapGrid extends JPanel{
 		updateUI();
 	}
 
+	private void reloadCells()
+	{
+		removeAll();
+		GridBagConstraints gbc = new GridBagConstraints();
+		for (int col = 0; col < colCount; ++col) {
+			for  (int row = 0; row < rowCount; ++row){
+				gbc.gridx = col;
+				gbc.gridy = row;
+      			add(cells[col][row],gbc);
+			}
+		}
+		this.updateUI();
+	}
+
 	public void readSavedMap(SavedMap savedMap)
 	{
 		this.initializeGrid(savedMap.get_mapSize());
 		ArrayList<Point> usedPoints = new ArrayList<Point>();
 		this.cells = savedMap.get_cells();
-
+		reloadCells();
 		for(Tile[] TileRow:cells)
 		{
 			for (Tile t:TileRow)
@@ -75,8 +88,6 @@ public class MapGrid extends JPanel{
 					if (draw)
 					{
 						usedPoints.add(t.getCenterPosition());
-						t.printInfo();
-						System.out.println(t.getMapObject().getImage().toString());
 						BufferedImage chunks[] = ImageProcessor.divideImage(t.getMapObject().getImage(), cellWidth, cellHeight);
 						int rows = t.getMapObject().getImage().getHeight(null) / cellHeight;
 						int cols = t.getMapObject().getImage().getWidth(null) / cellWidth;
@@ -90,6 +101,9 @@ public class MapGrid extends JPanel{
 		}
 		this.revalidate();
 		this.repaint();
+		Container m = this.getParent();
+		m.revalidate();
+		m.repaint();
 	}
 
 	public MapSize getMapSize()

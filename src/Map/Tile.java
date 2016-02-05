@@ -68,7 +68,13 @@ public class Tile extends JLayeredPane implements Serializable{
 
 	public void setMapObject(ImageIcon img) {
 		object.setIcon(img);
-		updateUI();
+		object.setVisible(true);
+		object.revalidate();
+		object.repaint();
+		object.updateUI();
+		this.revalidate();
+		this.repaint();
+		this.updateUI();
 	}
 
 	public MapObject getMapObject()
@@ -80,6 +86,13 @@ public class Tile extends JLayeredPane implements Serializable{
 		this.mapObject = mo;
 		this.ID = mo.getID();
 		this.drawingPoint = drawingPoint;
+		object.setVisible(true);
+		object.revalidate();
+		object.repaint();
+		object.updateUI();
+		this.revalidate();
+		this.repaint();
+		this.updateUI();
 	}
 
 	public void setMapObjectBorder(Border b) {
