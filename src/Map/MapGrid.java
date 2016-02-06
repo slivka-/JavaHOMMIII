@@ -4,8 +4,10 @@ import javax.swing.border.MatteBorder;
 
 import GraphicsProcessing.Graphics;
 import GraphicsProcessing.ImageProcessor;
+import HeroDisplay.HeroDisplayPanel;
 import ImageSelection.ImageSelectionBox;
 import Map.MapObjects.MapObject;
+import Map.MapObjects.Towns.Loch;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -23,10 +25,31 @@ public class MapGrid extends JPanel{
 	private Graphics graphics;
 	private ImageSelectionBox isb;
 
+
+	/**
+	 * Constructor for editor mode
+	 * @param g
+	 * @param isb
+	 */
 	public MapGrid(Graphics g, ImageSelectionBox isb){
 		this.graphics = g;
 		this.isb = isb;
-		setLayout(new GridBagLayout());
+		//setLayout(new GridBagLayout());
+		setLayout(null);
+
+	}
+
+	/**
+	 * Constructor for game mode
+	 * @param g
+	 */
+	public MapGrid(Graphics g)
+	{
+		this.graphics = g;
+		this.isb = null;
+		//setLayout(new GridBagLayout());
+		setLayout(null);
+
 	}
 	
 	public void initializeGrid(MapSize size) {
@@ -34,15 +57,16 @@ public class MapGrid extends JPanel{
 		isGridOn = false;
 		rowCount = colCount = size.getValue();
 		cells = new Tile[colCount][rowCount];
-		GridBagConstraints gbc = new GridBagConstraints();	
+		//GridBagConstraints gbc = new GridBagConstraints();
 		for (int col = 0; col < colCount; ++col) {
 			for  (int row = 0; row < rowCount; ++row){
-				gbc.gridx = col;
-				gbc.gridy = row;
+				//gbc.gridx = col;
+				//gbc.gridy = row;
 				
 				Image img = graphics.getRandomTileDefaultBackgroundImage();
 				Tile cell = new Tile(cellWidth, cellHeight, 1, img, new Point(col, row));
-				add(cell, gbc);
+				cell.setBounds(col*32,row*32,32,32);
+				add(cell);
 				cells[col][row] = cell;
 			}
 		}
@@ -52,58 +76,50 @@ public class MapGrid extends JPanel{
 	private void reloadCells()
 	{
 		removeAll();
-		GridBagConstraints gbc = new GridBagConstraints();
+		//GridBagConstraints gbc = new GridBagConstraints();
 		for (int col = 0; col < colCount; ++col) {
 			for  (int row = 0; row < rowCount; ++row){
-				gbc.gridx = col;
-				gbc.gridy = row;
-      			add(cells[col][row],gbc);
+				//gbc.gridx = col;
+				//gbc.gridy = row;
+				cells[col][row].setBounds(col*32,row*32,32, 32);
+				add(cells[col][row]);
+				if(cells[col][row].getOccupied() == false && cells[col][row].getMapObject()!= null)
+				{
+					if(cells[col][row].getMapObject().getClass().equals(new Loch(null).getClass()))
+					{
+						Point p = cells[col][row].getDrawingPoint();
+						HeroDisplayPanel hero = new HeroDisplayPanel(7);
+						hero.setBounds(p.x*32, p.y*32, 96, 64);
+						hero.setVisible(true);
+						add(hero);
+						System.out.println(p);
+					}
+				}
 			}
 		}
 		this.updateUI();
 	}
 
+	public void drawHeroRange()
+	{
+
+	}
+
 	public void readSavedMap(SavedMap savedMap)
 	{
 		this.initializeGrid(savedMap.get_mapSize());
-		ArrayList<Point> usedPoints = new ArrayList<Point>();
 		this.cells = savedMap.get_cells();
 		reloadCells();
-		for(Tile[] TileRow:cells)
-		{
-			for (Tile t:TileRow)
-			{
-				if(t.getCenterPosition()!= null)
-				{
-					int centerX = t.getCenterPosition().x;
-					int centerY = t.getCenterPosition().y;
-					boolean draw = true;
-					for (Point p : usedPoints)
-					{
-						if (p.x == centerX && p.y == centerY)
-						{
-							draw = false;
-						}
-					}
-					if (draw)
-					{
-						usedPoints.add(t.getCenterPosition());
-						BufferedImage chunks[] = ImageProcessor.divideImage(t.getMapObject().getImage(), cellWidth, cellHeight);
-						int rows = t.getMapObject().getImage().getHeight(null) / cellHeight;
-						int cols = t.getMapObject().getImage().getWidth(null) / cellWidth;
-						drawImageOnTiles(chunks, rows, cols, centerX, centerY, t.getMapObject());
-					}
-				}
-				t.updateUI();
-				t.revalidate();
-				t.repaint();
-			}
-		}
 		this.revalidate();
 		this.repaint();
 		Container m = this.getParent();
 		m.revalidate();
 		m.repaint();
+	}
+
+	public void drawHeroes()
+	{
+
 	}
 
 	public MapSize getMapSize()
@@ -121,6 +137,7 @@ public class MapGrid extends JPanel{
 			return MapSize.LARGE;
 		}
 	}
+
 /*
 	public void initializeGrid() {
 		removeAll();
@@ -188,31 +205,35 @@ public class MapGrid extends JPanel{
 	public void changeCellImage(int x, int y) {
 		//powinno być jakieś sprawdzanie jaki to object
 		//get object
-		String category = isb.getSelectedCategory();
-		String name = isb.getSelectedImageName();
-		if (category == null || name == null) {
-			System.out.println("Brak obrazka");
-			return;
-		}
-		else {
-			BufferedImage newImg = isb.getSelectedImage();
-			MapObject mo = MapObject.makeMapObject(category, name, newImg);
-			//Image newImg = mo.getImage();
-			System.out.println("Nazwa obrazka: " + isb.getSelectedImageName());
-			BufferedImage chunks[] = ImageProcessor.divideImage(newImg, cellWidth, cellHeight);
-
-			int rows = newImg.getHeight(null) / cellHeight;
-			int cols = newImg.getWidth(null) / cellWidth;
-			int centerX = x / cellWidth;
-			int centerY = y / cellHeight;
-
-			if(!isImageWithinBonds(rows, cols, centerX, centerY))
+		if(isb!=null)
+		{
+			String category = isb.getSelectedCategory();
+			String name = isb.getSelectedImageName();
+			if (category == null || name == null)
+			{
+				System.out.println("Brak obrazka");
 				return;
+			} else
+			{
+				BufferedImage newImg = isb.getSelectedImage();
+				MapObject mo = MapObject.makeMapObject(category, name, newImg);
+				//Image newImg = mo.getImage();
+				System.out.println("Nazwa obrazka: " + isb.getSelectedImageName());
+				BufferedImage chunks[] = ImageProcessor.divideImage(newImg, cellWidth, cellHeight);
 
-			if(areTilesOccupied(rows, cols, centerX, centerY))
-				return;
+				int rows = newImg.getHeight(null) / cellHeight;
+				int cols = newImg.getWidth(null) / cellWidth;
+				int centerX = x / cellWidth;
+				int centerY = y / cellHeight;
 
-			drawImageOnTiles(chunks, rows, cols, centerX, centerY, mo);
+				if (!isImageWithinBonds(rows, cols, centerX, centerY))
+					return;
+
+				if (areTilesOccupied(rows, cols, centerX, centerY))
+					return;
+
+				drawImageOnTiles(chunks, rows, cols, centerX, centerY, mo);
+			}
 		}
 	}
 

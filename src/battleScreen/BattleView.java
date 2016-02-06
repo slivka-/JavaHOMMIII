@@ -6,6 +6,7 @@ import java.util.*;
 
 import javax.swing.*;
 
+import HeroDisplay.HeroDisplayPanel;
 import battleDisplay.*;
 import dataClasses.BattlefieldCell;
 import dataClasses.CellEntity;
@@ -344,6 +345,7 @@ public class BattleView {
 
 	public void drawUnitRange(ArrayList<Point> range)
 	{
+
 
 		for(Point p : range)
 		{

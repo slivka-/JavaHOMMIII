@@ -25,6 +25,7 @@ public class Tile extends JLayeredPane implements Serializable{
 
 	public Tile(int cellWidth, int cellHeight, int movementCost, Image img, Point drawingPoint) {
 		//super(new ImageIcon(img));
+		this.setLayout(null);
 		this.cellWidth = cellWidth;
 		this.cellHeight = cellHeight;
 		this.movementCost = movementCost;
@@ -38,6 +39,7 @@ public class Tile extends JLayeredPane implements Serializable{
 	}
 
 	public Tile(int cellWidth, int cellHeight, int movementCost, Image img, MapObject mapObject) {
+		this.setLayout(null);
 		this.cellWidth = cellWidth;
 		this.cellHeight = cellHeight;
 		this.movementCost = movementCost;

@@ -7,34 +7,13 @@ import Map.MapGrid;
 import Map.MapGridContainer;
 import Map.MapSize;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 
 public class TestClass {
 
 	public static void main(String[] args) {
-		
-		Graphics g = new Graphics();		
-		
-		ImageSelectionBox isb = new ImageSelectionBox(g.getListImages());
-		FolderImageBox fib = new FolderImageBox();
-		fib.setDirectoriesNames(g.getAllDirectoriesName());
-		ImageSelectionController isc = new ImageSelectionController(isb, fib);
-
-		ImageFolderComponent imgFolders = new ImageFolderComponent(fib, isb);
-		
-		MapGrid map = new MapGrid(g, isb);
-
-		map.initializeGrid(MapSize.SMALL);
-		//map.initializeGrid();
-
-		MapEditorMenuBar menuBar = new MapEditorMenuBar(map);
-		MapGridContainer mgc = new MapGridContainer(map);
-		
-		final DrawGUI draw = new DrawGUI(mgc, menuBar, imgFolders);
-		
-		SwingUtilities.invokeLater(new Runnable() {
-			public void run() {
-				draw.drawAndShowMap();
-			}
-		});
+			MainMenu.showMainMenu();
 	}
 }
