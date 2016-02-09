@@ -1,5 +1,7 @@
 package testP;
 
+import Map.MapObjects.Towns.Loch;
+import Map.MapObjects.Towns.Zamek;
 import dataClasses.HeroInfo;
 import dataClasses.UnitCommander;
 import dataClasses.UnitInfo;
@@ -16,8 +18,8 @@ public class TestingClass {
 
 
 
-		HeroInfo player1 = new HeroInfo();
-		HeroInfo player2 = new HeroInfo();
+		HeroInfo player1 = new HeroInfo("Zbyszek",new Loch(null));
+		HeroInfo player2 = new HeroInfo("Stefan",new Zamek(null));
 		
 		UnitType c1 = new UnitType("Rycerz","crusader","castle",10,10,1);
 		UnitType c2 = new UnitType("Halabardier","halberdier","castle",10,10,5);

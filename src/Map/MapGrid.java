@@ -8,13 +8,16 @@ import HeroDisplay.HeroDisplayPanel;
 import ImageSelection.ImageSelectionBox;
 import Map.MapObjects.MapObject;
 import Map.MapObjects.Towns.Loch;
+import dataClasses.HeroInfo;
 
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.util.*;
 
 
-public class MapGrid extends JPanel{
+public class MapGrid extends JLayeredPane{
 	
 	private int rowCount;
 	private int colCount;
@@ -24,6 +27,8 @@ public class MapGrid extends JPanel{
 	private boolean isGridOn = false;
 	private Graphics graphics;
 	private ImageSelectionBox isb;
+
+	private MouseListener listener;
 
 
 	/**
@@ -36,6 +41,7 @@ public class MapGrid extends JPanel{
 		this.isb = isb;
 		//setLayout(new GridBagLayout());
 		setLayout(null);
+		this.listener = null;
 
 	}
 
@@ -49,6 +55,41 @@ public class MapGrid extends JPanel{
 		this.isb = null;
 		//setLayout(new GridBagLayout());
 		setLayout(null);
+		this.listener = new MouseListener()
+		{
+			Toolkit toolkit = Toolkit.getDefaultToolkit();
+			Image moveImage = toolkit.getImage("assets/cursors/move.png");
+			Cursor moveCursor = toolkit.createCustomCursor(moveImage,new Point(12,12),"img");
+			@Override
+			public void mouseClicked(MouseEvent e)
+			{
+				//TODO: odpalac metode chodzenia przez kontroler
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e)
+			{
+
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e)
+			{
+
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e)
+			{
+				setCursor(moveCursor);
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e)
+			{
+				setCursor(Cursor.getDefaultCursor());
+			}
+		};
 
 	}
 	
@@ -67,6 +108,7 @@ public class MapGrid extends JPanel{
 				Tile cell = new Tile(cellWidth, cellHeight, 1, img, new Point(col, row));
 				cell.setBounds(col*32,row*32,32,32);
 				add(cell);
+				this.setLayer(cell,50);
 				cells[col][row] = cell;
 			}
 		}
@@ -76,33 +118,85 @@ public class MapGrid extends JPanel{
 	private void reloadCells()
 	{
 		removeAll();
-		//GridBagConstraints gbc = new GridBagConstraints();
 		for (int col = 0; col < colCount; ++col) {
 			for  (int row = 0; row < rowCount; ++row){
-				//gbc.gridx = col;
-				//gbc.gridy = row;
 				cells[col][row].setBounds(col*32,row*32,32, 32);
-				add(cells[col][row]);
-				if(cells[col][row].getOccupied() == false && cells[col][row].getMapObject()!= null)
-				{
-					if(cells[col][row].getMapObject().getClass().equals(new Loch(null).getClass()))
-					{
-						Point p = cells[col][row].getDrawingPoint();
-						HeroDisplayPanel hero = new HeroDisplayPanel(7);
-						hero.setBounds(p.x*32, p.y*32, 96, 64);
-						hero.setVisible(true);
-						add(hero);
-						System.out.println(p);
-					}
-				}
+				this.add(cells[col][row]);
+				this.setLayer(cells[col][row],50);
 			}
 		}
 		this.updateUI();
 	}
 
-	public void drawHeroRange()
+	public MouseListener getMouseListener()
 	{
+		return this.listener;
+	}
 
+	
+
+	public void drawHeroRange(Point currentLocation, int range, MouseListener listener)
+	{
+		int minX = 0;
+		int maxX = 0;
+		int minY = 0;
+		int maxY = 0;
+
+		if(currentLocation.x - range>0)
+		{
+			minX = currentLocation.x - range;
+		}
+		else
+		{
+			minX = 0;
+		}
+
+		if(currentLocation.x + range<rowCount)
+		{
+			maxX = currentLocation.x + range;
+		}
+		else
+		{
+			maxX = rowCount;
+		}
+
+		if(currentLocation.y - range>0)
+		{
+			minY = currentLocation.y - range;
+		}
+		else
+		{
+			minY = 0;
+		}
+
+		if(currentLocation.y + range<colCount)
+		{
+			maxY = currentLocation.y + range;
+		}
+		else
+		{
+			maxY = colCount;
+		}
+
+		ArrayList<Point> moveRange = new ArrayList<Point>();
+		for(int x=minX;x<maxX;x++)
+		{
+			for(int y=minY;y<maxY;y++)
+			{
+				int distance = Math.abs(cells[x][y].getDrawingPoint().x - currentLocation.x) + Math.abs(cells[x][y].getDrawingPoint().y - currentLocation.y);
+				if(distance <= range && !cells[x][y].getOccupied())
+				{
+					moveRange.add(new Point(x,y));
+				}
+			}
+		}
+		for(Point p : moveRange)
+		{
+			MapRangeIndicator mri = new MapRangeIndicator(p,listener);
+			mri.setVisible(true);
+			this.add(mri);
+			this.setLayer(mri,1000);
+		}
 	}
 
 	public void readSavedMap(SavedMap savedMap)
@@ -117,9 +211,32 @@ public class MapGrid extends JPanel{
 		m.repaint();
 	}
 
-	public void drawHeroes()
+	public void drawHeroes(ArrayList<HeroInfo> heroes)
 	{
+		for (int col = 0; col < colCount; ++col)
+		{
+			for (int row = 0; row < rowCount; ++row)
+			{
+				if (cells[col][row].getOccupied() == false && cells[col][row].getMapObject() != null)
+				{
+					for(HeroInfo hero : heroes){
+						if (cells[col][row].getMapObject().getClass().equals(hero.homeTown.getClass()))
+						{
 
+							Point p = cells[col][row].getDrawingPoint();
+							hero.currentPosition = p;
+							hero.heroDisplay = new HeroDisplayPanel(7);
+							HeroDisplayPanel HeroD = hero.heroDisplay;
+							HeroD.setBounds((p.x * 32)-48+16, (p.y * 32)-16, 96, 64);
+							HeroD.setVisible(true);
+							this.add(HeroD);
+							this.setLayer(HeroD,150);
+							this.updateUI();
+						}
+					}
+				}
+			}
+		}
 	}
 
 	public MapSize getMapSize()

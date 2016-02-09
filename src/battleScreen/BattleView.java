@@ -345,8 +345,6 @@ public class BattleView {
 
 	public void drawUnitRange(ArrayList<Point> range)
 	{
-
-
 		for(Point p : range)
 		{
 			BattlefieldCell c = mainController.getBattlefieldInfo()[(p.x-50)/50][(p.y-110)/43];

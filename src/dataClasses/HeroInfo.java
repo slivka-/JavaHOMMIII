@@ -1,5 +1,9 @@
 package dataClasses;
 
+import HeroDisplay.HeroDisplayPanel;
+import Map.MapObjects.Towns.Town;
+
+import java.awt.*;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.TreeMap;
@@ -11,17 +15,19 @@ import java.util.TreeMap;
  */
 public class HeroInfo {
 	private int ID;
-	private String Name;
-	private int ATK;
-	private int DEF;
+	public String Name;
+	public Town homeTown;
+	public Point currentPosition;
+	public HeroDisplayPanel heroDisplay;
+	public int heroRange = 8;
+
 	private HashMap<Integer, UnitInfo> army;
 	
-	public HeroInfo()
+	public HeroInfo(String name,Town town)
 	{
 		ID = 0;
-		Name = "Default";
-		ATK = 1;
-		DEF = 1;
+		Name = name;
+		homeTown = town;
 		setArmy(new HashMap<Integer, UnitInfo>());
 	}
 	
@@ -60,5 +66,5 @@ public class HeroInfo {
 			}
 		}
 	}
-	
+
 }

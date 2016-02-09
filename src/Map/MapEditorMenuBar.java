@@ -1,4 +1,6 @@
 package Map;
+import mapLogic.MapGameController;
+
 import javax.swing.*;
 
 import java.awt.event.KeyEvent;
@@ -13,11 +15,13 @@ import java.io.*;
 public class MapEditorMenuBar extends JMenuBar {
 	
 	private MapGrid map;
+	private MapGameController controller;
 	//private JMenu file;
 	//private JMenu edit;
 	
-	public MapEditorMenuBar(MapGrid map) {
+	public MapEditorMenuBar(MapGrid map, MapGameController controller) {
 		this.map = map;
+		this.controller = controller;
 		createMenuBar();
 	}
 		
@@ -51,26 +55,7 @@ public class MapEditorMenuBar extends JMenuBar {
 			@Override
 			public void actionPerformed(ActionEvent e)
 			{
-				JFileChooser loadMapDialog = new JFileChooser("D:\\");
-				if(loadMapDialog.showOpenDialog((JMenuItem)e.getSource()) == JFileChooser.APPROVE_OPTION)
-				{
-					try
-					{
-						File mapLoadFile = loadMapDialog.getSelectedFile();
-						FileInputStream mapLoadInput = new FileInputStream(mapLoadFile);
-						ObjectInputStream mapLoadObjectInput = new ObjectInputStream(mapLoadInput);
-						SavedMap loadedMap = (SavedMap)mapLoadObjectInput.readObject();
-						mapLoadObjectInput.close();
-						mapLoadInput.close();
-						map.readSavedMap(loadedMap);
-						JOptionPane.showMessageDialog(null,"Wczytanie udane!","Wczytano",JOptionPane.INFORMATION_MESSAGE);
-					}
-					catch (Exception ex)
-					{
-						JOptionPane.showMessageDialog(null,ex.toString(),"ERROR",JOptionPane.ERROR_MESSAGE);
-						ex.printStackTrace();
-					}
-				}
+				controller.loadMap();
 			}
 		});
 		file.add(loadMap);

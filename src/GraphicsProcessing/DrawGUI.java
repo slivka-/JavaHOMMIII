@@ -22,10 +22,10 @@ public class DrawGUI {
 		this.imgFolders = imgFolders;
 	}
 
-	public DrawGUI(MapGridContainer mgc, MapEditorMenuBar menuBar)
+	public DrawGUI(MapGridContainer mgc)
 	{
 		this.mgc = mgc;
-		this.menuBar = menuBar;
+		this.menuBar = null;
 		this.imgFolders = null;
 	}
 	
@@ -34,9 +34,12 @@ public class DrawGUI {
 		JFrame frame = new JFrame("Map");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLayout(new BorderLayout());
-		
-		frame.getContentPane().add(menuBar, BorderLayout.NORTH);
-		menuBar.setSize(800, 20);
+
+		if(menuBar!=null)
+		{
+			frame.getContentPane().add(menuBar, BorderLayout.NORTH);
+			menuBar.setSize(800, 20);
+		}
 		
 		frame.getContentPane().add(mgc);
 		if(imgFolders!= null)

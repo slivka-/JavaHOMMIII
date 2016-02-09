@@ -20,7 +20,7 @@ public class HeroDisplayPanel extends JPanel
     public HeroDisplayPanel(int HeroID)
     {
         //this.setLayout(null);
-        this.currentDirection = HeroDirection.MOVING_LEFT;
+        this.currentDirection = HeroDirection.IDLE_LEFT;
         ex = Executors.newFixedThreadPool(2);
         animation = new HeroAnimationThread(HeroID);
         ex.execute(animation);

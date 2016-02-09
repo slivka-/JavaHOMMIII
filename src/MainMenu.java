@@ -7,13 +7,20 @@ import ImageSelection.ImageSelectionController;
 import Map.MapEditorMenuBar;
 import Map.MapGrid;
 import Map.MapGridContainer;
+import Map.MapObjects.Towns.Loch;
 import Map.MapSize;
+import dataClasses.HeroInfo;
+import dataClasses.UnitCommander;
+import dataClasses.UnitInfo;
+import dataClasses.UnitType;
+import mapLogic.MapGameController;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.ArrayList;
 
 /**
  * Created by slivka on 06.02.2016.
@@ -21,6 +28,7 @@ import java.awt.event.WindowEvent;
 public class MainMenu
 {
     private static JFrame mainMenuFrame;
+    private static MapGameController mainGameController;
 
     public static void showMainMenu()
     {
@@ -41,7 +49,14 @@ public class MainMenu
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                launchGame();
+                //TODO: Dodać menu z wyborem gracza, pobierać graczy od innych klientów, dodawać do arrayList
+                HeroInfo player1 = new HeroInfo("Zbyszek",new Loch(null));
+                UnitType d1 = new UnitType("Troglodyta","troglodyte","dungeon",10,10,1);
+                UnitInfo u11  = new UnitInfo(10, d1, UnitCommander.PLAYER1);
+                player1.addToArmy(1, u11);
+                ArrayList<HeroInfo> ar1 = new ArrayList<HeroInfo>();
+                ar1.add(player1);
+                mainGameController = new MapGameController(ar1);
                 mainMenuFrame.setVisible(false);
                 mainMenuFrame.dispose();
             }
@@ -55,53 +70,12 @@ public class MainMenu
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                launchEditor();
+                //Odpala edytor map
+                mainGameController = new MapGameController(null);
                 mainMenuFrame.setVisible(false);
                 mainMenuFrame.dispose();
             }
         });
         mainMenuFrame.add(editorStart);
-
-
-    }
-
-    private static void launchEditor()
-    {
-        Graphics g = new Graphics();
-        ImageSelectionBox isb = new ImageSelectionBox(g.getListImages());
-        FolderImageBox fib = new FolderImageBox();
-        fib.setDirectoriesNames(g.getAllDirectoriesName());
-        ImageSelectionController isc = new ImageSelectionController(isb, fib);
-        ImageFolderComponent imgFolders = new ImageFolderComponent(fib, isb);
-
-        MapGrid map = new MapGrid(g, isb);
-        map.initializeGrid(MapSize.SMALL);
-
-        //map.initializeGrid();
-
-        MapEditorMenuBar menuBar = new MapEditorMenuBar(map);
-        MapGridContainer mgc = new MapGridContainer(map);
-        final DrawGUI draw = new DrawGUI(mgc, menuBar, imgFolders);
-
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                draw.drawAndShowMap();
-            }
-        });
-    }
-
-    private static void launchGame()
-    {
-        Graphics g = new Graphics();
-        MapGrid map = new MapGrid(g);
-        map.initializeGrid(MapSize.SMALL);
-        MapEditorMenuBar menuBar = new MapEditorMenuBar(map);
-        MapGridContainer mgc = new MapGridContainer(map);
-        final DrawGUI draw = new DrawGUI(mgc, menuBar);
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                draw.drawAndShowMap();
-            }
-        });
     }
 }
