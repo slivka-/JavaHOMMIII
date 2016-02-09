@@ -1,5 +1,6 @@
 package Map;
 
+import Map.MapObjects.TerrainPassability;
 import battleDisplay.AttackDirection;
 
 import javax.swing.*;
@@ -13,14 +14,17 @@ import java.awt.event.MouseMotionListener;
 public class MapRangeIndicator extends JPanel
 {
     public Point location;
+    public TerrainPassability passability;
     //TODO: dodac oznaczenie na czym jest ten wskaznik(puste miejsce, oddzial, przeciwnik, zasoby, itp)
 
-    public MapRangeIndicator(Point p, MouseListener mListener)
+    public MapRangeIndicator(Point p, MouseListener mListener, TerrainPassability passability)
     {
         this.setOpaque(false);
         this.setBounds(p.x * 32, p.y * 32, 32, 32);
         System.out.println(p);
         this.location = p;
+        this.passability = passability;
+        System.out.println(passability);
         if(mListener != null)
         {
             this.addMouseListener(mListener);

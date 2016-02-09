@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.geom.Point2D;
+import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -15,7 +17,9 @@ public class HeroDisplayPanel extends JPanel
 
     private ExecutorService ex;
     private HeroAnimationThread animation;
+    private HeroMoveThread moveThread;
     private HeroDirection currentDirection;
+    private boolean isMoving;
 
     public HeroDisplayPanel(int HeroID)
     {
@@ -55,11 +59,47 @@ public class HeroDisplayPanel extends JPanel
         return this.currentDirection;
     }
 
+    public void MoveHero(ArrayList<Point> path)
+    {
+        moveThread = new HeroMoveThread(path);
+        ex.execute(moveThread);
+    }
+
     @Override
     protected void paintComponent(Graphics g)
     {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D)g;
+        if(moveThread != null)
+        {
+            if(moveThread.isRunning())
+            {
+                Point2D p = moveThread.getCurrentPosition();
+                currentDirection = moveThread.getDirection();
+                this.setBounds((int)p.getX()-32,(int)p.getY()-16,96,64);
+            }
+            else
+            {
+                if(currentDirection == HeroDirection.MOVING_BACK)
+                {
+                    currentDirection = HeroDirection.IDLE_BACK;
+                }
+                else if(currentDirection == HeroDirection.MOVING_FRONT)
+                {
+                    currentDirection = HeroDirection.IDLE_FRONT;
+                }
+                else if(currentDirection == HeroDirection.MOVING_LEFT)
+                {
+                    currentDirection = HeroDirection.IDLE_LEFT;
+                }
+                else if(currentDirection == HeroDirection.MOVING_RIGHT)
+                {
+                    currentDirection = HeroDirection.IDLE_RIGHT;
+                }
+                moveThread = null;
+            }
+        }
         g2.drawImage(animation.getCurrentFrame(currentDirection),0,0,null);
+
     }
 }

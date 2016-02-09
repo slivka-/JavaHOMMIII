@@ -7,8 +7,11 @@ import GraphicsProcessing.ImageProcessor;
 import HeroDisplay.HeroDisplayPanel;
 import ImageSelection.ImageSelectionBox;
 import Map.MapObjects.MapObject;
+import Map.MapObjects.TerrainPassability;
 import Map.MapObjects.Towns.Loch;
+import Pathfinding.Pathfinder;
 import dataClasses.HeroInfo;
+import mapLogic.MapGameController;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -30,6 +33,8 @@ public class MapGrid extends JLayeredPane{
 
 	private MouseListener listener;
 
+	private MapGameController controller;
+
 
 	/**
 	 * Constructor for editor mode
@@ -42,6 +47,7 @@ public class MapGrid extends JLayeredPane{
 		//setLayout(new GridBagLayout());
 		setLayout(null);
 		this.listener = null;
+		this.controller = null;
 
 	}
 
@@ -49,17 +55,22 @@ public class MapGrid extends JLayeredPane{
 	 * Constructor for game mode
 	 * @param g
 	 */
-	public MapGrid(Graphics g)
+	public MapGrid(Graphics g, MapGameController c)
 	{
 		this.graphics = g;
 		this.isb = null;
-		//setLayout(new GridBagLayout());
+		this.controller = c;
 		setLayout(null);
 		this.listener = new MouseListener()
 		{
 			Toolkit toolkit = Toolkit.getDefaultToolkit();
-			Image moveImage = toolkit.getImage("assets/cursors/move.png");
+			Image moveImage = toolkit.getImage("assets/cursors/mapMove.png");
+			Image battleImage = toolkit.getImage("assets/cursors/mapBattle.png");
+			Image actionImage = toolkit.getImage("assets/cursors/mapAction.png");
+
 			Cursor moveCursor = toolkit.createCustomCursor(moveImage,new Point(12,12),"img");
+			Cursor battleCursor = toolkit.createCustomCursor(battleImage,new Point(12,12),"img");
+			Cursor actionCursor = toolkit.createCustomCursor(actionImage,new Point(12,12),"img");
 			@Override
 			public void mouseClicked(MouseEvent e)
 			{
@@ -69,7 +80,19 @@ public class MapGrid extends JLayeredPane{
 			@Override
 			public void mousePressed(MouseEvent e)
 			{
-
+				MapRangeIndicator t = (MapRangeIndicator)e.getSource();
+				switch (t.passability)
+				{
+					case UNOCCUPIED:
+						controller.moveHero(t.location);
+						break;
+					case ARMY:
+						//setCursor(battleCursor);
+						break;
+					case COLLECTABLE:
+						//setCursor(actionCursor);
+						break;
+				}
 			}
 
 			@Override
@@ -81,7 +104,20 @@ public class MapGrid extends JLayeredPane{
 			@Override
 			public void mouseEntered(MouseEvent e)
 			{
-				setCursor(moveCursor);
+				MapRangeIndicator t = (MapRangeIndicator)e.getSource();
+				switch (t.passability)
+				{
+					case UNOCCUPIED:
+						setCursor(moveCursor);
+						break;
+					case ARMY:
+						setCursor(battleCursor);
+						break;
+					case COLLECTABLE:
+						setCursor(actionCursor);
+						break;
+				}
+
 			}
 
 			@Override
@@ -106,6 +142,7 @@ public class MapGrid extends JLayeredPane{
 				
 				Image img = graphics.getRandomTileDefaultBackgroundImage();
 				Tile cell = new Tile(cellWidth, cellHeight, 1, img, new Point(col, row));
+				cell.passability = TerrainPassability.UNOCCUPIED;
 				cell.setBounds(col*32,row*32,32,32);
 				add(cell);
 				this.setLayer(cell,50);
@@ -133,7 +170,7 @@ public class MapGrid extends JLayeredPane{
 		return this.listener;
 	}
 
-	
+
 
 	public void drawHeroRange(Point currentLocation, int range, MouseListener listener)
 	{
@@ -192,7 +229,7 @@ public class MapGrid extends JLayeredPane{
 		}
 		for(Point p : moveRange)
 		{
-			MapRangeIndicator mri = new MapRangeIndicator(p,listener);
+			MapRangeIndicator mri = new MapRangeIndicator(p,listener,cells[p.x][p.y].passability);
 			mri.setVisible(true);
 			this.add(mri);
 			this.setLayer(mri,1000);
@@ -416,6 +453,7 @@ public class MapGrid extends JLayeredPane{
 				cells[_x][_y].setOccupied(true);
 				cells[_x][_y].setMapObject(mo, new Point(_x, _y));
 				cells[_x][_y].setCenterPosition(new Point(centerX,centerY));
+				cells[_x][_y].passability = TerrainPassability.OCCUPIED_PERM;
 				//cells[x][y].setType = town/mine/etc.
 				//cells[x][y].canMove = false //exception- center(true)
 				//or collect cells and put them in collection of object of i.e. town type
@@ -472,6 +510,17 @@ public class MapGrid extends JLayeredPane{
 				cells[row][col].setMapObjectBorder(BorderFactory.createEmptyBorder());
 			}
 		}
+	}
+
+	public void moveHero(HeroInfo hero, Point target)
+	{
+		Pathfinder p = new Pathfinder(cells,hero.currentPosition,target);
+		ArrayList<Point> pArr = p.generatePath();
+		for(Point a : pArr)
+		{
+			System.out.println(a);
+		}
+		//hero.heroDisplay.MoveHero();
 	}
 
 }

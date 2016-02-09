@@ -18,7 +18,7 @@ public class Tile extends JLayeredPane implements Serializable{
 	private JLabel object;
 	private int ID = -1;
 	private MapObject mapObject;
-	private TerrainPassability passability;
+	public TerrainPassability passability;
 	private Point drawingPoint;
 	private Point firstDrawingPoint;
 	private Point centerPosition;

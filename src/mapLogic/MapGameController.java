@@ -12,6 +12,7 @@ import dataClasses.HeroInfo;
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import java.awt.*;
 import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.FileInputStream;
@@ -74,7 +75,7 @@ public class MapGameController
     private void launchGame()
     {
         Graphics g = new Graphics();
-        mainMapGrid = new MapGrid(g);
+        mainMapGrid = new MapGrid(g,this);
         mainMapGrid.initializeGrid(MapSize.SMALL);
         MapGridContainer mgc = new MapGridContainer(mainMapGrid);
         final DrawGUI draw = new DrawGUI(mgc);
@@ -118,5 +119,10 @@ public class MapGameController
     {
         HeroInfo currentHero = playersList.get(currentPlayerID);
         mainMapGrid.drawHeroRange(currentHero.currentPosition,currentHero.heroRange,this.listener);
+    }
+
+    public void moveHero(Point target)
+    {
+        mainMapGrid.moveHero(playersList.get(currentPlayerID),target);
     }
 }
