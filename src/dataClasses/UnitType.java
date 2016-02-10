@@ -1,12 +1,13 @@
 package dataClasses;
 
+import java.io.Serializable;
 import java.util.Random;
 
 /**
  * @author slivka
  * Klasa przechowywuj�ca informacje o jednostce
  */
-public class UnitType {
+public class UnitType implements Serializable{
 	public String _name;
 	public String _spriteName;
 	public String _townName;

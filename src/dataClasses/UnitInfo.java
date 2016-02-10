@@ -1,6 +1,7 @@
 package dataClasses;
 
 import java.awt.Point;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import battleDisplay.GraphicsPanel;
@@ -9,7 +10,7 @@ import battleDisplay.GraphicsPanel;
  * @author slivka
  * Klasa przechowywuj�ca informacje o oddziale
  */
-public class UnitInfo {
+public class UnitInfo implements Serializable{
 
 	public int unitSize;
 	public UnitType unitType;

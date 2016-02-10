@@ -7,7 +7,11 @@ import ImageSelection.ImageFolderComponent;
 import ImageSelection.ImageSelectionBox;
 import ImageSelection.ImageSelectionController;
 import Map.*;
+import Map.MapObjects.Army;
+import battleScreen.BattleController;
 import dataClasses.HeroInfo;
+import dataClasses.UnitInfo;
+import dataClasses.UnitType;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
@@ -20,6 +24,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by slivka on 09.02.2016.
@@ -31,7 +36,9 @@ public class MapGameController
     private int currentPlayerID;
     private final int myPlayerID;
     private MouseListener listener;
+    private boolean attack = false;
 
+    private HashMap<Integer, UnitInfo> enemyArmy = null;
 
     public MapGameController(ArrayList<HeroInfo> players)
     {
@@ -132,6 +139,29 @@ public class MapGameController
         waitForAnimation();
     }
 
+    public void AttackUnit(Point target,HeroInfo hero)
+    {
+        attack = true;
+        mainMapGrid.clearHeroRange();
+        HeroInfo currentPlayer = playersList.get(currentPlayerID);
+        mainMapGrid.moveHero(currentPlayer,target);
+        currentPlayer.currentPosition = target;
+        enemyArmy = hero.getArmy();
+        waitForAnimation();
+    }
+
+    public void AttackUnit(Point target,Army army)
+    {
+        attack = true;
+        mainMapGrid.clearHeroRange();
+        HeroInfo currentPlayer = playersList.get(currentPlayerID);
+        mainMapGrid.moveHero(currentPlayer,target);
+        currentPlayer.currentPosition = target;
+        enemyArmy = army.army;
+        waitForAnimation();
+    }
+
+
     private void waitForAnimation()
     {
         Timer timer = new Timer(20, new ActionListener()
@@ -143,7 +173,15 @@ public class MapGameController
                 {
                     Timer t = (Timer)e.getSource();
                     t.stop();
-                    nextTurn();
+                    if(attack)
+                    {
+                        attack = false;
+                        LaunchBattle();
+                    }
+                    else
+                    {
+                        nextTurn();
+                    }
                 }
             }
         });
@@ -156,5 +194,12 @@ public class MapGameController
     {
         //TODO: TU ZMIENIAC GRACZA
         this.drawCurrentHeroRange();
+    }
+
+    public void LaunchBattle()
+    {
+        BattleController controller = new BattleController(1,playersList.get(currentPlayerID),enemyArmy);
+        controller.BattleInit();
+
     }
 }

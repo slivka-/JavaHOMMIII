@@ -1,5 +1,6 @@
 package Pathfinding;
 
+import Map.MapObjects.TerrainPassability;
 import Map.Tile;
 
 import java.awt.*;

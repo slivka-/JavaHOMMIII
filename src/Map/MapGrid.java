@@ -6,9 +6,11 @@ import GraphicsProcessing.Graphics;
 import GraphicsProcessing.ImageProcessor;
 import HeroDisplay.HeroDisplayPanel;
 import ImageSelection.ImageSelectionBox;
+import Map.MapObjects.Army;
 import Map.MapObjects.MapObject;
 import Map.MapObjects.TerrainPassability;
 import Map.MapObjects.Towns.Loch;
+import Map.MapObjects.Towns.Town;
 import Pathfinding.Pathfinder;
 import dataClasses.HeroInfo;
 import mapLogic.MapGameController;
@@ -74,12 +76,6 @@ public class MapGrid extends JLayeredPane{
 			@Override
 			public void mouseClicked(MouseEvent e)
 			{
-				//TODO: odpalac metode chodzenia przez kontroler
-			}
-
-			@Override
-			public void mousePressed(MouseEvent e)
-			{
 				MapRangeIndicator t = (MapRangeIndicator)e.getSource();
 				switch (t.passability)
 				{
@@ -87,12 +83,18 @@ public class MapGrid extends JLayeredPane{
 						controller.moveHero(t.location);
 						break;
 					case ARMY:
-						//setCursor(battleCursor);
+						controller.AttackUnit(t.location,(Army)cells[t.getX()/32][t.getY()/32].getMapObject());
 						break;
 					case COLLECTABLE:
 						//setCursor(actionCursor);
 						break;
 				}
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e)
+			{
+
 			}
 
 			@Override
@@ -117,7 +119,6 @@ public class MapGrid extends JLayeredPane{
 						setCursor(actionCursor);
 						break;
 				}
-				System.out.println(t.passability);
 			}
 
 			@Override
@@ -273,9 +274,10 @@ public class MapGrid extends JLayeredPane{
 					for(HeroInfo hero : heroes){
 						if (cells[col][row].getMapObject().getClass().equals(hero.homeTown.getClass()))
 						{
-
+							//TODO: dobieranie wyglądu na podstawie miasta
 							Point p = cells[col][row].getDrawingPoint();
 							hero.currentPosition = p;
+							hero.homeTown = (Town)cells[col][row].getMapObject();
 							hero.heroDisplay = new HeroDisplayPanel(7);
 							HeroDisplayPanel HeroD = hero.heroDisplay;
 							HeroD.setBounds((p.x * 32)-48+16, (p.y * 32)-16, 96, 64);
@@ -377,30 +379,55 @@ public class MapGrid extends JLayeredPane{
 		{
 			String category = isb.getSelectedCategory();
 			String name = isb.getSelectedImageName();
-			if (category == null || name == null)
+
+			if(category!=null && category.equals("unit"))
 			{
-				System.out.println("Brak obrazka");
-				return;
-			} else
+				NewUnitDialog nud = new NewUnitDialog();
+				Army freeArmy = nud.showDialog();
+				if(freeArmy!= null)
+				{
+					BufferedImage chunks[] = ImageProcessor.divideImage(freeArmy.getImage(), cellWidth, cellHeight);
+					int rows = freeArmy.getImage().getHeight(null) / cellHeight;
+					int cols = freeArmy.getImage().getWidth(null) / cellWidth;
+					int centerX = x / cellWidth;
+					int centerY = y / cellHeight;
+
+					if (!isImageWithinBonds(rows, cols, centerX, centerY))
+						return;
+
+					if (areTilesOccupied(rows, cols, centerX, centerY))
+						return;
+
+					drawImageOnTiles(chunks, rows, cols, centerX, centerY, freeArmy);
+				}
+			}
+			else
 			{
-				BufferedImage newImg = isb.getSelectedImage();
-				MapObject mo = MapObject.makeMapObject(category, name, newImg);
-				//Image newImg = mo.getImage();
-				System.out.println("Nazwa obrazka: " + isb.getSelectedImageName());
-				BufferedImage chunks[] = ImageProcessor.divideImage(newImg, cellWidth, cellHeight);
-
-				int rows = newImg.getHeight(null) / cellHeight;
-				int cols = newImg.getWidth(null) / cellWidth;
-				int centerX = x / cellWidth;
-				int centerY = y / cellHeight;
-
-				if (!isImageWithinBonds(rows, cols, centerX, centerY))
+				if (category == null || name == null)
+				{
+					System.out.println("Brak obrazka");
 					return;
+				} else
+				{
+					BufferedImage newImg = isb.getSelectedImage();
+					MapObject mo = MapObject.makeMapObject(category, name, newImg);
+					//Image newImg = mo.getImage();
+					System.out.println("Nazwa obrazka: " + isb.getSelectedImageName());
+					BufferedImage chunks[] = ImageProcessor.divideImage(newImg, cellWidth, cellHeight);
 
-				if (areTilesOccupied(rows, cols, centerX, centerY))
-					return;
+					int rows = newImg.getHeight(null) / cellHeight;
+					int cols = newImg.getWidth(null) / cellWidth;
+					int centerX = x / cellWidth;
+					int centerY = y / cellHeight;
 
-				drawImageOnTiles(chunks, rows, cols, centerX, centerY, mo);
+					if (!isImageWithinBonds(rows, cols, centerX, centerY))
+						return;
+
+					if (areTilesOccupied(rows, cols, centerX, centerY))
+						return;
+
+					drawImageOnTiles(chunks, rows, cols, centerX, centerY, mo);
+				}
 			}
 		}
 	}
@@ -458,23 +485,39 @@ public class MapGrid extends JLayeredPane{
 	}
 
 	private void drawImageOnTiles(BufferedImage chunks[], int rows, int cols, int centerX, int centerY, MapObject mo) {
+		boolean isUnit = false;
+		if(mo.getClass().equals(new Army(null).getClass()))
+		{
+			isUnit = true;
+		}
 		int count = 0;
 		for (int r = 0; r < rows; ++r) {
 			for(int c = 0; c < cols; ++c) {
 				int _x = centerX + c - cols/2;
 				int _y = centerY + r - rows+1;
 				cells[_x][_y].setMapObject(new ImageIcon(chunks[count++]));
-				cells[_x][_y].setOccupied(true);
 				cells[_x][_y].setMapObject(mo, new Point(_x, _y));
 				cells[_x][_y].setCenterPosition(new Point(centerX,centerY));
-				cells[_x][_y].passability = TerrainPassability.OCCUPIED_PERM;
+				if(!isUnit)
+				{
+					cells[_x][_y].passability = TerrainPassability.OCCUPIED_PERM;
+					cells[_x][_y].setOccupied(true);
+				}
+				else
+				{
+					cells[_x][_y].passability = TerrainPassability.ARMY;
+					cells[_x][_y].setOccupied(false);
+				}
 				//cells[x][y].setType = town/mine/etc.
 				//cells[x][y].canMove = false //exception- center(true)
 				//or collect cells and put them in collection of object of i.e. town type
 			}
 		}
-		cells[centerX][centerY].setOccupied(false);
-		cells[centerX][centerY].passability = TerrainPassability.COLLECTABLE;
+		if(!isUnit)
+		{
+			cells[centerX][centerY].setOccupied(false);
+			cells[centerX][centerY].passability = TerrainPassability.COLLECTABLE;
+		}
 	}
 
 

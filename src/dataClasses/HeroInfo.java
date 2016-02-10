@@ -21,6 +21,7 @@ public class HeroInfo {
 	public HeroDisplayPanel heroDisplay;
 	public int heroRange = 8;
 
+	public HashMap<String,Integer> resources;//gold, wood, ore, itp
 	private HashMap<Integer, UnitInfo> army;
 	
 	public HeroInfo(String name,Town town)

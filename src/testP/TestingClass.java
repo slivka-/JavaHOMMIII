@@ -31,10 +31,10 @@ public class TestingClass {
 		UnitType d3 = new UnitType("Minotaur","minotaur","dungeon",10,10,1);
 		UnitType d4 = new UnitType("Uberminotaur","minotaurking","dungeon",10,10,1);
 
-		UnitType s1 = new UnitType("ogre","ogre","stronghold",10,10,1);
-		UnitType s2 = new UnitType("wolf","wolf","stronghold",10,10,1);
-		UnitType s3 = new UnitType("hobgoblin","hobgoblin","stronghold",10,10,1);
-		UnitType s4 = new UnitType("behemoth","behemoth","stronghold",10,10,1);
+		UnitType s1 = new UnitType("Ogr","ogre","stronghold",10,10,1);
+		UnitType s2 = new UnitType("Wilk","wolf","stronghold",10,10,1);
+		UnitType s3 = new UnitType("Hobgoblin","hobgoblin","stronghold",10,10,1);
+		UnitType s4 = new UnitType("Behemot","behemoth","stronghold",10,10,1);
 		
 		UnitInfo u1  = new UnitInfo(10, c1, UnitCommander.PLAYER1);
 		UnitInfo u2  = new UnitInfo(10, c2,UnitCommander.PLAYER1);

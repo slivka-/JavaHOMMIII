@@ -114,4 +114,9 @@ public class ImageSelectionBox extends JPanel{
 		return selectedCategory;
 	}
 
+	public void setSelctedToUnit()
+	{
+		this.selectedCategory = "unit";
+	}
+
 }
