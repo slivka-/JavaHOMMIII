@@ -8,7 +8,9 @@ import ImageSelection.ImageSelectionBox;
 import ImageSelection.ImageSelectionController;
 import Map.*;
 import Map.MapObjects.Army;
+import Map.MapObjects.TerrainPassability;
 import battleScreen.BattleController;
+import dataClasses.BattleResult;
 import dataClasses.HeroInfo;
 import dataClasses.UnitInfo;
 import dataClasses.UnitType;
@@ -37,6 +39,7 @@ public class MapGameController
     private final int myPlayerID;
     private MouseListener listener;
     private boolean attack = false;
+    private BattleController controller;
 
     private HashMap<Integer, UnitInfo> enemyArmy = null;
 
@@ -198,8 +201,46 @@ public class MapGameController
 
     public void LaunchBattle()
     {
-        BattleController controller = new BattleController(1,playersList.get(currentPlayerID),enemyArmy);
+        controller = new BattleController(1,playersList.get(currentPlayerID),enemyArmy);
         controller.BattleInit();
+        Timer timer = new Timer(100, new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                if(controller.isBattleOver)
+                {
+                    Timer t = (Timer)e.getSource();
+                    t.stop();
+                    battleEnded(controller.EndBattle());
+                }
+            }
+        });
+        timer.setRepeats(true);
+        timer.setCoalesce(true);
+        timer.start();
+    }
 
+    private void battleEnded(BattleResult result)
+    {
+        controller = null;
+        if(result.vsAI)
+        {
+            if(result.winner == null)
+            {
+                playersList.set(currentPlayerID,result.looser);
+                playersList.get(currentPlayerID).backToHomeTown();
+            }
+            else
+            {
+                playersList.set(currentPlayerID,result.winner);
+                mainMapGrid.cells[result.winner.currentPosition.x][result.winner.currentPosition.y].deleteMapObject();
+            }
+        }
+        else
+        {
+            //TODO: walka 2 graczy
+        }
+        nextTurn();
     }
 }

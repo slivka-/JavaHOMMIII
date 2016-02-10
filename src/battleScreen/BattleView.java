@@ -395,4 +395,10 @@ public class BattleView {
 	{
 		this.infoBoxText.setText(battleText);
 	}
+
+	public void endBattle()
+	{
+		mainBattleFrame.setVisible(false);
+		mainBattleFrame.dispose();
+	}
 }

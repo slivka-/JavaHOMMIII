@@ -18,6 +18,7 @@ public class HeroInfo {
 	public String Name;
 	public Town homeTown;
 	public Point currentPosition;
+	public Point townPosition;
 	public HeroDisplayPanel heroDisplay;
 	public int heroRange = 8;
 
@@ -68,4 +69,8 @@ public class HeroInfo {
 		}
 	}
 
+	public void backToHomeTown()
+	{
+		heroDisplay.setBounds((townPosition.x*32)-32,(townPosition.y*32)-32,96,64);
+	}
 }

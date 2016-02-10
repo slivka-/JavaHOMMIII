@@ -154,9 +154,9 @@ public class BattleInfo {
 		try {
 			if(activeUnit == null && nextActiveUnit == null)
 			{
-				activeUnit = BattleQueue.dequeue();
+				activeUnit = BattleQueue.dequeue(10);
 				activeUnit.setAsActive();
-				nextActiveUnit = BattleQueue.dequeue();
+				nextActiveUnit = BattleQueue.dequeue(10);
 			}
 			else
 			{
@@ -167,10 +167,10 @@ public class BattleInfo {
 					activeUnit = nextActiveUnit;
 				} else
 				{
-					activeUnit = BattleQueue.dequeue();
+					activeUnit = BattleQueue.dequeue(10);
 				}
 				activeUnit.setAsActive();
-				nextActiveUnit = BattleQueue.dequeue();
+				nextActiveUnit = BattleQueue.dequeue(10);
 			}
 		}
 		catch (InterruptedException e) {
@@ -206,10 +206,25 @@ public class BattleInfo {
 				player1.removeFromArmy(killedUnit);
 				System.out.println(player1.getArmy());
 			}
-			else
+			else if(killedUnit.commander == UnitCommander.PLAYER2)
 			{
 				player2.removeFromArmy(killedUnit);
 				System.out.println(player2.getArmy());
+			}
+			else
+			{
+				Iterator<Integer> CPUArmyI = CPUarmy.keySet().iterator();
+				while(CPUArmyI.hasNext())
+				{
+					Integer key = CPUArmyI.next();
+					UnitInfo u = CPUarmy.get(key);
+					if(u.equals(killedUnit))
+					{
+						CPUarmy.remove(key,killedUnit);
+						break;
+					}
+				}
+				System.out.println(CPUarmy);
 			}
 
 		}
@@ -218,6 +233,35 @@ public class BattleInfo {
 			ex.printStackTrace();
 		}
 
+	}
+
+	public boolean checkForEnd()
+	{
+		if(player1.getArmy().isEmpty())
+		{
+			System.out.println("Gracz2 Wygrywa");
+			return true;
+		}
+		else
+		{
+			if(player2!= null)
+			{
+				if(player2.getArmy().isEmpty())
+				{
+					System.out.println("Gracz1 Wygrywa");
+					return true;
+				}
+
+			}else if(CPUarmy!= null)
+			{
+				if(CPUarmy.isEmpty())
+				{
+					System.out.println("Gracz1 Wygrywa");
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	public ArrayList<Point> getMoveRange()

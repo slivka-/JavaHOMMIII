@@ -28,7 +28,7 @@ public class MapGrid extends JLayeredPane{
 	private int colCount;
 	private final int cellWidth = 32;
 	private final int cellHeight = 32;
-	private Tile[][] cells;
+	public Tile[][] cells;
 	private boolean isGridOn = false;
 	private Graphics graphics;
 	private ImageSelectionBox isb;
@@ -278,6 +278,7 @@ public class MapGrid extends JLayeredPane{
 							Point p = cells[col][row].getDrawingPoint();
 							hero.currentPosition = p;
 							hero.homeTown = (Town)cells[col][row].getMapObject();
+							hero.townPosition = p;
 							hero.heroDisplay = new HeroDisplayPanel(7);
 							HeroDisplayPanel HeroD = hero.heroDisplay;
 							HeroD.setBounds((p.x * 32)-48+16, (p.y * 32)-16, 96, 64);
@@ -386,19 +387,12 @@ public class MapGrid extends JLayeredPane{
 				Army freeArmy = nud.showDialog();
 				if(freeArmy!= null)
 				{
-					BufferedImage chunks[] = ImageProcessor.divideImage(freeArmy.getImage(), cellWidth, cellHeight);
-					int rows = freeArmy.getImage().getHeight(null) / cellHeight;
-					int cols = freeArmy.getImage().getWidth(null) / cellWidth;
+					BufferedImage chunks[] = {freeArmy.getImage()};
 					int centerX = x / cellWidth;
 					int centerY = y / cellHeight;
 
-					if (!isImageWithinBonds(rows, cols, centerX, centerY))
-						return;
 
-					if (areTilesOccupied(rows, cols, centerX, centerY))
-						return;
-
-					drawImageOnTiles(chunks, rows, cols, centerX, centerY, freeArmy);
+					drawImageOnTiles(chunks, 1, 1, centerX, centerY, freeArmy);
 				}
 			}
 			else

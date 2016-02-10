@@ -31,6 +31,7 @@ public class BattleController {
 	//IDENTYFIKACJA GRACZA
 	private UnitCommander me;
 	public boolean isMyTurn = true;
+	public boolean isBattleOver = false;
 		
 	public BattleController(int terrainType, HeroInfo Player1, HeroInfo Player2, UnitCommander me)
 	{
@@ -40,7 +41,6 @@ public class BattleController {
 		this.model.setTerraintype(terrainType);
 		this.me = me;
 		this.view = new BattleView(width,height,this);
-
 	}
 	
 	public BattleController(int terrainType, HeroInfo Player1, HashMap<Integer, UnitInfo> Enemy)
@@ -220,13 +220,19 @@ public class BattleController {
 
 	private void newTurn()
 	{
-
-		model.SetNextActiveUnit();
-		ArrayList<Point> moveRange = model.getMoveRange();
-		debugSetMe();
-		if(isMyTurn)
+		if(!model.checkForEnd())
 		{
-			view.drawUnitRange(moveRange);
+			model.SetNextActiveUnit();
+			ArrayList<Point> moveRange = model.getMoveRange();
+			debugSetMe();
+			if (isMyTurn)
+			{
+				view.drawUnitRange(moveRange);
+			}
+		}
+		else
+		{
+			isBattleOver = true;
 		}
 	}
 
@@ -264,5 +270,46 @@ public class BattleController {
 
 		view.setBattleText("Oddzia\u0142 "+model.activeUnit.unitType._name+" broni si\u0119. (Otrzymywane obra\u017Cenia -50%)");
 		newTurn();
+	}
+
+	public BattleResult EndBattle()
+	{
+		if(isBattleOver)
+		{
+			view.endBattle();
+			BattleResult r = new BattleResult();
+			if(model.getPlayer1().getArmy().isEmpty())
+			{
+				r.looser = model.getPlayer1();
+				r.looser.currentPosition = r.looser.townPosition;
+				if(model.getPlayer2()!= null)
+				{
+					r.winner = model.getPlayer2();
+					r.vsAI = false;
+					return r;
+				}
+				else
+				{
+					r.winner = null;
+					r.vsAI = true;
+					return r;
+				}
+			}
+			else if(model.getPlayer2()!=null)
+			{
+				r.looser = model.getPlayer2();
+				r.winner = model.getPlayer1();
+				r.vsAI = false;
+				return r;
+			}
+			else
+			{
+				r.looser = null;
+				r.winner = model.getPlayer1();
+				r.vsAI = true;
+				return r;
+			}
+		}
+		return null;
 	}
 }
