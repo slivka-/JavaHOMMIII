@@ -13,6 +13,8 @@ import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.FileInputStream;
@@ -87,7 +89,7 @@ public class MapGameController
         });
         mainMapGrid.drawHeroes(playersList);
         this.listener = mainMapGrid.getMouseListener();
-        this.drawCurrentHeroRange();
+        nextTurn();
     }
 
     public void loadMap()
@@ -123,6 +125,36 @@ public class MapGameController
 
     public void moveHero(Point target)
     {
-        mainMapGrid.moveHero(playersList.get(currentPlayerID),target);
+        mainMapGrid.clearHeroRange();
+        HeroInfo currentPlayer = playersList.get(currentPlayerID);
+        mainMapGrid.moveHero(currentPlayer,target);
+        currentPlayer.currentPosition = target;
+        waitForAnimation();
+    }
+
+    private void waitForAnimation()
+    {
+        Timer timer = new Timer(20, new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                if(playersList.get(currentPlayerID).heroDisplay.getIsMoveFinished())
+                {
+                    Timer t = (Timer)e.getSource();
+                    t.stop();
+                    nextTurn();
+                }
+            }
+        });
+        timer.setRepeats(true);
+        timer.setCoalesce(true);
+        timer.start();
+    }
+
+    public void nextTurn()
+    {
+        //TODO: TU ZMIENIAC GRACZA
+        this.drawCurrentHeroRange();
     }
 }

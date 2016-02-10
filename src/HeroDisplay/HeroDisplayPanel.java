@@ -19,7 +19,7 @@ public class HeroDisplayPanel extends JPanel
     private HeroAnimationThread animation;
     private HeroMoveThread moveThread;
     private HeroDirection currentDirection;
-    private boolean isMoving;
+    private boolean isMoveFinished;
 
     public HeroDisplayPanel(int HeroID)
     {
@@ -30,6 +30,7 @@ public class HeroDisplayPanel extends JPanel
         ex.execute(animation);
         this.setOpaque(false);
         this.refreshDisplay();
+        this.isMoveFinished = true;
     }
 
     private void refreshDisplay()
@@ -59,10 +60,14 @@ public class HeroDisplayPanel extends JPanel
         return this.currentDirection;
     }
 
+    public boolean getIsMoveFinished() {return isMoveFinished;}
+
     public void MoveHero(ArrayList<Point> path)
     {
+        isMoveFinished = false;
         moveThread = new HeroMoveThread(path);
         ex.execute(moveThread);
+
     }
 
     @Override
@@ -76,7 +81,7 @@ public class HeroDisplayPanel extends JPanel
             {
                 Point2D p = moveThread.getCurrentPosition();
                 currentDirection = moveThread.getDirection();
-                this.setBounds((int)p.getX()-32,(int)p.getY()-16,96,64);
+                this.setBounds((int)p.getX()-32,(int)p.getY()-32,96,64);
             }
             else
             {
@@ -97,6 +102,7 @@ public class HeroDisplayPanel extends JPanel
                     currentDirection = HeroDirection.IDLE_RIGHT;
                 }
                 moveThread = null;
+                isMoveFinished = true;
             }
         }
         g2.drawImage(animation.getCurrentFrame(currentDirection),0,0,null);

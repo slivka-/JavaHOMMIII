@@ -47,11 +47,11 @@ public class GameMap
                 {
                     map[i][j].N = map[i][j-1];
                 }
-                if(thisY+1<=9)
+                if(thisY+1<=battlefieldInfo[0].length-1)
                 {
                     map[i][j].S = map[i][j+1];
                 }
-                if(thisX+1<=13)
+                if(thisX+1<=battlefieldInfo.length-1)
                 {
                     map[i][j].E = map[i+1][j];
                 }

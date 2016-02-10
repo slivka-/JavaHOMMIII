@@ -39,7 +39,7 @@ public class Pathfinder
         ArrayList<Point> paintPath = new ArrayList<Point>();
         for(Point p :cellPath)
         {
-            paintPath.add(bInfo[p.x][p.y].getDrawingPoint());
+            paintPath.add(new Point(p.x*32,p.y*32));
         }
         return paintPath;
     }

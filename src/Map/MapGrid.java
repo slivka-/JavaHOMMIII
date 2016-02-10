@@ -117,7 +117,7 @@ public class MapGrid extends JLayeredPane{
 						setCursor(actionCursor);
 						break;
 				}
-
+				System.out.println(t.passability);
 			}
 
 			@Override
@@ -234,6 +234,20 @@ public class MapGrid extends JLayeredPane{
 			this.add(mri);
 			this.setLayer(mri,1000);
 		}
+	}
+
+	public void clearHeroRange()
+	{
+		Component[] c = this.getComponents();
+		MapRangeIndicator r = new MapRangeIndicator(new Point(0,0),null,null);
+		for(Component cmp : c)
+		{
+			if(cmp.getClass() == r.getClass())
+			{
+				this.remove(cmp);
+			}
+		}
+		this.repaint();
 	}
 
 	public void readSavedMap(SavedMap savedMap)
@@ -460,6 +474,7 @@ public class MapGrid extends JLayeredPane{
 			}
 		}
 		cells[centerX][centerY].setOccupied(false);
+		cells[centerX][centerY].passability = TerrainPassability.COLLECTABLE;
 	}
 
 
@@ -520,7 +535,7 @@ public class MapGrid extends JLayeredPane{
 		{
 			System.out.println(a);
 		}
-		//hero.heroDisplay.MoveHero();
+		hero.heroDisplay.MoveHero(pArr);
 	}
 
 }
