@@ -14,6 +14,8 @@ import dataClasses.UnitCommander;
 import dataClasses.UnitInfo;
 import dataClasses.UnitType;
 import mapLogic.MapGameController;
+import testP.HostGameWindow;
+import testP.JoinGameWindow;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -41,7 +43,7 @@ public class MainMenu
                 System.exit(0);
             }
         });
-
+        /*
         JButton gameStart = new JButton("GRA");
         gameStart.setBounds(100, 100, 100, 50);
         gameStart.addActionListener(new ActionListener()
@@ -62,6 +64,28 @@ public class MainMenu
             }
         });
         mainMenuFrame.add(gameStart);
+        */
+        JButton hostGame = new JButton("HOSTUJ GRE");
+        hostGame.setBounds(100, 100, 100, 50);
+        hostGame.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                HostGameWindow hgw = new HostGameWindow(mainMenuFrame);
+                hgw.show();
+            }
+        });
+        mainMenuFrame.add(hostGame);
+
+        JButton joinGame = new JButton("DOLACZ DO GRY");
+        joinGame.setBounds(100, 200, 100, 50);
+        joinGame.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JoinGameWindow jgw = new JoinGameWindow(mainMenuFrame);
+                jgw.show();
+            }
+        });
+        mainMenuFrame.add(joinGame);
 
         JButton editorStart = new JButton("EDYTOR MAP");
         editorStart.setBounds(300, 100, 120, 50);
