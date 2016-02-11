@@ -11,10 +11,7 @@ import Map.MapObjects.Army;
 import Map.MapObjects.TerrainPassability;
 import Networking.Client;
 import battleScreen.BattleController;
-import dataClasses.BattleResult;
-import dataClasses.HeroInfo;
-import dataClasses.UnitInfo;
-import dataClasses.UnitType;
+import dataClasses.*;
 import testP.JoinGameWindow;
 
 import javax.swing.*;
@@ -49,6 +46,8 @@ public class MapGameController
     private Client serverConn;
 
     private HashMap<Integer, UnitInfo> enemyArmy = null;
+
+    private MiniHeroInfo enemyHero = null;
 
     public MapGameController(ArrayList<HeroInfo> players, int myID, SavedMap map, Client serverConn)
     {
@@ -151,20 +150,35 @@ public class MapGameController
     {
         mainMapGrid.clearHeroRange();
         HeroInfo currentPlayer = playersList.get(currentPlayerID);
-        mainMapGrid.moveHero(currentPlayer,target);
+        mainMapGrid.cells[currentPlayer.currentPosition.x][currentPlayer.currentPosition.y].heroOnTop();
+        mainMapGrid.moveHero(currentPlayer, target);
         currentPlayer.currentPosition = target;
+        mainMapGrid.cells[target.x][target.y].heroOnTop();
         waitForAnimation();
     }
 
-    public void AttackUnit(Point target,HeroInfo hero)
+    public void AttackUnitSend(Point target, MiniHeroInfo hero)
+    {
+        serverConn.attackHeroSend(target, hero);
+    }
+
+
+    public void AttackUnit(Point target,MiniHeroInfo hero)
     {
         attack = true;
         mainMapGrid.clearHeroRange();
         HeroInfo currentPlayer = playersList.get(currentPlayerID);
-        mainMapGrid.moveHero(currentPlayer,target);
+        mainMapGrid.cells[currentPlayer.currentPosition.x][currentPlayer.currentPosition.y].heroOnTop();
+        mainMapGrid.moveHero(currentPlayer, target);
         currentPlayer.currentPosition = target;
-        enemyArmy = hero.getArmy();
+        mainMapGrid.cells[target.x][target.y].heroOnTop();
+        enemyHero = hero;
         waitForAnimation();
+    }
+
+    public void AttackUnitSend(Point target,Army army)
+    {
+        serverConn.attackHeroSend(target, army);
     }
 
     public void AttackUnit(Point target,Army army)
@@ -172,8 +186,10 @@ public class MapGameController
         attack = true;
         mainMapGrid.clearHeroRange();
         HeroInfo currentPlayer = playersList.get(currentPlayerID);
+        mainMapGrid.cells[currentPlayer.currentPosition.x][currentPlayer.currentPosition.y].heroOnTop();
         mainMapGrid.moveHero(currentPlayer,target);
         currentPlayer.currentPosition = target;
+        mainMapGrid.cells[target.x][target.y].heroOnTop();
         enemyArmy = army.army;
         waitForAnimation();
     }
@@ -235,7 +251,17 @@ public class MapGameController
 
     public void LaunchBattle()
     {
-        controller = new BattleController(1,playersList.get(currentPlayerID),enemyArmy);
+        if(enemyHero == null)
+        {
+            controller = new BattleController(1, playersList.get(currentPlayerID).toMiniHeroInfo(), enemyArmy, serverConn);
+            serverConn.isBattleVsAi(true);
+        }
+        else
+        {
+            controller = new BattleController(1, playersList.get(currentPlayerID).toMiniHeroInfo(), enemyHero, myPlayerID, serverConn);
+            serverConn.isBattleVsAi(false);
+        }
+        serverConn.setBattleController(controller);
         controller.BattleInit();
         Timer timer = new Timer(100, new ActionListener()
         {
@@ -258,17 +284,20 @@ public class MapGameController
     private void battleEnded(BattleResult result)
     {
         controller = null;
+        enemyArmy = null;
+        enemyHero = null;
+        serverConn.setBattleController(null);
         if(result.vsAI)
         {
             if(result.winner == null)
             {
-                playersList.set(currentPlayerID,result.looser);
-                playersList.get(currentPlayerID).backToHomeTown();
+               // playersList.set(currentPlayerID,result.looser);
+                //playersList.get(currentPlayerID).backToHomeTown();
             }
             else
             {
-                playersList.set(currentPlayerID,result.winner);
-                mainMapGrid.cells[result.winner.currentPosition.x][result.winner.currentPosition.y].deleteMapObject();
+               // playersList.set(currentPlayerID,result.winner);
+                //mainMapGrid.cells[result.winner.currentPosition.x][result.winner.currentPosition.y].deleteMapObject();
             }
         }
         else
@@ -276,5 +305,17 @@ public class MapGameController
             //TODO: walka 2 graczy
         }
         endOfTurn();
+    }
+
+    public HeroInfo getHeroByPoint(Point p)
+    {
+        for(HeroInfo h : playersList)
+        {
+            if(h.currentPosition.x == p.x && h.currentPosition.y == p.y)
+            {
+                return h;
+            }
+        }
+        return null;
     }
 }

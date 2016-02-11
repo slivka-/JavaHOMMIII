@@ -1,8 +1,10 @@
 package Networking;
 
+import Map.MapObjects.Army;
 import Map.SavedMap;
 import Map.Tile;
 import dataClasses.HeroInfo;
+import dataClasses.MiniHeroInfo;
 import mapLogic.MapGameController;
 
 import java.awt.*;
@@ -23,4 +25,8 @@ public interface RMIServiceInterfaceClient extends Remote {
     void setCurrentPlayerID(int playerID) throws RemoteException;
     void setGameController(MapGameController controller) throws RemoteException;
     void gameMapEndOfTurn() throws RemoteException;
+    void attackUnit(Point target,Army army) throws RemoteException;
+    void attackUnit(Point target, MiniHeroInfo hero) throws RemoteException;
+    void battleMoveUnit(Point targetCell) throws RemoteException;
+    void battleSetNextPlayerID(int ID) throws RemoteException;
 }

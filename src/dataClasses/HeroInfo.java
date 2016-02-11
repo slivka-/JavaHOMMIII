@@ -15,7 +15,7 @@ import java.util.TreeMap;
  * Klasa zawiera dane nt bohatera i jego armii
  */
 public class HeroInfo implements Serializable{
-	private int ID;
+	public int ID;
 	public String Name;
 	public Town homeTown;
 	public Point currentPosition;
@@ -26,9 +26,9 @@ public class HeroInfo implements Serializable{
 	public HashMap<String,Integer> resources;//gold, wood, ore, itp
 	private HashMap<Integer, UnitInfo> army;
 	
-	public HeroInfo(String name,Town town)
+	public HeroInfo(String name,Town town, int myID)
 	{
-		ID = 0;
+		ID = myID;
 		Name = name;
 		homeTown = town;
 		setArmy(new HashMap<Integer, UnitInfo>());
@@ -73,5 +73,10 @@ public class HeroInfo implements Serializable{
 	public void backToHomeTown()
 	{
 		heroDisplay.setBounds((townPosition.x*32)-32,(townPosition.y*32)-32,96,64);
+	}
+
+	public MiniHeroInfo toMiniHeroInfo()
+	{
+		return new MiniHeroInfo(this.ID,this.Name,this.army,this.currentPosition,this.townPosition);
 	}
 }

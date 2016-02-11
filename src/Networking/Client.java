@@ -1,8 +1,11 @@
 package Networking;
 
+import Map.MapObjects.Army;
 import Map.SavedMap;
 import Map.Tile;
+import battleScreen.BattleController;
 import dataClasses.HeroInfo;
+import dataClasses.MiniHeroInfo;
 import mapLogic.MapGameController;
 import testP.JoinGameWindow;
 
@@ -21,6 +24,7 @@ public class Client extends UnicastRemoteObject implements RMIServiceInterfaceCl
     private String name;
     private JoinGameWindow parentWindow;
     private MapGameController controller;
+    private BattleController battle;
 
     public Client(String name, RMIServiceInterfaceServer server, JoinGameWindow parentWindow) throws RemoteException {
         this.name = name;
@@ -42,6 +46,66 @@ public class Client extends UnicastRemoteObject implements RMIServiceInterfaceCl
         try
         {
             server.moveHero(target);
+        } catch (RemoteException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    public void attackHeroSend(Point target,Army army)
+    {
+        try
+        {
+            server.attackHero(target, army);
+        } catch (RemoteException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    public void attackHeroSend(Point target, MiniHeroInfo hero)
+    {
+        try
+        {
+            server.attackHero(target, hero);
+        } catch (RemoteException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    public void battleMoveSend(Point targetCell)
+    {
+        try
+        {
+            server.battleMoveUnit(targetCell);
+        } catch (RemoteException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    public void setBattleController(BattleController controller)
+    {
+        this.battle = controller;
+    }
+
+    public void battleEndOfTurn(int nextID)
+    {
+        try
+        {
+            server.battleEndOfTurn(nextID);
+        } catch (RemoteException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    public void isBattleVsAi(boolean state)
+    {
+        try
+        {
+            server.battleIsVsAi(state);
         } catch (RemoteException e)
         {
             e.printStackTrace();
@@ -101,4 +165,29 @@ public class Client extends UnicastRemoteObject implements RMIServiceInterfaceCl
     {
         server.gameMapEndOfTurn();
     }
+
+    @Override
+    public void attackUnit(Point target, Army army) throws RemoteException
+    {
+        controller.AttackUnit(target, army);
+    }
+
+    @Override
+    public void attackUnit(Point target, MiniHeroInfo hero) throws RemoteException
+    {
+        controller.AttackUnit(target, hero);
+    }
+
+    @Override
+    public void battleMoveUnit(Point targetCell) throws RemoteException
+    {
+        battle.MoveUnit(targetCell);
+    }
+
+    @Override
+    public void battleSetNextPlayerID(int ID) throws RemoteException
+    {
+        battle.setCurrentPlayerID(ID);
+    }
+
 }

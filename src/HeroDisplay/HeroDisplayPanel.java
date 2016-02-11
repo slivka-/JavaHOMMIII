@@ -5,6 +5,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.geom.Point2D;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -106,6 +108,5 @@ public class HeroDisplayPanel extends JPanel
             }
         }
         g2.drawImage(animation.getCurrentFrame(currentDirection),0,0,null);
-
     }
 }

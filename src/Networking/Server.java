@@ -1,15 +1,13 @@
 package Networking;
 
+import Map.MapObjects.Army;
 import Map.MapObjects.MapObject;
 import Map.MapObjects.Towns.Loch;
 import Map.MapObjects.Towns.Town;
 import Map.MapObjects.Towns.Zamek;
 import Map.ReadyUnitTypes;
 import Map.SavedMap;
-import dataClasses.HeroInfo;
-import dataClasses.UnitCommander;
-import dataClasses.UnitInfo;
-import dataClasses.UnitType;
+import dataClasses.*;
 import testP.HostGameWindow;
 
 import java.awt.*;
@@ -28,6 +26,8 @@ public class Server extends UnicastRemoteObject implements RMIServiceInterfaceSe
     public ArrayList<MapObject> towns = null;
     private int currentPlayerID = 1;
     private int endCount = 1;
+    private int battleCount = 1;
+    private boolean isVsAi = false;
 
 
 
@@ -74,7 +74,7 @@ public class Server extends UnicastRemoteObject implements RMIServiceInterfaceSe
         int i = 0;
         ArrayList<HeroInfo> players = new ArrayList<>();
         while (i < gameClients.size()) {
-            HeroInfo hero = new HeroInfo(gameClients.get(i).retriveClientName(),(Town)towns.get(i));
+            HeroInfo hero = new HeroInfo(gameClients.get(i).retriveClientName(),(Town)towns.get(i),i);
             UnitType t;
             if(towns.get(i).getClass().equals(Zamek.class))
             {
@@ -88,7 +88,7 @@ public class Server extends UnicastRemoteObject implements RMIServiceInterfaceSe
             {
                 t = ReadyUnitTypes.hobgoblin;
             }
-            hero.addToArmy(1,new UnitInfo(50,t, UnitCommander.PLAYER1));
+            hero.addToArmy(1,new UnitInfo(50,t,i));
             players.add(hero);
             i++;
         }
@@ -111,6 +111,70 @@ public class Server extends UnicastRemoteObject implements RMIServiceInterfaceSe
         {
             endCount++;
         }
+    }
+
+    @Override
+    public void attackHero(Point target, Army army) throws RemoteException
+    {
+        int i = 0;
+        while (i < gameClients.size()) {
+            gameClients.get(i++).attackUnit(target, army);
+        }
+    }
+
+    public void attackHero(Point target, MiniHeroInfo hero) throws RemoteException
+    {
+        int i = 0;
+        while (i < gameClients.size()) {
+            gameClients.get(i++).attackUnit(target, hero);
+        }
+    }
+
+    @Override
+    public void battleMoveUnit(Point targetCell) throws RemoteException
+    {
+        int i = 0;
+        while (i < gameClients.size()) {
+            gameClients.get(i++).battleMoveUnit(targetCell);
+        }
+    }
+
+    @Override
+    public void battleEndOfTurn(int nextID) throws RemoteException
+    {
+
+        if(isVsAi)
+        {
+            int i = 0;
+            while (i < gameClients.size())
+            {
+                gameClients.get(i++).battleSetNextPlayerID(nextID);
+            }
+        }
+        else
+        {
+            System.out.println("Koniec tury");
+            if(battleCount == 2)
+            {
+                System.out.println("Nowa tura");
+                int i = 0;
+                while (i < gameClients.size())
+                {
+                    gameClients.get(i++).battleSetNextPlayerID(nextID);
+                }
+                battleCount = 1;
+            }
+            else
+            {
+                battleCount++;
+            }
+        }
+    }
+
+    @Override
+    public void battleIsVsAi(boolean state) throws RemoteException
+    {
+        this.isVsAi = state;
     }
 
 

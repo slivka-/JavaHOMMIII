@@ -151,7 +151,7 @@ public class BattleView {
 			public void mouseClicked(MouseEvent e) {
 
 					RangeIndicator r = (RangeIndicator) e.getSource();
-					mainController.MoveUnit(r.location);
+					mainController.MoveUnitSend(r.location);
 					mainBattleFrame.setCursor(Cursor.getDefaultCursor());
 
 			}
@@ -180,7 +180,7 @@ public class BattleView {
 							attackPosition = new Point(r.location.x + 1, r.location.y);
 							break;
 					}
-					mainController.AttackUnit(r.location, attackPosition);
+					mainController.AttackUnitSend(r.location, attackPosition);
 					mainBattleFrame.setCursor(Cursor.getDefaultCursor());
 
 			}
@@ -332,10 +332,9 @@ public class BattleView {
 	public void clearUnitRange()
 	{
 		Component[] c = lPane.getComponents();
-		RangeIndicator r = new RangeIndicator(new Point(0,0),null,null);
 		for(Component cmp : c)
 		{
-			if(cmp.getClass() == r.getClass())
+			if(cmp.getClass().equals(RangeIndicator.class))
 			{
 				lPane.remove(cmp);
 			}

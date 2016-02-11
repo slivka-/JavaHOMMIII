@@ -23,6 +23,8 @@ public class Tile extends JLayeredPane implements Serializable{
 	private Point firstDrawingPoint;
 	private Point centerPosition;
 
+	private TerrainPassability tempPass = null;
+
 	public Tile(int cellWidth, int cellHeight, int movementCost, Image img, Point drawingPoint) {
 		//super(new ImageIcon(img));
 		this.setLayout(null);
@@ -152,5 +154,19 @@ public class Tile extends JLayeredPane implements Serializable{
 	public void setCenterPosition(Point centerPosition)
 	{
 		this.centerPosition = centerPosition;
+	}
+
+	public void heroOnTop()
+	{
+		if(tempPass == null)
+		{
+			tempPass = passability;
+			passability = TerrainPassability.HERO;
+		}
+		else
+		{
+			passability = tempPass;
+			tempPass = null;
+		}
 	}
 }

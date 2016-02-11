@@ -13,9 +13,8 @@ import sun.misc.Queue;
  */
 public class BattleInfo {
 
-	private HeroInfo player1;
-	private HeroInfo player2;
-	private HeroInfo[] spectators;
+	private MiniHeroInfo player1;
+	private MiniHeroInfo player2;
 	private HashMap<Integer, UnitInfo> CPUarmy;
 	private int terrainType;
 	public BattlefieldCell[][] BattlefieldInfo;
@@ -35,7 +34,6 @@ public class BattleInfo {
 	{
 		player1 = null;
 		player2 = null;
-		spectators = null;
 		CPUarmy = null;
 		terrainType = 0;
 		BattlefieldInfo = new BattlefieldCell[14][10];
@@ -157,6 +155,7 @@ public class BattleInfo {
 				activeUnit = BattleQueue.dequeue(10);
 				activeUnit.setAsActive();
 				nextActiveUnit = BattleQueue.dequeue(10);
+
 			}
 			else
 			{
@@ -201,12 +200,12 @@ public class BattleInfo {
 			{
 				nextActiveUnit = null;
 			}
-			if(killedUnit.commander == UnitCommander.PLAYER1)
+			if(killedUnit.commander == player1.ID)
 			{
 				player1.removeFromArmy(killedUnit);
 				System.out.println(player1.getArmy());
 			}
-			else if(killedUnit.commander == UnitCommander.PLAYER2)
+			else if(player2!= null && killedUnit.commander == player2.ID)
 			{
 				player2.removeFromArmy(killedUnit);
 				System.out.println(player2.getArmy());
@@ -288,23 +287,23 @@ public class BattleInfo {
 	}
 	
 //============================PLAYER 1 GET/SET==================================\\	
-	public HeroInfo getPlayer1() 
+	public MiniHeroInfo getPlayer1()
 	{
 		return player1;
 	}
 	
-	public void setPlayer1(HeroInfo player1) 
+	public void setPlayer1(MiniHeroInfo player1)
 	{
 		this.player1 = player1;
 	}
 	
 //============================PLAYER2  GET/SET==================================\\	
-	public HeroInfo getPlayer2() 
+	public MiniHeroInfo getPlayer2()
 	{
 		return player2;
 	}
 
-	public void setPlayer2(HeroInfo player2) 
+	public void setPlayer2(MiniHeroInfo player2)
 	{
 		this.player2 = player2;
 	}
@@ -317,18 +316,7 @@ public class BattleInfo {
 	public void setCPUarmy(HashMap<Integer, UnitInfo> cPUarmy) {
 		CPUarmy = cPUarmy;
 	}
-	
-//============================SPECTATORS GET/SET================================\\	
-	public HeroInfo[] getSpectators() 
-	{
-		return spectators;
-	}
-	
-	public void setSpectators(HeroInfo[] spectators) 
-	{
-		this.spectators = spectators;
-	}
-	
+
 //==============================================================================\\		
 	public int getTerraintype() 
 	{

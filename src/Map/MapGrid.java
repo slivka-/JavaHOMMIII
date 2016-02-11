@@ -83,7 +83,10 @@ public class MapGrid extends JLayeredPane{
 						controller.moveHeroSend(t.location);
 						break;
 					case ARMY:
-						controller.AttackUnit(t.location,(Army)cells[t.getX()/32][t.getY()/32].getMapObject());
+						controller.AttackUnitSend(t.location, (Army) cells[t.getX() / 32][t.getY() / 32].getMapObject());
+						break;
+					case HERO:
+						controller.AttackUnitSend(t.location,controller.getHeroByPoint(new Point(t.getX()/32,t.getY()/32)).toMiniHeroInfo());
 						break;
 					case COLLECTABLE:
 						//setCursor(actionCursor);
@@ -113,6 +116,9 @@ public class MapGrid extends JLayeredPane{
 						setCursor(moveCursor);
 						break;
 					case ARMY:
+						setCursor(battleCursor);
+						break;
+					case HERO:
 						setCursor(battleCursor);
 						break;
 					case COLLECTABLE:
@@ -279,6 +285,7 @@ public class MapGrid extends JLayeredPane{
 							Point p = cells[col][row].getDrawingPoint();
 							hero.currentPosition = p;
 							hero.homeTown = (Town)cells[col][row].getMapObject();
+							cells[col][row].heroOnTop();
 							hero.townPosition = p;
 							hero.heroDisplay = new HeroDisplayPanel(7);
 							HeroDisplayPanel HeroD = hero.heroDisplay;

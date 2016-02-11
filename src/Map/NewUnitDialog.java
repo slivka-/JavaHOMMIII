@@ -75,27 +75,27 @@ public class NewUnitDialog
         String name = (String)unitsSelectionBox0.getSelectedItem();
         if(!name.equals("empty"))
         {
-            army.put(1,new UnitInfo(Integer.parseInt(unitNumberFiled0.getText()),ReadyUnitTypes.getUnitTypeByName(name), UnitCommander.FREEARMY));
+            army.put(1,new UnitInfo(Integer.parseInt(unitNumberFiled0.getText()),ReadyUnitTypes.getUnitTypeByName(name), -1));
         }
         name = (String)unitsSelectionBox1.getSelectedItem();
         if(!name.equals("empty"))
         {
-            army.put(2,new UnitInfo(Integer.parseInt(unitNumberFiled1.getText()),ReadyUnitTypes.getUnitTypeByName(name), UnitCommander.FREEARMY));
+            army.put(2,new UnitInfo(Integer.parseInt(unitNumberFiled1.getText()),ReadyUnitTypes.getUnitTypeByName(name), -1));
         }
         name = (String)unitsSelectionBox2.getSelectedItem();
         if(!name.equals("empty"))
         {
-            army.put(3,new UnitInfo(Integer.parseInt(unitNumberFiled2.getText()),ReadyUnitTypes.getUnitTypeByName(name), UnitCommander.FREEARMY));
+            army.put(3,new UnitInfo(Integer.parseInt(unitNumberFiled2.getText()),ReadyUnitTypes.getUnitTypeByName(name), -1));
         }
         name = (String)unitsSelectionBox3.getSelectedItem();
         if(!name.equals("empty"))
         {
-            army.put(4,new UnitInfo(Integer.parseInt(unitNumberFiled3.getText()),ReadyUnitTypes.getUnitTypeByName(name), UnitCommander.FREEARMY));
+            army.put(4,new UnitInfo(Integer.parseInt(unitNumberFiled3.getText()),ReadyUnitTypes.getUnitTypeByName(name), -1));
         }
         name = (String)unitsSelectionBox4.getSelectedItem();
         if(!name.equals("empty"))
         {
-            army.put(5,new UnitInfo(Integer.parseInt(unitNumberFiled4.getText()),ReadyUnitTypes.getUnitTypeByName(name), UnitCommander.FREEARMY));
+            army.put(5,new UnitInfo(Integer.parseInt(unitNumberFiled4.getText()),ReadyUnitTypes.getUnitTypeByName(name), -1));
         }
         Army output = new Army(army);
         if (choice == JOptionPane.YES_OPTION) {

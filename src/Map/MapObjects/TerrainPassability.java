@@ -4,5 +4,6 @@ public enum TerrainPassability {
     UNOCCUPIED,
     OCCUPIED_PERM,
     COLLECTABLE,
-    ARMY
+    ARMY,
+    HERO
 }

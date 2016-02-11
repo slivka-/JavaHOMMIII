@@ -5,7 +5,7 @@ package dataClasses;
  */
 public class BattleResult
 {
-    public HeroInfo winner;
-    public HeroInfo looser;
+    public MiniHeroInfo winner;
+    public MiniHeroInfo looser;
     public boolean vsAI;
 }

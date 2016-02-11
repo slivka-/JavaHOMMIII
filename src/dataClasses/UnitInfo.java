@@ -16,13 +16,13 @@ public class UnitInfo implements Serializable{
 	public UnitType unitType;
 	public Point currentPos;
 	public int woundedUnitHealth;
-	public UnitCommander commander;
+	public int commander;
 	private GraphicsPanel unitDisplay;
 	public int Defending;
 
 
 
-	public UnitInfo(int size, UnitType type, UnitCommander commander)
+	public UnitInfo(int size, UnitType type, int commander)
 	{
 		this.unitSize = size;
 		this.unitType = type;

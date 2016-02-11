@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 
 //import battleDisplay.PathFinding;
+import Networking.Client;
 import dataClasses.*;
 import Pathfinding.FindPath;
 
@@ -29,55 +30,36 @@ public class BattleController {
 	private int height = 664;
 
 	//IDENTYFIKACJA GRACZA
-	private UnitCommander me;
-	public boolean isMyTurn = true;
+	private int myID;
+	public int currentPlayerID;
 	public boolean isBattleOver = false;
+	private Client serverConnection;
 		
-	public BattleController(int terrainType, HeroInfo Player1, HeroInfo Player2, UnitCommander me)
+	public BattleController(int terrainType, MiniHeroInfo Player1, MiniHeroInfo Player2, int myID, Client serverConn)
 	{
 		this.model = new BattleInfo();
 		this.model.setPlayer1(Player1);
 		this.model.setPlayer2(Player2);
 		this.model.setTerraintype(terrainType);
-		this.me = me;
+		this.myID = myID;
 		this.view = new BattleView(width,height,this);
+		this.serverConnection = serverConn;
 	}
 	
-	public BattleController(int terrainType, HeroInfo Player1, HashMap<Integer, UnitInfo> Enemy)
+	public BattleController(int terrainType, MiniHeroInfo Player1, HashMap<Integer, UnitInfo> Enemy, Client serverConn)
 	{
 		this.model = new BattleInfo();
 		this.model.setPlayer1(Player1);
 		this.model.setCPUarmy(Enemy);
 		this.model.setTerraintype(terrainType);
 		this.view = new BattleView(width,height,this);
+		this.serverConnection = serverConn;
 	}
 
-	private void debugSetMe()
-	{
-		this.me = model.activeUnit.commander;
-	}
+//============================GET/SET==================================\\
 
-//============================GET/SET==================================\\	
-	
-	public void SetSpectators(HeroInfo[] heroInfo)
-	{
-		model.setSpectators(heroInfo);
-	}
+	public int getMe() { return myID; }
 
-	public UnitCommander getMe() { return this.me; }
-
-	public boolean isNextMoveMine()
-	{
-
-		if(model.nextActiveUnit.commander.equals(me))
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	}
 	
 //============================CONTROL==================================\\	
 	/**
@@ -90,23 +72,22 @@ public class BattleController {
 		
 		view.DrawBattleScreen(model.getTerraintype(),model.getBattlefieldInfo());
 		newTurn();
+		endOfTurn();
 	}
 	
-	/**
-	 * Przesuwa jednostke na wybrane pole
-	 * @param targetCell pole na kt�re jednostka ma si� przesun��
-	 */
+	public void MoveUnitSend(Point targetCell)
+	{
+		System.out.println("WysylamRuch "+ targetCell);
+		serverConnection.battleMoveSend(targetCell);
+	}
+
 	public void MoveUnit(Point targetCell)
 	{
+		System.out.println("DostalemRuch  "+ targetCell);
 			view.clearUnitRange();
 			Point startingPoint = model.activeUnit.currentPos;
 			FindPath f = new FindPath(model.BattlefieldInfo, startingPoint, targetCell);
 			ArrayList<Point> path = f.generatePath();
-			System.out.println("===================");
-			for (Point p : path)
-			{
-				System.out.println("X: " + p.x + ", Y:" + p.y);
-			}
 			model.BattlefieldInfo[model.activeUnit.currentPos.x][model.activeUnit.currentPos.y].contains = CellEntity.EMPTY;
 			model.BattlefieldInfo[model.activeUnit.currentPos.x][model.activeUnit.currentPos.y].unit = null;
 			model.BattlefieldInfo[targetCell.x][targetCell.y].contains = CellEntity.UNIT;
@@ -114,6 +95,10 @@ public class BattleController {
 			model.activeUnit.currentPos = targetCell;
 			view.moveUnit(model.BattlefieldInfo[targetCell.x][targetCell.y], path);
 			this.waitForAnimation(model.activeUnit,null);
+	}
+
+	public void AttackUnitSend(Point attackTarget, Point attackPosition)
+	{
 
 	}
 
@@ -152,7 +137,7 @@ public class BattleController {
 			model.BattlefieldInfo[attackTarget.x][attackTarget.y].unit = null;
 			model.deleteUnitFromQueue(defender);
 		}
-		newTurn();
+		endOfTurn();
 	}
 
 	private void waitForAnimation(UnitInfo animatedUnit,Point attackTarget)
@@ -166,13 +151,14 @@ public class BattleController {
 				{
 					Timer t = (Timer)e.getSource();
 					t.stop();
+					System.out.println("Koniec animacji");
 					if(attackTarget != null)
 					{
 						endAttackTurn(attackTarget);
 					}
 					else
 					{
-						newTurn();
+						endOfTurn();
 					}
 				}
 			}
@@ -218,15 +204,21 @@ public class BattleController {
 		}
 	}
 
+	public void setCurrentPlayerID(int ID)
+	{
+		this.currentPlayerID = ID;
+		newTurn();
+	}
+
 	private void newTurn()
 	{
 		if(!model.checkForEnd())
 		{
 			model.SetNextActiveUnit();
-			ArrayList<Point> moveRange = model.getMoveRange();
-			debugSetMe();
-			if (isMyTurn)
+			System.out.println("A: "+currentPlayerID+", JA:"+myID);
+			if (currentPlayerID == myID)
 			{
+				ArrayList<Point> moveRange = model.getMoveRange();
 				view.drawUnitRange(moveRange);
 			}
 		}
@@ -265,11 +257,19 @@ public class BattleController {
 
 	public void unitDefend()
 	{
-		view.clearUnitRange();
-		model.activeUnit.setDefending();
+		if(currentPlayerID == myID)
+		{
+			view.clearUnitRange();
+			model.activeUnit.setDefending();
 
-		view.setBattleText("Oddzia\u0142 "+model.activeUnit.unitType._name+" broni si\u0119. (Otrzymywane obra\u017Cenia -50%)");
-		newTurn();
+			view.setBattleText("Oddzia\u0142 " + model.activeUnit.unitType._name + " broni si\u0119. (Otrzymywane obra\u017Cenia -50%)");
+			newTurn();
+		}
+	}
+
+	public void endOfTurn()
+	{
+		serverConnection.battleEndOfTurn(model.nextActiveUnit.commander);
 	}
 
 	public BattleResult EndBattle()

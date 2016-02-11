@@ -4,14 +4,15 @@ import javax.imageio.ImageIO;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
-import java.io.File;
+import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
  * Created by slivka on 06.02.2016.
  */
-public class HeroAnimationThread implements Runnable
+public class HeroAnimationThread implements Runnable,Serializable
 {
 
     private int currentFrame;
@@ -80,71 +81,79 @@ public class HeroAnimationThread implements Runnable
         BufferedImage output;
         AffineTransform tx = AffineTransform.getScaleInstance(-1, 1);
         AffineTransformOp op;
-        switch (direction)
+        try
         {
-            case IDLE_BACK:
-                output = standingBack;
-                this.stop();
-            break;
+            switch (direction)
+            {
+                case IDLE_BACK:
+                    output = standingBack;
+                    this.stop();
+                    break;
 
-            case IDLE_FRONT:
-                output = standingFront;
-                this.stop();
-            break;
+                case IDLE_FRONT:
+                    output = standingFront;
+                    this.stop();
+                    break;
 
-            case IDLE_RIGHT:
-                output = standingSideways;
-                this.stop();
-            break;
+                case IDLE_RIGHT:
+                    output = standingSideways;
+                    this.stop();
+                    break;
 
-            case IDLE_LEFT:
-                output = standingSideways;
-                tx.translate(-output.getWidth(null),0);
-                op = new AffineTransformOp(tx, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
-                output = op.filter(output, null);
-                this.stop();
-            break;
+                case IDLE_LEFT:
+                    output = standingSideways;
+                    tx.translate(-output.getWidth(null), 0);
+                    op = new AffineTransformOp(tx, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
+                    output = op.filter(output, null);
+                    this.stop();
+                    break;
 
-            case MOVING_BACK:
-                output = moveBack.get(currentFrame);
-                if(stopped)
-                {
-                    this.restart();
-                }
-            break;
+                case MOVING_BACK:
+                    output = moveBack.get(currentFrame);
+                    if (stopped)
+                    {
+                        this.restart();
+                    }
+                    break;
 
-            case MOVING_FRONT:
-                output = moveFront.get(currentFrame);
-                if(stopped)
-                {
-                    this.restart();
-                }
-            break;
+                case MOVING_FRONT:
+                    output = moveFront.get(currentFrame);
+                    if (stopped)
+                    {
+                        this.restart();
+                    }
+                    break;
 
-            case MOVING_RIGHT:
-                output = moveSideways.get(currentFrame);
-                if(stopped)
-                {
-                    this.restart();
-                }
-            break;
+                case MOVING_RIGHT:
+                    output = moveSideways.get(currentFrame);
+                    if (stopped)
+                    {
+                        this.restart();
+                    }
+                    break;
 
-            case MOVING_LEFT:
-                output = moveSideways.get(currentFrame);
-                tx.translate(-output.getWidth(null),0);
-                op = new AffineTransformOp(tx, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
-                output = op.filter(output, null);
-                if(stopped)
-                {
-                    this.restart();
-                }
-            break;
+                case MOVING_LEFT:
+                    output = moveSideways.get(currentFrame);
+                    tx.translate(-output.getWidth(null), 0);
+                    op = new AffineTransformOp(tx, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
+                    output = op.filter(output, null);
+                    if (stopped)
+                    {
+                        this.restart();
+                    }
+                    break;
 
-            default:
-                output = null;
-            break;
+                default:
+                    output = null;
+                    break;
+            }
+            return output;
         }
-        return output;
+        catch (NullPointerException ex)
+        {
+            return standingSideways;
+        }
+
     }
 
     @Override
@@ -175,4 +184,5 @@ public class HeroAnimationThread implements Runnable
         }
 
     }
+
 }
