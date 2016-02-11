@@ -80,7 +80,7 @@ public class MapGrid extends JLayeredPane{
 				switch (t.passability)
 				{
 					case UNOCCUPIED:
-						controller.moveHero(t.location);
+						controller.moveHeroSend(t.location);
 						break;
 					case ARMY:
 						controller.AttackUnit(t.location,(Army)cells[t.getX()/32][t.getY()/32].getMapObject());
@@ -240,14 +240,15 @@ public class MapGrid extends JLayeredPane{
 	public void clearHeroRange()
 	{
 		Component[] c = this.getComponents();
-		MapRangeIndicator r = new MapRangeIndicator(new Point(0,0),null,null);
 		for(Component cmp : c)
 		{
-			if(cmp.getClass() == r.getClass())
+			if(cmp.getClass().equals(MapRangeIndicator.class))
 			{
 				this.remove(cmp);
 			}
 		}
+		this.updateUI();
+		this.revalidate();
 		this.repaint();
 	}
 
@@ -308,63 +309,6 @@ public class MapGrid extends JLayeredPane{
 			return MapSize.LARGE;
 		}
 	}
-
-/*
-	public void initializeGrid() {
-		removeAll();
-		isGridOn = false;
-		rowCount = colCount = 32;
-		cells2 = new Tile2[colCount][rowCount];
-		for (int col = 0; col < colCount; ++col) {
-			for (int row = 0; row < rowCount; ++row) {
-				Tile2 cell = new Tile2(cellWidth, cellHeight, 1);
-				Image img = graphics.getRandomTileDefaultBackgroundImage();
-				cell.setImage(img);
-				cell.setID(-1);
-				cells2[col][row] = cell;
-			}
-		}
-		/*
-		removeAll();
-		isGridOn = false;
-		rowCount = colCount = 32;
-
-		for (int col = 0; col < colCount; ++col) {
-			for (int row = 0; row < rowCount; ++row) {
-				Image img = graphics.getRandomTileDefaultBackgroundImage();
-				//Graphics2D g;
-				java.awt.Graphics g = getComponentGraphics(img.getGraphics());
-				g.drawImage(img, col * cellWidth, row * cellHeight, null);
-				System.out.println(col + " : " + row);
-			}
-		}
-		updateUI();
-	}
-	*/
-/*
-	protected void paintComponent(java.awt.Graphics g) {
-		removeAll();
-		isGridOn = false;
-		rowCount = colCount = 10;
-
-		for (int col = 0; col < colCount; ++col) {
-			for (int row = 0; row < rowCount; ++row) {
-				//Image img = graphics.getRandomTileDefaultBackgroundImage();
-				Image img = cells2[col][row].getImage();
-				//Graphics2D g;
-
-				//g.drawImage(img, col * cellWidth, row * cellHeight, null);
-				drawTile(g, img, col * cellWidth, row * cellHeight);
-				System.out.println(col + " : " + row);
-			}
-		}
-		System.out.println("wowwowwowwowwowwowwow");
-	}
-
-	protected void drawTile(java.awt.Graphics g, Image img, int x, int y) {
-		g.drawImage(img, x, y, null);
-	}
-*/
 	/**
 	 * If element is selected in Image Selection Box and you click on the map
 	 * it changes the image (icon) of given tile. Note: to have more images
@@ -568,10 +512,6 @@ public class MapGrid extends JLayeredPane{
 	{
 		Pathfinder p = new Pathfinder(cells,hero.currentPosition,target);
 		ArrayList<Point> pArr = p.generatePath();
-		for(Point a : pArr)
-		{
-			System.out.println(a);
-		}
 		hero.heroDisplay.MoveHero(pArr);
 	}
 

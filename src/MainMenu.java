@@ -65,17 +65,23 @@ public class MainMenu
         });
         mainMenuFrame.add(gameStart);
         */
+        //HOSTOWANIE
         JButton hostGame = new JButton("HOSTUJ GRE");
         hostGame.setBounds(100, 100, 100, 50);
-        hostGame.addActionListener(new ActionListener() {
+        hostGame.addActionListener(new ActionListener()
+        {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e)
+            {
                 HostGameWindow hgw = new HostGameWindow(mainMenuFrame);
                 hgw.show();
+                mainMenuFrame.setVisible(false);
+                mainMenuFrame.dispose();
             }
         });
         mainMenuFrame.add(hostGame);
 
+        //DOLACZANIE
         JButton joinGame = new JButton("DOLACZ DO GRY");
         joinGame.setBounds(100, 200, 100, 50);
         joinGame.addActionListener(new ActionListener() {
@@ -95,7 +101,7 @@ public class MainMenu
             public void actionPerformed(ActionEvent e)
             {
                 //Odpala edytor map
-                mainGameController = new MapGameController(null);
+                mainGameController = new MapGameController(null,0,null,null);
                 mainMenuFrame.setVisible(false);
                 mainMenuFrame.dispose();
             }

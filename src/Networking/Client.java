@@ -1,10 +1,16 @@
 package Networking;
 
+import Map.SavedMap;
 import Map.Tile;
+import dataClasses.HeroInfo;
+import mapLogic.MapGameController;
+import testP.JoinGameWindow;
 
+import java.awt.*;
 import java.io.Console;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
 
 /**
  * Created by Irozin on 2016-02-10.
@@ -13,10 +19,13 @@ public class Client extends UnicastRemoteObject implements RMIServiceInterfaceCl
 
     private RMIServiceInterfaceServer server;
     private String name;
+    private JoinGameWindow parentWindow;
+    private MapGameController controller;
 
-    public Client(String name, RMIServiceInterfaceServer server) throws RemoteException {
+    public Client(String name, RMIServiceInterfaceServer server, JoinGameWindow parentWindow) throws RemoteException {
         this.name = name;
         this.server = server;
+        this.parentWindow = parentWindow;
         server.registerClient(this);
     }
 
@@ -28,19 +37,34 @@ public class Client extends UnicastRemoteObject implements RMIServiceInterfaceCl
         }
     }
 
-    public void poruszBOhaterem(int x, int y)
+    public void moveHeroSend(Point target)
     {
-        //server.moveHero(x, y);
+        try
+        {
+            server.moveHero(target);
+        } catch (RemoteException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     @Override
-    public void downloadMap(Tile[] map) throws RemoteException {
-        //utwórz mapę
+    public void downloadMap(SavedMap map) throws RemoteException {
+        parentWindow.gameMap = map;
     }
 
     @Override
-    public void moveHero(int ID, int newX, int newY) throws RemoteException {
+    public void retriveHeroInfos(ArrayList<HeroInfo> players, int myID) throws RemoteException
+    {
+        parentWindow.playersInfo = players;
+        parentWindow.myID = myID;
+        parentWindow.startGame();
+    }
 
+    @Override
+    public void moveHero(Point target) throws RemoteException
+    {
+        controller.moveHero(target);
     }
 
     @Override
@@ -51,5 +75,30 @@ public class Client extends UnicastRemoteObject implements RMIServiceInterfaceCl
     @Override
     public void retrieveMessage(String message) throws RemoteException {
         System.out.println(message);
+    }
+
+    @Override
+    public String retriveClientName() throws RemoteException
+    {
+        return name;
+    }
+
+
+    @Override
+    public void setCurrentPlayerID(int playerID) throws RemoteException
+    {
+        controller.setCurrentPlayer(playerID);
+    }
+
+
+    public void setGameController(MapGameController controller) throws RemoteException
+    {
+        this.controller = controller;
+    }
+
+    @Override
+    public void gameMapEndOfTurn() throws RemoteException
+    {
+        server.gameMapEndOfTurn();
     }
 }

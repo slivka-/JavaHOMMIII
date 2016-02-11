@@ -21,10 +21,8 @@ public class MapRangeIndicator extends JPanel
     {
         this.setOpaque(false);
         this.setBounds(p.x * 32, p.y * 32, 32, 32);
-        System.out.println(p);
         this.location = p;
         this.passability = passability;
-        System.out.println(passability);
         if(mListener != null)
         {
             this.addMouseListener(mListener);

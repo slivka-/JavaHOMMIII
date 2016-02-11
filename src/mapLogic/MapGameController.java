@@ -9,11 +9,13 @@ import ImageSelection.ImageSelectionController;
 import Map.*;
 import Map.MapObjects.Army;
 import Map.MapObjects.TerrainPassability;
+import Networking.Client;
 import battleScreen.BattleController;
 import dataClasses.BattleResult;
 import dataClasses.HeroInfo;
 import dataClasses.UnitInfo;
 import dataClasses.UnitType;
+import testP.JoinGameWindow;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
@@ -25,6 +27,7 @@ import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -35,18 +38,22 @@ public class MapGameController
 {
     private ArrayList<HeroInfo> playersList;
     private MapGrid mainMapGrid;
+
     private int currentPlayerID;
-    private final int myPlayerID;
+    private int myPlayerID;
+
     private MouseListener listener;
     private boolean attack = false;
     private BattleController controller;
+    private SavedMap savedMap;
+    private Client serverConn;
 
     private HashMap<Integer, UnitInfo> enemyArmy = null;
 
-    public MapGameController(ArrayList<HeroInfo> players)
+    public MapGameController(ArrayList<HeroInfo> players, int myID, SavedMap map, Client serverConn)
     {
-        myPlayerID = 0;
-        currentPlayerID = 0;
+        myPlayerID = myID;
+        //currentPlayerID = 0;
         if(players == null)
         {
             launchEditor();
@@ -54,6 +61,8 @@ public class MapGameController
         else
         {
             this.playersList = players;
+            this.savedMap = map;
+            this.serverConn = serverConn;
             launchGame();
         }
     }
@@ -91,7 +100,7 @@ public class MapGameController
         mainMapGrid.initializeGrid(MapSize.SMALL);
         MapGridContainer mgc = new MapGridContainer(mainMapGrid);
         final DrawGUI draw = new DrawGUI(mgc);
-        loadMap();
+        mainMapGrid.readSavedMap(savedMap);
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 draw.drawAndShowMap();
@@ -131,6 +140,11 @@ public class MapGameController
     {
         HeroInfo currentHero = playersList.get(currentPlayerID);
         mainMapGrid.drawHeroRange(currentHero.currentPosition,currentHero.heroRange,this.listener);
+    }
+
+    public void moveHeroSend(Point target)
+    {
+        serverConn.moveHeroSend(target);
     }
 
     public void moveHero(Point target)
@@ -183,7 +197,7 @@ public class MapGameController
                     }
                     else
                     {
-                        nextTurn();
+                        endOfTurn();
                     }
                 }
             }
@@ -195,8 +209,32 @@ public class MapGameController
 
     public void nextTurn()
     {
-        //TODO: TU ZMIENIAC GRACZA
-        this.drawCurrentHeroRange();
+        System.out.println("JA:"+myPlayerID+", A:"+currentPlayerID);
+        if(currentPlayerID == myPlayerID)
+        {
+            this.drawCurrentHeroRange();
+        }
+    }
+
+    public void setCurrentPlayer(int playerID)
+    {
+        this.currentPlayerID = playerID;
+        nextTurn();
+    }
+
+    private void endOfTurn()
+    {
+        try
+        {
+            if(currentPlayerID == myPlayerID)
+            {
+                serverConn.gameMapEndOfTurn();
+                System.out.println("KONCZE TURE");
+            }
+        } catch (RemoteException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     public void LaunchBattle()
@@ -241,6 +279,6 @@ public class MapGameController
         {
             //TODO: walka 2 graczy
         }
-        nextTurn();
+        endOfTurn();
     }
 }

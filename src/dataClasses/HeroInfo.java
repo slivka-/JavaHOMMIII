@@ -4,6 +4,7 @@ import HeroDisplay.HeroDisplayPanel;
 import Map.MapObjects.Towns.Town;
 
 import java.awt.*;
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.TreeMap;
@@ -13,7 +14,7 @@ import java.util.TreeMap;
  * @author slivka
  * Klasa zawiera dane nt bohatera i jego armii
  */
-public class HeroInfo {
+public class HeroInfo implements Serializable{
 	private int ID;
 	public String Name;
 	public Town homeTown;
