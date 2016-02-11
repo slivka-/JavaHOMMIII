@@ -2,31 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a84184e7-9ef9-4486-ac6f-da6f5692ca5e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/units/castle/Halberdier/a;100x115;7.png" afterPath="$PROJECT_DIR$/assets/units/castle/Halberdier/a;100x115;7.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/units/castle/Pikeman/a;100x80;6.png" afterPath="$PROJECT_DIR$/assets/units/castle/Pikeman/a;100x80;6.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/units/castle/Swordsman/a;99x99;7.png" afterPath="$PROJECT_DIR$/assets/units/castle/Swordsman/a;99x99;7.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/units/Dungeon/minotaur/d;100x100;6.png" afterPath="$PROJECT_DIR$/assets/units/Dungeon/minotaur/d;100x100;6.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/units/Dungeon/minotaurking/d;100x105;6.png" afterPath="$PROJECT_DIR$/assets/units/Dungeon/minotaurking/d;100x105;6.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/units/castle/Crusader/d;100x120;6.png" afterPath="$PROJECT_DIR$/assets/units/castle/Crusader/d;100x120;6.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/units/castle/Pikeman/d;60x80;5.png" afterPath="$PROJECT_DIR$/assets/units/castle/Pikeman/d;60x80;5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/units/castle/Halberdier/d;80x90;3.png" afterPath="$PROJECT_DIR$/assets/units/castle/Halberdier/d;80x90;3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/units/Dungeon/troglodyte/d;80x90;5.png" afterPath="$PROJECT_DIR$/assets/units/Dungeon/troglodyte/d;80x90;5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/units/Dungeon/infernaltroglodyte/d;90x100;4.png" afterPath="$PROJECT_DIR$/assets/units/Dungeon/infernaltroglodyte/d;90x100;4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/units/castle/Swordsman/d;99x99;6.png" afterPath="$PROJECT_DIR$/assets/units/castle/Swordsman/d;99x99;6.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/units/castle/Swordsman/i;50x80;9.png" afterPath="$PROJECT_DIR$/assets/units/castle/Swordsman/i;50x80;9.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/units/castle/Halberdier/i;60x115;9.png" afterPath="$PROJECT_DIR$/assets/units/castle/Halberdier/i;60x115;9.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/units/castle/Crusader/i;70x110;9.png" afterPath="$PROJECT_DIR$/assets/units/castle/Crusader/i;70x110;9.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Networking/Client.java" afterPath="$PROJECT_DIR$/src/Networking/Client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dataClasses/HeroInfo.java" afterPath="$PROJECT_DIR$/src/dataClasses/HeroInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/testP/HostGameWindow.java" afterPath="$PROJECT_DIR$/src/testP/HostGameWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/testP/JoinGameWindow.java" afterPath="$PROJECT_DIR$/src/testP/JoinGameWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainMenu.java" afterPath="$PROJECT_DIR$/src/MainMenu.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mapLogic/MapGameController.java" afterPath="$PROJECT_DIR$/src/mapLogic/MapGameController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map/MapGrid.java" afterPath="$PROJECT_DIR$/src/Map/MapGrid.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map/MapRangeIndicator.java" afterPath="$PROJECT_DIR$/src/Map/MapRangeIndicator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Networking/RMIServiceInterfaceClient.java" afterPath="$PROJECT_DIR$/src/Networking/RMIServiceInterfaceClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Networking/RMIServiceInterfaceServer.java" afterPath="$PROJECT_DIR$/src/Networking/RMIServiceInterfaceServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map/SavedMap.java" afterPath="$PROJECT_DIR$/src/Map/SavedMap.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Networking/Server.java" afterPath="$PROJECT_DIR$/src/Networking/Server.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -77,8 +53,8 @@
       <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Networking/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1173" max-vertical-offset="2686">
-              <caret line="160" column="23" selection-start-line="160" selection-start-column="23" selection-end-line="160" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="2839">
+              <caret line="135" column="5" selection-start-line="135" selection-start-column="5" selection-end-line="135" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -117,23 +93,11 @@
       <file leaf-file-name="MapGameController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/mapLogic/MapGameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.2191958" vertical-offset="1621" max-vertical-offset="4352">
-              <caret line="230" column="46" selection-start-line="230" selection-start-column="46" selection-end-line="230" selection-end-column="46" />
+            <state vertical-scroll-proportion="-0.031636864" vertical-offset="3321" max-vertical-offset="4284">
+              <caret line="228" column="42" selection-start-line="228" selection-start-column="42" selection-end-line="228" selection-end-column="42" />
               <folding>
                 <element signature="e#4733#4734#0" expanded="true" />
                 <element signature="e#4780#4781#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MapGrid.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Map/MapGrid.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3320" max-vertical-offset="8806">
-              <caret line="234" column="0" selection-start-line="234" selection-start-column="0" selection-end-line="234" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -207,8 +171,8 @@
         <option value="$PROJECT_DIR$/src/Networking/Client.java" />
         <option value="$PROJECT_DIR$/src/Map/MapGrid.java" />
         <option value="$PROJECT_DIR$/src/Map/MapRangeIndicator.java" />
-        <option value="$PROJECT_DIR$/src/Networking/Server.java" />
         <option value="$PROJECT_DIR$/src/mapLogic/MapGameController.java" />
+        <option value="$PROJECT_DIR$/src/Networking/Server.java" />
       </list>
     </option>
   </component>
@@ -765,16 +729,16 @@
       <workItem from="1455104134763" duration="12716000" />
       <workItem from="1455127770423" duration="8108000" />
       <workItem from="1455139310212" duration="3867000" />
-      <workItem from="1455189921375" duration="13254000" />
+      <workItem from="1455189921375" duration="14096000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191802000" />
+    <option name="totallyTimeSpent" value="192644000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -787,7 +751,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10626398" sideWeight="0.46760392" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15548098" sideWeight="0.46760392" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1680929" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1259,16 +1223,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Map/MapGrid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3320" max-vertical-offset="8806">
-          <caret line="234" column="0" selection-start-line="234" selection-start-column="0" selection-end-line="234" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/HeroDisplay/HeroDisplayPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="838" max-vertical-offset="1768">
@@ -1285,14 +1239,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Networking/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1173" max-vertical-offset="2686">
-          <caret line="160" column="23" selection-start-line="160" selection-start-column="23" selection-end-line="160" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/HeroDisplay/HeroAnimationThread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1259" max-vertical-offset="2975">
@@ -1301,10 +1247,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Networking/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="2839">
+          <caret line="135" column="5" selection-start-line="135" selection-start-column="5" selection-end-line="135" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Map/MapGrid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3320" max-vertical-offset="8806">
+          <caret line="234" column="0" selection-start-line="234" selection-start-column="0" selection-end-line="234" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/mapLogic/MapGameController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.2191958" vertical-offset="1621" max-vertical-offset="4352">
-          <caret line="230" column="46" selection-start-line="230" selection-start-column="46" selection-end-line="230" selection-end-column="46" />
+        <state vertical-scroll-proportion="-0.031636864" vertical-offset="3321" max-vertical-offset="4284">
+          <caret line="228" column="42" selection-start-line="228" selection-start-column="42" selection-end-line="228" selection-end-column="42" />
           <folding>
             <element signature="e#4733#4734#0" expanded="true" />
             <element signature="e#4780#4781#0" expanded="true" />

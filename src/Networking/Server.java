@@ -27,6 +27,7 @@ public class Server extends UnicastRemoteObject implements RMIServiceInterfaceSe
     public boolean canClientsJoin;
     public ArrayList<MapObject> towns = null;
     private int currentPlayerID = 1;
+    private int endCount = 1;
 
 
 
@@ -102,7 +103,14 @@ public class Server extends UnicastRemoteObject implements RMIServiceInterfaceSe
     @Override
     public synchronized void gameMapEndOfTurn() throws RemoteException
     {
-        setCurrentPlayerID();
+        if(endCount == gameClients.size())
+        {
+            setCurrentPlayerID();
+        }
+        else
+        {
+            endCount++;
+        }
     }
 
 
@@ -120,6 +128,7 @@ public class Server extends UnicastRemoteObject implements RMIServiceInterfaceSe
         {
             currentPlayerID = 0;
         }
+        endCount = 1;
     }
 
     @Override

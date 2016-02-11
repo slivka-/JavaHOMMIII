@@ -226,11 +226,7 @@ public class MapGameController
     {
         try
         {
-            if(currentPlayerID == myPlayerID)
-            {
-                serverConn.gameMapEndOfTurn();
-                System.out.println("KONCZE TURE");
-            }
+            serverConn.gameMapEndOfTurn();
         } catch (RemoteException e)
         {
             e.printStackTrace();
