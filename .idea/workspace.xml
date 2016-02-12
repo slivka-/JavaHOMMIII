@@ -2,30 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a84184e7-9ef9-4486-ac6f-da6f5692ca5e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/mapLogic/BuyUnitsDialog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/battleDisplay/AnimateThread.java" afterPath="$PROJECT_DIR$/src/battleDisplay/AnimateThread.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/battleScreen/BattleController.java" afterPath="$PROJECT_DIR$/src/battleScreen/BattleController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/battleScreen/BattleView.java" afterPath="$PROJECT_DIR$/src/battleScreen/BattleView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Networking/Client.java" afterPath="$PROJECT_DIR$/src/Networking/Client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map/MapObjects/Mines/DrewnoMine.java" afterPath="$PROJECT_DIR$/src/Map/MapObjects/Mines/DrewnoMine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/battleDisplay/GraphicsPanel.java" afterPath="$PROJECT_DIR$/src/battleDisplay/GraphicsPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dataClasses/HeroInfo.java" afterPath="$PROJECT_DIR$/src/dataClasses/HeroInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/testP/HostGameWindow.java" afterPath="$PROJECT_DIR$/src/testP/HostGameWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map/MapObjects/Mines/KlejnotMine.java" afterPath="$PROJECT_DIR$/src/Map/MapObjects/Mines/KlejnotMine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map/MapObjects/Mines/KrysztalMine.java" afterPath="$PROJECT_DIR$/src/Map/MapObjects/Mines/KrysztalMine.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainMenu.java" afterPath="$PROJECT_DIR$/src/MainMenu.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mapLogic/MapGameController.java" afterPath="$PROJECT_DIR$/src/mapLogic/MapGameController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map/MapGrid.java" afterPath="$PROJECT_DIR$/src/Map/MapGrid.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map/MapGridContainer.java" afterPath="$PROJECT_DIR$/src/Map/MapGridContainer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map/MapObjects/MapObject.java" afterPath="$PROJECT_DIR$/src/Map/MapObjects/MapObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/battleDisplay/MoveThread.java" afterPath="$PROJECT_DIR$/src/battleDisplay/MoveThread.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Networking/RMIServiceInterfaceClient.java" afterPath="$PROJECT_DIR$/src/Networking/RMIServiceInterfaceClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Networking/RMIServiceInterfaceServer.java" afterPath="$PROJECT_DIR$/src/Networking/RMIServiceInterfaceServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map/MapObjects/Mines/RudaMine.java" afterPath="$PROJECT_DIR$/src/Map/MapObjects/Mines/RudaMine.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Networking/Server.java" afterPath="$PROJECT_DIR$/src/Networking/Server.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map/MapObjects/Mines/SiarkaMine.java" afterPath="$PROJECT_DIR$/src/Map/MapObjects/Mines/SiarkaMine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map/MapObjects/Mines/ZlotoMine.java" afterPath="$PROJECT_DIR$/src/Map/MapObjects/Mines/ZlotoMine.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="D:\Programy\GIT\JavaHOMMIII\src\testP\HostGameWindow.java" afterPath="$PROJECT_DIR$/src/GameWindows/HostGameWindow.java" />
+      <change type="MOVED" beforePath="D:\Programy\GIT\JavaHOMMIII\src\testP\JoinGameWindow.java" afterPath="$PROJECT_DIR$/src/GameWindows/JoinGameWindow.java" />
     </list>
     <ignored path="JavaHOMMIII.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,364 +35,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Networking/Server.java">
+      <file leaf-file-name="FolderImageBox.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ImageSelection/FolderImageBox.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2782" max-vertical-offset="4284">
-              <caret line="194" column="52" selection-start-line="194" selection-start-column="52" selection-end-line="194" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.09803922" vertical-offset="0" max-vertical-offset="1207">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RMIServiceInterfaceClient.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Networking/RMIServiceInterfaceClient.java">
+      <file leaf-file-name="ImageFolderComponent.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ImageSelection/ImageFolderComponent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-              <caret line="33" column="53" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Networking/Client.java">
+      <file leaf-file-name="ImageSelectionBox.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ImageSelection/ImageSelectionBox.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="806" max-vertical-offset="3672">
-              <caret line="223" column="32" selection-start-line="223" selection-start-column="32" selection-end-line="223" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="294" max-vertical-offset="1836">
+              <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MapGameController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mapLogic/MapGameController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6103">
-              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-              <folding>
-                <element signature="e#6640#6641#0" expanded="true" />
-                <element signature="e#6695#6696#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BuyUnitsDialog.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mapLogic/BuyUnitsDialog.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="576" max-vertical-offset="5219">
-              <caret line="49" column="28" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainMenu.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MainMenu.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1581">
-              <caret line="89" column="69" selection-start-line="89" selection-start-column="69" selection-end-line="89" selection-end-column="69" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReadyUnitTypes.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Map/ReadyUnitTypes.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="290" max-vertical-offset="1156">
-              <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NewUnitDialog.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Map/NewUnitDialog.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1001" max-vertical-offset="1836">
-              <caret line="77" column="96" selection-start-line="77" selection-start-column="96" selection-end-line="77" selection-end-column="96" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HostGameWindow.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/testP/HostGameWindow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="496" max-vertical-offset="2652">
-              <caret line="65" column="21" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JAVA/battleDisplay" pinned="false" current-in-tab="true">
-        <entry file="uml://JAVA/battleDisplay">
-          <provider selected="true" editor-type-id="UmlEditorProvider">
-            <state>
-              <ID>JAVA</ID>
-              <OriginalElement>battleDisplay</OriginalElement>
-              <nodes>
-                <node x="0.0" y="255.0">Networking.RMIServiceInterfaceServer</node>
-                <node x="642.0" y="790.0">mapLogic.BuyUnitsDialog</node>
-                <node x="774.0" y="865.0">Map.MapObjects.Mines.ResoruceType</node>
-                <node x="170.0" y="180.0">Map.MapObjects.Towns.Forteca</node>
-                <node x="615.0" y="180.0">Map.MapObjects.Resources.Rtec</node>
-                <node x="0.0" y="410.0">Pathfinding.FindPath</node>
-                <node x="738.0" y="1090.0">Map.Tile</node>
-                <node x="429.0" y="255.0">ImageSelection.ImageSelectionBox</node>
-                <node x="215.0" y="255.0">Networking.RMIServiceInterfaceClient</node>
-                <node x="183.0" y="565.0">Map.MapRangeIndicator</node>
-                <node x="308.88392857142867" y="90.0">Map.MapObjects.Miscellaneous.Misc</node>
-                <node x="80.0" y="180.0">Map.MapObjects.Towns.Zamek</node>
-                <node x="469.0" y="865.0">HeroDisplay.HeroDirection</node>
-                <node x="523.0" y="1015.0">dataClasses.UnitType</node>
-                <node x="-135.0" y="767.0">MainMenu</node>
-                <node x="523.0" y="90.0">Map.MapObjects.Resources.Resource</node>
-                <node x="745.0" y="410.0">mapLogic.MapGameController</node>
-                <node x="482.0" y="790.0">battleDisplay.AnimationType</node>
-                <node x="126.0" y="410.0">ImageSelection.ImageSelectionController</node>
-                <node x="496.0" y="1090.0">dataClasses.UnitInfo</node>
-                <node x="339.0" y="410.0">ImageSelection.ImageFolderComponent</node>
-                <node x="1102.0" y="180.0">Map.MapObjects.Mines.ZlotoMine</node>
-                <node x="609.0" y="255.0">ImageSelection.FolderImageBox</node>
-                <node x="1329.0" y="180.0">Map.MapObjects.Mines.RudaMine</node>
-                <node x="692.0" y="180.0">Map.MapObjects.Resources.Klejnot</node>
-                <node x="0.0" y="1015.0">Pathfinding.GameMap</node>
-                <node x="533.0" y="180.0">Map.MapObjects.Resources.Zloto</node>
-                <node x="1558.0" y="180.0">Map.MapObjects.Mines.RtecMine</node>
-                <node x="161.0" y="790.0">Map.NewMapDialog</node>
-                <node x="990.0" y="180.0">Map.MapObjects.Mines.SiarkaMine</node>
-                <node x="263.00000000000006" y="180.0">Map.MapObjects.Resources.Ruda</node>
-                <node x="0.0" y="865.0">Map.NewUnitDialog</node>
-                <node x="622.0" y="865.0">dataClasses.BattlefieldCell</node>
-                <node x="295.0" y="940.0">battleDisplay.SpriteLoader</node>
-                <node x="366.0" y="565.0">Map.MapEditorMenuBar</node>
-                <node x="0.0" y="940.0">dataClasses.MiniHeroInfo</node>
-                <node x="1211.0" y="180.0">Map.MapObjects.Mines.KlejnotMine</node>
-                <node x="1310.5" y="90.0">Map.MapObjects.Landscapes.Landscape</node>
-                <node x="783.0" y="180.0">Map.MapObjects.Resources.Siarka</node>
-                <node x="1437.0" y="180.0">Map.MapObjects.Mines.KrysztalMine</node>
-                <node x="168.0" y="715.0">GraphicsProcessing.ImageProcessor</node>
-                <node x="264.0" y="1015.0">Pathfinding.GameCell</node>
-                <node x="250.0" y="1090.0">Map.MapSize</node>
-                <node x="373.0" y="1090.0">Pathfinding.MapCell</node>
-                <node x="656.0" y="715.0">battleDisplay.AttackDirection</node>
-                <node x="494.0" y="715.0">battleScreen.BattleController</node>
-                <node x="775.0" y="1015.0">GraphicsProcessing.Graphics</node>
-                <node x="619.5" y="335.0">ImageSelection.FolderImageBox.ListRenderer</node>
-                <node x="715.0" y="940.0">Map.SavedMap</node>
-                <node x="0.0" y="1090.0">GraphicsProcessing.DrawGUI</node>
-                <node x="394.0" y="1015.0">dataClasses.CellEntity</node>
-                <node x="331.0" y="715.0">Map.ReadyUnitTypes</node>
-                <node x="1.0" y="490.0">Pathfinding.FindPath.openList</node>
-                <node x="52.0" y="335.0">Networking.Server</node>
-                <node x="438.5" y="335.0">ImageSelection.ImageSelectionBox.MyListRenderer</node>
-                <node x="159.0" y="865.0">Pathfinding.BattlefieldMap</node>
-                <node x="83.5" y="90.0">Map.MapObjects.Towns.Town</node>
-                <node x="690.0" y="640.0">Map.MapObjects.TerrainPassability</node>
-                <node x="0.0" y="640.0">testP.JoinGameWindow</node>
-                <node x="267.0" y="335.0">Networking.Client</node>
-                <node x="868.0" y="180.0">Map.MapObjects.Mines.DrewnoMine</node>
-                <node x="581.0" y="940.0">battleScreen.BattleView</node>
-                <node x="315.0" y="865.0">battleDisplay.GraphicsPanel</node>
-                <node x="0.0" y="180.0">Map.MapObjects.Towns.Loch</node>
-                <node x="134.0" y="1015.0">battleScreen.BattleInfo</node>
-                <node x="824.5" y="0.0">Map.MapObjects.MapObject</node>
-                <node x="779.0" y="335.0">Pathfinding.Pathfinder.openList</node>
-                <node x="649.0" y="1015.0">dataClasses.HeroInfo</node>
-                <node x="0.0" y="565.0">battleDisplay.StaticGraphicsPanel</node>
-                <node x="548.0" y="410.0">HeroDisplay.HeroAnimationThread</node>
-                <node x="322.0" y="790.0">battleDisplay.AnimateThread</node>
-                <node x="344.00000000000006" y="180.0">Map.MapObjects.Resources.Krysztal</node>
-                <node x="438.00000000000006" y="180.0">Map.MapObjects.Resources.Drewno</node>
-                <node x="125.0" y="1090.0">Map.MapGrid</node>
-                <node x="440.0" y="940.0">dataClasses.BattleResult</node>
-                <node x="802.0" y="790.0">battleDisplay.RangeIndicator</node>
-                <node x="1229.5" y="90.0">Map.MapObjects.Mines.Mine</node>
-                <node x="-146.0" y="681.0">TestClass</node>
-                <node x="347.0" y="640.0">HeroDisplay.HeroDisplayPanel</node>
-                <node x="0.0" y="715.0">dataClasses.UnitCommander</node>
-                <node x="0.0" y="790.0">battleDisplay.interfaceButton</node>
-                <node x="727.0" y="565.0">Map.MapGridContainer</node>
-                <node x="519.0" y="640.0">HeroDisplay.HeroMoveThread</node>
-                <node x="618.0" y="1090.0">battleDisplay.infoBox</node>
-                <node x="150.0" y="940.0">battleDisplay.MoveThread</node>
-                <node x="548.0" y="565.0">testP.HostGameWindow</node>
-                <node x="774.0" y="255.0">Pathfinding.Pathfinder</node>
-                <node x="885.75" y="90.0">Map.MapObjects.Army</node>
-                <node x="175.0" y="640.0">battleDisplay.BackgroundPanel</node>
-              </nodes>
-              <notes />
-              <edges>
-                <edge source="Map.MapObjects.Mines.DrewnoMine" target="Map.MapObjects.Mines.Mine">
-                  <point x="0.0" y="-15.0" />
-                  <point x="919.0" y="140.0" />
-                  <point x="1233.857142857143" y="140.0" />
-                  <point x="-26.14285714285711" y="15.0" />
-                </edge>
-                <edge source="Map.MapObjects.Mines.RtecMine" target="Map.MapObjects.Mines.Mine">
-                  <point x="0.0" y="-15.0" />
-                  <point x="1600.0" y="140.0" />
-                  <point x="1286.142857142857" y="140.0" />
-                  <point x="26.14285714285711" y="15.0" />
-                </edge>
-                <edge source="Map.MapObjects.Resources.Siarka" target="Map.MapObjects.Resources.Resource">
-                  <point x="0.0" y="-15.0" />
-                  <point x="815.5" y="140.0" />
-                  <point x="599.1428571428571" y="140.0" />
-                  <point x="35.14285714285711" y="15.0" />
-                </edge>
-                <edge source="Map.MapObjects.Resources.Drewno" target="Map.MapObjects.Resources.Resource">
-                  <point x="-5.6843418860808015E-14" y="-15.0" />
-                  <point x="475.5" y="160.0" />
-                  <point x="552.2857142857144" y="160.0" />
-                  <point x="-11.714285714285666" y="15.0" />
-                </edge>
-                <edge source="Map.MapObjects.Resources.Zloto" target="Map.MapObjects.Resources.Resource">
-                  <point x="0.0" y="-15.0" />
-                  <point x="0.0" y="15.0" />
-                </edge>
-                <edge source="Map.MapObjects.Army" target="Map.MapObjects.MapObject">
-                  <point x="0.0" y="-15.0" />
-                  <point x="917.25" y="70.0" />
-                  <point x="878.75" y="70.0" />
-                  <point x="7.75" y="15.0" />
-                </edge>
-                <edge source="Map.MapObjects.Towns.Loch" target="Map.MapObjects.Towns.Town">
-                  <point x="0.0" y="-15.0" />
-                  <point x="30.0" y="160.0" />
-                  <point x="94.0" y="160.0" />
-                  <point x="-21.0" y="15.0" />
-                </edge>
-                <edge source="Map.MapObjects.Mines.Mine" target="Map.MapObjects.MapObject">
-                  <point x="0.0" y="-15.0" />
-                  <point x="1260.0" y="60.0" />
-                  <point x="894.25" y="60.0" />
-                  <point x="23.25" y="15.0" />
-                </edge>
-                <edge source="Map.MapObjects.Towns.Zamek" target="Map.MapObjects.Towns.Town">
-                  <point x="0.0" y="-15.0" />
-                  <point x="0.0" y="15.0" />
-                </edge>
-                <edge source="Map.MapObjects.Resources.Klejnot" target="Map.MapObjects.Resources.Resource">
-                  <point x="0.0" y="-15.0" />
-                  <point x="727.5" y="150.0" />
-                  <point x="587.4285714285716" y="150.0" />
-                  <point x="23.428571428571445" y="15.0" />
-                </edge>
-                <edge source="Map.MapObjects.Towns.Town" target="Map.MapObjects.MapObject">
-                  <point x="0.0" y="-15.0" />
-                  <point x="115.0" y="50.0" />
-                  <point x="832.25" y="50.0" />
-                  <point x="-38.75" y="15.0" />
-                </edge>
-                <edge source="Map.MapObjects.Resources.Rtec" target="Map.MapObjects.Resources.Resource">
-                  <point x="0.0" y="-15.0" />
-                  <point x="643.5" y="160.0" />
-                  <point x="575.7142857142858" y="160.0" />
-                  <point x="11.71428571428578" y="15.0" />
-                </edge>
-                <edge source="Map.MapObjects.Mines.SiarkaMine" target="Map.MapObjects.Mines.Mine">
-                  <point x="0.0" y="-15.0" />
-                  <point x="1036.0" y="150.0" />
-                  <point x="1242.5714285714287" y="150.0" />
-                  <point x="-17.42857142857133" y="15.0" />
-                </edge>
-                <edge source="Map.MapObjects.Towns.Forteca" target="Map.MapObjects.Towns.Town">
-                  <point x="0.0" y="-15.0" />
-                  <point x="206.5" y="160.0" />
-                  <point x="136.0" y="160.0" />
-                  <point x="21.0" y="15.0" />
-                </edge>
-                <edge source="Networking.Client" target="Networking.RMIServiceInterfaceClient">
-                  <point x="0.0" y="-15.0" />
-                  <point x="0.0" y="15.0" />
-                </edge>
-                <edge source="Pathfinding.Pathfinder.openList" target="Pathfinding.Pathfinder">
-                  <point x="0.0" y="-15.0" />
-                  <point x="0.0" y="15.0" />
-                </edge>
-                <edge source="Map.MapObjects.Mines.ZlotoMine" target="Map.MapObjects.Mines.Mine">
-                  <point x="0.0" y="-15.0" />
-                  <point x="1146.5" y="160.0" />
-                  <point x="1251.2857142857142" y="160.0" />
-                  <point x="-8.71428571428578" y="15.0" />
-                </edge>
-                <edge source="Map.MapObjects.Mines.KrysztalMine" target="Map.MapObjects.Mines.Mine">
-                  <point x="0.0" y="-15.0" />
-                  <point x="1487.5" y="150.0" />
-                  <point x="1277.4285714285713" y="150.0" />
-                  <point x="17.42857142857133" y="15.0" />
-                </edge>
-                <edge source="Map.MapObjects.Miscellaneous.Misc" target="Map.MapObjects.MapObject">
-                  <point x="0.0" y="-15.0" />
-                  <point x="338.38392857142867" y="60.0" />
-                  <point x="847.75" y="60.0" />
-                  <point x="-23.25" y="15.0" />
-                </edge>
-                <edge source="ImageSelection.ImageSelectionBox.MyListRenderer" target="ImageSelection.ImageSelectionBox">
-                  <point x="0.0" y="-15.0" />
-                  <point x="0.0" y="15.0" />
-                </edge>
-                <edge source="Pathfinding.FindPath.openList" target="Pathfinding.FindPath">
-                  <point x="0.0" y="-15.0" />
-                  <point x="0.0" y="15.0" />
-                </edge>
-                <edge source="Map.MapObjects.Resources.Krysztal" target="Map.MapObjects.Resources.Resource">
-                  <point x="0.0" y="-15.0" />
-                  <point x="381.00000000000006" y="150.0" />
-                  <point x="540.5714285714287" y="150.0" />
-                  <point x="-23.428571428571445" y="15.0" />
-                </edge>
-                <edge source="Map.MapObjects.Mines.RudaMine" target="Map.MapObjects.Mines.Mine">
-                  <point x="0.0" y="-15.0" />
-                  <point x="1373.0" y="160.0" />
-                  <point x="1268.7142857142858" y="160.0" />
-                  <point x="8.71428571428578" y="15.0" />
-                </edge>
-                <edge source="Map.MapObjects.Landscapes.Landscape" target="Map.MapObjects.MapObject">
-                  <point x="0.0" y="-15.0" />
-                  <point x="1355.5" y="50.0" />
-                  <point x="909.75" y="50.0" />
-                  <point x="38.75" y="15.0" />
-                </edge>
-                <edge source="ImageSelection.FolderImageBox.ListRenderer" target="ImageSelection.FolderImageBox">
-                  <point x="0.0" y="-15.0" />
-                  <point x="0.0" y="15.0" />
-                </edge>
-                <edge source="Map.MapObjects.Resources.Ruda" target="Map.MapObjects.Resources.Resource">
-                  <point x="0.0" y="-15.0" />
-                  <point x="293.50000000000006" y="140.0" />
-                  <point x="528.8571428571429" y="140.0" />
-                  <point x="-35.14285714285711" y="15.0" />
-                </edge>
-                <edge source="Networking.Server" target="Networking.RMIServiceInterfaceServer">
-                  <point x="0.0" y="-15.0" />
-                  <point x="0.0" y="15.0" />
-                </edge>
-                <edge source="Map.MapObjects.Resources.Resource" target="Map.MapObjects.MapObject">
-                  <point x="0.0" y="-15.0" />
-                  <point x="564.0" y="70.0" />
-                  <point x="863.25" y="70.0" />
-                  <point x="-7.75" y="15.0" />
-                </edge>
-                <edge source="Map.MapObjects.Mines.KlejnotMine" target="Map.MapObjects.Mines.Mine">
-                  <point x="0.0" y="-15.0" />
-                  <point x="0.0" y="15.0" />
-                </edge>
-              </edges>
-              <settings layout="Hierarchic Group" zoom="0.6894736842105263" x="748.9847328244274" y="580.0" />
-              <SelectedNodes />
-              <Categories>
-                <Category>Inner Classes</Category>
-              </Categories>
-              <SCOPE>All</SCOPE>
-              <VISIBILITY>private</VISIBILITY>
             </state>
           </provider>
         </entry>
@@ -458,7 +110,6 @@
         <option value="$PROJECT_DIR$/src/battleDisplay/MoveThread.java" />
         <option value="$PROJECT_DIR$/src/battleDisplay/GraphicsPanel.java" />
         <option value="$PROJECT_DIR$/src/Map/MapGridContainer.java" />
-        <option value="$PROJECT_DIR$/src/Map/MapGrid.java" />
         <option value="$PROJECT_DIR$/src/Map/MapObjects/MapObject.java" />
         <option value="$PROJECT_DIR$/src/Map/MapObjects/Mines/DrewnoMine.java" />
         <option value="$PROJECT_DIR$/src/Map/MapObjects/Mines/KlejnotMine.java" />
@@ -473,6 +124,7 @@
         <option value="$PROJECT_DIR$/src/mapLogic/MapGameController.java" />
         <option value="$PROJECT_DIR$/src/mapLogic/BuyUnitsDialog.java" />
         <option value="$PROJECT_DIR$/src/dataClasses/HeroInfo.java" />
+        <option value="$PROJECT_DIR$/src/Map/MapGrid.java" />
       </list>
     </option>
   </component>
@@ -510,7 +162,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -541,24 +192,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaHOMMIII" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaHOMMIII" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testP" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -608,6 +241,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameWindows" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaHOMMIII" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaHOMMIII" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -632,6 +283,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1009,20 +661,20 @@
       <workItem from="1455139310212" duration="3867000" />
       <workItem from="1455189921375" duration="25166000" />
       <workItem from="1455225653673" duration="15962000" />
+      <workItem from="1455242904378" duration="2123000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="219676000" />
+    <option name="totallyTimeSpent" value="221799000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31431767" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1033,10 +685,9 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.059284117" sideWeight="0.46760392" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1680929" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20782396" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.034675617" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1045,7 +696,9 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31431767" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.034675617" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1139,47 +792,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/units/armyMini.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Map/NewMapDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45685998" vertical-offset="0" max-vertical-offset="707">
-          <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Map/SavedMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67288136" vertical-offset="453" max-vertical-offset="1105">
-          <caret line="56" column="39" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Map/MapEditorMenuBar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17457627" vertical-offset="747" max-vertical-offset="1955">
-          <caret line="57" column="37" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
-          <folding>
-            <element signature="e#1452#1453#0" expanded="false" />
-            <element signature="e#1483#1484#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pathfinding/Pathfinder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.5944625" vertical-offset="1557" max-vertical-offset="2312">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Map/MapRangeIndicator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.43220338" vertical-offset="0" max-vertical-offset="708">
@@ -1225,11 +837,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/heroes/HEROSAVE.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/HeroDisplay/HeroDisplayPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1751">
@@ -1271,7 +878,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/testP/JoinGameWindow.java">
+    <entry file="file://$PROJECT_DIR$/src/GameWindows/JoinGameWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.6359774" vertical-offset="86" max-vertical-offset="1428">
           <caret line="88" column="37" selection-start-line="88" selection-start-column="37" selection-end-line="88" selection-end-column="37" />
@@ -1325,14 +932,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GraphicsProcessing/DrawGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63310343" vertical-offset="119" max-vertical-offset="918">
-          <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Map/MapGridContainer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1207">
@@ -1355,16 +954,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.39650145" vertical-offset="0" max-vertical-offset="686">
           <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Map/MapGrid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61953354" vertical-offset="1122" max-vertical-offset="8925">
-          <caret line="91" column="62" selection-start-line="91" selection-start-column="62" selection-end-line="91" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
@@ -1435,14 +1024,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Networking/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2782" max-vertical-offset="4284">
-          <caret line="194" column="52" selection-start-line="194" selection-start-column="52" selection-end-line="194" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Map/ReadyUnitTypes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="290" max-vertical-offset="1156">
@@ -1489,7 +1070,7 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="350.5" y="260.0" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="351.0" y="260.0" />
           <SelectedNodes />
           <Categories />
           <SCOPE>All</SCOPE>
@@ -1577,8 +1158,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6103">
           <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding>
-            <element signature="e#6640#6641#0" expanded="true" />
-            <element signature="e#6695#6696#0" expanded="true" />
+            <element signature="e#6492#6493#0" expanded="true" />
+            <element signature="e#6547#6548#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1640,7 +1221,7 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="58.5" y="90.0" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="59.0" y="90.0" />
           <SelectedNodes />
           <Categories />
           <SCOPE>All</SCOPE>
@@ -1658,17 +1239,10 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="-90.5" y="-70.0" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="-90.0" y="-70.0" />
           <SelectedNodes />
           <Categories />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/testP/HostGameWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="496" max-vertical-offset="2652">
-          <caret line="65" column="21" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="21" />
-          <folding />
+          <SCOPE>All</SCOPE>
         </state>
       </provider>
     </entry>
@@ -1678,262 +1252,182 @@
           <ID>JAVA</ID>
           <OriginalElement>battleDisplay</OriginalElement>
           <nodes>
-            <node x="0.0" y="255.0">Networking.RMIServiceInterfaceServer</node>
-            <node x="642.0" y="790.0">mapLogic.BuyUnitsDialog</node>
-            <node x="774.0" y="865.0">Map.MapObjects.Mines.ResoruceType</node>
-            <node x="170.0" y="180.0">Map.MapObjects.Towns.Forteca</node>
-            <node x="615.0" y="180.0">Map.MapObjects.Resources.Rtec</node>
-            <node x="0.0" y="410.0">Pathfinding.FindPath</node>
-            <node x="738.0" y="1090.0">Map.Tile</node>
-            <node x="429.0" y="255.0">ImageSelection.ImageSelectionBox</node>
-            <node x="215.0" y="255.0">Networking.RMIServiceInterfaceClient</node>
-            <node x="183.0" y="565.0">Map.MapRangeIndicator</node>
-            <node x="308.88392857142867" y="90.0">Map.MapObjects.Miscellaneous.Misc</node>
-            <node x="80.0" y="180.0">Map.MapObjects.Towns.Zamek</node>
-            <node x="469.0" y="865.0">HeroDisplay.HeroDirection</node>
-            <node x="523.0" y="1015.0">dataClasses.UnitType</node>
-            <node x="-135.0" y="767.0">MainMenu</node>
-            <node x="523.0" y="90.0">Map.MapObjects.Resources.Resource</node>
-            <node x="745.0" y="410.0">mapLogic.MapGameController</node>
-            <node x="482.0" y="790.0">battleDisplay.AnimationType</node>
-            <node x="126.0" y="410.0">ImageSelection.ImageSelectionController</node>
-            <node x="496.0" y="1090.0">dataClasses.UnitInfo</node>
-            <node x="339.0" y="410.0">ImageSelection.ImageFolderComponent</node>
-            <node x="1102.0" y="180.0">Map.MapObjects.Mines.ZlotoMine</node>
-            <node x="609.0" y="255.0">ImageSelection.FolderImageBox</node>
-            <node x="1329.0" y="180.0">Map.MapObjects.Mines.RudaMine</node>
-            <node x="692.0" y="180.0">Map.MapObjects.Resources.Klejnot</node>
-            <node x="0.0" y="1015.0">Pathfinding.GameMap</node>
-            <node x="533.0" y="180.0">Map.MapObjects.Resources.Zloto</node>
-            <node x="1558.0" y="180.0">Map.MapObjects.Mines.RtecMine</node>
-            <node x="161.0" y="790.0">Map.NewMapDialog</node>
-            <node x="990.0" y="180.0">Map.MapObjects.Mines.SiarkaMine</node>
-            <node x="263.00000000000006" y="180.0">Map.MapObjects.Resources.Ruda</node>
-            <node x="0.0" y="865.0">Map.NewUnitDialog</node>
-            <node x="622.0" y="865.0">dataClasses.BattlefieldCell</node>
-            <node x="295.0" y="940.0">battleDisplay.SpriteLoader</node>
-            <node x="366.0" y="565.0">Map.MapEditorMenuBar</node>
-            <node x="0.0" y="940.0">dataClasses.MiniHeroInfo</node>
-            <node x="1211.0" y="180.0">Map.MapObjects.Mines.KlejnotMine</node>
-            <node x="1310.5" y="90.0">Map.MapObjects.Landscapes.Landscape</node>
-            <node x="783.0" y="180.0">Map.MapObjects.Resources.Siarka</node>
-            <node x="1437.0" y="180.0">Map.MapObjects.Mines.KrysztalMine</node>
-            <node x="168.0" y="715.0">GraphicsProcessing.ImageProcessor</node>
-            <node x="264.0" y="1015.0">Pathfinding.GameCell</node>
-            <node x="250.0" y="1090.0">Map.MapSize</node>
-            <node x="373.0" y="1090.0">Pathfinding.MapCell</node>
-            <node x="656.0" y="715.0">battleDisplay.AttackDirection</node>
-            <node x="494.0" y="715.0">battleScreen.BattleController</node>
-            <node x="775.0" y="1015.0">GraphicsProcessing.Graphics</node>
-            <node x="619.5" y="335.0">ImageSelection.FolderImageBox.ListRenderer</node>
-            <node x="715.0" y="940.0">Map.SavedMap</node>
-            <node x="0.0" y="1090.0">GraphicsProcessing.DrawGUI</node>
-            <node x="394.0" y="1015.0">dataClasses.CellEntity</node>
-            <node x="331.0" y="715.0">Map.ReadyUnitTypes</node>
-            <node x="1.0" y="490.0">Pathfinding.FindPath.openList</node>
-            <node x="52.0" y="335.0">Networking.Server</node>
-            <node x="438.5" y="335.0">ImageSelection.ImageSelectionBox.MyListRenderer</node>
-            <node x="159.0" y="865.0">Pathfinding.BattlefieldMap</node>
-            <node x="83.5" y="90.0">Map.MapObjects.Towns.Town</node>
-            <node x="690.0" y="640.0">Map.MapObjects.TerrainPassability</node>
-            <node x="0.0" y="640.0">testP.JoinGameWindow</node>
-            <node x="267.0" y="335.0">Networking.Client</node>
-            <node x="868.0" y="180.0">Map.MapObjects.Mines.DrewnoMine</node>
-            <node x="581.0" y="940.0">battleScreen.BattleView</node>
-            <node x="315.0" y="865.0">battleDisplay.GraphicsPanel</node>
-            <node x="0.0" y="180.0">Map.MapObjects.Towns.Loch</node>
-            <node x="134.0" y="1015.0">battleScreen.BattleInfo</node>
-            <node x="824.5" y="0.0">Map.MapObjects.MapObject</node>
-            <node x="779.0" y="335.0">Pathfinding.Pathfinder.openList</node>
-            <node x="649.0" y="1015.0">dataClasses.HeroInfo</node>
-            <node x="0.0" y="565.0">battleDisplay.StaticGraphicsPanel</node>
-            <node x="548.0" y="410.0">HeroDisplay.HeroAnimationThread</node>
-            <node x="322.0" y="790.0">battleDisplay.AnimateThread</node>
-            <node x="344.00000000000006" y="180.0">Map.MapObjects.Resources.Krysztal</node>
-            <node x="438.00000000000006" y="180.0">Map.MapObjects.Resources.Drewno</node>
-            <node x="125.0" y="1090.0">Map.MapGrid</node>
-            <node x="440.0" y="940.0">dataClasses.BattleResult</node>
-            <node x="802.0" y="790.0">battleDisplay.RangeIndicator</node>
-            <node x="1229.5" y="90.0">Map.MapObjects.Mines.Mine</node>
-            <node x="-146.0" y="681.0">TestClass</node>
-            <node x="347.0" y="640.0">HeroDisplay.HeroDisplayPanel</node>
-            <node x="0.0" y="715.0">dataClasses.UnitCommander</node>
-            <node x="0.0" y="790.0">battleDisplay.interfaceButton</node>
-            <node x="727.0" y="565.0">Map.MapGridContainer</node>
-            <node x="519.0" y="640.0">HeroDisplay.HeroMoveThread</node>
-            <node x="618.0" y="1090.0">battleDisplay.infoBox</node>
-            <node x="150.0" y="940.0">battleDisplay.MoveThread</node>
-            <node x="548.0" y="565.0">testP.HostGameWindow</node>
-            <node x="774.0" y="255.0">Pathfinding.Pathfinder</node>
-            <node x="885.75" y="90.0">Map.MapObjects.Army</node>
-            <node x="175.0" y="640.0">battleDisplay.BackgroundPanel</node>
+            <node x="" y="">mapLogic.BuyUnitsDialog</node>
+            <node x="" y="">Map.MapObjects.Mines.ResoruceType</node>
+            <node x="" y="">Map.MapObjects.Towns.Forteca</node>
+            <node x="" y="">Networking.RMIServiceInterfaceServer</node>
+            <node x="" y="">Map.MapObjects.Resources.Rtec</node>
+            <node x="" y="">ImageSelection.ImageSelectionBox</node>
+            <node x="" y="">Map.Tile</node>
+            <node x="" y="">Pathfinding.FindPath</node>
+            <node x="" y="">Map.MapRangeIndicator</node>
+            <node x="" y="">Networking.RMIServiceInterfaceClient</node>
+            <node x="" y="">Map.MapObjects.Miscellaneous.Misc</node>
+            <node x="" y="">HeroDisplay.HeroDirection</node>
+            <node x="" y="">Map.MapObjects.Towns.Zamek</node>
+            <node x="" y="">dataClasses.UnitType</node>
+            <node x="" y="">MainMenu</node>
+            <node x="" y="">Map.MapObjects.Resources.Resource</node>
+            <node x="" y="">battleDisplay.AnimationType</node>
+            <node x="" y="">mapLogic.MapGameController</node>
+            <node x="" y="">ImageSelection.ImageSelectionController</node>
+            <node x="" y="">dataClasses.UnitInfo</node>
+            <node x="" y="">ImageSelection.ImageFolderComponent</node>
+            <node x="" y="">ImageSelection.FolderImageBox</node>
+            <node x="" y="">Map.MapObjects.Mines.ZlotoMine</node>
+            <node x="" y="">Map.MapObjects.Mines.RudaMine</node>
+            <node x="" y="">Map.MapObjects.Resources.Klejnot</node>
+            <node x="" y="">Pathfinding.GameMap</node>
+            <node x="" y="">Map.MapObjects.Resources.Zloto</node>
+            <node x="" y="">Map.MapObjects.Mines.RtecMine</node>
+            <node x="" y="">Map.NewMapDialog</node>
+            <node x="" y="">Map.MapObjects.Resources.Ruda</node>
+            <node x="" y="">Map.NewUnitDialog</node>
+            <node x="" y="">Map.MapObjects.Mines.SiarkaMine</node>
+            <node x="" y="">dataClasses.BattlefieldCell</node>
+            <node x="" y="">battleDisplay.SpriteLoader</node>
+            <node x="" y="">Map.MapEditorMenuBar</node>
+            <node x="" y="">dataClasses.MiniHeroInfo</node>
+            <node x="" y="">Map.MapObjects.Landscapes.Landscape</node>
+            <node x="" y="">Map.MapObjects.Mines.KlejnotMine</node>
+            <node x="" y="">Map.MapObjects.Resources.Siarka</node>
+            <node x="" y="">Map.MapObjects.Mines.KrysztalMine</node>
+            <node x="" y="">GraphicsProcessing.ImageProcessor</node>
+            <node x="" y="">Pathfinding.GameCell</node>
+            <node x="" y="">Map.MapSize</node>
+            <node x="" y="">Pathfinding.MapCell</node>
+            <node x="" y="">battleDisplay.AttackDirection</node>
+            <node x="" y="">battleScreen.BattleController</node>
+            <node x="" y="">GraphicsProcessing.Graphics</node>
+            <node x="" y="">ImageSelection.FolderImageBox.ListRenderer</node>
+            <node x="" y="">Map.SavedMap</node>
+            <node x="" y="">GraphicsProcessing.DrawGUI</node>
+            <node x="" y="">dataClasses.CellEntity</node>
+            <node x="" y="">Map.ReadyUnitTypes</node>
+            <node x="" y="">ImageSelection.ImageSelectionBox.MyListRenderer</node>
+            <node x="" y="">Networking.Server</node>
+            <node x="" y="">Pathfinding.FindPath.openList</node>
+            <node x="" y="">Pathfinding.BattlefieldMap</node>
+            <node x="" y="">Map.MapObjects.TerrainPassability</node>
+            <node x="" y="">Map.MapObjects.Towns.Town</node>
+            <node x="" y="">testP.JoinGameWindow</node>
+            <node x="" y="">Map.MapObjects.Mines.DrewnoMine</node>
+            <node x="" y="">Networking.Client</node>
+            <node x="" y="">battleScreen.BattleView</node>
+            <node x="" y="">battleDisplay.GraphicsPanel</node>
+            <node x="" y="">battleScreen.BattleInfo</node>
+            <node x="" y="">Map.MapObjects.Towns.Loch</node>
+            <node x="" y="">Map.MapObjects.MapObject</node>
+            <node x="" y="">Pathfinding.Pathfinder.openList</node>
+            <node x="" y="">battleDisplay.StaticGraphicsPanel</node>
+            <node x="" y="">dataClasses.HeroInfo</node>
+            <node x="" y="">HeroDisplay.HeroAnimationThread</node>
+            <node x="" y="">battleDisplay.AnimateThread</node>
+            <node x="" y="">Map.MapObjects.Resources.Drewno</node>
+            <node x="" y="">Map.MapGrid</node>
+            <node x="" y="">Map.MapObjects.Resources.Krysztal</node>
+            <node x="" y="">dataClasses.BattleResult</node>
+            <node x="" y="">battleDisplay.RangeIndicator</node>
+            <node x="" y="">Map.MapObjects.Mines.Mine</node>
+            <node x="" y="">TestClass</node>
+            <node x="" y="">HeroDisplay.HeroDisplayPanel</node>
+            <node x="" y="">dataClasses.UnitCommander</node>
+            <node x="" y="">battleDisplay.interfaceButton</node>
+            <node x="" y="">battleDisplay.infoBox</node>
+            <node x="" y="">HeroDisplay.HeroMoveThread</node>
+            <node x="" y="">Map.MapGridContainer</node>
+            <node x="" y="">battleDisplay.MoveThread</node>
+            <node x="" y="">testP.HostGameWindow</node>
+            <node x="" y="">Pathfinding.Pathfinder</node>
+            <node x="" y="">Map.MapObjects.Army</node>
+            <node x="" y="">battleDisplay.BackgroundPanel</node>
           </nodes>
           <notes />
-          <edges>
-            <edge source="Map.MapObjects.Mines.DrewnoMine" target="Map.MapObjects.Mines.Mine">
-              <point x="0.0" y="-15.0" />
-              <point x="919.0" y="140.0" />
-              <point x="1233.857142857143" y="140.0" />
-              <point x="-26.14285714285711" y="15.0" />
-            </edge>
-            <edge source="Map.MapObjects.Mines.RtecMine" target="Map.MapObjects.Mines.Mine">
-              <point x="0.0" y="-15.0" />
-              <point x="1600.0" y="140.0" />
-              <point x="1286.142857142857" y="140.0" />
-              <point x="26.14285714285711" y="15.0" />
-            </edge>
-            <edge source="Map.MapObjects.Resources.Siarka" target="Map.MapObjects.Resources.Resource">
-              <point x="0.0" y="-15.0" />
-              <point x="815.5" y="140.0" />
-              <point x="599.1428571428571" y="140.0" />
-              <point x="35.14285714285711" y="15.0" />
-            </edge>
-            <edge source="Map.MapObjects.Resources.Drewno" target="Map.MapObjects.Resources.Resource">
-              <point x="-5.6843418860808015E-14" y="-15.0" />
-              <point x="475.5" y="160.0" />
-              <point x="552.2857142857144" y="160.0" />
-              <point x="-11.714285714285666" y="15.0" />
-            </edge>
-            <edge source="Map.MapObjects.Resources.Zloto" target="Map.MapObjects.Resources.Resource">
-              <point x="0.0" y="-15.0" />
-              <point x="0.0" y="15.0" />
-            </edge>
-            <edge source="Map.MapObjects.Army" target="Map.MapObjects.MapObject">
-              <point x="0.0" y="-15.0" />
-              <point x="917.25" y="70.0" />
-              <point x="878.75" y="70.0" />
-              <point x="7.75" y="15.0" />
-            </edge>
-            <edge source="Map.MapObjects.Towns.Loch" target="Map.MapObjects.Towns.Town">
-              <point x="0.0" y="-15.0" />
-              <point x="30.0" y="160.0" />
-              <point x="94.0" y="160.0" />
-              <point x="-21.0" y="15.0" />
-            </edge>
-            <edge source="Map.MapObjects.Mines.Mine" target="Map.MapObjects.MapObject">
-              <point x="0.0" y="-15.0" />
-              <point x="1260.0" y="60.0" />
-              <point x="894.25" y="60.0" />
-              <point x="23.25" y="15.0" />
-            </edge>
-            <edge source="Map.MapObjects.Towns.Zamek" target="Map.MapObjects.Towns.Town">
-              <point x="0.0" y="-15.0" />
-              <point x="0.0" y="15.0" />
-            </edge>
-            <edge source="Map.MapObjects.Resources.Klejnot" target="Map.MapObjects.Resources.Resource">
-              <point x="0.0" y="-15.0" />
-              <point x="727.5" y="150.0" />
-              <point x="587.4285714285716" y="150.0" />
-              <point x="23.428571428571445" y="15.0" />
-            </edge>
-            <edge source="Map.MapObjects.Towns.Town" target="Map.MapObjects.MapObject">
-              <point x="0.0" y="-15.0" />
-              <point x="115.0" y="50.0" />
-              <point x="832.25" y="50.0" />
-              <point x="-38.75" y="15.0" />
-            </edge>
-            <edge source="Map.MapObjects.Resources.Rtec" target="Map.MapObjects.Resources.Resource">
-              <point x="0.0" y="-15.0" />
-              <point x="643.5" y="160.0" />
-              <point x="575.7142857142858" y="160.0" />
-              <point x="11.71428571428578" y="15.0" />
-            </edge>
-            <edge source="Map.MapObjects.Mines.SiarkaMine" target="Map.MapObjects.Mines.Mine">
-              <point x="0.0" y="-15.0" />
-              <point x="1036.0" y="150.0" />
-              <point x="1242.5714285714287" y="150.0" />
-              <point x="-17.42857142857133" y="15.0" />
-            </edge>
-            <edge source="Map.MapObjects.Towns.Forteca" target="Map.MapObjects.Towns.Town">
-              <point x="0.0" y="-15.0" />
-              <point x="206.5" y="160.0" />
-              <point x="136.0" y="160.0" />
-              <point x="21.0" y="15.0" />
-            </edge>
-            <edge source="Networking.Client" target="Networking.RMIServiceInterfaceClient">
-              <point x="0.0" y="-15.0" />
-              <point x="0.0" y="15.0" />
-            </edge>
-            <edge source="Pathfinding.Pathfinder.openList" target="Pathfinding.Pathfinder">
-              <point x="0.0" y="-15.0" />
-              <point x="0.0" y="15.0" />
-            </edge>
-            <edge source="Map.MapObjects.Mines.ZlotoMine" target="Map.MapObjects.Mines.Mine">
-              <point x="0.0" y="-15.0" />
-              <point x="1146.5" y="160.0" />
-              <point x="1251.2857142857142" y="160.0" />
-              <point x="-8.71428571428578" y="15.0" />
-            </edge>
-            <edge source="Map.MapObjects.Mines.KrysztalMine" target="Map.MapObjects.Mines.Mine">
-              <point x="0.0" y="-15.0" />
-              <point x="1487.5" y="150.0" />
-              <point x="1277.4285714285713" y="150.0" />
-              <point x="17.42857142857133" y="15.0" />
-            </edge>
-            <edge source="Map.MapObjects.Miscellaneous.Misc" target="Map.MapObjects.MapObject">
-              <point x="0.0" y="-15.0" />
-              <point x="338.38392857142867" y="60.0" />
-              <point x="847.75" y="60.0" />
-              <point x="-23.25" y="15.0" />
-            </edge>
-            <edge source="ImageSelection.ImageSelectionBox.MyListRenderer" target="ImageSelection.ImageSelectionBox">
-              <point x="0.0" y="-15.0" />
-              <point x="0.0" y="15.0" />
-            </edge>
-            <edge source="Pathfinding.FindPath.openList" target="Pathfinding.FindPath">
-              <point x="0.0" y="-15.0" />
-              <point x="0.0" y="15.0" />
-            </edge>
-            <edge source="Map.MapObjects.Resources.Krysztal" target="Map.MapObjects.Resources.Resource">
-              <point x="0.0" y="-15.0" />
-              <point x="381.00000000000006" y="150.0" />
-              <point x="540.5714285714287" y="150.0" />
-              <point x="-23.428571428571445" y="15.0" />
-            </edge>
-            <edge source="Map.MapObjects.Mines.RudaMine" target="Map.MapObjects.Mines.Mine">
-              <point x="0.0" y="-15.0" />
-              <point x="1373.0" y="160.0" />
-              <point x="1268.7142857142858" y="160.0" />
-              <point x="8.71428571428578" y="15.0" />
-            </edge>
-            <edge source="Map.MapObjects.Landscapes.Landscape" target="Map.MapObjects.MapObject">
-              <point x="0.0" y="-15.0" />
-              <point x="1355.5" y="50.0" />
-              <point x="909.75" y="50.0" />
-              <point x="38.75" y="15.0" />
-            </edge>
-            <edge source="ImageSelection.FolderImageBox.ListRenderer" target="ImageSelection.FolderImageBox">
-              <point x="0.0" y="-15.0" />
-              <point x="0.0" y="15.0" />
-            </edge>
-            <edge source="Map.MapObjects.Resources.Ruda" target="Map.MapObjects.Resources.Resource">
-              <point x="0.0" y="-15.0" />
-              <point x="293.50000000000006" y="140.0" />
-              <point x="528.8571428571429" y="140.0" />
-              <point x="-35.14285714285711" y="15.0" />
-            </edge>
-            <edge source="Networking.Server" target="Networking.RMIServiceInterfaceServer">
-              <point x="0.0" y="-15.0" />
-              <point x="0.0" y="15.0" />
-            </edge>
-            <edge source="Map.MapObjects.Resources.Resource" target="Map.MapObjects.MapObject">
-              <point x="0.0" y="-15.0" />
-              <point x="564.0" y="70.0" />
-              <point x="863.25" y="70.0" />
-              <point x="-7.75" y="15.0" />
-            </edge>
-            <edge source="Map.MapObjects.Mines.KlejnotMine" target="Map.MapObjects.Mines.Mine">
-              <point x="0.0" y="-15.0" />
-              <point x="0.0" y="15.0" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="0.6894736842105263" x="748.9847328244274" y="580.0" />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.6894736842105263" x="1147.1297709923663" y="822.2137404580153" />
           <SelectedNodes />
           <Categories>
             <Category>Inner Classes</Category>
           </Categories>
           <SCOPE>All</SCOPE>
           <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameWindows/HostGameWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2592152" vertical-offset="496" max-vertical-offset="2652">
+          <caret line="65" column="21" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Networking/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3507729" vertical-offset="2782" max-vertical-offset="4284">
+          <caret line="194" column="52" selection-start-line="194" selection-start-column="52" selection-end-line="194" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/heroes/HEROSAVE.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Map/MapGrid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.83621687" vertical-offset="3763" max-vertical-offset="8602">
+          <caret line="290" column="87" selection-start-line="290" selection-start-column="87" selection-end-line="290" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GraphicsProcessing/DrawGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="77" max-vertical-offset="918">
+          <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GraphicsProcessing/Graphics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="587" max-vertical-offset="1428">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GraphicsProcessing/ImageProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ImageSelection/ImageFolderComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ImageSelection/ImageSelectionBox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="294" max-vertical-offset="1836">
+          <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ImageSelection/FolderImageBox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09803922" vertical-offset="0" max-vertical-offset="1207">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>

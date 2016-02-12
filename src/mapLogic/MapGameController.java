@@ -9,15 +9,11 @@ import ImageSelection.ImageSelectionController;
 import Map.*;
 import Map.MapObjects.Army;
 import Map.MapObjects.MapObject;
-import Map.MapObjects.TerrainPassability;
-import Map.MapObjects.Towns.Town;
 import Networking.Client;
 import battleScreen.BattleController;
 import dataClasses.*;
-import testP.JoinGameWindow;
 
 import javax.swing.*;
-import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;

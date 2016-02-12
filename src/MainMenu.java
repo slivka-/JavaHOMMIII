@@ -1,28 +1,12 @@
-import GraphicsProcessing.DrawGUI;
-import GraphicsProcessing.Graphics;
-import ImageSelection.FolderImageBox;
-import ImageSelection.ImageFolderComponent;
-import ImageSelection.ImageSelectionBox;
-import ImageSelection.ImageSelectionController;
-import Map.MapEditorMenuBar;
-import Map.MapGrid;
-import Map.MapGridContainer;
-import Map.MapObjects.Towns.Loch;
-import Map.MapSize;
-import dataClasses.HeroInfo;
-import dataClasses.UnitCommander;
-import dataClasses.UnitInfo;
-import dataClasses.UnitType;
 import mapLogic.MapGameController;
-import testP.HostGameWindow;
-import testP.JoinGameWindow;
+import GameWindows.HostGameWindow;
+import GameWindows.JoinGameWindow;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.util.ArrayList;
 
 /**
  * Created by slivka on 06.02.2016.

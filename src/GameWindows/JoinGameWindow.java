@@ -1,4 +1,4 @@
-package testP;
+package GameWindows;
 
 import Map.SavedMap;
 import Networking.Client;

@@ -3,15 +3,13 @@ package Networking;
 import Map.MapObjects.Army;
 import Map.MapObjects.MapObject;
 import Map.SavedMap;
-import Map.Tile;
 import battleScreen.BattleController;
 import dataClasses.HeroInfo;
 import dataClasses.MiniHeroInfo;
 import mapLogic.MapGameController;
-import testP.JoinGameWindow;
+import GameWindows.JoinGameWindow;
 
 import java.awt.*;
-import java.io.Console;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;

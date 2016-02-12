@@ -287,7 +287,8 @@ public class MapGrid extends JLayeredPane{
 							hero.homeTown = (Town)cells[col][row].getMapObject();
 							cells[col][row].heroOnTop();
 							hero.townPosition = p;
-							hero.heroDisplay = new HeroDisplayPanel(7);
+							Random rnd = new Random();
+							hero.heroDisplay = new HeroDisplayPanel(1+rnd.nextInt(17));
 							HeroDisplayPanel HeroD = hero.heroDisplay;
 							HeroD.setBounds((p.x * 32)-48+16, (p.y * 32)-16, 96, 64);
 							HeroD.setVisible(true);

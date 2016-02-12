@@ -1,7 +1,6 @@
-package testP;
+package GameWindows;
 
 import Map.SavedMap;
-import Networking.RMIServiceInterfaceClient;
 import Networking.RMIServiceInterfaceServer;
 import Networking.Server;
 
@@ -16,7 +15,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.net.MalformedURLException;
-import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.registry.Registry;
 import java.rmi.registry.LocateRegistry;

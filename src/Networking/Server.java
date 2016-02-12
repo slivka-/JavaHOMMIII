@@ -8,7 +8,7 @@ import Map.MapObjects.Towns.Zamek;
 import Map.ReadyUnitTypes;
 import Map.SavedMap;
 import dataClasses.*;
-import testP.HostGameWindow;
+import GameWindows.HostGameWindow;
 
 import java.awt.*;
 import java.rmi.RemoteException;
