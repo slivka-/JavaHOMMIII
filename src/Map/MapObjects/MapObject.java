@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.HashMap;
 
 public class MapObject implements Serializable{
     protected static int availableID = 0;
@@ -45,6 +46,8 @@ public class MapObject implements Serializable{
     public TerrainPassability getPassability() {
         return passability;
     }
+
+    public HashMap<String, Integer> objectAction(){return null;}
 
     public static MapObject makeMapObject(String category, String object, BufferedImage img) {
         MapObject mapObject = null;

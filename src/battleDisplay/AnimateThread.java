@@ -145,7 +145,7 @@ public class AnimateThread implements Runnable
                     {
                         currentFrame = frames.get(currentAnimation).size() - 1;
                     }
-                    Thread.sleep(90);
+                    Thread.sleep(100);
                     //System.out.println(currentFrame);
                 }
             } catch (Exception ex)

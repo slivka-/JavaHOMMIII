@@ -1,6 +1,7 @@
 package Networking;
 
 import Map.MapObjects.Army;
+import Map.MapObjects.MapObject;
 import Map.SavedMap;
 import Map.Tile;
 import battleScreen.BattleController;
@@ -112,6 +113,28 @@ public class Client extends UnicastRemoteObject implements RMIServiceInterfaceCl
         }
     }
 
+    public void sendCollectible(Point p, MapObject m)
+    {
+        try
+        {
+            server.collectible(p, m);
+        } catch (RemoteException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    public void removePlayer(int id)
+    {
+        try
+        {
+            server.removeClient(id);
+        } catch (RemoteException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public void downloadMap(SavedMap map) throws RemoteException {
         parentWindow.gameMap = map;
@@ -188,6 +211,17 @@ public class Client extends UnicastRemoteObject implements RMIServiceInterfaceCl
     public void battleSetNextPlayerID(int ID) throws RemoteException
     {
         battle.setCurrentPlayerID(ID);
+    }
+
+    @Override
+    public void collectible(Point p, MapObject m) throws RemoteException
+    {
+        controller.CollectibleMove(p, m);
+    }
+
+    public void sendWinningMessage() throws RemoteException
+    {
+        controller.winEndGame();
     }
 
 }

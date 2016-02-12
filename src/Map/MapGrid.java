@@ -89,7 +89,7 @@ public class MapGrid extends JLayeredPane{
 						controller.AttackUnitSend(t.location,controller.getHeroByPoint(new Point(t.getX()/32,t.getY()/32)).toMiniHeroInfo());
 						break;
 					case COLLECTABLE:
-						//setCursor(actionCursor);
+						controller.CollectibleSend(t.location, cells[t.getX() / 32][t.getY() / 32].getMapObject());
 						break;
 				}
 			}

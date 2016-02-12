@@ -177,6 +177,25 @@ public class Server extends UnicastRemoteObject implements RMIServiceInterfaceSe
         this.isVsAi = state;
     }
 
+    @Override
+    public void collectible(Point p, MapObject m) throws RemoteException
+    {
+        int i = 0;
+        while (i < gameClients.size()) {
+            gameClients.get(i++).collectible(p, m);
+        }
+    }
+
+    @Override
+    public void removeClient(int ClientID) throws RemoteException
+    {
+        gameClients.remove(ClientID);
+        if(gameClients.size() <2)
+        {
+            gameClients.get(0).sendWinningMessage();
+        }
+    }
+
 
     public synchronized void setCurrentPlayerID() throws RemoteException
     {

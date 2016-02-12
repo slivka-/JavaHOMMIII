@@ -32,6 +32,14 @@ public class HeroInfo implements Serializable{
 		Name = name;
 		homeTown = town;
 		setArmy(new HashMap<Integer, UnitInfo>());
+		resources = new HashMap<>();
+		resources.put("Zloto",5000);
+		resources.put("Drewno",50);
+		resources.put("Ruda",50);
+		resources.put("Siarka",50);
+		resources.put("Krysztal",50);
+		resources.put("Klejnot",50);
+
 	}
 	
 	/**
@@ -46,6 +54,25 @@ public class HeroInfo implements Serializable{
 			army.put(position, unit);
 		}
 		army = new HashMap<Integer, UnitInfo>(new TreeMap<Integer, UnitInfo>(army));
+	}
+
+	public void incUnit(UnitType t)
+	{
+		Iterator<Integer> iterator = army.keySet().iterator();
+		boolean added = false;
+		while(iterator.hasNext())
+		{
+			Integer key = iterator.next();
+			if(army.get(key).unitType.equals(t))
+			{
+				army.get(key).unitSize++;
+				added = true;
+			}
+		}
+		if(added == false)
+		{
+			addToArmy(army.size()+1,new UnitInfo(1,t,ID));
+		}
 	}
 	
 	public HashMap<Integer, UnitInfo> getArmy() {

@@ -88,7 +88,9 @@ public class MainMenu
             @Override
             public void actionPerformed(ActionEvent e) {
                 JoinGameWindow jgw = new JoinGameWindow(mainMenuFrame);
+                mainMenuFrame.dispose();
                 jgw.show();
+
             }
         });
         mainMenuFrame.add(joinGame);

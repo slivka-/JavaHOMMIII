@@ -10,6 +10,7 @@ import java.awt.*;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
+import java.util.Map;
 
 /**
  * Created by Irozin on 2016-02-10.
@@ -27,4 +28,6 @@ public interface RMIServiceInterfaceServer extends Remote {
     void battleMoveUnit(Point targetCell) throws RemoteException;
     void battleEndOfTurn(int nextID) throws RemoteException;
     void battleIsVsAi(boolean state) throws RemoteException;
+    void collectible(Point p, MapObject m) throws RemoteException;
+    void removeClient(int ClientID) throws RemoteException;
 }

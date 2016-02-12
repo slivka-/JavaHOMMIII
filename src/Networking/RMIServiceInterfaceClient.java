@@ -1,6 +1,7 @@
 package Networking;
 
 import Map.MapObjects.Army;
+import Map.MapObjects.MapObject;
 import Map.SavedMap;
 import Map.Tile;
 import dataClasses.HeroInfo;
@@ -29,4 +30,6 @@ public interface RMIServiceInterfaceClient extends Remote {
     void attackUnit(Point target, MiniHeroInfo hero) throws RemoteException;
     void battleMoveUnit(Point targetCell) throws RemoteException;
     void battleSetNextPlayerID(int ID) throws RemoteException;
+    void collectible(Point p, MapObject m) throws RemoteException;
+    void sendWinningMessage() throws RemoteException;
 }

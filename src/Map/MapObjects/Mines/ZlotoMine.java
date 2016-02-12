@@ -1,6 +1,7 @@
 package Map.MapObjects.Mines;
 
 import java.awt.image.BufferedImage;
+import java.util.HashMap;
 
 public class ZlotoMine extends Mine {
 
@@ -8,5 +9,12 @@ public class ZlotoMine extends Mine {
         this.img = img;
         this.ID = super.generateID();
         this.resoruceType = ResoruceType.ZLOTO;
+    }
+    @Override
+    public HashMap<String, Integer> objectAction()
+    {
+        HashMap<String, Integer> m = new HashMap<>();
+        m.put("Zloto",5000);
+        return m;
     }
 }

@@ -71,8 +71,14 @@ public class BattleController {
 		model.PalceUnits();
 		
 		view.DrawBattleScreen(model.getTerraintype(),model.getBattlefieldInfo());
-		newTurn();
-		endOfTurn();
+		model.SetNextActiveUnit();
+		currentPlayerID = model.activeUnit.commander;
+		System.out.println("A: "+currentPlayerID+", JA:"+myID);
+		if (currentPlayerID == myID)
+		{
+			ArrayList<Point> moveRange = model.getMoveRange();
+			view.drawUnitRange(moveRange);
+		}
 	}
 	
 	public void MoveUnitSend(Point targetCell)

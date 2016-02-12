@@ -8,7 +8,9 @@ import ImageSelection.ImageSelectionBox;
 import ImageSelection.ImageSelectionController;
 import Map.*;
 import Map.MapObjects.Army;
+import Map.MapObjects.MapObject;
 import Map.MapObjects.TerrainPassability;
+import Map.MapObjects.Towns.Town;
 import Networking.Client;
 import battleScreen.BattleController;
 import dataClasses.*;
@@ -33,14 +35,15 @@ import java.util.HashMap;
  */
 public class MapGameController
 {
-    private ArrayList<HeroInfo> playersList;
+    public ArrayList<HeroInfo> playersList;
     private MapGrid mainMapGrid;
 
-    private int currentPlayerID;
+    public int currentPlayerID;
     private int myPlayerID;
 
     private MouseListener listener;
     private boolean attack = false;
+    private boolean collectible = false;
     private BattleController controller;
     private SavedMap savedMap;
     private Client serverConn;
@@ -154,7 +157,7 @@ public class MapGameController
         mainMapGrid.moveHero(currentPlayer, target);
         currentPlayer.currentPosition = target;
         mainMapGrid.cells[target.x][target.y].heroOnTop();
-        waitForAnimation();
+        waitForAnimation(null);
     }
 
     public void AttackUnitSend(Point target, MiniHeroInfo hero)
@@ -173,7 +176,7 @@ public class MapGameController
         currentPlayer.currentPosition = target;
         mainMapGrid.cells[target.x][target.y].heroOnTop();
         enemyHero = hero;
-        waitForAnimation();
+        waitForAnimation(null);
     }
 
     public void AttackUnitSend(Point target,Army army)
@@ -191,11 +194,72 @@ public class MapGameController
         currentPlayer.currentPosition = target;
         mainMapGrid.cells[target.x][target.y].heroOnTop();
         enemyArmy = army.army;
-        waitForAnimation();
+        waitForAnimation(null);
     }
 
+    public void CollectibleSend(Point target, MapObject src)
+    {
+        serverConn.sendCollectible(target, src);
+    }
 
-    private void waitForAnimation()
+    public void CollectibleMove(Point target, MapObject src)
+    {
+        collectible = true;
+        mainMapGrid.clearHeroRange();
+        HeroInfo currentPlayer = playersList.get(currentPlayerID);
+        mainMapGrid.cells[currentPlayer.currentPosition.x][currentPlayer.currentPosition.y].heroOnTop();
+        mainMapGrid.moveHero(currentPlayer,target);
+        currentPlayer.currentPosition = target;
+        mainMapGrid.cells[target.x][target.y].heroOnTop();
+        waitForAnimation(src);
+    }
+
+    public void endOfCollectible(MapObject m)
+    {
+        System.out.println(m);
+        if(m.objectAction()== null)
+        {
+            if(playersList.get(currentPlayerID).homeTown.getID() == m.getID())
+            {
+                if(myPlayerID == currentPlayerID)
+                {
+                    BuyUnitsDialog u = new BuyUnitsDialog(this);
+                }
+                else
+                {
+                    endOfTurn();
+                }
+            }
+            else
+            {
+                int x = 0;
+                for (HeroInfo i : playersList)
+                {
+                    System.out.println(i.homeTown);
+                    if(i.homeTown.getID() == m.getID())
+                    {
+                        i.heroDisplay.setVisible(false);
+                        JOptionPane.showMessageDialog(mainMapGrid,"Gracz "+i.Name+" zostal pokonany","POKONANY",JOptionPane.INFORMATION_MESSAGE);
+                        playersList.remove(i);
+                        serverConn.removePlayer(x);
+                        break;
+                    }
+                    x++;
+                }
+                endOfTurn();
+            }
+        }
+        else
+        {
+            HashMap<String,Integer> res = m.objectAction();
+            res.forEach((k, v) -> playersList.get(currentPlayerID).resources.merge(k, v, (v1, v2) -> v1 + v2));
+            System.out.println(playersList.get(currentPlayerID).resources);
+            endOfTurn();
+        }
+
+    }
+
+    private void waitForAnimation(MapObject c)
     {
         Timer timer = new Timer(20, new ActionListener()
         {
@@ -210,6 +274,11 @@ public class MapGameController
                     {
                         attack = false;
                         LaunchBattle();
+                    }
+                    else if(collectible)
+                    {
+                        collectible = false;
+                        endOfCollectible(c);
                     }
                     else
                     {
@@ -238,7 +307,7 @@ public class MapGameController
         nextTurn();
     }
 
-    private void endOfTurn()
+    public void endOfTurn()
     {
         try
         {
@@ -317,5 +386,10 @@ public class MapGameController
             }
         }
         return null;
+    }
+
+    public void winEndGame()
+    {
+        JOptionPane.showMessageDialog(mainMapGrid,"WYGRALES! GRATULACJE!","WYGRANA",JOptionPane.INFORMATION_MESSAGE);
     }
 }

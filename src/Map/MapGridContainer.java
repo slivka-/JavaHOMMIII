@@ -2,8 +2,7 @@ package Map;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
+import javax.swing.*;
 
 
 public class MapGridContainer extends JPanel{
@@ -20,7 +19,9 @@ public class MapGridContainer extends JPanel{
 	private void initialize() {
 		setLayout(new BorderLayout());
 		add(scrollPane, BorderLayout.CENTER);
-		setSize(600, 780);
+		setSize(1000, 1000);
+		scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		scrollPane.addMouseListener(new MouseListener() {
 			
 			@Override

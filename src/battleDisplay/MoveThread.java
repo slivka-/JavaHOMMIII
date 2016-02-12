@@ -11,8 +11,8 @@ public class MoveThread implements Runnable
 {
 
     private ArrayList<Point> _path;
-    private int pathPointCount = 0;
-    private int animationCount = 0;
+    private int pathPointCount;
+    private int animationCount;
     private int endOfPath;
     private Point2D currentPosition;
     private boolean isRunning;
@@ -25,6 +25,8 @@ public class MoveThread implements Runnable
         this.endOfPath = _path.size();
         this.currentPosition = new Point();
         this.isRunning = true;
+        this.pathPointCount = 0;
+        this.animationCount = 0;
     }
 
 
@@ -54,7 +56,7 @@ public class MoveThread implements Runnable
     @Override
     public void run()
     {
-        while(pathPointCount+1 != endOfPath)
+        while(true)
         {
             try
             {
@@ -82,8 +84,13 @@ public class MoveThread implements Runnable
             {
                 ex.printStackTrace();
             }
+            if(pathPointCount+1 >= endOfPath)
+            {
+                isRunning = false;
+                break;
+            }
         }
-        isRunning = false;
+
     }
 
 

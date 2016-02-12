@@ -3,6 +3,8 @@ package battleScreen;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import javax.swing.*;
 
@@ -28,12 +30,14 @@ public class BattleView {
 	private MouseListener _aListener;
 	private MouseMotionListener _aDirectionListener;
 	private JLabel infoBoxText;
+	private ExecutorService ex;
 
 	public BattleView(int width, int height, BattleController mControl)
 	{
 		mainController = mControl;
 		_bfWidth = width;
 		_bfHeight = height;
+		ex = Executors.newCachedThreadPool();
 	}
 	
 	public void DrawBattleScreen(int terraintype, BattlefieldCell[][] BattlefieldInfo)
@@ -315,6 +319,7 @@ public class BattleView {
 						u.flipFacing();
 					}
 					lPane.add(u.getUnitDisplay(),j,j+1);
+					ex.execute(u.getUnitDisplay());
 				}
 
 				if(BattlefieldInfo[i][j].contains == CellEntity.OBSTACLE)

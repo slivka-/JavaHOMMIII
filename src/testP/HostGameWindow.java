@@ -116,6 +116,7 @@ public class HostGameWindow {
                     {
                         server.sendMap(loadedMap);
                         server.sendPlayersInfo();
+                        mainHostFrame.dispose();
                     }
                     else
                     {

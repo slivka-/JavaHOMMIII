@@ -2,25 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a84184e7-9ef9-4486-ac6f-da6f5692ca5e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dataClasses/MiniHeroInfo.java" />
-      <change type="DELETED" beforePath="D:\Programy\GIT\JavaHOMMIII\src\testP\TestingClass.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/mapLogic/BuyUnitsDialog.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/battleDisplay/AnimateThread.java" afterPath="$PROJECT_DIR$/src/battleDisplay/AnimateThread.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/battleScreen/BattleController.java" afterPath="$PROJECT_DIR$/src/battleScreen/BattleController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/battleScreen/BattleInfo.java" afterPath="$PROJECT_DIR$/src/battleScreen/BattleInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dataClasses/BattleResult.java" afterPath="$PROJECT_DIR$/src/dataClasses/BattleResult.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/battleScreen/BattleView.java" afterPath="$PROJECT_DIR$/src/battleScreen/BattleView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Networking/Client.java" afterPath="$PROJECT_DIR$/src/Networking/Client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/HeroDisplay/HeroAnimationThread.java" afterPath="$PROJECT_DIR$/src/HeroDisplay/HeroAnimationThread.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/HeroDisplay/HeroDisplayPanel.java" afterPath="$PROJECT_DIR$/src/HeroDisplay/HeroDisplayPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map/MapObjects/Mines/DrewnoMine.java" afterPath="$PROJECT_DIR$/src/Map/MapObjects/Mines/DrewnoMine.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/battleDisplay/GraphicsPanel.java" afterPath="$PROJECT_DIR$/src/battleDisplay/GraphicsPanel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dataClasses/HeroInfo.java" afterPath="$PROJECT_DIR$/src/dataClasses/HeroInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/testP/HostGameWindow.java" afterPath="$PROJECT_DIR$/src/testP/HostGameWindow.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map/MapObjects/Mines/KlejnotMine.java" afterPath="$PROJECT_DIR$/src/Map/MapObjects/Mines/KlejnotMine.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map/MapObjects/Mines/KrysztalMine.java" afterPath="$PROJECT_DIR$/src/Map/MapObjects/Mines/KrysztalMine.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainMenu.java" afterPath="$PROJECT_DIR$/src/MainMenu.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mapLogic/MapGameController.java" afterPath="$PROJECT_DIR$/src/mapLogic/MapGameController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map/MapGrid.java" afterPath="$PROJECT_DIR$/src/Map/MapGrid.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map/NewUnitDialog.java" afterPath="$PROJECT_DIR$/src/Map/NewUnitDialog.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map/MapGridContainer.java" afterPath="$PROJECT_DIR$/src/Map/MapGridContainer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map/MapObjects/MapObject.java" afterPath="$PROJECT_DIR$/src/Map/MapObjects/MapObject.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/battleDisplay/MoveThread.java" afterPath="$PROJECT_DIR$/src/battleDisplay/MoveThread.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Networking/RMIServiceInterfaceClient.java" afterPath="$PROJECT_DIR$/src/Networking/RMIServiceInterfaceClient.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Networking/RMIServiceInterfaceServer.java" afterPath="$PROJECT_DIR$/src/Networking/RMIServiceInterfaceServer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map/MapObjects/Mines/RudaMine.java" afterPath="$PROJECT_DIR$/src/Map/MapObjects/Mines/RudaMine.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Networking/Server.java" afterPath="$PROJECT_DIR$/src/Networking/Server.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map/MapObjects/TerrainPassability.java" afterPath="$PROJECT_DIR$/src/Map/MapObjects/TerrainPassability.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map/Tile.java" afterPath="$PROJECT_DIR$/src/Map/Tile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dataClasses/UnitInfo.java" afterPath="$PROJECT_DIR$/src/dataClasses/UnitInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map/MapObjects/Mines/SiarkaMine.java" afterPath="$PROJECT_DIR$/src/Map/MapObjects/Mines/SiarkaMine.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map/MapObjects/Mines/ZlotoMine.java" afterPath="$PROJECT_DIR$/src/Map/MapObjects/Mines/ZlotoMine.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JavaHOMMIII.iws" />
@@ -47,21 +51,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Server.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Networking/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.71555555" vertical-offset="2245" max-vertical-offset="3961">
-              <caret line="164" column="32" selection-start-line="164" selection-start-column="32" selection-end-line="164" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Networking/Client.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3111">
-              <caret line="177" column="18" selection-start-line="177" selection-start-column="18" selection-end-line="177" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2782" max-vertical-offset="4284">
+              <caret line="194" column="52" selection-start-line="194" selection-start-column="52" selection-end-line="194" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -70,32 +64,351 @@
       <file leaf-file-name="RMIServiceInterfaceClient.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Networking/RMIServiceInterfaceClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
-              <caret line="28" column="46" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+              <caret line="33" column="53" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BattleController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/battleScreen/BattleController.java">
+      <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Networking/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1528" max-vertical-offset="5100">
-              <caret line="153" column="55" selection-start-line="153" selection-start-column="55" selection-end-line="153" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="806" max-vertical-offset="3672">
+              <caret line="223" column="32" selection-start-line="223" selection-start-column="32" selection-end-line="223" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MapGameController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mapLogic/MapGameController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6103">
+              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding>
-                <element signature="e#7568#7569#0" expanded="true" />
-                <element signature="e#7639#7640#0" expanded="true" />
+                <element signature="e#6640#6641#0" expanded="true" />
+                <element signature="e#6695#6696#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BattleView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/battleScreen/BattleView.java">
+      <file leaf-file-name="BuyUnitsDialog.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mapLogic/BuyUnitsDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4930" max-vertical-offset="6545">
-              <caret line="333" column="46" selection-start-line="333" selection-start-column="46" selection-end-line="333" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="576" max-vertical-offset="5219">
+              <caret line="49" column="28" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainMenu.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MainMenu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1581">
+              <caret line="89" column="69" selection-start-line="89" selection-start-column="69" selection-end-line="89" selection-end-column="69" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReadyUnitTypes.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Map/ReadyUnitTypes.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="290" max-vertical-offset="1156">
+              <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewUnitDialog.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Map/NewUnitDialog.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1001" max-vertical-offset="1836">
+              <caret line="77" column="96" selection-start-line="77" selection-start-column="96" selection-end-line="77" selection-end-column="96" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HostGameWindow.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/testP/HostGameWindow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="496" max-vertical-offset="2652">
+              <caret line="65" column="21" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JAVA/battleDisplay" pinned="false" current-in-tab="true">
+        <entry file="uml://JAVA/battleDisplay">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JAVA</ID>
+              <OriginalElement>battleDisplay</OriginalElement>
+              <nodes>
+                <node x="0.0" y="255.0">Networking.RMIServiceInterfaceServer</node>
+                <node x="642.0" y="790.0">mapLogic.BuyUnitsDialog</node>
+                <node x="774.0" y="865.0">Map.MapObjects.Mines.ResoruceType</node>
+                <node x="170.0" y="180.0">Map.MapObjects.Towns.Forteca</node>
+                <node x="615.0" y="180.0">Map.MapObjects.Resources.Rtec</node>
+                <node x="0.0" y="410.0">Pathfinding.FindPath</node>
+                <node x="738.0" y="1090.0">Map.Tile</node>
+                <node x="429.0" y="255.0">ImageSelection.ImageSelectionBox</node>
+                <node x="215.0" y="255.0">Networking.RMIServiceInterfaceClient</node>
+                <node x="183.0" y="565.0">Map.MapRangeIndicator</node>
+                <node x="308.88392857142867" y="90.0">Map.MapObjects.Miscellaneous.Misc</node>
+                <node x="80.0" y="180.0">Map.MapObjects.Towns.Zamek</node>
+                <node x="469.0" y="865.0">HeroDisplay.HeroDirection</node>
+                <node x="523.0" y="1015.0">dataClasses.UnitType</node>
+                <node x="-135.0" y="767.0">MainMenu</node>
+                <node x="523.0" y="90.0">Map.MapObjects.Resources.Resource</node>
+                <node x="745.0" y="410.0">mapLogic.MapGameController</node>
+                <node x="482.0" y="790.0">battleDisplay.AnimationType</node>
+                <node x="126.0" y="410.0">ImageSelection.ImageSelectionController</node>
+                <node x="496.0" y="1090.0">dataClasses.UnitInfo</node>
+                <node x="339.0" y="410.0">ImageSelection.ImageFolderComponent</node>
+                <node x="1102.0" y="180.0">Map.MapObjects.Mines.ZlotoMine</node>
+                <node x="609.0" y="255.0">ImageSelection.FolderImageBox</node>
+                <node x="1329.0" y="180.0">Map.MapObjects.Mines.RudaMine</node>
+                <node x="692.0" y="180.0">Map.MapObjects.Resources.Klejnot</node>
+                <node x="0.0" y="1015.0">Pathfinding.GameMap</node>
+                <node x="533.0" y="180.0">Map.MapObjects.Resources.Zloto</node>
+                <node x="1558.0" y="180.0">Map.MapObjects.Mines.RtecMine</node>
+                <node x="161.0" y="790.0">Map.NewMapDialog</node>
+                <node x="990.0" y="180.0">Map.MapObjects.Mines.SiarkaMine</node>
+                <node x="263.00000000000006" y="180.0">Map.MapObjects.Resources.Ruda</node>
+                <node x="0.0" y="865.0">Map.NewUnitDialog</node>
+                <node x="622.0" y="865.0">dataClasses.BattlefieldCell</node>
+                <node x="295.0" y="940.0">battleDisplay.SpriteLoader</node>
+                <node x="366.0" y="565.0">Map.MapEditorMenuBar</node>
+                <node x="0.0" y="940.0">dataClasses.MiniHeroInfo</node>
+                <node x="1211.0" y="180.0">Map.MapObjects.Mines.KlejnotMine</node>
+                <node x="1310.5" y="90.0">Map.MapObjects.Landscapes.Landscape</node>
+                <node x="783.0" y="180.0">Map.MapObjects.Resources.Siarka</node>
+                <node x="1437.0" y="180.0">Map.MapObjects.Mines.KrysztalMine</node>
+                <node x="168.0" y="715.0">GraphicsProcessing.ImageProcessor</node>
+                <node x="264.0" y="1015.0">Pathfinding.GameCell</node>
+                <node x="250.0" y="1090.0">Map.MapSize</node>
+                <node x="373.0" y="1090.0">Pathfinding.MapCell</node>
+                <node x="656.0" y="715.0">battleDisplay.AttackDirection</node>
+                <node x="494.0" y="715.0">battleScreen.BattleController</node>
+                <node x="775.0" y="1015.0">GraphicsProcessing.Graphics</node>
+                <node x="619.5" y="335.0">ImageSelection.FolderImageBox.ListRenderer</node>
+                <node x="715.0" y="940.0">Map.SavedMap</node>
+                <node x="0.0" y="1090.0">GraphicsProcessing.DrawGUI</node>
+                <node x="394.0" y="1015.0">dataClasses.CellEntity</node>
+                <node x="331.0" y="715.0">Map.ReadyUnitTypes</node>
+                <node x="1.0" y="490.0">Pathfinding.FindPath.openList</node>
+                <node x="52.0" y="335.0">Networking.Server</node>
+                <node x="438.5" y="335.0">ImageSelection.ImageSelectionBox.MyListRenderer</node>
+                <node x="159.0" y="865.0">Pathfinding.BattlefieldMap</node>
+                <node x="83.5" y="90.0">Map.MapObjects.Towns.Town</node>
+                <node x="690.0" y="640.0">Map.MapObjects.TerrainPassability</node>
+                <node x="0.0" y="640.0">testP.JoinGameWindow</node>
+                <node x="267.0" y="335.0">Networking.Client</node>
+                <node x="868.0" y="180.0">Map.MapObjects.Mines.DrewnoMine</node>
+                <node x="581.0" y="940.0">battleScreen.BattleView</node>
+                <node x="315.0" y="865.0">battleDisplay.GraphicsPanel</node>
+                <node x="0.0" y="180.0">Map.MapObjects.Towns.Loch</node>
+                <node x="134.0" y="1015.0">battleScreen.BattleInfo</node>
+                <node x="824.5" y="0.0">Map.MapObjects.MapObject</node>
+                <node x="779.0" y="335.0">Pathfinding.Pathfinder.openList</node>
+                <node x="649.0" y="1015.0">dataClasses.HeroInfo</node>
+                <node x="0.0" y="565.0">battleDisplay.StaticGraphicsPanel</node>
+                <node x="548.0" y="410.0">HeroDisplay.HeroAnimationThread</node>
+                <node x="322.0" y="790.0">battleDisplay.AnimateThread</node>
+                <node x="344.00000000000006" y="180.0">Map.MapObjects.Resources.Krysztal</node>
+                <node x="438.00000000000006" y="180.0">Map.MapObjects.Resources.Drewno</node>
+                <node x="125.0" y="1090.0">Map.MapGrid</node>
+                <node x="440.0" y="940.0">dataClasses.BattleResult</node>
+                <node x="802.0" y="790.0">battleDisplay.RangeIndicator</node>
+                <node x="1229.5" y="90.0">Map.MapObjects.Mines.Mine</node>
+                <node x="-146.0" y="681.0">TestClass</node>
+                <node x="347.0" y="640.0">HeroDisplay.HeroDisplayPanel</node>
+                <node x="0.0" y="715.0">dataClasses.UnitCommander</node>
+                <node x="0.0" y="790.0">battleDisplay.interfaceButton</node>
+                <node x="727.0" y="565.0">Map.MapGridContainer</node>
+                <node x="519.0" y="640.0">HeroDisplay.HeroMoveThread</node>
+                <node x="618.0" y="1090.0">battleDisplay.infoBox</node>
+                <node x="150.0" y="940.0">battleDisplay.MoveThread</node>
+                <node x="548.0" y="565.0">testP.HostGameWindow</node>
+                <node x="774.0" y="255.0">Pathfinding.Pathfinder</node>
+                <node x="885.75" y="90.0">Map.MapObjects.Army</node>
+                <node x="175.0" y="640.0">battleDisplay.BackgroundPanel</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="Map.MapObjects.Mines.DrewnoMine" target="Map.MapObjects.Mines.Mine">
+                  <point x="0.0" y="-15.0" />
+                  <point x="919.0" y="140.0" />
+                  <point x="1233.857142857143" y="140.0" />
+                  <point x="-26.14285714285711" y="15.0" />
+                </edge>
+                <edge source="Map.MapObjects.Mines.RtecMine" target="Map.MapObjects.Mines.Mine">
+                  <point x="0.0" y="-15.0" />
+                  <point x="1600.0" y="140.0" />
+                  <point x="1286.142857142857" y="140.0" />
+                  <point x="26.14285714285711" y="15.0" />
+                </edge>
+                <edge source="Map.MapObjects.Resources.Siarka" target="Map.MapObjects.Resources.Resource">
+                  <point x="0.0" y="-15.0" />
+                  <point x="815.5" y="140.0" />
+                  <point x="599.1428571428571" y="140.0" />
+                  <point x="35.14285714285711" y="15.0" />
+                </edge>
+                <edge source="Map.MapObjects.Resources.Drewno" target="Map.MapObjects.Resources.Resource">
+                  <point x="-5.6843418860808015E-14" y="-15.0" />
+                  <point x="475.5" y="160.0" />
+                  <point x="552.2857142857144" y="160.0" />
+                  <point x="-11.714285714285666" y="15.0" />
+                </edge>
+                <edge source="Map.MapObjects.Resources.Zloto" target="Map.MapObjects.Resources.Resource">
+                  <point x="0.0" y="-15.0" />
+                  <point x="0.0" y="15.0" />
+                </edge>
+                <edge source="Map.MapObjects.Army" target="Map.MapObjects.MapObject">
+                  <point x="0.0" y="-15.0" />
+                  <point x="917.25" y="70.0" />
+                  <point x="878.75" y="70.0" />
+                  <point x="7.75" y="15.0" />
+                </edge>
+                <edge source="Map.MapObjects.Towns.Loch" target="Map.MapObjects.Towns.Town">
+                  <point x="0.0" y="-15.0" />
+                  <point x="30.0" y="160.0" />
+                  <point x="94.0" y="160.0" />
+                  <point x="-21.0" y="15.0" />
+                </edge>
+                <edge source="Map.MapObjects.Mines.Mine" target="Map.MapObjects.MapObject">
+                  <point x="0.0" y="-15.0" />
+                  <point x="1260.0" y="60.0" />
+                  <point x="894.25" y="60.0" />
+                  <point x="23.25" y="15.0" />
+                </edge>
+                <edge source="Map.MapObjects.Towns.Zamek" target="Map.MapObjects.Towns.Town">
+                  <point x="0.0" y="-15.0" />
+                  <point x="0.0" y="15.0" />
+                </edge>
+                <edge source="Map.MapObjects.Resources.Klejnot" target="Map.MapObjects.Resources.Resource">
+                  <point x="0.0" y="-15.0" />
+                  <point x="727.5" y="150.0" />
+                  <point x="587.4285714285716" y="150.0" />
+                  <point x="23.428571428571445" y="15.0" />
+                </edge>
+                <edge source="Map.MapObjects.Towns.Town" target="Map.MapObjects.MapObject">
+                  <point x="0.0" y="-15.0" />
+                  <point x="115.0" y="50.0" />
+                  <point x="832.25" y="50.0" />
+                  <point x="-38.75" y="15.0" />
+                </edge>
+                <edge source="Map.MapObjects.Resources.Rtec" target="Map.MapObjects.Resources.Resource">
+                  <point x="0.0" y="-15.0" />
+                  <point x="643.5" y="160.0" />
+                  <point x="575.7142857142858" y="160.0" />
+                  <point x="11.71428571428578" y="15.0" />
+                </edge>
+                <edge source="Map.MapObjects.Mines.SiarkaMine" target="Map.MapObjects.Mines.Mine">
+                  <point x="0.0" y="-15.0" />
+                  <point x="1036.0" y="150.0" />
+                  <point x="1242.5714285714287" y="150.0" />
+                  <point x="-17.42857142857133" y="15.0" />
+                </edge>
+                <edge source="Map.MapObjects.Towns.Forteca" target="Map.MapObjects.Towns.Town">
+                  <point x="0.0" y="-15.0" />
+                  <point x="206.5" y="160.0" />
+                  <point x="136.0" y="160.0" />
+                  <point x="21.0" y="15.0" />
+                </edge>
+                <edge source="Networking.Client" target="Networking.RMIServiceInterfaceClient">
+                  <point x="0.0" y="-15.0" />
+                  <point x="0.0" y="15.0" />
+                </edge>
+                <edge source="Pathfinding.Pathfinder.openList" target="Pathfinding.Pathfinder">
+                  <point x="0.0" y="-15.0" />
+                  <point x="0.0" y="15.0" />
+                </edge>
+                <edge source="Map.MapObjects.Mines.ZlotoMine" target="Map.MapObjects.Mines.Mine">
+                  <point x="0.0" y="-15.0" />
+                  <point x="1146.5" y="160.0" />
+                  <point x="1251.2857142857142" y="160.0" />
+                  <point x="-8.71428571428578" y="15.0" />
+                </edge>
+                <edge source="Map.MapObjects.Mines.KrysztalMine" target="Map.MapObjects.Mines.Mine">
+                  <point x="0.0" y="-15.0" />
+                  <point x="1487.5" y="150.0" />
+                  <point x="1277.4285714285713" y="150.0" />
+                  <point x="17.42857142857133" y="15.0" />
+                </edge>
+                <edge source="Map.MapObjects.Miscellaneous.Misc" target="Map.MapObjects.MapObject">
+                  <point x="0.0" y="-15.0" />
+                  <point x="338.38392857142867" y="60.0" />
+                  <point x="847.75" y="60.0" />
+                  <point x="-23.25" y="15.0" />
+                </edge>
+                <edge source="ImageSelection.ImageSelectionBox.MyListRenderer" target="ImageSelection.ImageSelectionBox">
+                  <point x="0.0" y="-15.0" />
+                  <point x="0.0" y="15.0" />
+                </edge>
+                <edge source="Pathfinding.FindPath.openList" target="Pathfinding.FindPath">
+                  <point x="0.0" y="-15.0" />
+                  <point x="0.0" y="15.0" />
+                </edge>
+                <edge source="Map.MapObjects.Resources.Krysztal" target="Map.MapObjects.Resources.Resource">
+                  <point x="0.0" y="-15.0" />
+                  <point x="381.00000000000006" y="150.0" />
+                  <point x="540.5714285714287" y="150.0" />
+                  <point x="-23.428571428571445" y="15.0" />
+                </edge>
+                <edge source="Map.MapObjects.Mines.RudaMine" target="Map.MapObjects.Mines.Mine">
+                  <point x="0.0" y="-15.0" />
+                  <point x="1373.0" y="160.0" />
+                  <point x="1268.7142857142858" y="160.0" />
+                  <point x="8.71428571428578" y="15.0" />
+                </edge>
+                <edge source="Map.MapObjects.Landscapes.Landscape" target="Map.MapObjects.MapObject">
+                  <point x="0.0" y="-15.0" />
+                  <point x="1355.5" y="50.0" />
+                  <point x="909.75" y="50.0" />
+                  <point x="38.75" y="15.0" />
+                </edge>
+                <edge source="ImageSelection.FolderImageBox.ListRenderer" target="ImageSelection.FolderImageBox">
+                  <point x="0.0" y="-15.0" />
+                  <point x="0.0" y="15.0" />
+                </edge>
+                <edge source="Map.MapObjects.Resources.Ruda" target="Map.MapObjects.Resources.Resource">
+                  <point x="0.0" y="-15.0" />
+                  <point x="293.50000000000006" y="140.0" />
+                  <point x="528.8571428571429" y="140.0" />
+                  <point x="-35.14285714285711" y="15.0" />
+                </edge>
+                <edge source="Networking.Server" target="Networking.RMIServiceInterfaceServer">
+                  <point x="0.0" y="-15.0" />
+                  <point x="0.0" y="15.0" />
+                </edge>
+                <edge source="Map.MapObjects.Resources.Resource" target="Map.MapObjects.MapObject">
+                  <point x="0.0" y="-15.0" />
+                  <point x="564.0" y="70.0" />
+                  <point x="863.25" y="70.0" />
+                  <point x="-7.75" y="15.0" />
+                </edge>
+                <edge source="Map.MapObjects.Mines.KlejnotMine" target="Map.MapObjects.Mines.Mine">
+                  <point x="0.0" y="-15.0" />
+                  <point x="0.0" y="15.0" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="0.6894736842105263" x="748.9847328244274" y="580.0" />
+              <SelectedNodes />
+              <Categories>
+                <Category>Inner Classes</Category>
+              </Categories>
+              <SCOPE>All</SCOPE>
+              <VISIBILITY>private</VISIBILITY>
             </state>
           </provider>
         </entry>
@@ -109,22 +422,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/battleDisplay/MoveThread.java" />
-        <option value="$PROJECT_DIR$/src/battleDisplay/GraphicsPanel.java" />
-        <option value="$PROJECT_DIR$/src/battleDisplay/interfaceButton.java" />
-        <option value="$PROJECT_DIR$/src/battleDisplay/infoBox.java" />
-        <option value="$PROJECT_DIR$/src/Client/ClientMain.java" />
-        <option value="$PROJECT_DIR$/src/dataClasses/UnitCommander.java" />
-        <option value="$PROJECT_DIR$/src/Server/ServerMain.java" />
-        <option value="$PROJECT_DIR$/src/Client/ClientThread.java" />
-        <option value="$PROJECT_DIR$/src/Pathfinding/FindPath.java" />
-        <option value="$PROJECT_DIR$/src/Pathfinding/BattlefieldMap.java" />
         <option value="$PROJECT_DIR$/src/Pathfinding/MapCell.java" />
         <option value="$PROJECT_DIR$/src/Map/MapObjects/SerializableMapObject.java" />
-        <option value="$PROJECT_DIR$/src/Map/MapObjects/MapObject.java" />
         <option value="$PROJECT_DIR$/src/TestClass.java" />
         <option value="$PROJECT_DIR$/src/HeroDisplay/HeroDirection.java" />
-        <option value="$PROJECT_DIR$/src/Map/MapGridContainer.java" />
         <option value="$PROJECT_DIR$/src/Map/MapEditorMenuBar.java" />
         <option value="$PROJECT_DIR$/src/GraphicsProcessing/DrawGUI.java" />
         <option value="$PROJECT_DIR$/src/Map/RangeIndicator.java" />
@@ -138,9 +439,7 @@
         <option value="$PROJECT_DIR$/src/Map/MapObjects/Army.java" />
         <option value="$PROJECT_DIR$/src/Pathfinding/GameMap.java" />
         <option value="$PROJECT_DIR$/src/Map/SavedMap.java" />
-        <option value="$PROJECT_DIR$/src/testP/HostGameWindow.java" />
         <option value="$PROJECT_DIR$/src/testP/JoinGameWindow.java" />
-        <option value="$PROJECT_DIR$/src/MainMenu.java" />
         <option value="$PROJECT_DIR$/src/Map/MapRangeIndicator.java" />
         <option value="$PROJECT_DIR$/src/Map/MapObjects/TerrainPassability.java" />
         <option value="$PROJECT_DIR$/src/Map/Tile.java" />
@@ -150,16 +449,30 @@
         <option value="$PROJECT_DIR$/src/battleScreen/BattleInfo.java" />
         <option value="$PROJECT_DIR$/src/dataClasses/BattleResult.java" />
         <option value="$PROJECT_DIR$/src/dataClasses/MiniHeroInfo.java" />
-        <option value="$PROJECT_DIR$/src/dataClasses/HeroInfo.java" />
-        <option value="$PROJECT_DIR$/src/Networking/RMIServiceInterfaceClient.java" />
-        <option value="$PROJECT_DIR$/src/Networking/RMIServiceInterfaceServer.java" />
-        <option value="$PROJECT_DIR$/src/Networking/Client.java" />
-        <option value="$PROJECT_DIR$/src/Map/MapGrid.java" />
-        <option value="$PROJECT_DIR$/src/mapLogic/MapGameController.java" />
         <option value="$PROJECT_DIR$/src/HeroDisplay/HeroAnimationThread.java" />
-        <option value="$PROJECT_DIR$/src/battleScreen/BattleView.java" />
         <option value="$PROJECT_DIR$/src/battleScreen/BattleController.java" />
+        <option value="$PROJECT_DIR$/src/battleScreen/BattleView.java" />
+        <option value="$PROJECT_DIR$/src/testP/HostGameWindow.java" />
+        <option value="$PROJECT_DIR$/src/MainMenu.java" />
+        <option value="$PROJECT_DIR$/src/battleDisplay/AnimateThread.java" />
+        <option value="$PROJECT_DIR$/src/battleDisplay/MoveThread.java" />
+        <option value="$PROJECT_DIR$/src/battleDisplay/GraphicsPanel.java" />
+        <option value="$PROJECT_DIR$/src/Map/MapGridContainer.java" />
+        <option value="$PROJECT_DIR$/src/Map/MapGrid.java" />
+        <option value="$PROJECT_DIR$/src/Map/MapObjects/MapObject.java" />
+        <option value="$PROJECT_DIR$/src/Map/MapObjects/Mines/DrewnoMine.java" />
+        <option value="$PROJECT_DIR$/src/Map/MapObjects/Mines/KlejnotMine.java" />
+        <option value="$PROJECT_DIR$/src/Map/MapObjects/Mines/KrysztalMine.java" />
+        <option value="$PROJECT_DIR$/src/Map/MapObjects/Mines/SiarkaMine.java" />
+        <option value="$PROJECT_DIR$/src/Map/MapObjects/Mines/ZlotoMine.java" />
+        <option value="$PROJECT_DIR$/src/Map/MapObjects/Mines/RudaMine.java" />
+        <option value="$PROJECT_DIR$/src/Networking/RMIServiceInterfaceServer.java" />
+        <option value="$PROJECT_DIR$/src/Networking/RMIServiceInterfaceClient.java" />
         <option value="$PROJECT_DIR$/src/Networking/Server.java" />
+        <option value="$PROJECT_DIR$/src/Networking/Client.java" />
+        <option value="$PROJECT_DIR$/src/mapLogic/MapGameController.java" />
+        <option value="$PROJECT_DIR$/src/mapLogic/BuyUnitsDialog.java" />
+        <option value="$PROJECT_DIR$/src/dataClasses/HeroInfo.java" />
       </list>
     </option>
   </component>
@@ -197,6 +510,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -293,118 +608,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mapLogic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaHOMMIII" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaHOMMIII" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Map" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaHOMMIII" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaHOMMIII" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Map" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MapObjects" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaHOMMIII" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaHOMMIII" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HeroDisplay" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaHOMMIII" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaHOMMIII" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dataClasses" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaHOMMIII" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaHOMMIII" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="battleScreen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaHOMMIII" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaHOMMIII" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -429,8 +632,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -440,7 +641,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/untitled" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="options.splitter.main.proportions" value="0.3" />
@@ -806,16 +1007,17 @@
       <workItem from="1455104134763" duration="12716000" />
       <workItem from="1455127770423" duration="8108000" />
       <workItem from="1455139310212" duration="3867000" />
-      <workItem from="1455189921375" duration="24282000" />
+      <workItem from="1455189921375" duration="25166000" />
+      <workItem from="1455225653673" duration="15962000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202830000" />
+    <option name="totallyTimeSpent" value="219676000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -828,22 +1030,22 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.46532437" sideWeight="0.46760392" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.059284117" sideWeight="0.46760392" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1680929" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.034675617" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15436241" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27740493" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19394618" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -928,7 +1130,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="36" />
+      <option name="time" value="40" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -937,182 +1139,15 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/TestClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
-          <folding>
-            <element signature="e#389#390#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/battleDisplay/SpriteLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="1122">
-          <caret line="60" column="96" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/HeroDisplay/HeroDirection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.125" vertical-offset="0" max-vertical-offset="680">
-          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/battleDisplay/AttackDirection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1374134" vertical-offset="0" max-vertical-offset="866">
-          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Map/MapObjects/Towns/Loch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GraphicsProcessing/DrawGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6557143" vertical-offset="119" max-vertical-offset="918">
-          <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/battleDisplay/AnimateThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6584507" vertical-offset="459" max-vertical-offset="2703">
-          <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="61" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pathfinding/FindPath.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.4807693" vertical-offset="1428" max-vertical-offset="2329">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/HeroDisplay/HeroMoveThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="282" max-vertical-offset="1666">
-          <caret line="77" column="62" selection-start-line="77" selection-start-column="62" selection-end-line="77" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Map/MapObjects/Towns/Town.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ImageSelection/ImageSelectionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.044155844" vertical-offset="0" max-vertical-offset="770">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ImageSelection/ImageSelectionBox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.72357726" vertical-offset="1272" max-vertical-offset="1887">
-          <caret line="118" column="39" selection-start-line="118" selection-start-column="39" selection-end-line="118" selection-end-column="39" />
-          <folding>
-            <element signature="e#3540#3541#0" expanded="false" />
-            <element signature="e#3577#3578#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ImageSelection/ImageFolderComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49756098" vertical-offset="17" max-vertical-offset="663">
-          <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#670#671#0" expanded="false" />
-            <element signature="e#703#704#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pathfinding/GameCell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0762987" vertical-offset="115" max-vertical-offset="1326">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Map/ReadyUnitTypes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5848033" vertical-offset="453" max-vertical-offset="1190">
-          <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Map/MapObjects/Army.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
-          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pathfinding/GameMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1224">
-          <caret line="28" column="54" selection-start-line="28" selection-start-column="54" selection-end-line="28" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dataClasses/CellEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.048295453" vertical-offset="0" max-vertical-offset="704">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/units/armyMini.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/battleDisplay/GraphicsPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16216215" vertical-offset="1205" max-vertical-offset="3179">
-          <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/battleDisplay/MoveThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16435185" vertical-offset="283" max-vertical-offset="1445">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Map/NewMapDialog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.45685998" vertical-offset="0" max-vertical-offset="707">
           <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Map/MapGridContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1173">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1121,7 +1156,7 @@
         <state vertical-scroll-proportion="0.67288136" vertical-offset="453" max-vertical-offset="1105">
           <caret line="56" column="39" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1134,30 +1169,6 @@
             <element signature="e#1452#1453#0" expanded="false" />
             <element signature="e#1483#1484#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/testP/HostGameWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1057" max-vertical-offset="2635">
-          <caret line="117" column="49" selection-start-line="117" selection-start-column="49" selection-end-line="117" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1547">
-          <caret line="36" column="43" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/testP/JoinGameWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="647" max-vertical-offset="1428">
-          <caret line="88" column="37" selection-start-line="88" selection-start-column="37" selection-end-line="88" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1181,7 +1192,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
           <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1204,21 +1214,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Map/NewUnitDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1074" max-vertical-offset="1836">
-          <caret line="97" column="126" selection-start-line="97" selection-start-column="126" selection-end-line="97" selection-end-column="126" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dataClasses/UnitInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.3792049" vertical-offset="520" max-vertical-offset="1241">
           <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
           <folding>
-            <element signature="e#1332#1333#0" expanded="true" />
-            <element signature="e#1366#1367#0" expanded="true" />
+            <element signature="e#1332#1333#0" expanded="false" />
+            <element signature="e#1366#1367#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1228,26 +1230,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Map/MapObjects/MapObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.26322418" vertical-offset="379" max-vertical-offset="1173">
-          <caret line="21" column="23" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/HeroDisplay/HeroDisplayPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1751">
           <caret line="110" column="5" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/battleScreen/BattleInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4335" max-vertical-offset="5202">
-          <caret line="305" column="39" selection-start-line="305" selection-start-column="39" selection-end-line="305" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -1265,41 +1251,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
           <caret line="18" column="118" selection-start-line="18" selection-start-column="118" selection-end-line="18" selection-end-column="118" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dataClasses/HeroInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="444" max-vertical-offset="1258">
-          <caret line="79" column="98" selection-start-line="79" selection-start-column="98" selection-end-line="79" selection-end-column="98" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Networking/RMIServiceInterfaceClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
-          <caret line="28" column="46" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Networking/RMIServiceInterfaceServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Map/MapGrid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1196" max-vertical-offset="8925">
-          <caret line="88" column="139" selection-start-line="88" selection-start-column="139" selection-end-line="88" selection-end-column="139" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1308,57 +1260,680 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.58082974" vertical-offset="2484" max-vertical-offset="3298">
           <caret line="170" column="21" selection-start-line="170" selection-start-column="21" selection-end-line="170" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2094#2095#0" expanded="true" />
-            <element signature="e#2124#2125#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mapLogic/MapGameController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3468" max-vertical-offset="4930">
-          <caret line="284" column="5" selection-start-line="284" selection-start-column="5" selection-end-line="284" selection-end-column="5" />
-          <folding>
-            <element signature="e#5247#5248#0" expanded="true" />
-            <element signature="e#5302#5303#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/battleScreen/BattleView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4930" max-vertical-offset="6545">
-          <caret line="333" column="46" selection-start-line="333" selection-start-column="46" selection-end-line="333" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="4692" max-vertical-offset="6596">
+          <caret line="320" column="56" selection-start-line="320" selection-start-column="56" selection-end-line="320" selection-end-column="56" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/testP/JoinGameWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.6359774" vertical-offset="86" max-vertical-offset="1428">
+          <caret line="88" column="37" selection-start-line="88" selection-start-column="37" selection-end-line="88" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/battleDisplay/GraphicsPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.4315169" vertical-offset="2275" max-vertical-offset="3485">
+          <caret line="220" column="31" selection-start-line="220" selection-start-column="31" selection-end-line="220" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/battleScreen/BattleInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.9060693" vertical-offset="2193" max-vertical-offset="5253">
+          <caret line="305" column="39" selection-start-line="305" selection-start-column="39" selection-end-line="305" selection-end-column="39" />
+          <folding>
+            <element signature="e#6578#6579#0" expanded="false" />
+            <element signature="e#6607#6608#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/battleDisplay/MoveThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5736994" vertical-offset="793" max-vertical-offset="1564">
+          <caret line="81" column="31" selection-start-line="81" selection-start-column="31" selection-end-line="81" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/battleDisplay/AnimateThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5086705" vertical-offset="2062" max-vertical-offset="2754">
+          <caret line="147" column="36" selection-start-line="147" selection-start-column="36" selection-end-line="147" selection-end-column="36" />
+          <folding>
+            <element signature="e#1633#1634#0" expanded="false" />
+            <element signature="e#1710#1711#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/battleScreen/BattleController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1528" max-vertical-offset="5100">
-          <caret line="153" column="55" selection-start-line="153" selection-start-column="55" selection-end-line="153" selection-end-column="55" />
+        <state vertical-scroll-proportion="-0.30044183" vertical-offset="1530" max-vertical-offset="5151">
+          <caret line="90" column="5" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GraphicsProcessing/DrawGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.63310343" vertical-offset="119" max-vertical-offset="918">
+          <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Map/MapGridContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1207">
+          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Map/MapObjects/Mines/RudaMine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44606414" vertical-offset="0" max-vertical-offset="686">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
           <folding>
-            <element signature="e#7568#7569#0" expanded="true" />
-            <element signature="e#7639#7640#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Networking/Client.java">
+    <entry file="file://$PROJECT_DIR$/src/Map/MapObjects/Mines/ZlotoMine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3111">
-          <caret line="177" column="18" selection-start-line="177" selection-start-column="18" selection-end-line="177" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.39650145" vertical-offset="0" max-vertical-offset="686">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Map/MapGrid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.61953354" vertical-offset="1122" max-vertical-offset="8925">
+          <caret line="91" column="62" selection-start-line="91" selection-start-column="62" selection-end-line="91" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Map/MapObjects/Mines/SiarkaMine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4708455" vertical-offset="0" max-vertical-offset="686">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Map/MapObjects/Mines/KrysztalMine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
+          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Networking/RMIServiceInterfaceServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+          <caret line="31" column="59" selection-start-line="31" selection-start-column="59" selection-end-line="31" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Map/MapObjects/Mines/KlejnotMine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4212828" vertical-offset="0" max-vertical-offset="686">
+          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Map/MapObjects/MapObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.83843535" vertical-offset="0" max-vertical-offset="1207">
+          <caret line="49" column="50" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Map/MapObjects/Mines/DrewnoMine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="19" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Networking/RMIServiceInterfaceClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <caret line="33" column="53" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Networking/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71555555" vertical-offset="2245" max-vertical-offset="3961">
-          <caret line="164" column="32" selection-start-line="164" selection-start-column="32" selection-end-line="164" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2782" max-vertical-offset="4284">
+          <caret line="194" column="52" selection-start-line="194" selection-start-column="52" selection-end-line="194" selection-end-column="52" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Map/ReadyUnitTypes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="290" max-vertical-offset="1156">
+          <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Map/NewUnitDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1001" max-vertical-offset="1836">
+          <caret line="77" column="96" selection-start-line="77" selection-start-column="96" selection-end-line="77" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dataClasses/HeroInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.86312217" vertical-offset="359" max-vertical-offset="1717">
+          <caret line="73" column="35" selection-start-line="73" selection-start-column="35" selection-end-line="73" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/mapLogic.BuyUnitsDialog">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>mapLogic.BuyUnitsDialog</OriginalElement>
+          <nodes>
+            <node x="" y="">mapLogic.BuyUnitsDialog</node>
+            <node x="" y="">java.awt.Frame</node>
+            <node x="" y="">java.awt.Window</node>
+            <node x="" y="">java.awt.MenuContainer</node>
+            <node x="" y="">javax.swing.RootPaneContainer</node>
+            <node x="" y="">javax.swing.TransferHandler.HasGetTransferHandler</node>
+            <node x="" y="">javax.accessibility.Accessible</node>
+            <node x="" y="">java.awt.Component</node>
+            <node x="" y="">java.awt.image.ImageObserver</node>
+            <node x="" y="">java.io.Serializable</node>
+            <node x="" y="">java.awt.Container</node>
+            <node x="" y="">javax.swing.JFrame</node>
+            <node x="" y="">javax.swing.WindowConstants</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="350.5" y="260.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/java.lang.Override">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>java.lang.Override</OriginalElement>
+          <nodes>
+            <node x="" y="">java.lang.Override</node>
+            <node x="" y="">java.lang.annotation.Annotation</node>
+            <node x="" y="">java.lang.annotation.Target</node>
+            <node x="" y="">java.lang.annotation.Retention</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="64.0" y="135.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/MainMenu">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>MainMenu</OriginalElement>
+          <nodes>
+            <node x="" y="">MainMenu</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="46.0" y="15.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="1581">
+          <caret line="89" column="69" selection-start-line="89" selection-start-column="69" selection-end-line="89" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mapLogic/BuyUnitsDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="576" max-vertical-offset="5219">
+          <caret line="49" column="28" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/mapLogic.MapGameController">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>mapLogic.MapGameController</OriginalElement>
+          <nodes>
+            <node x="" y="">mapLogic.MapGameController</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="71.0" y="15.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mapLogic/MapGameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6103">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding>
+            <element signature="e#6640#6641#0" expanded="true" />
+            <element signature="e#6695#6696#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Networking/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="806" max-vertical-offset="3672">
+          <caret line="223" column="32" selection-start-line="223" selection-start-column="32" selection-end-line="223" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/testP.HostGameWindow">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>testP.HostGameWindow</OriginalElement>
+          <nodes>
+            <node x="" y="">testP.HostGameWindow</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="67.0" y="15.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/battleScreen">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>battleScreen</OriginalElement>
+          <nodes>
+            <node x="" y="">dataClasses.CellEntity</node>
+            <node x="" y="">battleDisplay.AnimateThread</node>
+            <node x="" y="">dataClasses.BattlefieldCell</node>
+            <node x="" y="">battleDisplay.SpriteLoader</node>
+            <node x="" y="">battleDisplay.RangeIndicator</node>
+            <node x="" y="">dataClasses.BattleResult</node>
+            <node x="" y="">dataClasses.MiniHeroInfo</node>
+            <node x="" y="">dataClasses.UnitType</node>
+            <node x="" y="">dataClasses.UnitCommander</node>
+            <node x="" y="">battleDisplay.interfaceButton</node>
+            <node x="" y="">battleDisplay.AnimationType</node>
+            <node x="" y="">battleScreen.BattleView</node>
+            <node x="" y="">battleDisplay.GraphicsPanel</node>
+            <node x="" y="">battleDisplay.infoBox</node>
+            <node x="" y="">dataClasses.UnitInfo</node>
+            <node x="" y="">battleScreen.BattleInfo</node>
+            <node x="" y="">battleDisplay.AttackDirection</node>
+            <node x="" y="">battleDisplay.MoveThread</node>
+            <node x="" y="">battleScreen.BattleController</node>
+            <node x="" y="">battleDisplay.BackgroundPanel</node>
+            <node x="" y="">battleDisplay.StaticGraphicsPanel</node>
+            <node x="" y="">dataClasses.HeroInfo</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="58.5" y="90.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://MODULES/mdl-JavaHOMMIII">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>MODULES</ID>
+          <OriginalElement>mdl-JavaHOMMIII</OriginalElement>
+          <nodes>
+            <node x="" y="">mdl-JavaHOMMIII</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="-90.5" y="-70.0" />
+          <SelectedNodes />
+          <Categories />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/testP/HostGameWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="496" max-vertical-offset="2652">
+          <caret line="65" column="21" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/battleDisplay">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>battleDisplay</OriginalElement>
+          <nodes>
+            <node x="0.0" y="255.0">Networking.RMIServiceInterfaceServer</node>
+            <node x="642.0" y="790.0">mapLogic.BuyUnitsDialog</node>
+            <node x="774.0" y="865.0">Map.MapObjects.Mines.ResoruceType</node>
+            <node x="170.0" y="180.0">Map.MapObjects.Towns.Forteca</node>
+            <node x="615.0" y="180.0">Map.MapObjects.Resources.Rtec</node>
+            <node x="0.0" y="410.0">Pathfinding.FindPath</node>
+            <node x="738.0" y="1090.0">Map.Tile</node>
+            <node x="429.0" y="255.0">ImageSelection.ImageSelectionBox</node>
+            <node x="215.0" y="255.0">Networking.RMIServiceInterfaceClient</node>
+            <node x="183.0" y="565.0">Map.MapRangeIndicator</node>
+            <node x="308.88392857142867" y="90.0">Map.MapObjects.Miscellaneous.Misc</node>
+            <node x="80.0" y="180.0">Map.MapObjects.Towns.Zamek</node>
+            <node x="469.0" y="865.0">HeroDisplay.HeroDirection</node>
+            <node x="523.0" y="1015.0">dataClasses.UnitType</node>
+            <node x="-135.0" y="767.0">MainMenu</node>
+            <node x="523.0" y="90.0">Map.MapObjects.Resources.Resource</node>
+            <node x="745.0" y="410.0">mapLogic.MapGameController</node>
+            <node x="482.0" y="790.0">battleDisplay.AnimationType</node>
+            <node x="126.0" y="410.0">ImageSelection.ImageSelectionController</node>
+            <node x="496.0" y="1090.0">dataClasses.UnitInfo</node>
+            <node x="339.0" y="410.0">ImageSelection.ImageFolderComponent</node>
+            <node x="1102.0" y="180.0">Map.MapObjects.Mines.ZlotoMine</node>
+            <node x="609.0" y="255.0">ImageSelection.FolderImageBox</node>
+            <node x="1329.0" y="180.0">Map.MapObjects.Mines.RudaMine</node>
+            <node x="692.0" y="180.0">Map.MapObjects.Resources.Klejnot</node>
+            <node x="0.0" y="1015.0">Pathfinding.GameMap</node>
+            <node x="533.0" y="180.0">Map.MapObjects.Resources.Zloto</node>
+            <node x="1558.0" y="180.0">Map.MapObjects.Mines.RtecMine</node>
+            <node x="161.0" y="790.0">Map.NewMapDialog</node>
+            <node x="990.0" y="180.0">Map.MapObjects.Mines.SiarkaMine</node>
+            <node x="263.00000000000006" y="180.0">Map.MapObjects.Resources.Ruda</node>
+            <node x="0.0" y="865.0">Map.NewUnitDialog</node>
+            <node x="622.0" y="865.0">dataClasses.BattlefieldCell</node>
+            <node x="295.0" y="940.0">battleDisplay.SpriteLoader</node>
+            <node x="366.0" y="565.0">Map.MapEditorMenuBar</node>
+            <node x="0.0" y="940.0">dataClasses.MiniHeroInfo</node>
+            <node x="1211.0" y="180.0">Map.MapObjects.Mines.KlejnotMine</node>
+            <node x="1310.5" y="90.0">Map.MapObjects.Landscapes.Landscape</node>
+            <node x="783.0" y="180.0">Map.MapObjects.Resources.Siarka</node>
+            <node x="1437.0" y="180.0">Map.MapObjects.Mines.KrysztalMine</node>
+            <node x="168.0" y="715.0">GraphicsProcessing.ImageProcessor</node>
+            <node x="264.0" y="1015.0">Pathfinding.GameCell</node>
+            <node x="250.0" y="1090.0">Map.MapSize</node>
+            <node x="373.0" y="1090.0">Pathfinding.MapCell</node>
+            <node x="656.0" y="715.0">battleDisplay.AttackDirection</node>
+            <node x="494.0" y="715.0">battleScreen.BattleController</node>
+            <node x="775.0" y="1015.0">GraphicsProcessing.Graphics</node>
+            <node x="619.5" y="335.0">ImageSelection.FolderImageBox.ListRenderer</node>
+            <node x="715.0" y="940.0">Map.SavedMap</node>
+            <node x="0.0" y="1090.0">GraphicsProcessing.DrawGUI</node>
+            <node x="394.0" y="1015.0">dataClasses.CellEntity</node>
+            <node x="331.0" y="715.0">Map.ReadyUnitTypes</node>
+            <node x="1.0" y="490.0">Pathfinding.FindPath.openList</node>
+            <node x="52.0" y="335.0">Networking.Server</node>
+            <node x="438.5" y="335.0">ImageSelection.ImageSelectionBox.MyListRenderer</node>
+            <node x="159.0" y="865.0">Pathfinding.BattlefieldMap</node>
+            <node x="83.5" y="90.0">Map.MapObjects.Towns.Town</node>
+            <node x="690.0" y="640.0">Map.MapObjects.TerrainPassability</node>
+            <node x="0.0" y="640.0">testP.JoinGameWindow</node>
+            <node x="267.0" y="335.0">Networking.Client</node>
+            <node x="868.0" y="180.0">Map.MapObjects.Mines.DrewnoMine</node>
+            <node x="581.0" y="940.0">battleScreen.BattleView</node>
+            <node x="315.0" y="865.0">battleDisplay.GraphicsPanel</node>
+            <node x="0.0" y="180.0">Map.MapObjects.Towns.Loch</node>
+            <node x="134.0" y="1015.0">battleScreen.BattleInfo</node>
+            <node x="824.5" y="0.0">Map.MapObjects.MapObject</node>
+            <node x="779.0" y="335.0">Pathfinding.Pathfinder.openList</node>
+            <node x="649.0" y="1015.0">dataClasses.HeroInfo</node>
+            <node x="0.0" y="565.0">battleDisplay.StaticGraphicsPanel</node>
+            <node x="548.0" y="410.0">HeroDisplay.HeroAnimationThread</node>
+            <node x="322.0" y="790.0">battleDisplay.AnimateThread</node>
+            <node x="344.00000000000006" y="180.0">Map.MapObjects.Resources.Krysztal</node>
+            <node x="438.00000000000006" y="180.0">Map.MapObjects.Resources.Drewno</node>
+            <node x="125.0" y="1090.0">Map.MapGrid</node>
+            <node x="440.0" y="940.0">dataClasses.BattleResult</node>
+            <node x="802.0" y="790.0">battleDisplay.RangeIndicator</node>
+            <node x="1229.5" y="90.0">Map.MapObjects.Mines.Mine</node>
+            <node x="-146.0" y="681.0">TestClass</node>
+            <node x="347.0" y="640.0">HeroDisplay.HeroDisplayPanel</node>
+            <node x="0.0" y="715.0">dataClasses.UnitCommander</node>
+            <node x="0.0" y="790.0">battleDisplay.interfaceButton</node>
+            <node x="727.0" y="565.0">Map.MapGridContainer</node>
+            <node x="519.0" y="640.0">HeroDisplay.HeroMoveThread</node>
+            <node x="618.0" y="1090.0">battleDisplay.infoBox</node>
+            <node x="150.0" y="940.0">battleDisplay.MoveThread</node>
+            <node x="548.0" y="565.0">testP.HostGameWindow</node>
+            <node x="774.0" y="255.0">Pathfinding.Pathfinder</node>
+            <node x="885.75" y="90.0">Map.MapObjects.Army</node>
+            <node x="175.0" y="640.0">battleDisplay.BackgroundPanel</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="Map.MapObjects.Mines.DrewnoMine" target="Map.MapObjects.Mines.Mine">
+              <point x="0.0" y="-15.0" />
+              <point x="919.0" y="140.0" />
+              <point x="1233.857142857143" y="140.0" />
+              <point x="-26.14285714285711" y="15.0" />
+            </edge>
+            <edge source="Map.MapObjects.Mines.RtecMine" target="Map.MapObjects.Mines.Mine">
+              <point x="0.0" y="-15.0" />
+              <point x="1600.0" y="140.0" />
+              <point x="1286.142857142857" y="140.0" />
+              <point x="26.14285714285711" y="15.0" />
+            </edge>
+            <edge source="Map.MapObjects.Resources.Siarka" target="Map.MapObjects.Resources.Resource">
+              <point x="0.0" y="-15.0" />
+              <point x="815.5" y="140.0" />
+              <point x="599.1428571428571" y="140.0" />
+              <point x="35.14285714285711" y="15.0" />
+            </edge>
+            <edge source="Map.MapObjects.Resources.Drewno" target="Map.MapObjects.Resources.Resource">
+              <point x="-5.6843418860808015E-14" y="-15.0" />
+              <point x="475.5" y="160.0" />
+              <point x="552.2857142857144" y="160.0" />
+              <point x="-11.714285714285666" y="15.0" />
+            </edge>
+            <edge source="Map.MapObjects.Resources.Zloto" target="Map.MapObjects.Resources.Resource">
+              <point x="0.0" y="-15.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="Map.MapObjects.Army" target="Map.MapObjects.MapObject">
+              <point x="0.0" y="-15.0" />
+              <point x="917.25" y="70.0" />
+              <point x="878.75" y="70.0" />
+              <point x="7.75" y="15.0" />
+            </edge>
+            <edge source="Map.MapObjects.Towns.Loch" target="Map.MapObjects.Towns.Town">
+              <point x="0.0" y="-15.0" />
+              <point x="30.0" y="160.0" />
+              <point x="94.0" y="160.0" />
+              <point x="-21.0" y="15.0" />
+            </edge>
+            <edge source="Map.MapObjects.Mines.Mine" target="Map.MapObjects.MapObject">
+              <point x="0.0" y="-15.0" />
+              <point x="1260.0" y="60.0" />
+              <point x="894.25" y="60.0" />
+              <point x="23.25" y="15.0" />
+            </edge>
+            <edge source="Map.MapObjects.Towns.Zamek" target="Map.MapObjects.Towns.Town">
+              <point x="0.0" y="-15.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="Map.MapObjects.Resources.Klejnot" target="Map.MapObjects.Resources.Resource">
+              <point x="0.0" y="-15.0" />
+              <point x="727.5" y="150.0" />
+              <point x="587.4285714285716" y="150.0" />
+              <point x="23.428571428571445" y="15.0" />
+            </edge>
+            <edge source="Map.MapObjects.Towns.Town" target="Map.MapObjects.MapObject">
+              <point x="0.0" y="-15.0" />
+              <point x="115.0" y="50.0" />
+              <point x="832.25" y="50.0" />
+              <point x="-38.75" y="15.0" />
+            </edge>
+            <edge source="Map.MapObjects.Resources.Rtec" target="Map.MapObjects.Resources.Resource">
+              <point x="0.0" y="-15.0" />
+              <point x="643.5" y="160.0" />
+              <point x="575.7142857142858" y="160.0" />
+              <point x="11.71428571428578" y="15.0" />
+            </edge>
+            <edge source="Map.MapObjects.Mines.SiarkaMine" target="Map.MapObjects.Mines.Mine">
+              <point x="0.0" y="-15.0" />
+              <point x="1036.0" y="150.0" />
+              <point x="1242.5714285714287" y="150.0" />
+              <point x="-17.42857142857133" y="15.0" />
+            </edge>
+            <edge source="Map.MapObjects.Towns.Forteca" target="Map.MapObjects.Towns.Town">
+              <point x="0.0" y="-15.0" />
+              <point x="206.5" y="160.0" />
+              <point x="136.0" y="160.0" />
+              <point x="21.0" y="15.0" />
+            </edge>
+            <edge source="Networking.Client" target="Networking.RMIServiceInterfaceClient">
+              <point x="0.0" y="-15.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="Pathfinding.Pathfinder.openList" target="Pathfinding.Pathfinder">
+              <point x="0.0" y="-15.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="Map.MapObjects.Mines.ZlotoMine" target="Map.MapObjects.Mines.Mine">
+              <point x="0.0" y="-15.0" />
+              <point x="1146.5" y="160.0" />
+              <point x="1251.2857142857142" y="160.0" />
+              <point x="-8.71428571428578" y="15.0" />
+            </edge>
+            <edge source="Map.MapObjects.Mines.KrysztalMine" target="Map.MapObjects.Mines.Mine">
+              <point x="0.0" y="-15.0" />
+              <point x="1487.5" y="150.0" />
+              <point x="1277.4285714285713" y="150.0" />
+              <point x="17.42857142857133" y="15.0" />
+            </edge>
+            <edge source="Map.MapObjects.Miscellaneous.Misc" target="Map.MapObjects.MapObject">
+              <point x="0.0" y="-15.0" />
+              <point x="338.38392857142867" y="60.0" />
+              <point x="847.75" y="60.0" />
+              <point x="-23.25" y="15.0" />
+            </edge>
+            <edge source="ImageSelection.ImageSelectionBox.MyListRenderer" target="ImageSelection.ImageSelectionBox">
+              <point x="0.0" y="-15.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="Pathfinding.FindPath.openList" target="Pathfinding.FindPath">
+              <point x="0.0" y="-15.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="Map.MapObjects.Resources.Krysztal" target="Map.MapObjects.Resources.Resource">
+              <point x="0.0" y="-15.0" />
+              <point x="381.00000000000006" y="150.0" />
+              <point x="540.5714285714287" y="150.0" />
+              <point x="-23.428571428571445" y="15.0" />
+            </edge>
+            <edge source="Map.MapObjects.Mines.RudaMine" target="Map.MapObjects.Mines.Mine">
+              <point x="0.0" y="-15.0" />
+              <point x="1373.0" y="160.0" />
+              <point x="1268.7142857142858" y="160.0" />
+              <point x="8.71428571428578" y="15.0" />
+            </edge>
+            <edge source="Map.MapObjects.Landscapes.Landscape" target="Map.MapObjects.MapObject">
+              <point x="0.0" y="-15.0" />
+              <point x="1355.5" y="50.0" />
+              <point x="909.75" y="50.0" />
+              <point x="38.75" y="15.0" />
+            </edge>
+            <edge source="ImageSelection.FolderImageBox.ListRenderer" target="ImageSelection.FolderImageBox">
+              <point x="0.0" y="-15.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="Map.MapObjects.Resources.Ruda" target="Map.MapObjects.Resources.Resource">
+              <point x="0.0" y="-15.0" />
+              <point x="293.50000000000006" y="140.0" />
+              <point x="528.8571428571429" y="140.0" />
+              <point x="-35.14285714285711" y="15.0" />
+            </edge>
+            <edge source="Networking.Server" target="Networking.RMIServiceInterfaceServer">
+              <point x="0.0" y="-15.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="Map.MapObjects.Resources.Resource" target="Map.MapObjects.MapObject">
+              <point x="0.0" y="-15.0" />
+              <point x="564.0" y="70.0" />
+              <point x="863.25" y="70.0" />
+              <point x="-7.75" y="15.0" />
+            </edge>
+            <edge source="Map.MapObjects.Mines.KlejnotMine" target="Map.MapObjects.Mines.Mine">
+              <point x="0.0" y="-15.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.6894736842105263" x="748.9847328244274" y="580.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>

@@ -23,7 +23,7 @@ import javax.swing.*;
  * @author slivka
  * Klasa rysuj�ca jednostki
  */
-public class GraphicsPanel extends JPanel {
+public class GraphicsPanel extends JPanel implements Runnable{
 
 	private static final long serialVersionUID = 3688560623253859696L;
 	private UnitType _unit;
@@ -62,7 +62,7 @@ public class GraphicsPanel extends JPanel {
 		this.setBounds(x-(currentFrame.getWidth()/2),y-currentFrame.getHeight(), currentFrame.getWidth(), currentFrame.getHeight()+12);
 		//this.addMouseListener(new MouseListener() {
 
-		startRefresh();
+		//startRefresh();
 	}
 
 	public void updateUnitSize(int newUnitSize)
@@ -125,7 +125,7 @@ public class GraphicsPanel extends JPanel {
 		j.setLayer(this, 1);
 		isDead = true;
 	}
-
+/*
 	private void startRefresh()
 	{
 		Timer timer = new Timer(20, new ActionListener()
@@ -133,15 +133,14 @@ public class GraphicsPanel extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e)
 			{
-				revalidate();
-				repaint();
+
 			}
 		});
 		timer.setRepeats(true);
 		timer.setCoalesce(true);
 		timer.start();
 	}
-
+*/
 
 	@Override
 	protected void paintComponent(Graphics g)
@@ -167,6 +166,7 @@ public class GraphicsPanel extends JPanel {
 		this.setBounds((int)currentPosition.getX()-(currentFrame.getWidth()/2),(int)currentPosition.getY()-currentFrame.getHeight(), currentFrame.getWidth(), currentFrame.getHeight()+12);
 		if(moveThread!=null)
 		{
+			System.out.println(currentPosition+", "+moveThread.isRunning());
 			if(moveThread.isRunning())
 			{
 				facingLeft = moveThread.isFacingLeft();
@@ -186,6 +186,7 @@ public class GraphicsPanel extends JPanel {
 				}
 				else
 				{
+					System.out.println("Koniec MOVE");
 					animateThread.changeAnimation(AnimationType.IDLE);
 				}
 				animationFinished = true;
@@ -205,6 +206,23 @@ public class GraphicsPanel extends JPanel {
 			g2.fillRect(10, currentFrame.getHeight() - 3, 30, 15);
 			g2.setColor(Color.black);
 			g2.drawString(Integer.toString(_unitSize), 20, currentFrame.getHeight() + 9);
+		}
+	}
+
+	@Override
+	public void run()
+	{
+		while (!Thread.currentThread().isInterrupted())
+		{
+			this.revalidate();
+			this.repaint();
+			try
+			{
+				Thread.sleep(25);
+			} catch (InterruptedException e)
+			{
+				e.printStackTrace();
+			}
 		}
 	}
 }
